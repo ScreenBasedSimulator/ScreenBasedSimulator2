@@ -1,4 +1,4 @@
-package edu.cmu.sbs.hub.core;
+package edu.cmu.sbs.hub.server;
 
 import com.github.kevinsawicki.http.HttpRequest;
 import edu.cmu.sbs.hub.datatype.PatientStatus;

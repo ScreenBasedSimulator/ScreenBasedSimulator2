@@ -1,6 +1,7 @@
-package edu.cmu.sbs.hub.core;
+package edu.cmu.sbs.hub.server;
 
 import com.google.gson.Gson;
+import edu.cmu.sbs.hub.datatype.PatientStatus;
 import edu.cmu.sbs.protocol.StatusProtocol;
 
 import java.time.LocalTime;
@@ -20,10 +21,18 @@ public class HttpServer {
             System.out.println("Received at : " + LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME));
             System.out.println("received:\n" + request.body());
             StatusProtocol status = gson.fromJson(request.body(), StatusProtocol.class);
+
+
+
             System.out.println(status.toString());
             return 1;
         });
 
+    }
+
+    private StatusProtocol statusToProtocol(PatientStatus status) {
+        StatusProtocol statusProtocol = new StatusProtocol();
+        return statusProtocol;
     }
 
     public static void main(String[] args) {
