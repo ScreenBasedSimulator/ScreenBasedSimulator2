@@ -14,6 +14,7 @@ public:
 
 private:
     ConnectionClient* m_pConnectionClient = nullptr;
+    void handleMessage(std::string a);
 };
 
 #endif

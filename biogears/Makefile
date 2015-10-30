@@ -1,9 +1,9 @@
 CC=gcc
 CXX=g++
 RM=rm -f
-CPPFLAGS=-g -std=c++11
-MAC_LDFLAGS=-g -pthread -Wl,-rpath,../lib
-INC=-I./include -I./include/cdm -I./include/cdm/bind -I./include/log4cpp/include
+CPPFLAGS=-g -std=c++14 -O3 
+MAC_LDFLAGS=-g -lboost_thread-mt -lboost_system-mt -pthread -Wl,-rpath,../lib
+INC=-I./include -I./include/cdm -I./include/cdm/bind -I./include/log4cpp/include -I./include/crow
 LIBPATH=-L./lib/
 MAC_LIBS= ./lib/libxerces-c-3.1.dylib ./lib/CommonDataModelBind.dylib ./lib/CommonDataModel.dylib ./lib/BioGearsEngine.dylib
 BIN=./bin

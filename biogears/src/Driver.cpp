@@ -44,7 +44,9 @@ void Driver::HandleMessage(const std::string& message)
 int main()
 {
     Driver driver;
+    
 
+    std::cout<<"HELLO HERE!!!"<<std::endl;
     driver.Initialize();
     driver.Run();
 }

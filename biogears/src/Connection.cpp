@@ -10,31 +10,50 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <iostream>
+#include "crow_all.h"
+#include "driver.h"
+
 Connection::Connection(ConnectionClient* pConnectionClient)
     : m_pConnectionClient(pConnectionClient)
 {
+}
+
+void Connection::handleMessage(std::string message) {
+    m_pConnectionClient->HandleMessage("12");
 }
 
 void Connection::operator()()
 {
     SetRunning(true);
 
-    while (Running())
-    {
-        std::string content;
-        std::cin >> content;
-        // std::cout<< "received the input: " << content<<std::endl;
+    crow::SimpleApp app;
+    Driver * client= (Driver *)m_pConnectionClient;
+    CROW_ROUTE(app, "/")([this](){
+        handleMessage("123");
+        std::cout<<"HIHIHI"<<std::endl;
+        crow::json::wvalue x;
+        x["message"] = "Hello, World!";
+        return x;
+    });
 
-        m_pConnectionClient->HandleMessage(content);
-        // 
-        // std::cout<<"success!!!!!";
-        // int bytes = read(socketfd, receive_buffer, sizeof receive_buffer);
-        // if (bytes > 0)
-        // {
-        //     //fputs(receive_buffer, stdout);
-        //     m_pConnectionClient->HandleMessage(std::string(receive_buffer));
-        // }
-    }
+    app.port(18080).multithreaded().run();
+
+    // while (Running())
+    // {
+    //     std::string content;
+    //     std::cin >> content;
+    //     // std::cout<< "received the input: " << content<<std::endl;
+
+        
+    //     // 
+    //     // std::cout<<"success!!!!!";
+    //     // int bytes = read(socketfd, receive_buffer, sizeof receive_buffer);
+    //     // if (bytes > 0)
+    //     // {
+    //     //     //fputs(receive_buffer, stdout);
+    //     //     m_pConnectionClient->HandleMessage(std::string(receive_buffer));
+    //     // }
+    // }
 
     
 }
