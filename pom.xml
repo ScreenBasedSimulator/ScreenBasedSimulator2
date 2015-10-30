@@ -4,41 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>edu.cmu.lti.bic.sbs</groupId>
-    <artifactId>hub</artifactId>
-    <version>0.0.1</version>
-
-
-
+    <groupId>edu.cmu</groupId>
+    <artifactId>sbs</artifactId>
+    <version>2.0.0</version>
 
     <dependencies>
-        <!-- Unirest Http Library-->
-        <dependency>
-            <groupId>com.mashape.unirest</groupId>
-            <artifactId>unirest-java</artifactId>
-            <version>1.4.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.3.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpasyncclient</artifactId>
-            <version>4.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpmime</artifactId>
-            <version>4.3.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20140107</version>
-        </dependency>
-
         <!-- Spark Framework-->
         <dependency>
             <groupId>com.sparkjava</groupId>
@@ -56,11 +26,11 @@
 
         <!-- Java Data and Time-->
         <!-- http://www.joda.org/joda-time/-->
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.8.2</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>joda-time</groupId>-->
+            <!--<artifactId>joda-time</artifactId>-->
+            <!--<version>2.8.2</version>-->
+        <!--</dependency>-->
 
         <!-- Apache Commons, String manipulation-->
         <dependency>
@@ -69,6 +39,7 @@
             <version>3.4</version>
         </dependency>
 
+        <!-- Object serialization-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
