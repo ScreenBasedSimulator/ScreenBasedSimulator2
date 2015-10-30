@@ -133,3 +133,5 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
+# Ignore bin for biogears
+biogears/bin
