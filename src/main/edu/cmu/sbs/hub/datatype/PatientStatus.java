@@ -1,12 +1,18 @@
-package datatype;
+package edu.cmu.sbs.hub.datatype;
 
-import java.util.*;
 import com.google.gson.Gson;
+
+import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.Map;
+
 public class PatientStatus {
 
     private final Patient patient;
+
     private static Gson gson = new Gson();
-    enum Metric {
+
+    public enum Metric {
         HEARTRATE, RESPRATE, SYSTOLICBP, DIASTOLICBP, OXYGEN;
 
         @Override
@@ -52,13 +58,14 @@ public class PatientStatus {
 
     @Deprecated
     public static PatientStatus getRandomFakeStatus() {
-        System.out.println("Test Method invoked " + new Object(){}.getClass().getEnclosingMethod().getName());
+        System.out.println("Test Method invoked " + new Object() {
+        }.getClass().getEnclosingMethod().getName());
         EnumMap<Metric, Double> metricDoubleMap = new EnumMap<>(Metric.class);
         metricDoubleMap.put(Metric.HEARTRATE, 50 + 20 * Math.random());
         metricDoubleMap.put(Metric.SYSTOLICBP, Math.random() * 100);
         metricDoubleMap.put(Metric.DIASTOLICBP, Math.random() * 20 + 100);
         metricDoubleMap.put(Metric.OXYGEN, Math.random() * 120);
-        metricDoubleMap.put(Metric.RESPRATE, 60.0 + Math.random()*20);
+        metricDoubleMap.put(Metric.RESPRATE, 60.0 + Math.random() * 20);
         return new PatientStatus(metricDoubleMap, Patient.getRandomPatient());
     }
 

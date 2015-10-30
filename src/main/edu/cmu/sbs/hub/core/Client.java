@@ -1,7 +1,7 @@
-package hub.core;
+package edu.cmu.sbs.hub.core;
 
 import com.github.kevinsawicki.http.HttpRequest;
-import datatype.PatientStatus;
+import edu.cmu.sbs.hub.datatype.PatientStatus;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -13,19 +13,6 @@ public class Client {
 
 
     public static void main(String[] args) {
-//        Scanner in = new Scanner(System.in);
-//
-//        String str = in.nextLine();
-//
-//        while (!str.isEmpty()) {
-//            HttpRequest.post("http://localhost:8081").send("hahaha").code();
-//            str = in.nextLine();
-//        }
-
-
-//        for (int i = 1; i < 20; i++) {
-//            HttpRequest.post("http://localhost:8081").send("test").code();
-//        }
 
         Runnable testRun = () -> {
 

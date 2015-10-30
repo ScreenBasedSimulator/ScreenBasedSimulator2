@@ -1,4 +1,4 @@
-package datatype;
+package edu.cmu.sbs.hub.datatype;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
