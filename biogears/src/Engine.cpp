@@ -21,6 +21,7 @@
 #include "scenario/SEPhysiologySystemDataRequest.h"
 #include <chrono>
 #include <thread>
+#include "crow_all.h"
 
 void Engine::Initialize()
 {
@@ -33,25 +34,31 @@ void Engine::Initialize()
     m_dt = m_engine->GetTimeStep(SEScalarTime::s) * 1000.0;
 }
 
+crow::json::wvalue Engine::GetPatientStatus() {
+    crow::json::wvalue status;
+    /* heartrate      |66.03         |double value round to two decimal places
+     * resprate       |75.48         |double value round to two decimal places
+     * systolicbp     |37.99         |double value round to two decimal places
+     * diastolicbp    |120.91        |double value round to two decimal places
+     * oxygen         |93.60         |double value round to two decimal places
+     */
+    status["heartrate"] = m_engine->GetCardiovascularSystem()->GetHeartRate(SEScalarFrequency::Per_min);
+    status["oxygen"] = m_engine->GetBloodChemistrySystem()->GetOxygenSaturation();
+        // std::cout << "Tidal Volume : " << m_engine->GetRespiratorySystem()->GetTidalVolume(SEScalarVolume::mL) << SEScalarVolume::mL << "\n";
+        // std::cout << "Systolic Pressure : " << m_engine->GetCardiovascularSystem()->GetSystolicArterialPressure(SEScalarPressure::mmHg) << SEScalarPressure::mmHg << "\n";
+        // std::cout << "Diastolic Pressure : " << m_engine->GetCardiovascularSystem()->GetDiastolicArterialPressure(SEScalarPressure::mmHg) << SEScalarPressure::mmHg << "\n";
+        // std::cout << "Heart Rate : " << m_engine->GetCardiovascularSystem()->GetHeartRate(SEScalarFrequency::Per_min) << SEScalarFrequency::Per_min << "\n";
+        // std::cout << "Respiration Rate : " << m_engine->GetRespiratorySystem()->GetRespirationRate(SEScalarFrequency::Per_min) << SEScalarFrequency::Per_min << "\n";
+        // std::cout << "Oxygen Saturation : " << m_engine->GetBloodChemistrySystem()->GetOxygenSaturation() << "\n\n";
+
+}
+
 void Engine::operator()()
 {
     using Clock = std::chrono::high_resolution_clock;
-    int count = 0;
     while (Running())
     {
         Clock::time_point start = Clock::now();
-
-        if(count == 100){
-            count = 0;
-            std::cout << "Tidal Volume : " << m_engine->GetRespiratorySystem()->GetTidalVolume(SEScalarVolume::mL) << SEScalarVolume::mL << "\n";
-            std::cout << "Systolic Pressure : " << m_engine->GetCardiovascularSystem()->GetSystolicArterialPressure(SEScalarPressure::mmHg) << SEScalarPressure::mmHg << "\n";
-            std::cout << "Diastolic Pressure : " << m_engine->GetCardiovascularSystem()->GetDiastolicArterialPressure(SEScalarPressure::mmHg) << SEScalarPressure::mmHg << "\n";
-            std::cout << "Heart Rate : " << m_engine->GetCardiovascularSystem()->GetHeartRate(SEScalarFrequency::Per_min) << SEScalarFrequency::Per_min << "\n";
-            std::cout << "Respiration Rate : " << m_engine->GetRespiratorySystem()->GetRespirationRate(SEScalarFrequency::Per_min) << SEScalarFrequency::Per_min << "\n";
-            std::cout << "Oxygen Saturation : " << m_engine->GetBloodChemistrySystem()->GetOxygenSaturation() << "\n\n";
-
-        }
-        count++;
         {
 
             std::lock_guard<std::mutex> lock(m_pressureMutex);

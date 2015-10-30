@@ -28,7 +28,15 @@ void Connection::operator()()
 
     crow::SimpleApp app;
     Driver * client= (Driver *)m_pConnectionClient;
+
     CROW_ROUTE(app, "/")([this](){
+        handleMessage("123");
+        std::cout<<"HIHIHI"<<std::endl;
+        crow::json::wvalue x = m_pConnectionClient->GetPatientStatus();
+        return x;
+    });
+
+    CROW_ROUTE(app, "/patient/status")([this](){
         handleMessage("123");
         std::cout<<"HIHIHI"<<std::endl;
         crow::json::wvalue x;

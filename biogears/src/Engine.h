@@ -13,6 +13,7 @@ public:
 
     void Initialize();
     void SetPressure(double pressure);
+    crow::json::wvalue GetPatientStatus();
 
 private:
     std::unique_ptr<PhysiologyEngine> m_engine;
