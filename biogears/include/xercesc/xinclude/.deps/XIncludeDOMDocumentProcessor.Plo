@@ -1,0 +1,469 @@
+xercesc/xinclude/XIncludeDOMDocumentProcessor.lo: \
+ xercesc/xinclude/XIncludeDOMDocumentProcessor.cpp \
+ /usr/arm-linux-gnueabihf/include/stdc-predef.h \
+ xercesc/xinclude/XIncludeDOMDocumentProcessor.hpp \
+ xercesc/util/XercesDefs.hpp xercesc/util/Xerces_autoconf_config.hpp \
+ /usr/arm-linux-gnueabihf/include/inttypes.h \
+ /usr/arm-linux-gnueabihf/include/features.h \
+ /usr/arm-linux-gnueabihf/include/sys/cdefs.h \
+ /usr/arm-linux-gnueabihf/include/bits/wordsize.h \
+ /usr/arm-linux-gnueabihf/include/gnu/stubs.h \
+ /usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h \
+ /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stdint.h \
+ /usr/arm-linux-gnueabihf/include/stdint.h \
+ /usr/arm-linux-gnueabihf/include/bits/wchar.h \
+ /usr/arm-linux-gnueabihf/include/sys/types.h \
+ /usr/arm-linux-gnueabihf/include/bits/types.h \
+ /usr/arm-linux-gnueabihf/include/bits/typesizes.h \
+ /usr/arm-linux-gnueabihf/include/time.h \
+ /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stddef.h \
+ /usr/arm-linux-gnueabihf/include/endian.h \
+ /usr/arm-linux-gnueabihf/include/bits/endian.h \
+ /usr/arm-linux-gnueabihf/include/bits/byteswap.h \
+ /usr/arm-linux-gnueabihf/include/bits/byteswap-16.h \
+ /usr/arm-linux-gnueabihf/include/sys/select.h \
+ /usr/arm-linux-gnueabihf/include/bits/select.h \
+ /usr/arm-linux-gnueabihf/include/bits/sigset.h \
+ /usr/arm-linux-gnueabihf/include/bits/time.h \
+ /usr/arm-linux-gnueabihf/include/bits/select2.h \
+ /usr/arm-linux-gnueabihf/include/sys/sysmacros.h \
+ /usr/arm-linux-gnueabihf/include/bits/pthreadtypes.h \
+ xercesc/util/XercesVersion.hpp xercesc/dom/DOM.hpp \
+ xercesc/dom/DOMAttr.hpp xercesc/dom/DOMNode.hpp \
+ xercesc/dom/DOMCDATASection.hpp xercesc/dom/DOMText.hpp \
+ xercesc/dom/DOMCharacterData.hpp xercesc/dom/DOMComment.hpp \
+ xercesc/dom/DOMDocument.hpp xercesc/dom/DOMDocumentRange.hpp \
+ xercesc/dom/DOMDocumentTraversal.hpp xercesc/dom/DOMNodeFilter.hpp \
+ xercesc/dom/DOMXPathEvaluator.hpp xercesc/dom/DOMXPathResult.hpp \
+ xercesc/dom/DOMDocumentFragment.hpp xercesc/dom/DOMDocumentType.hpp \
+ xercesc/dom/DOMElement.hpp xercesc/dom/DOMEntity.hpp \
+ xercesc/dom/DOMEntityReference.hpp xercesc/dom/DOMException.hpp \
+ xercesc/util/PlatformUtils.hpp xercesc/util/XMLException.hpp \
+ xercesc/util/XMemory.hpp /usr/arm-linux-gnueabihf/include/stdlib.h \
+ /usr/arm-linux-gnueabihf/include/bits/waitflags.h \
+ /usr/arm-linux-gnueabihf/include/bits/waitstatus.h \
+ /usr/arm-linux-gnueabihf/include/xlocale.h \
+ /usr/arm-linux-gnueabihf/include/alloca.h \
+ /usr/arm-linux-gnueabihf/include/bits/stdlib-bsearch.h \
+ /usr/arm-linux-gnueabihf/include/bits/stdlib-float.h \
+ /usr/arm-linux-gnueabihf/include/bits/stdlib.h \
+ xercesc/util/XMLExceptMsgs.hpp xercesc/dom/DOMError.hpp \
+ xercesc/util/XMLUni.hpp xercesc/framework/XMLErrorReporter.hpp \
+ xercesc/util/PanicHandler.hpp xercesc/util/XMLFileMgr.hpp \
+ xercesc/util/XMLMutexMgr.hpp xercesc/dom/DOMImplementation.hpp \
+ xercesc/dom/DOMImplementationLS.hpp xercesc/dom/DOMLSException.hpp \
+ xercesc/dom/DOMRangeException.hpp xercesc/dom/DOMNamedNodeMap.hpp \
+ xercesc/dom/DOMNodeList.hpp xercesc/dom/DOMNotation.hpp \
+ xercesc/dom/DOMProcessingInstruction.hpp xercesc/dom/DOMNodeIterator.hpp \
+ xercesc/dom/DOMRange.hpp xercesc/dom/DOMTreeWalker.hpp \
+ xercesc/dom/DOMLSParser.hpp xercesc/dom/DOMConfiguration.hpp \
+ xercesc/util/XMLString.hpp xercesc/util/BaseRefVectorOf.hpp \
+ xercesc/util/ArrayIndexOutOfBoundsException.hpp \
+ xercesc/util/XMLEnumerator.hpp xercesc/framework/MemoryManager.hpp \
+ xercesc/util/BaseRefVectorOf.c xercesc/framework/XMLBuffer.hpp \
+ /usr/arm-linux-gnueabihf/include/string.h \
+ /usr/arm-linux-gnueabihf/include/bits/string3.h \
+ /usr/arm-linux-gnueabihf/include/assert.h xercesc/util/RefVectorOf.hpp \
+ xercesc/util/RefVectorOf.c xercesc/dom/DOMStringList.hpp \
+ xercesc/dom/DOMLSParserFilter.hpp xercesc/validators/common/Grammar.hpp \
+ /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include-fixed/limits.h \
+ /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include-fixed/syslimits.h \
+ /usr/arm-linux-gnueabihf/include/limits.h \
+ /usr/arm-linux-gnueabihf/include/bits/posix1_lim.h \
+ /usr/arm-linux-gnueabihf/include/bits/local_lim.h \
+ /usr/arm-linux-gnueabihf/include/linux/limits.h \
+ /usr/arm-linux-gnueabihf/include/bits/posix2_lim.h \
+ /usr/arm-linux-gnueabihf/include/bits/xopen_lim.h \
+ /usr/arm-linux-gnueabihf/include/bits/stdio_lim.h \
+ xercesc/framework/XMLElementDecl.hpp xercesc/framework/XMLAttr.hpp \
+ xercesc/util/QName.hpp xercesc/util/XMLUniDefs.hpp \
+ xercesc/internal/XSerializable.hpp xercesc/internal/XSerializeEngine.hpp \
+ xercesc/util/RefHashTableOf.hpp xercesc/util/Hashers.hpp \
+ xercesc/util/IllegalArgumentException.hpp \
+ xercesc/util/NoSuchElementException.hpp \
+ xercesc/util/RuntimeException.hpp xercesc/util/RefHashTableOf.c \
+ xercesc/util/Janitor.hpp xercesc/util/Janitor.c \
+ xercesc/util/NullPointerException.hpp \
+ /usr/arm-linux-gnueabihf/include/c++/4.9.2/new \
+ /usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/c++config.h \
+ /usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/os_defines.h \
+ /usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/cpu_defines.h \
+ /usr/arm-linux-gnueabihf/include/c++/4.9.2/exception \
+ /usr/arm-linux-gnueabihf/include/c++/4.9.2/bits/atomic_lockfree_defines.h \
+ xercesc/util/ValueVectorOf.hpp xercesc/util/ValueVectorOf.c \
+ xercesc/internal/XSerializationException.hpp \
+ xercesc/internal/XProtoType.hpp xercesc/framework/XMLAttDef.hpp \
+ xercesc/validators/datatype/DatatypeValidator.hpp \
+ xercesc/util/KVStringPair.hpp xercesc/util/regx/RegularExpression.hpp \
+ xercesc/util/RefArrayVectorOf.hpp xercesc/util/RefArrayVectorOf.c \
+ xercesc/util/regx/Op.hpp xercesc/util/regx/TokenFactory.hpp \
+ xercesc/util/regx/Token.hpp xercesc/util/Mutexes.hpp \
+ xercesc/util/regx/BMPattern.hpp xercesc/util/regx/OpFactory.hpp \
+ xercesc/util/regx/RegxUtil.hpp \
+ xercesc/validators/schema/SchemaSymbols.hpp \
+ xercesc/framework/psvi/XSSimpleTypeDefinition.hpp \
+ xercesc/framework/psvi/XSTypeDefinition.hpp \
+ xercesc/framework/psvi/XSObject.hpp \
+ xercesc/framework/psvi/XSConstants.hpp \
+ xercesc/framework/ValidationContext.hpp xercesc/util/NameIdPool.hpp \
+ xercesc/util/NameIdPool.c xercesc/framework/XMLAttDefList.hpp \
+ xercesc/framework/XMLEntityDecl.hpp \
+ xercesc/framework/XMLNotationDecl.hpp \
+ xercesc/dom/DOMLSResourceResolver.hpp xercesc/dom/DOMErrorHandler.hpp \
+ xercesc/dom/DOMImplementationList.hpp \
+ xercesc/dom/DOMImplementationRegistry.hpp \
+ xercesc/dom/DOMImplementationSource.hpp xercesc/dom/DOMLSInput.hpp \
+ xercesc/dom/DOMLSOutput.hpp xercesc/dom/DOMLocator.hpp \
+ xercesc/dom/DOMPSVITypeInfo.hpp xercesc/dom/DOMTypeInfo.hpp \
+ xercesc/dom/DOMUserDataHandler.hpp xercesc/dom/DOMLSSerializer.hpp \
+ xercesc/dom/DOMLSSerializerFilter.hpp xercesc/dom/DOMXPathNSResolver.hpp \
+ xercesc/dom/DOMXPathException.hpp xercesc/dom/DOMXPathExpression.hpp \
+ xercesc/dom/DOMXPathNamespace.hpp xercesc/xinclude/XIncludeUtils.hpp \
+ xercesc/xinclude/XIncludeLocation.hpp \
+ xercesc/framework/XMLErrorCodes.hpp
+
+/usr/arm-linux-gnueabihf/include/stdc-predef.h:
+
+xercesc/xinclude/XIncludeDOMDocumentProcessor.hpp:
+
+xercesc/util/XercesDefs.hpp:
+
+xercesc/util/Xerces_autoconf_config.hpp:
+
+/usr/arm-linux-gnueabihf/include/inttypes.h:
+
+/usr/arm-linux-gnueabihf/include/features.h:
+
+/usr/arm-linux-gnueabihf/include/sys/cdefs.h:
+
+/usr/arm-linux-gnueabihf/include/bits/wordsize.h:
+
+/usr/arm-linux-gnueabihf/include/gnu/stubs.h:
+
+/usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h:
+
+/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stdint.h:
+
+/usr/arm-linux-gnueabihf/include/stdint.h:
+
+/usr/arm-linux-gnueabihf/include/bits/wchar.h:
+
+/usr/arm-linux-gnueabihf/include/sys/types.h:
+
+/usr/arm-linux-gnueabihf/include/bits/types.h:
+
+/usr/arm-linux-gnueabihf/include/bits/typesizes.h:
+
+/usr/arm-linux-gnueabihf/include/time.h:
+
+/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stddef.h:
+
+/usr/arm-linux-gnueabihf/include/endian.h:
+
+/usr/arm-linux-gnueabihf/include/bits/endian.h:
+
+/usr/arm-linux-gnueabihf/include/bits/byteswap.h:
+
+/usr/arm-linux-gnueabihf/include/bits/byteswap-16.h:
+
+/usr/arm-linux-gnueabihf/include/sys/select.h:
+
+/usr/arm-linux-gnueabihf/include/bits/select.h:
+
+/usr/arm-linux-gnueabihf/include/bits/sigset.h:
+
+/usr/arm-linux-gnueabihf/include/bits/time.h:
+
+/usr/arm-linux-gnueabihf/include/bits/select2.h:
+
+/usr/arm-linux-gnueabihf/include/sys/sysmacros.h:
+
+/usr/arm-linux-gnueabihf/include/bits/pthreadtypes.h:
+
+xercesc/util/XercesVersion.hpp:
+
+xercesc/dom/DOM.hpp:
+
+xercesc/dom/DOMAttr.hpp:
+
+xercesc/dom/DOMNode.hpp:
+
+xercesc/dom/DOMCDATASection.hpp:
+
+xercesc/dom/DOMText.hpp:
+
+xercesc/dom/DOMCharacterData.hpp:
+
+xercesc/dom/DOMComment.hpp:
+
+xercesc/dom/DOMDocument.hpp:
+
+xercesc/dom/DOMDocumentRange.hpp:
+
+xercesc/dom/DOMDocumentTraversal.hpp:
+
+xercesc/dom/DOMNodeFilter.hpp:
+
+xercesc/dom/DOMXPathEvaluator.hpp:
+
+xercesc/dom/DOMXPathResult.hpp:
+
+xercesc/dom/DOMDocumentFragment.hpp:
+
+xercesc/dom/DOMDocumentType.hpp:
+
+xercesc/dom/DOMElement.hpp:
+
+xercesc/dom/DOMEntity.hpp:
+
+xercesc/dom/DOMEntityReference.hpp:
+
+xercesc/dom/DOMException.hpp:
+
+xercesc/util/PlatformUtils.hpp:
+
+xercesc/util/XMLException.hpp:
+
+xercesc/util/XMemory.hpp:
+
+/usr/arm-linux-gnueabihf/include/stdlib.h:
+
+/usr/arm-linux-gnueabihf/include/bits/waitflags.h:
+
+/usr/arm-linux-gnueabihf/include/bits/waitstatus.h:
+
+/usr/arm-linux-gnueabihf/include/xlocale.h:
+
+/usr/arm-linux-gnueabihf/include/alloca.h:
+
+/usr/arm-linux-gnueabihf/include/bits/stdlib-bsearch.h:
+
+/usr/arm-linux-gnueabihf/include/bits/stdlib-float.h:
+
+/usr/arm-linux-gnueabihf/include/bits/stdlib.h:
+
+xercesc/util/XMLExceptMsgs.hpp:
+
+xercesc/dom/DOMError.hpp:
+
+xercesc/util/XMLUni.hpp:
+
+xercesc/framework/XMLErrorReporter.hpp:
+
+xercesc/util/PanicHandler.hpp:
+
+xercesc/util/XMLFileMgr.hpp:
+
+xercesc/util/XMLMutexMgr.hpp:
+
+xercesc/dom/DOMImplementation.hpp:
+
+xercesc/dom/DOMImplementationLS.hpp:
+
+xercesc/dom/DOMLSException.hpp:
+
+xercesc/dom/DOMRangeException.hpp:
+
+xercesc/dom/DOMNamedNodeMap.hpp:
+
+xercesc/dom/DOMNodeList.hpp:
+
+xercesc/dom/DOMNotation.hpp:
+
+xercesc/dom/DOMProcessingInstruction.hpp:
+
+xercesc/dom/DOMNodeIterator.hpp:
+
+xercesc/dom/DOMRange.hpp:
+
+xercesc/dom/DOMTreeWalker.hpp:
+
+xercesc/dom/DOMLSParser.hpp:
+
+xercesc/dom/DOMConfiguration.hpp:
+
+xercesc/util/XMLString.hpp:
+
+xercesc/util/BaseRefVectorOf.hpp:
+
+xercesc/util/ArrayIndexOutOfBoundsException.hpp:
+
+xercesc/util/XMLEnumerator.hpp:
+
+xercesc/framework/MemoryManager.hpp:
+
+xercesc/util/BaseRefVectorOf.c:
+
+xercesc/framework/XMLBuffer.hpp:
+
+/usr/arm-linux-gnueabihf/include/string.h:
+
+/usr/arm-linux-gnueabihf/include/bits/string3.h:
+
+/usr/arm-linux-gnueabihf/include/assert.h:
+
+xercesc/util/RefVectorOf.hpp:
+
+xercesc/util/RefVectorOf.c:
+
+xercesc/dom/DOMStringList.hpp:
+
+xercesc/dom/DOMLSParserFilter.hpp:
+
+xercesc/validators/common/Grammar.hpp:
+
+/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include-fixed/limits.h:
+
+/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include-fixed/syslimits.h:
+
+/usr/arm-linux-gnueabihf/include/limits.h:
+
+/usr/arm-linux-gnueabihf/include/bits/posix1_lim.h:
+
+/usr/arm-linux-gnueabihf/include/bits/local_lim.h:
+
+/usr/arm-linux-gnueabihf/include/linux/limits.h:
+
+/usr/arm-linux-gnueabihf/include/bits/posix2_lim.h:
+
+/usr/arm-linux-gnueabihf/include/bits/xopen_lim.h:
+
+/usr/arm-linux-gnueabihf/include/bits/stdio_lim.h:
+
+xercesc/framework/XMLElementDecl.hpp:
+
+xercesc/framework/XMLAttr.hpp:
+
+xercesc/util/QName.hpp:
+
+xercesc/util/XMLUniDefs.hpp:
+
+xercesc/internal/XSerializable.hpp:
+
+xercesc/internal/XSerializeEngine.hpp:
+
+xercesc/util/RefHashTableOf.hpp:
+
+xercesc/util/Hashers.hpp:
+
+xercesc/util/IllegalArgumentException.hpp:
+
+xercesc/util/NoSuchElementException.hpp:
+
+xercesc/util/RuntimeException.hpp:
+
+xercesc/util/RefHashTableOf.c:
+
+xercesc/util/Janitor.hpp:
+
+xercesc/util/Janitor.c:
+
+xercesc/util/NullPointerException.hpp:
+
+/usr/arm-linux-gnueabihf/include/c++/4.9.2/new:
+
+/usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/c++config.h:
+
+/usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/os_defines.h:
+
+/usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/cpu_defines.h:
+
+/usr/arm-linux-gnueabihf/include/c++/4.9.2/exception:
+
+/usr/arm-linux-gnueabihf/include/c++/4.9.2/bits/atomic_lockfree_defines.h:
+
+xercesc/util/ValueVectorOf.hpp:
+
+xercesc/util/ValueVectorOf.c:
+
+xercesc/internal/XSerializationException.hpp:
+
+xercesc/internal/XProtoType.hpp:
+
+xercesc/framework/XMLAttDef.hpp:
+
+xercesc/validators/datatype/DatatypeValidator.hpp:
+
+xercesc/util/KVStringPair.hpp:
+
+xercesc/util/regx/RegularExpression.hpp:
+
+xercesc/util/RefArrayVectorOf.hpp:
+
+xercesc/util/RefArrayVectorOf.c:
+
+xercesc/util/regx/Op.hpp:
+
+xercesc/util/regx/TokenFactory.hpp:
+
+xercesc/util/regx/Token.hpp:
+
+xercesc/util/Mutexes.hpp:
+
+xercesc/util/regx/BMPattern.hpp:
+
+xercesc/util/regx/OpFactory.hpp:
+
+xercesc/util/regx/RegxUtil.hpp:
+
+xercesc/validators/schema/SchemaSymbols.hpp:
+
+xercesc/framework/psvi/XSSimpleTypeDefinition.hpp:
+
+xercesc/framework/psvi/XSTypeDefinition.hpp:
+
+xercesc/framework/psvi/XSObject.hpp:
+
+xercesc/framework/psvi/XSConstants.hpp:
+
+xercesc/framework/ValidationContext.hpp:
+
+xercesc/util/NameIdPool.hpp:
+
+xercesc/util/NameIdPool.c:
+
+xercesc/framework/XMLAttDefList.hpp:
+
+xercesc/framework/XMLEntityDecl.hpp:
+
+xercesc/framework/XMLNotationDecl.hpp:
+
+xercesc/dom/DOMLSResourceResolver.hpp:
+
+xercesc/dom/DOMErrorHandler.hpp:
+
+xercesc/dom/DOMImplementationList.hpp:
+
+xercesc/dom/DOMImplementationRegistry.hpp:
+
+xercesc/dom/DOMImplementationSource.hpp:
+
+xercesc/dom/DOMLSInput.hpp:
+
+xercesc/dom/DOMLSOutput.hpp:
+
+xercesc/dom/DOMLocator.hpp:
+
+xercesc/dom/DOMPSVITypeInfo.hpp:
+
+xercesc/dom/DOMTypeInfo.hpp:
+
+xercesc/dom/DOMUserDataHandler.hpp:
+
+xercesc/dom/DOMLSSerializer.hpp:
+
+xercesc/dom/DOMLSSerializerFilter.hpp:
+
+xercesc/dom/DOMXPathNSResolver.hpp:
+
+xercesc/dom/DOMXPathException.hpp:
+
+xercesc/dom/DOMXPathExpression.hpp:
+
+xercesc/dom/DOMXPathNamespace.hpp:
+
+xercesc/xinclude/XIncludeUtils.hpp:
+
+xercesc/xinclude/XIncludeLocation.hpp:
+
+xercesc/framework/XMLErrorCodes.hpp:
