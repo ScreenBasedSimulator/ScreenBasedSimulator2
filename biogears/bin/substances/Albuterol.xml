@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Substance xmlns="uri:/mil/tatrc/physiology/datamodel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" State="Gas" xsi:schemaLocation="">
+    <Name>Albuterol</Name>
+    <Density value="3213.0" unit="g/m^3"/>
+    <MolarMass value="239.31" unit="g/mol"/>
+    <Aerosolization>
+        <DropletDensity value="1.0" unit="g/mL"/>
+        <DropletDiameter value="1.5" unit="um"/>
+    </Aerosolization>
+    <RelativeDiffusionCoefficient value="0.047"/>
+    <SolubilityCoefficient value="0.46" unit="1/atm"/>
+    <Clearance>
+        <Systemic>
+            <FractionExcretedInFeces value="0.2"/>
+            <FractionUnboundInPlasma value="0.9"/>
+            <IntrinsicClearance value="0.3" unit="mL/min kg"/>
+            <RenalClearance value="0.8" unit="mL/min kg"/>
+            <SystemicClearance value="1.2" unit="mL/min kg"/>
+        </Systemic>
+        <RenalDynamics>
+            <Clearance value="0.8" unit="mL/min kg"/>
+        </RenalDynamics>
+    </Clearance>
+    <Pharmacodynamics>
+        <Bronchodilation value="1.0"/>
+        <DiastolicPressureModifier value="0.0"/>
+        <EC50 value="3.1E-5" unit="ug/mL"/>
+        <HeartRateModifier value="0.2"/>
+        <NeuromuscularBlock value="0.0"/>
+        <PupilState>Dialated</PupilState>
+        <RespirationRateModifier value="0.0"/>
+        <Sedation value="0.0"/>
+        <SystolicPressureModifier value="0.0"/>
+        <TidalVolumeModifier value="0.0"/>
+    </Pharmacodynamics>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Myocardium">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Fat">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Kidneys">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Brain">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Muscle">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Skin">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Bone">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="RightLung">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="LeftLung">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Gut">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Spleen">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+    <CompartmentEffect xsi:type="SubstanceAnatomyEffectData" AnatomyCompartment="Liver">
+        <PartitionCoefficient value="0.0032"/>
+    </CompartmentEffect>
+</Substance>

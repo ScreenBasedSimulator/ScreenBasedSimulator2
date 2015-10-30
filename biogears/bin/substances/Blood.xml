@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SubstanceCompound xmlns="uri:/mil/tatrc/physiology/datamodel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="">
+    <Name>Blood</Name>
+    <Component>
+        <SubstanceName>Hemoglobin</SubstanceName>
+        <Concentration value="3.7" unit="g/dL"/>
+    </Component>
+    <Component>
+        <SubstanceName>Oxyhemoglobin</SubstanceName>
+        <Concentration value="11.1" unit="g/dL"/>
+    </Component>
+    <Component>
+        <SubstanceName>Sodium</SubstanceName>
+        <Concentration value="0.322" unit="g/dL"/>
+    </Component>
+    <Component>
+        <SubstanceName>Albumin</SubstanceName>
+        <Concentration value="4.5" unit="g/dL"/>
+    </Component>
+    <Component>
+        <SubstanceName>Urea</SubstanceName>
+        <Concentration value="0.0257" unit="g/dL"/>
+    </Component>
+    <Component>
+        <SubstanceName>Glucose</SubstanceName>
+        <Concentration value="0.08" unit="g/dL"/>
+    </Component>
+    <Component>
+        <SubstanceName>Tristearin</SubstanceName>
+        <Concentration value="0.107" unit="g/dL"/>
+    </Component>
+    <Component>
+        <SubstanceName>Calcium</SubstanceName>
+        <Concentration value="0.01" unit="g/dL"/>
+    </Component>
+    <Component>
+        <SubstanceName>Creatinine</SubstanceName>
+        <Concentration value="0.001" unit="g/dL"/>
+    </Component>
+</SubstanceCompound>

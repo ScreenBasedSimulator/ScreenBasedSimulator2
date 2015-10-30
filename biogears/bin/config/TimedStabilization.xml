@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PhysiologyEngineTimedStabilization xmlns="uri:/mil/tatrc/physiology/datamodel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="">
+    <TrackingStabilization>false</TrackingStabilization>
+    <RestingStabilizationTime value="600.0" unit="s"/>
+    <ConditionStabilization Name="ConsumeMeal">
+        <Time value="600.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="ChronicPulmonaryShunt">
+        <Time value="500.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="ChronicVentricularSystolicDysfunction">
+        <Time value="250.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="PericardialEffusion">
+        <Time value="1000.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="ChronicObstructivePulmonaryDisease">
+        <Time value="600.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="ChronicAnemia">
+        <Time value="300.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="ChronicBradycardia">
+        <Time value="600.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="ChronicTachycardia">
+        <Time value="600.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="LobarPneumonia">
+        <Time value="600.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="InitialEnvironment">
+        <Time value="600.0" unit="s"/>
+    </ConditionStabilization>
+    <ConditionStabilization Name="ChronicRenalStenosis">
+        <Time value="1000.0" unit="s"/>
+    </ConditionStabilization>
+</PhysiologyEngineTimedStabilization>

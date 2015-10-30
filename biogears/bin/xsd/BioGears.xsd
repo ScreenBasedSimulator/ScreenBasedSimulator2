@@ -1,0 +1,683 @@
+<!-- @brief BioGears specific data for our methodology  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" jaxb:extensionBindingPrefixes="xjc" jaxb:version="2.0" targetNamespace="uri:/mil/tatrc/physiology/datamodel" xmlns="uri:/mil/tatrc/physiology/datamodel" elementFormDefault="qualified">
+  
+  <xs:include schemaLocation="Properties.xsd"/>
+  <xs:include schemaLocation="Engine.xsd"/>
+  <xs:include schemaLocation="Scenario.xsd"/>
+  <xs:include schemaLocation="Patient.xsd"/>
+  <xs:include schemaLocation="PatientActions.xsd"/>  
+  <xs:include schemaLocation="PatientAssessments.xsd"/>
+  <xs:include schemaLocation="PatientConditions.xsd"/>
+  <xs:include schemaLocation="PatientNutrition.xsd"/>  
+  <xs:include schemaLocation="Anatomy.xsd"/>
+  <xs:include schemaLocation="Compartment.xsd"/>
+  <xs:include schemaLocation="Substance.xsd"/>
+  <xs:include schemaLocation="System.xsd"/>
+  <xs:include schemaLocation="Physiology.xsd"/>
+  <xs:include schemaLocation="Environment.xsd"/>
+  <xs:include schemaLocation="EnvironmentActions.xsd"/>
+  <xs:include schemaLocation="EnvironmentConditions.xsd"/>
+  <xs:include schemaLocation="Anesthesia.xsd"/>
+  <xs:include schemaLocation="AnesthesiaActions.xsd"/>
+  <xs:include schemaLocation="ElectroCardioGram.xsd"/>
+  <xs:include schemaLocation="Inhaler.xsd"/>
+  <xs:include schemaLocation="InhalerActions.xsd"/>
+  
+  
+  <xs:include schemaLocation="Circuit.xsd"/>   
+  <xs:include schemaLocation="TestReport.xsd"/>
+  
+  <!-- BioGears Enums -->
+  <xs:simpleType name="enumAirwayMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Free"/>
+      <xs:enumeration value="Mask"/>
+      <xs:enumeration value="Tube"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="BioGearsConfigurationData">
+    <xs:complexContent>
+      <xs:extension base="PhysiologyEngineConfigurationData">
+        <xs:sequence>                   
+          <xs:element name="BloodChemistryConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="MeanCorpuscularHemoglobin" type="ScalarMassPerAmountData" minOccurs="0" maxOccurs="1"/>              
+                <xs:element name="MeanCorpuscularVolume" type="ScalarVolumeData" minOccurs="0" maxOccurs="1"/>                        
+                <xs:element name="StandardDiffusionDistance" type="ScalarLengthData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="StandardOxygenDiffusionCoefficient" type="ScalarAreaPerTimePerPressureData" minOccurs="0" maxOccurs="1"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element> 
+          <xs:element name="CardiovascularConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="MinimumBloodVolumeFraction" type="ScalarFractionData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="StandardPulmonaryCapillaryCoverage" type="ScalarData" minOccurs="0" maxOccurs="1"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="CircuitConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CardiovascularOpenResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="DefaultClosedElectricResistance" type="ScalarElectricResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="DefaultClosedFlowResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="DefaultClosedHeatResistance" type="ScalarHeatResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="DefaultOpenElectricResistance" type="ScalarElectricResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="DefaultOpenFlowResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="DefaultOpenHeatResistance" type="ScalarHeatResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MachineClosedResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MachineOpenResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="RespiratoryClosedResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="RespiratoryOpenResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element> 
+          <xs:element name="ConstantsConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="OxygenMetabolicConstant" type="ScalarData" minOccurs="0" maxOccurs="1"/>          
+                <xs:element name="StefanBoltzmann" type="ScalarData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="UniversalGasConstant" type="ScalarHeatCapacitancePerMassData" minOccurs="0" maxOccurs="1"/>          
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element> 
+          <xs:element name="DrugsConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:attribute name="PDModel" type="enumOnOff" default="On"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="EnergyConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="BodySpecificHeat" type="ScalarHeatCapacitancePerMassData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="CarbonDioxideProductionFromOxygenConsumptionConstant" type="ScalarData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="CoreTemperatureLow" type="ScalarTemperatureData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="CoreTemperatureHigh" type="ScalarTemperatureData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="DeltaCoreTemperatureLow" type="ScalarTemperatureData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="EnergyPerATP" type="ScalarEnergyPerAmountData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="SweatHeatTransfer" type="ScalarHeatConductanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="VaporizationEnergy" type="ScalarEnergyPerMassData" minOccurs="0" maxOccurs="1"/>          
+                <xs:element name="VaporSpecificHeat" type="ScalarHeatCapacitancePerMassData" minOccurs="0" maxOccurs="1"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element> 
+          <xs:element name="EnvironmentConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="AirDensity" type="ScalarMassPerVolumeData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="AirSpecificHeat" type="ScalarHeatCapacitancePerMassData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MolarMassOfDryAir" type="ScalarMassPerAmountData" minOccurs="0" maxOccurs="1"/>  
+                <xs:element name="MolarMassOfWaterVapor" type="ScalarMassPerAmountData" minOccurs="0" maxOccurs="1"/>      
+                <xs:element name="StandardEnvironment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="WaterDensity" type="ScalarMassPerVolumeData" minOccurs="0" maxOccurs="1"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>     
+          <xs:element name="GastrointestinalConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CalciumAbsorbtionFraction" type="ScalarFractionData" minOccurs="0" maxOccurs="1"/><!-- @brief Fraction of the calcium eaten that get absorbed into the body --> 
+                <xs:element name="CalciumDigestionRate" type="ScalarMassPerTimeData" minOccurs="0" maxOccurs="1"/><!-- @brief Speed at which calcium is digested by the body, mouth to being absorbed into the blood -->
+                <xs:element name="CarbohydrateAbsorbtionFraction" type="ScalarFractionData" minOccurs="0" maxOccurs="1"/><!-- @brief Fraction of the Carbs eaten that get absorbed into the body --> 
+                <xs:element name="DefaultCarbohydrateDigestionRate" type="ScalarMassPerTimeData" minOccurs="0" maxOccurs="1"/><!-- @brief Carb digestion rate to use if none is provided in the nutrition information -->
+                <xs:element name="DefaultFatDigestionRate" type="ScalarMassPerTimeData" minOccurs="0" maxOccurs="1"/><!-- @brief Fat digestion rate to use if none is provided in the nutrition information -->
+                <xs:element name="DefaultProteinDigestionRate" type="ScalarMassPerTimeData" minOccurs="0" maxOccurs="1"/><!-- @brief Protein digestion rate to use if none is provided in the nutrition information -->
+                <xs:element name="DefaultStomachContents" type="NutritionData" minOccurs="0" maxOccurs="1"/><!-- @brief The default stomach contents for the patient -->                
+                <xs:element name="FatAbsorbtionFraction" type="ScalarFractionData" minOccurs="0" maxOccurs="1"/><!-- @brief Fraction of the fat eaten that get absorbed into the body --> 
+                <xs:element name="ProteinToUreaFraction" type="ScalarFractionData" minOccurs="0" maxOccurs="1"/><!-- @brief Fraction of the protein eaten that get turned into urea -->              
+                <xs:element name="WaterDigestionRate" type="ScalarVolumePerTimeData" minOccurs="0" maxOccurs="1"/><!-- @brief The rate at which water is absorbed from gut chyme into the vascular system (small intestine) -->
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>   
+          <xs:element name="RenalConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="GlomerularAlbuminConcentrationSetPoint" type="ScalarMassPerVolumeData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="BowmansAlbuminConcentrationSetPoint" type="ScalarMassPerVolumeData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="PeritubularAlbuminConcentrationSetPoint" type="ScalarMassPerVolumeData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="TubulesAlbuminConcentrationSetPoint" type="ScalarMassPerVolumeData" minOccurs="0" maxOccurs="1"/>                
+                <xs:element name="TubularSodiumConcentrationSetPoint" type="ScalarMassPerVolumeData" minOccurs="0" maxOccurs="1"/>
+				
+				<xs:element name="PlasmaSodiumConcentrationSetPoint" type="ScalarMassPerVolumeData" minOccurs="0" maxOccurs="1"/>
+								
+                <xs:element name="LeftGlomerularFilteringSurfaceAreaBaseline" type="ScalarAreaData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="LeftGlomerularFluidPermeabilityBaseline" type="ScalarData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="LeftTubularReabsorptionFilteringSurfaceAreaBaseline " type="ScalarAreaData" minOccurs="0" maxOccurs="1"/>    
+                <xs:element name="LeftTubularReabsorptionFluidPermeabilityBaseline" type="ScalarData" minOccurs="0" maxOccurs="1"/>
+                
+                <xs:element name="MaximumAfferentResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MinimumAfferentResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MaximumEfferentResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MinimumEfferentResistance" type="ScalarFlowResistanceData" minOccurs="0" maxOccurs="1"/>
+                
+                <xs:element name="RightGlomerularFilteringSurfaceAreaBaseline" type="ScalarAreaData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="RightGlomerularFluidPermeabilityBaseline" type="ScalarData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="RightTubularReabsorptionFilteringSurfaceAreaBaseline " type="ScalarAreaData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="RightTubularReabsorptionFluidPermeabilityBaseline" type="ScalarData" minOccurs="0" maxOccurs="1"/> 
+		
+              </xs:sequence>
+            </xs:complexType>            
+          </xs:element>       
+          <xs:element name="RespiratoryConfiguration" minOccurs="0" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="CentralVentilatoryControllerGain" type="ScalarData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="PeripheralVentilatoryControllerGain" type="ScalarData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="PleuralComplianceSensitivity" type="ScalarData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="StandardAlveoliSurfaceArea" type="ScalarAreaData" minOccurs="0" maxOccurs="1"/>                
+                <xs:element name="StandardTotalLungCapacity" type="ScalarVolumeData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="VentilationTidalVolumeIntercept" type="ScalarVolumeData" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="VentilatoryOcclusionPressure" type="ScalarPressureData" minOccurs="0" maxOccurs="1"/>
+              </xs:sequence>
+            </xs:complexType>            
+          </xs:element>           
+        </xs:sequence>	
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BioGearsConfiguration" type="BioGearsConfigurationData"/>
+  
+  <xs:simpleType name="enumBioGearsNode">
+    <xs:restriction base="xs:string">
+      
+      <!-- Cardiovascular -->
+      
+      <xs:enumeration value="Aorta1"/>
+      <xs:enumeration value="Aorta2"/>
+      <xs:enumeration value="Aorta3"/>
+      
+      <xs:enumeration value="RightHeart1"/>
+      <xs:enumeration value="RightHeart2"/>
+      <xs:enumeration value="RightHeart3"/>
+      
+      <xs:enumeration value="LeftHeart1"/>
+      <xs:enumeration value="LeftHeart2"/>
+      <xs:enumeration value="LeftHeart3"/>
+      
+      <xs:enumeration value="MainPulmonaryArteries"/>
+      <xs:enumeration value="LeftIntermediatePulmonaryArteries"/>
+      <xs:enumeration value="RightIntermediatePulmonaryArteries"/>
+      <xs:enumeration value="LeftPulmonaryArteries"/>
+      <xs:enumeration value="RightPulmonaryArteries"/>
+      <xs:enumeration value="LeftPulmonaryCapillaries"/>
+      <xs:enumeration value="RightPulmonaryCapillaries"/>
+      <xs:enumeration value="LeftIntermediatePulmonaryVeins"/>
+      <xs:enumeration value="RightIntermediatePulmonaryVeins"/>
+      <xs:enumeration value="LeftPulmonaryVeins"/>
+      <xs:enumeration value="RightPulmonaryVeins"/>
+      
+      <xs:enumeration value="VenaCava"/>
+      <xs:enumeration value="CardiovascularGround"/>
+      
+      <!-- Renal -->
+	  <xs:enumeration value="RightRenalAortaConnectionNode"/>
+      <xs:enumeration value="RightRenalArteryNode"/>
+      <xs:enumeration value="RightAfferentArterioleNode"/>
+      <xs:enumeration value="RightGlomerularCapillariesNode"/>
+      <xs:enumeration value="RightEfferentArterioleNode"/>
+      <xs:enumeration value="RightPeritubularCapillariesNode"/>
+      <xs:enumeration value="RightRenalVeinNode"/>
+	  <xs:enumeration value="RightRenalVenaCavaConnectionNode"/>
+	  
+	  <xs:enumeration value="RightNetGlomerularCapillariesNode"/>
+	  <xs:enumeration value="RightNetBowmansCapsulesNode"/>
+	  <xs:enumeration value="RightBowmansCapsulesNode"/>
+	  <xs:enumeration value="RightTubulesNode"/>
+	  <xs:enumeration value="RightNetTubulesNode"/>
+	  <xs:enumeration value="RightNetPeritubularCapillariesNode"/>
+	  <xs:enumeration value="RightUreterNode"/>
+	  
+	  <xs:enumeration value="LeftRenalAortaConnectionNode"/>
+	  <xs:enumeration value="LeftRenalArteryNode"/>
+      <xs:enumeration value="LeftAfferentArterioleNode"/>
+      <xs:enumeration value="LeftGlomerularCapillariesNode"/>
+      <xs:enumeration value="LeftEfferentArterioleNode"/>
+      <xs:enumeration value="LeftPeritubularCapillariesNode"/>
+      <xs:enumeration value="LeftRenalVeinNode"/>
+	  <xs:enumeration value="LeftRenalVenaCavaConnectionNode"/>
+	  
+	  <xs:enumeration value="LeftNetGlomerularCapillariesNode"/>
+	  <xs:enumeration value="LeftNetBowmansCapsulesNode"/>
+	  <xs:enumeration value="LeftBowmansCapsulesNode"/>
+	  <xs:enumeration value="LeftTubulesNode"/>
+	  <xs:enumeration value="LeftNetTubulesNode"/>
+	  <xs:enumeration value="LeftNetPeritubularCapillariesNode"/>
+	  <xs:enumeration value="LeftUreterNode"/>
+	  
+      <xs:enumeration value="BladderNode"/>
+      
+      <!-- Gastrointestinal -->
+      <xs:enumeration value="GutChyme"/>
+      
+      <!-- Temperature -->
+      <xs:enumeration value="Core"/>
+      <xs:enumeration value="Skin"/>
+      <xs:enumeration value="TemperatureGround"/>
+      
+      <!-- Respiratory -->
+      <xs:enumeration value="Mouth"/>
+      <xs:enumeration value="Carina"/>
+      <xs:enumeration value="RightAnatomicDeadSpace"/>
+      <xs:enumeration value="LeftAnatomicDeadSpace"/>      
+      <xs:enumeration value="RightAlveoli"/>
+      <xs:enumeration value="LeftAlveoli"/>      
+      <xs:enumeration value="RightAlveoliDiffusion"/>
+      <xs:enumeration value="LeftAlveoliDiffusion"/>      
+      <xs:enumeration value="RightPleural"/>
+      <xs:enumeration value="LeftPleural"/>      
+      <xs:enumeration value="Stomach"/>             
+      <xs:enumeration value="RespiratoryMuscle"/>
+      <xs:enumeration value="RightIntraPleural"/>
+      <xs:enumeration value="LeftIntraPleural"/>      
+      <xs:enumeration value="RightAlveoliLeak"/>
+      <xs:enumeration value="LeftAlveoliLeak"/>      
+      <xs:enumeration value="RightChestLeak"/>
+      <xs:enumeration value="LeftChestLeak"/>
+      
+      <!-- Anesthesia Machine -->      
+      <xs:enumeration value="Ventilator"/>
+	  <xs:enumeration value="VentilatorConnection"/>
+      <xs:enumeration value="ReliefValve"/>  
+      <xs:enumeration value="Squeeze"/>  
+      <xs:enumeration value="Bag"/>  
+      <xs:enumeration value="Selector"/> 	  
+      <xs:enumeration value="Scrubber"/>      
+      <xs:enumeration value="YPiece"/>      
+      <xs:enumeration value="GasInlet"/>
+      <xs:enumeration value="GasSource"/>   
+      <xs:enumeration value="AnesthesiaConnection"/>
+      <xs:enumeration value="InspiratoryLimb"/>  
+      <xs:enumeration value="ExpiratoryLimb"/>  	  
+      
+      
+      <!-- General Anatomy,Organs,Peripherey -->
+      <xs:enumeration value="FatTissue"/>
+      <xs:enumeration value="FatExtravascular"/>
+      <xs:enumeration value="FatVascular1"/>
+      <xs:enumeration value="FatVascular2"/>
+      
+      <xs:enumeration value="BoneTissue"/>
+      <xs:enumeration value="BoneExtravascular"/>
+      <xs:enumeration value="BoneVascular1"/>
+      <xs:enumeration value="BoneVascular2"/>
+      
+      <xs:enumeration value="MuscleTissue"/>
+      <xs:enumeration value="MuscleExtravascular"/>
+      <xs:enumeration value="MuscleVascular1"/>
+      <xs:enumeration value="MuscleVascular2"/>
+      
+      <xs:enumeration value="SkinTissue"/>
+      <xs:enumeration value="SkinExtravascular"/>
+      <xs:enumeration value="SkinVascular1"/>
+      <xs:enumeration value="SkinVascular2"/>
+      
+      <xs:enumeration value="LiverTissue"/>
+      <xs:enumeration value="LiverExtravascular"/>
+      <xs:enumeration value="LiverVascular1"/>
+      <xs:enumeration value="LiverVascular2"/>
+      
+      <xs:enumeration value="LeftKidneyTissue"/>
+      <xs:enumeration value="LeftKidneyExtravascular"/>
+      <xs:enumeration value="LeftKidneyVascular"/>
+      
+      <xs:enumeration value="RightKidneyTissue"/>
+      <xs:enumeration value="RightKidneyExtravascular"/>
+      <xs:enumeration value="RightKidneyVascular"/>
+	  
+      <xs:enumeration value="KidneyTissue"/>
+      <xs:enumeration value="RenalVein"/>
+      
+      <xs:enumeration value="MyocardiumTissue"/>
+      <xs:enumeration value="MyocardiumExtravascular"/>
+      <xs:enumeration value="MyocardiumVascular1"/>
+      <xs:enumeration value="MyocardiumVascular2"/>
+      
+      <xs:enumeration value="BrainTissue"/>
+      <xs:enumeration value="BrainExtravascular"/>
+      <xs:enumeration value="BrainVascular1"/>
+      <xs:enumeration value="BrainVascular2"/>
+      
+      <xs:enumeration value="SplanchnicVascular1"/>
+      
+      <xs:enumeration value="GutTissue"/>
+      <xs:enumeration value="GutExtravascular"/>
+      <xs:enumeration value="LeftLungTissue"/>
+      <xs:enumeration value="LeftLungExtravascular"/>
+      <xs:enumeration value="RightLungTissue"/>
+      <xs:enumeration value="RightLungExtravascular"/>
+      
+      <xs:enumeration value="SpleenTissue"/>
+      <xs:enumeration value="SpleenExtravascular"/>
+      <xs:enumeration value="SpleenVascular1"/>
+
+      <xs:enumeration value="LargeIntestineVascular1"/>
+      <xs:enumeration value="SmallIntestineVascular1"/>
+
+      <xs:enumeration value="PortalVein"/>
+
+      <xs:enumeration value="RightArmVascular1"/>
+      <xs:enumeration value="RightArmVascular2"/>
+      
+      <xs:enumeration value="LeftArmVascular1"/>
+      <xs:enumeration value="LeftArmVascular2"/>
+      
+      <xs:enumeration value="RightLegVascular1"/>
+      <xs:enumeration value="RightLegVascular2"/>
+      
+      <xs:enumeration value="LeftLegVascular1"/>
+      <xs:enumeration value="LeftLegVascular2"/>
+      
+      <xs:enumeration value="Pericardium1"/>
+      
+      <!-- Environment -->     
+      <xs:enumeration value="AmbientEnvironment"/>
+      <xs:enumeration value="EnvironmentSkin"/>
+      <xs:enumeration value="EnvironmentCore"/>
+      <xs:enumeration value="Clothing"/>
+      <xs:enumeration value="Enclosure"/>
+      <xs:enumeration value="AbsoluteReference"/>
+	  <xs:enumeration value="Active"/>
+      
+      <!-- Inhaler Equipment -->
+      <xs:enumeration value="Inhaler"/>
+      
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="enumBioGearsPath">
+    <xs:restriction base="xs:string">
+      <!-- Cardiovascular Paths -->
+      <xs:enumeration value="VenaCavaToRightHeart2"/>
+      <xs:enumeration value="RightHeart2ToRightHeart1"/>
+      <xs:enumeration value="RightHeart1ToMainPulmonaryArteries"/>
+      <xs:enumeration value="MainPulmonaryArteriesToLeftIntermediatePulmonaryArteries"/>
+      <xs:enumeration value="MainPulmonaryArteriesToRightIntermediatePulmonaryArteries"/>
+      <xs:enumeration value="LeftIntermediatePulmonaryArteriesToLeftPulmonaryArteries"/>
+      <xs:enumeration value="RightIntermediatePulmonaryArteriesToRightPulmonaryArteries"/>
+      <xs:enumeration value="LeftPulmonaryArteriesToLeftPulmonaryVeins"/>
+      <xs:enumeration value="RightPulmonaryArteriesToRightPulmonaryVeins"/>
+      <xs:enumeration value="LeftPulmonaryArteriesToLeftPulmonaryCapillaries"/>
+      <xs:enumeration value="RightPulmonaryArteriesToRightPulmonaryCapillaries"/>
+      <xs:enumeration value="LeftPulmonaryCapillariesToLeftPulmonaryVeins"/>
+      <xs:enumeration value="RightPulmonaryCapillariesToRightPulmonaryVeins"/>
+      <xs:enumeration value="LeftPulmonaryVeinsToLeftIntermediatePulmonaryVeins"/>
+      <xs:enumeration value="RightPulmonaryVeinsToRightIntermediatePulmonaryVeins"/>
+      <xs:enumeration value="LeftIntermediatePulmonaryVeinsToLeftHeart2"/>
+      <xs:enumeration value="RightIntermediatePulmonaryVeinsToLeftHeart2"/>
+      <xs:enumeration value="LeftPulmonaryVeinsToLeftHeart2"/>
+      <xs:enumeration value="RightPulmonaryVeinsToLeftHeart2"/>
+      <xs:enumeration value="LeftHeart2ToLeftHeart1"/>
+      
+      <!-- Pericardial Effusion Addition -->
+      <xs:enumeration value="MyocardiumVascular1ToPericardium2"/>
+      <xs:enumeration value="Pericardium1ToCardiovascularGround"/>
+      <xs:enumeration value="CardiovascularGroundToPericardium1"/>
+      <xs:enumeration value="Pericardium2ToPericardium1"/>
+      
+      <xs:enumeration value="LeftHeart1ToAorta2"/>
+      <xs:enumeration value="Aorta2ToAorta3"/>
+      <xs:enumeration value="Aorta3ToAorta1"/>
+      <xs:enumeration value="Aorta1ToBrainVascular1"/>
+      
+      <xs:enumeration value="Aorta1toMyocardiumVascular1"/>
+      <xs:enumeration value="Aorta1ToRightArmVascular1"/>
+      <xs:enumeration value="Aorta1ToLeftArmVascular1"/>
+      <xs:enumeration value="Aorta1ToRightLegVascular1"/>
+      <xs:enumeration value="Aorta1ToLeftLegVascular1"/>
+      <xs:enumeration value="Aorta1ToFatVascular1"/>
+      <xs:enumeration value="Aorta1ToBoneVascular1"/>
+      <xs:enumeration value="Aorta1ToMuscleVascular1"/>
+      <xs:enumeration value="Aorta1ToSkinVascular1"/>
+      
+      
+      <xs:enumeration value="Aorta1ToLiverVascular1"/>
+      <xs:enumeration value="Aorta1ToSplanchnicVascular1"/>
+      <xs:enumeration value="Aorta1ToSpleenVascular1"/>
+      <xs:enumeration value="Aorta1ToLargeIntestineVascular1"/>
+      <xs:enumeration value="Aorta1ToSmallIntestineVascular1"/>
+      <xs:enumeration value="Aorta1ToLeftKidneyVascular"/>
+      <xs:enumeration value="Aorta1ToRightKidneyVascular"/>
+      
+      <xs:enumeration value="BrainVascular1ToBrainVascular2"/>
+      <xs:enumeration value="RightArmVascular1ToRightArmVascular2"/>
+      <xs:enumeration value="LeftArmVascular1ToLeftArmVascular2"/>
+      <xs:enumeration value="RightLegVascular1ToRightLegVascular2"/>
+      <xs:enumeration value="LeftLegVascular1ToLeftLegVascular2"/>
+      <xs:enumeration value="FatVascular1ToFatVascular2"/>
+      <xs:enumeration value="BoneVascular1ToBoneVascular2"/>
+      <xs:enumeration value="MuscleVascular1ToMuscleVascular2"/>
+      <xs:enumeration value="SkinVascular1ToSkinVascular2"/>
+      <xs:enumeration value="LiverVascular1ToLiverVascular2"/>
+      
+      <xs:enumeration value="SplanchnicVascular1ToPortalVein"/>
+      <xs:enumeration value="SpleenVascular1ToPortalVein"/>
+      <xs:enumeration value="LargeIntestineVascular1ToPortalVein"/>
+      <xs:enumeration value="SmallIntestineVascular1ToPortalVein"/>
+      
+      <xs:enumeration value="PortalVeinToLiverVascular1"/>
+      <xs:enumeration value="LeftKidneyVasculartoRenalVein"/>
+      <xs:enumeration value="RightKidneyVascularToRenalVein"/>
+      <xs:enumeration value="MyocardiumVascular1ToMyocardiumVascular2"/>
+      <xs:enumeration value="BrainVascular2ToVenaCava"/>
+      
+      <xs:enumeration value="MyocardiumVascular2ToVenaCava"/>
+      <xs:enumeration value="RightArmVascular2ToVenaCava"/>
+      <xs:enumeration value="LeftArmVascular2ToVenaCava"/>
+      <xs:enumeration value="RightLegVascular2ToVenaCava"/>
+      <xs:enumeration value="LeftLegVascular2ToVenaCava"/>
+      <xs:enumeration value="FatVascular2ToVenaCava"/>
+      <xs:enumeration value="BoneVascular2ToVenaCava"/>
+      <xs:enumeration value="MuscleVascular2ToVenaCava"/>
+      <xs:enumeration value="SkinVascular2ToVenaCava"/>
+      <xs:enumeration value="LiverVascular2ToVenaCava"/>
+      <xs:enumeration value="RenalVeinToVenaCava"/>
+      <xs:enumeration value="BrainVascular1ToCardiovascularGround"/>
+      
+      <xs:enumeration value="MyocardiumVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="VenaCavaToCardiovascularGround"/>
+      <xs:enumeration value="VenaCavaToCardiovascularGroundBleeding"/>
+      <xs:enumeration value="CardiovascularGroundIVToVenaCava"/>
+      <xs:enumeration value="CardiovascularGroundSubstanceToVenaCava"/>
+      
+      <xs:enumeration value="LeftPulmonaryArteriesToCardiovascularGround"/>
+      <xs:enumeration value="LeftPulmonaryCapillariesToCardiovascularGround"/>
+      <xs:enumeration value="LeftPulmonaryVeinsToCardiovascularGround"/>
+      <xs:enumeration value="RightPulmonaryArteriesToCardiovascularGround"/>
+      <xs:enumeration value="RightPulmonaryCapillariesToCardiovascularGround"/>
+      <xs:enumeration value="RightPulmonaryVeinsToCardiovascularGround"/>
+      <xs:enumeration value="Aorta1ToCardiovascularGround"/>
+      <xs:enumeration value="RightArmVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="LeftArmVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="RightLegVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="LeftLegVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="FatVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="BoneVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="MuscleVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="SkinVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="LiverVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="SplanchnicVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="SpleenVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="LargeIntestineVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="SmallIntestineVascular1ToCardiovascularGround"/>
+      <xs:enumeration value="LeftKidneyToCardiovascularGround"/>
+      <xs:enumeration value="RightKidneyToCardiovascularGround"/>
+      <xs:enumeration value="RightHeart1ToRightHeart3"/>
+      <xs:enumeration value="LeftHeart1ToLeftHeart3"/>
+      <xs:enumeration value="RightHeart3ToGround"/> 
+      <xs:enumeration value="LeftHeart3ToGround"/>
+      
+      <!-- Extravascular Paths -->
+      <xs:enumeration value="FatExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="Fat1ToFatExtravascular"/>
+      <xs:enumeration value="BoneExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="Bone1ToBoneExtravascular"/>
+      <xs:enumeration value="BrainExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="Brain1ToBrainExtravascular"/>
+      <xs:enumeration value="GutExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="Splanchnic1ToGutExtravascular"/>
+      <xs:enumeration value="LargeIntestine1ToGutExtravascular"/>
+      <xs:enumeration value="SmallIntestine1ToGutExtravascular"/>
+      <xs:enumeration value="RightKidneyExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="RightKidneyVascularToRightKidneyExtravascular"/>
+      <xs:enumeration value="LeftKidneyExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="LeftKidneyVascularToLeftKidneyExtravascular"/>
+      <xs:enumeration value="LiverExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="Liver1ToLiverExtravascular"/>
+      <xs:enumeration value="LeftLungExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="LeftPulmonaryArteriesToLeftLungExtravascular"/>
+      <xs:enumeration value="LeftPulmonaryCapillariesToLeftLungExtravascular"/>
+      <xs:enumeration value="LeftPulmonaryVeinsToLeftLungExtravascular"/>
+      <xs:enumeration value="RightLungExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="RightPulmonaryArteriesToRightLungExtravascular"/>
+      <xs:enumeration value="RightPulmonaryCapillariesToRightLungExtravascular"/>
+      <xs:enumeration value="RightPulmonaryVeinsToRightLungExtravascular"/>
+      <xs:enumeration value="MuscleExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="Muscle1ToMuscleExtravascular"/>
+      <xs:enumeration value="MyocardiumExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="Myocardium1ToMyocardiumExtravascular"/>
+      <xs:enumeration value="SkinExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="Skin1ToSkinExtravascular"/>
+      <xs:enumeration value="SpleenExtravascularToCardiovascularGround"/>
+      <xs:enumeration value="Spleen1ToSpleenExtravascular"/>
+      
+      
+      <xs:enumeration value="SkinExtravascularToSweatingGround"/>
+      
+      <!-- Temperature Paths -->
+      <xs:enumeration value="TemperatureGroundToCore"/>
+      <xs:enumeration value="CoreToSkin"/>
+      <xs:enumeration value="CoreToTemperatureGround"/>
+      
+      <!-- Renal Paths -->	  
+	  <xs:enumeration value="RightRenalArteryConnectionPath"/>
+      <xs:enumeration value="RightRenalArteryPath"/>
+      <xs:enumeration value="RightAfferentArteriolePath"/>
+      <xs:enumeration value="RightGlomerularCapillariesPath"/>
+      <xs:enumeration value="RightEfferentArteriolePath"/>
+      <xs:enumeration value="RightPeritubularCapillariesPath"/>
+      <xs:enumeration value="RightRenalVeinPath"/>
+	  <xs:enumeration value="RightRenalArteryCompliancePath"/>
+	  <xs:enumeration value="RightGlomerularCapillariesCompliancePath"/>
+	  <xs:enumeration value="RightRenalVeinCompliancePath"/>
+	  
+	  <xs:enumeration value="RightOsmoticGlomerularPath"/>
+	  <xs:enumeration value="RightGlomerularFilterPath"/>
+	  <xs:enumeration value="RightOsmoticBowmansPath"/>
+	  <xs:enumeration value="RightTubulesPath"/>
+	  <xs:enumeration value="RightUreterPath"/>
+	  <xs:enumeration value="RightOsmoticTubulesPath"/>
+	  <xs:enumeration value="RightReabsorptionFilterPath"/>
+	  <xs:enumeration value="RightOsmoticPeritubularCapillariesPath"/>
+	  <xs:enumeration value="RightBladderPath"/>	  
+	  
+	  <xs:enumeration value="LeftRenalArteryConnectionPath"/>
+      <xs:enumeration value="LeftRenalArteryPath"/>
+      <xs:enumeration value="LeftAfferentArteriolePath"/>
+      <xs:enumeration value="LeftGlomerularCapillariesPath"/>
+      <xs:enumeration value="LeftEfferentArteriolePath"/>
+      <xs:enumeration value="LeftPeritubularCapillariesPath"/>
+      <xs:enumeration value="LeftRenalVeinPath"/>
+	  <xs:enumeration value="LeftRenalArteryCompliancePath"/>
+	  <xs:enumeration value="LeftGlomerularCapillariesCompliancePath"/>
+	  <xs:enumeration value="LeftRenalVeinCompliancePath"/>	  
+	  
+	  <xs:enumeration value="LeftOsmoticGlomerularPath"/>
+	  <xs:enumeration value="LeftGlomerularFilterPath"/>
+	  <xs:enumeration value="LeftOsmoticBowmansPath"/>
+	  <xs:enumeration value="LeftTubulesPath"/>
+	  <xs:enumeration value="LeftUreterPath"/>
+	  <xs:enumeration value="LeftOsmoticTubulesPath"/>
+	  <xs:enumeration value="LeftReabsorptionFilterPath"/>
+	  <xs:enumeration value="LeftOsmoticPeritubularCapillariesPath"/>
+	  <xs:enumeration value="LeftBladderPath"/>
+	  
+      <xs:enumeration value="BladderCompliancePath"/>
+      <xs:enumeration value="UrethraPath"/>
+	  
+      <!-- Gastrointestinal Paths -->
+      <xs:enumeration value="GutChymeToSmallIntestineVascular"/>
+      
+      <!-- Respiratory Paths -->
+      <xs:enumeration value="ExternalEnvironmentToMouth"/> 
+      <xs:enumeration value="MouthToCarina"/>
+      <xs:enumeration value="CarinaToRightAnatomicDeadSpace"/>
+      <xs:enumeration value="CarinaToLeftAnatomicDeadSpace"/>
+      <xs:enumeration value="RightAnatomicDeadSpaceToRightAlveoli"/>
+      <xs:enumeration value="LeftAnatomicDeadSpaceToLeftAlveoli"/>
+      <xs:enumeration value="RightAlveoliToRightPleural"/>
+      <xs:enumeration value="LeftAlveoliToLeftPleural"/>
+      <xs:enumeration value="RightAnatomicDeadSpaceToRightPleural"/>
+      <xs:enumeration value="LeftAnatomicDeadSpaceToLeftPleural"/>
+      
+      <xs:enumeration value="ExternalEnvironmentToRespiratoryMuscle"/>
+      
+      <xs:enumeration value="MouthToStomach"/>
+      <xs:enumeration value="StomachToExternalEnvironment"/>
+      
+      <xs:enumeration value="RightPleuralToRespiratoryMuscle"/>
+      <xs:enumeration value="LeftPleuralToRespiratoryMuscle"/>
+      
+      <xs:enumeration value="RightPleuralToExternalEnvironment"/>
+      <xs:enumeration value="LeftPleuralToExternalEnvironment"/>
+      
+      <xs:enumeration value="RightAlveoliToRightAlveoliLeak"/>
+      <xs:enumeration value="RightAlveoliLeakToRightPleural"/>
+      <xs:enumeration value="LeftAlveoliToLeftAlveoliLeak"/>
+      <xs:enumeration value="LeftAlveoliLeakToLeftPleural"/>
+      
+      <xs:enumeration value="ExternalEnvironmentToRightChestLeak"/>
+      <xs:enumeration value="RightChestLeakToRightPleural"/>
+      <xs:enumeration value="ExternalEnvironmentToLeftChestLeak"/>
+      <xs:enumeration value="LeftChestLeakToLeftPleural"/>
+      
+      
+      
+      <!-- Anesthesia Machine Paths -->
+      <xs:enumeration value="AnesthesiaGroundToVentilatorConnection"/>
+      <xs:enumeration value="AnesthesiaGroundToSqueeze"/>
+      <xs:enumeration value="AnesthesiaGroundToReliefValve"/>
+      <xs:enumeration value="SqueezeToBag"/>
+      <xs:enumeration value="VentilatorToVentilatorConnection"/>
+	  <xs:enumeration value="VentilatorToSelector"/>
+      <xs:enumeration value="BagToSelector"/>
+      <xs:enumeration value="SelectorToReliefValve"/>
+      <xs:enumeration value="SelectorToScrubber"/>	  
+      <xs:enumeration value="ScrubberToGasInlet"/>
+      <xs:enumeration value="AnesthesiaGroundToGasSource"/>
+      <xs:enumeration value="GasSourceToGasInlet"/>
+      <xs:enumeration value="GasInletToInspiratoryLimb"/>
+      <xs:enumeration value="InspiratoryLimbToYPiece"/>
+      <xs:enumeration value="YPieceToExpiratoryLimb"/>
+      <xs:enumeration value="ExpiratoryLimbToSelector"/>
+      <xs:enumeration value="YPieceToAnesthesiaConnection"/>	  
+      <xs:enumeration value="AnesthesiaConnectionToAnesthesiaGround"/>
+      <xs:enumeration value="SelectorToAnesthesiaGround"/>
+      
+      
+      <!-- Combined Respiratory and Anesthesia Machine Paths -->
+      <xs:enumeration value="AnesthesiaConnectionToMouth"/>
+      <xs:enumeration value="GroundConnection"/>
+      
+      <!-- Inhaler Paths -->
+      <xs:enumeration value="EnvironmentToInhaler"/>
+      <xs:enumeration value="InhalerToMouth"/>
+      
+      <!-- Environment -->   	  
+      <xs:enumeration value="EnvironmentCoreToAbsoluteReference"/>
+      <xs:enumeration value="EnvironmentSkinToAbsoluteReference"/>
+      <xs:enumeration value="EnvironmentSkinToClothing"/>
+      <xs:enumeration value="AbsoluteReferenceToClothing"/>
+	  <xs:enumeration value="AbsoluteReferenceToActive"/>
+	  <xs:enumeration value="ActiveToClothing"/>
+      <xs:enumeration value="ClothingToAmbientEnvironment"/>
+      <xs:enumeration value="ClothingToEnclosure"/>
+      <xs:enumeration value="AbsoluteReferenceToAmbientEnvironment"/>
+      <xs:enumeration value="AbsoluteReferenceToEnclosure"/>	  
+      
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>
