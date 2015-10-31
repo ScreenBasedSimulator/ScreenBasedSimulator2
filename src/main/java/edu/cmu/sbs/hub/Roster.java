@@ -1,7 +1,6 @@
-package edu.cmu.sbs.hub.datatype;
+package edu.cmu.sbs.hub;
 
-
-import edu.cmu.sbs.protocol.StatusProtocol;
+import edu.cmu.sbs.hub.datatype.Patient;
 
 import java.util.HashMap;
 
@@ -19,10 +18,6 @@ public class Roster {
         } else {
             throw new IllegalArgumentException("Patient \"" + hash + "\" does not exist!");
         }
-    }
-
-    public void updatePatientStatus(StatusProtocol statusProtocol) {
-        locatePatient(statusProtocol.getPatientHash()).updateStatus(statusProtocol.toEnumMap());
     }
 
     public void checkInPatient(Patient patient) {

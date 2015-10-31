@@ -8,52 +8,20 @@ import java.util.Map;
 
 public class PatientStatus {
 
-    private final Patient patient;
-
     private static Gson gson = new Gson();
-
-    public enum Metric {
-        HEARTRATE, RESPRATE, SYSTOLICBP, DIASTOLICBP, OXYGEN;
-
-        @Override
-        public String toString() {
-            return this.name().toLowerCase();
-        }
-    }
-
+    private final Patient patient;
     Map<Metric, String> metricMap = new EnumMap<>(Metric.class);
 
     public PatientStatus(EnumMap<Metric, String> metricMap, Patient patient) {
-//        validateEnumMap(metricMap);
+        validateEnumMap(metricMap);
         this.metricMap = metricMap;
         this.patient = patient;
-    }
-
-    public EnumMap<Metric, String> getStatus() {
-        return new EnumMap<>(metricMap);
-    }
-
-    public void updateStatus(EnumMap<Metric, String> metricMap) {
-        for (Metric metric : metricMap.keySet()) {
-            this.metricMap.put(metric, metricMap.get(metric));
-        }
     }
 
     public static void validateEnumMap(EnumMap<Metric, String> metricMap) {
         if (metricMap.size() != 4 || metricMap.keySet().containsAll(Arrays.asList(Metric.values()))) {
             throw new IllegalArgumentException("Map is not complete");
         }
-    }
-
-    @Override
-    public String toString() {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("hash").append(",").append(patient.patientHash).append("\n");
-//        for (Metric metric : Metric.values()) {
-//            sb.append(metric.toString()).append(",").append(metricMap.get(metric)).append("\n");
-//        }
-//        return sb.toString();
-        return gson.toJson(metricMap);
     }
 
     @Deprecated
@@ -72,6 +40,36 @@ public class PatientStatus {
     public static void main(String[] args) {
         for (int i = 0; i < 20; i++) {
             getRandomFakeStatus();
+        }
+    }
+
+    public EnumMap<Metric, String> getStatus() {
+        return new EnumMap<>(metricMap);
+    }
+
+    public void updateStatus(EnumMap<Metric, String> metricMap) {
+        for (Metric metric : metricMap.keySet()) {
+            this.metricMap.put(metric, metricMap.get(metric));
+        }
+    }
+
+    @Override
+    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("hash").append(",").append(patient.patientHash).append("\n");
+//        for (Metric metric : Metric.values()) {
+//            sb.append(metric.toString()).append(",").append(metricMap.get(metric)).append("\n");
+//        }
+//        return sb.toString();
+        return gson.toJson(metricMap);
+    }
+
+    public enum Metric {
+        HEARTRATE, RESPRATE, SYSTOLICBP, DIASTOLICBP, OXYGEN;
+
+        @Override
+        public String toString() {
+            return this.name().toLowerCase();
         }
     }
 }
