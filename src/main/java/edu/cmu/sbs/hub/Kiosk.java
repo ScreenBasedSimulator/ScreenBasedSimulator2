@@ -1,9 +1,7 @@
 package edu.cmu.sbs.hub;
 
-import edu.cmu.sbs.hub.datatype.Patient;
 import edu.cmu.sbs.hub.datatype.Roster;
 import edu.cmu.sbs.protocol.StatusProtocol;
-
 
 public class Kiosk {
 
@@ -14,8 +12,7 @@ public class Kiosk {
     }
 
     public void receive(StatusProtocol statusProtocol) {
-        Patient patient = roster.locatePatient(statusProtocol.statusMap.get("hash"));
-
+        roster.updatePatientStatus(statusProtocol);
 
     }
 }

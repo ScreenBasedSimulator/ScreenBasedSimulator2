@@ -2,8 +2,8 @@ package edu.cmu.sbs.protocol;
 
 import edu.cmu.sbs.hub.datatype.PatientStatus;
 
+import java.net.ProtocolException;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Map;
 
 public class StatusProtocol {
@@ -20,7 +20,7 @@ public class StatusProtocol {
      * diastolicbp     |120.91        |double value round to two decimal places
      * oxygen          |93.60         |double value round to two decimal places
      *
-     * Specification:
+     * Specifications:
      * > up to six key-values are transferred each time;
      * > NOT order-sensitive;
      * > Only hash key is required
@@ -29,23 +29,51 @@ public class StatusProtocol {
 
     public Map<String, String> statusMap;
 
-    public boolean validate() {
+    /**
+     * Validate boolean.
+     *
+     * @return the boolean
+     * @throws ProtocolException the protocol exception
+     */
+    public boolean validate() throws ProtocolException {
 
-        // TODO statusMap validation. check if the status comply specification
+        // TODO statusMap validation. check if the status comply with specifications
+        if (false) {
+
+        } else {
+            throw new ProtocolException("Illegal statusProtocol format!");
+        }
 
         return false;
     }
 
     public EnumMap<PatientStatus.Metric, String> toEnumMap() {
-        EnumMap<PatientStatus.Metric, String> enumMap = new EnumMap<>(PatientStatus.Metric.class);
-        for (String key : statusMap.keySet()) {
-            try {
-                enumMap.put(PatientStatus.Metric.valueOf(key.toUpperCase()), statusMap.get(key));
-            } catch (IllegalArgumentException e) {
-                e.printStackTrace();
-            }
-        }
+        try {
+            validate();
 
-        return enumMap;
+            EnumMap<PatientStatus.Metric, String> enumMap = new EnumMap<>(PatientStatus.Metric.class);
+            for (String key : statusMap.keySet()) {
+                enumMap.put(PatientStatus.Metric.valueOf(key.toUpperCase()), statusMap.get(key));
+            }
+            return enumMap;
+
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+            return new EnumMap<>(PatientStatus.Metric.class);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            return new EnumMap<>(PatientStatus.Metric.class);
+        }
+    }
+
+    public String getPatientHash() {
+        try {
+            validate();
+
+            return statusMap.get("hash");
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+            return "";
+        }
     }
 }
