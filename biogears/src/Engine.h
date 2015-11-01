@@ -3,7 +3,6 @@
 
 #include "Runnable.h"
 #include "BioGearsPhysiologyEngine.h"
-#include "crow_all.h"
 #include <mutex>
 
 class Engine : public Runnable
@@ -13,7 +12,7 @@ public:
 
     void Initialize();
     void SetPressure(double pressure);
-    crow::json::wvalue GetPatientStatus();
+//    crow::json::wvalue GetPatientStatus();
 
 private:
     std::unique_ptr<PhysiologyEngine> m_engine;

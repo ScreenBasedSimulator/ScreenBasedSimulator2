@@ -4,7 +4,6 @@
 #include "Engine.h"
 #include "ConnectionClient.h"
 #include "Connection.h"
-#include "crow_all.h"
 
 class Driver : public ConnectionClient
 {
@@ -15,7 +14,7 @@ public:
 
     void Run();
     virtual void HandleMessage(const std::string& message) override;
-    crow::json::wvalue GetPatientStatus();
+//    crow::json::wvalue GetPatientStatus();
 
 private:
     Engine m_engine;

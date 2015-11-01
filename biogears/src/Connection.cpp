@@ -10,8 +10,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <iostream>
-#include "crow_all.h"
-#include "Driver.h"
+//#include "Driver.h"
 
 Connection::Connection(ConnectionClient* pConnectionClient)
     : m_pConnectionClient(pConnectionClient)
@@ -27,21 +26,21 @@ void Connection::operator()()
     SetRunning(true);
 
     crow::SimpleApp app;
-    Driver * client= (Driver *)m_pConnectionClient;
+    //Driver * client= (Driver *)m_pConnectionClient;
 
-    CROW_ROUTE(app, "/")([this, client](){
+    CROW_ROUTE(app, "/")([this](){
         handleMessage("123");
         std::cout<<"HIHIHI"<<std::endl;
-        crow::json::wvalue x = client->GetPatientStatus();
-        return x;
+        //crow::json::wvalue x = client->GetPatientStatus();
+        return "HIHI";
     });
 
-    CROW_ROUTE(app, "/patient/status")([this,client](){
+    CROW_ROUTE(app, "/patient/status")([this](){
         handleMessage("123");
         std::cout<<"HIHIHI"<<std::endl;
-        crow::json::wvalue x = client->GetPatientStatus();
-        x["message"] = "Hello, World!";
-        return x;
+        //crow::json::wvalue x = client->GetPatientStatus();
+       // x["message"] = "Hello, World!";
+        return "Status";
     });
 
     app.port(18080).multithreaded().run();

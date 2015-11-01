@@ -1,6 +1,5 @@
 #include "Driver.h"
 #include "Connection.h"
-#include "crow_all.h"
 #include <thread>
 #include <sstream>
 
@@ -39,10 +38,10 @@ void Driver::HandleMessage(const std::string& message)
     }
 }
 
-crow::json::wvalue Driver::GetPatientStatus()
-{
-    return m_engine.GetPatientStatus();
-}
+//crow::json::wvalue Driver::GetPatientStatus()
+//{
+//    return m_engine.GetPatientStatus();
+//}
 
 int main()
 {
