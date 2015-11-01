@@ -39,7 +39,7 @@ void Connection::operator()()
     CROW_ROUTE(app, "/patient/status")([this](){
         handleMessage("123");
         std::cout<<"HIHIHI"<<std::endl;
-        crow::json::wvalue x;
+        crow::json::wvalue x = m_pConnectionClient->GetPatientStatus();
         x["message"] = "Hello, World!";
         return x;
     });
