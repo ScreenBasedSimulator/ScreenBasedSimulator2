@@ -11,7 +11,7 @@
 #include <arpa/inet.h>
 #include <iostream>
 #include "crow_all.h"
-#include "driver.h"
+#include "Driver.h"
 
 Connection::Connection(ConnectionClient* pConnectionClient)
     : m_pConnectionClient(pConnectionClient)
@@ -29,10 +29,10 @@ void Connection::operator()()
     crow::SimpleApp app;
     Driver * client= (Driver *)m_pConnectionClient;
 
-    CROW_ROUTE(app, "/")([this](){
+    CROW_ROUTE(app, "/")([this, client](){
         handleMessage("123");
         std::cout<<"HIHIHI"<<std::endl;
-        crow::json::wvalue x = m_pConnectionClient->GetPatientStatus();
+        crow::json::wvalue x = client->GetPatientStatus();
         return x;
     });
 

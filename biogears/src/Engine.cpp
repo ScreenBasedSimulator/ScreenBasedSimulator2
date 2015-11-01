@@ -21,7 +21,6 @@
 #include "scenario/SEPhysiologySystemDataRequest.h"
 #include <chrono>
 #include <thread>
-#include "crow_all.h"
 
 void Engine::Initialize()
 {
