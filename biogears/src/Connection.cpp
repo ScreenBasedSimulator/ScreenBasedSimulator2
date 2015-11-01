@@ -36,10 +36,10 @@ void Connection::operator()()
         return x;
     });
 
-    CROW_ROUTE(app, "/patient/status")([this](){
+    CROW_ROUTE(app, "/patient/status")([this,client](){
         handleMessage("123");
         std::cout<<"HIHIHI"<<std::endl;
-        crow::json::wvalue x = m_pConnectionClient->GetPatientStatus();
+        crow::json::wvalue x = client->GetPatientStatus();
         x["message"] = "Hello, World!";
         return x;
     });
