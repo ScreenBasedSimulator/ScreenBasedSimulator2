@@ -7,6 +7,21 @@ Third party package:
 
 How to run BioGears on Mac:
 1. Install homebrew
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 2. Install boost and google-perftools
-	brew install boost google-perftools
+```
+brew install boost google-perftools
+```
+3. Compile BioGears Server under biogears folder
+```
+make mac
+```
+
+
+How to run BioGears on Centos:
+1. Compile BioGears Server under biogears folder
+```
+make linux
+```
