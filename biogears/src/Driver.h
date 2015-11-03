@@ -2,10 +2,12 @@
 #define DRIVER_H
 
 #include "Engine.h"
-#include "ConnectionClient.h"
 #include "Connection.h"
 
-class Driver : public ConnectionClient
+class Connection;
+class Engine;
+
+class Driver
 {
 public:
     Driver();
@@ -13,12 +15,12 @@ public:
     void Initialize();
 
     void Run();
-    virtual void HandleMessage(const std::string& message) override;
-//    crow::json::wvalue GetPatientStatus();
+    void HandleMessage(const std::string& message);
+    crow::json::wvalue GetPatientStatus();
 
 private:
-    Engine m_engine;
-    Connection m_connection;
+    Engine* m_engine;
+    Connection* m_connection;
 };
 
 #endif

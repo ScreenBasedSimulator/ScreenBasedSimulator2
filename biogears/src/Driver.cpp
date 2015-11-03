@@ -4,20 +4,21 @@
 #include <sstream>
 
 Driver::Driver()
-    : m_connection(this)
 {
+    m_engine = new Engine(this);
+    m_connection = new Connection(this);
 }
 
 void Driver::Initialize()
 {
-    m_engine.Initialize();
+    m_engine->Initialize();
 }
 
 void Driver::Run()
 {
-    std::thread engineThread    ([this]() { m_engine();  });
-    std::thread connectionThread([this]() { m_connection();  });
-    m_connection.SetRunning(false);
+    std::thread engineThread    ([this]() { (*m_engine)();  });
+    std::thread connectionThread([this]() { (*m_connection)();  });
+    m_connection->SetRunning(false);
     //m_engine.SetRunning(false);
 
     connectionThread.join();
@@ -34,21 +35,18 @@ void Driver::HandleMessage(const std::string& message)
     if (iss >> value)
     {
         std::cout<<"received the double value"<<std::endl;
-        m_engine.SetPressure(value);
+        m_engine->SetPressure(value);
     }
 }
 
-//crow::json::wvalue Driver::GetPatientStatus()
-//{
-//    return m_engine.GetPatientStatus();
-//}
+crow::json::wvalue Driver::GetPatientStatus()
+{
+   return m_engine->GetPatientStatus();
+}
 
 int main()
 {
     Driver driver;
-    
-
-    std::cout<<"HELLO HERE!!!"<<std::endl;
     driver.Initialize();
     driver.Run();
 }

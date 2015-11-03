@@ -2,19 +2,21 @@
 #define CONNECTION_H
 
 #include "Runnable.h"
+#include "Driver.h"
 
-class ConnectionClient;
+class Driver;
 
 class Connection : public Runnable
 {
 public:
-    Connection(ConnectionClient* pConnectionClient);
+    Connection(Driver* pDriver);
 
     virtual void operator()() override;
 
 private:
-    ConnectionClient* m_pConnectionClient = nullptr;
+    Driver* m_pDriver = nullptr;
     void handleMessage(std::string a);
+    crow::json::wvalue GetPatientStatus();
 };
 
 #endif
