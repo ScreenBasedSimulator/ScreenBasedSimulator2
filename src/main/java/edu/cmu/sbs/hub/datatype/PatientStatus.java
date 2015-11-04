@@ -19,7 +19,7 @@ public class PatientStatus {
     }
 
     public static void validateEnumMap(EnumMap<Metric, String> metricMap) {
-        if (metricMap.size() != 4 || metricMap.keySet().containsAll(Arrays.asList(Metric.values()))) {
+        if (metricMap.size() != Metric.values().length || metricMap.keySet().containsAll(Arrays.asList(Metric.values()))) {
             throw new IllegalArgumentException("Map is not complete");
         }
     }
