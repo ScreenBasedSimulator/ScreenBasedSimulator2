@@ -9,8 +9,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class Client {
+public class Broadcast {
 
+    final private static String serverIP = "";
 
     public static void main(String[] args) {
 
@@ -22,7 +23,7 @@ public class Client {
             SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss");
             String time = currentTime.format(cal.getTime());
 
-            HttpRequest.post("http://localhost:8081/update").send(serialize(status)).code();
+            HttpRequest.post("http://" + serverIP + "/update").send(serialize(status)).code();
             System.out.println("Sent at " + time);
         };
 

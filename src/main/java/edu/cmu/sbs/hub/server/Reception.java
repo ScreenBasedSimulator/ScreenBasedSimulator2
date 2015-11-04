@@ -10,13 +10,13 @@ import java.time.format.DateTimeFormatter;
 import static spark.Spark.port;
 import static spark.Spark.post;
 
-public class HttpServer {
+public class Reception {
 
     private Gson gson = new Gson();
 
     private Kiosk kiosk;
 
-    public HttpServer(Kiosk kiosk) {
+    public Reception(Kiosk kiosk) {
 
         this.kiosk = kiosk;
 
