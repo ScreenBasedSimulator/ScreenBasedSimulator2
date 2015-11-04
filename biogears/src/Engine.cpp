@@ -21,6 +21,7 @@
 #include "scenario/SEPhysiologySystemDataRequest.h"
 #include <chrono>
 #include <thread>
+#include <cstring>
 
 Engine::Engine(Driver * pDriver)
 {
@@ -45,18 +46,24 @@ crow::json::wvalue Engine::GetPatientStatus() {
      * diastolicbp    |120.91        |double value round to two decimal places
      * oxygen         |93.60         |double value round to two decimal places
      */
+    crow::json::wvalue status;
     status["heart_rate"] = m_engine->GetCardiovascularSystem()->GetHeartRate(SEScalarFrequency::Per_min);
     status["oxygen_saturation"] = m_engine->GetBloodChemistrySystem()->GetOxygenSaturation();
     status["systolic_arterial_pressure"] = m_engine->GetCardiovascularSystem()->GetSystolicArterialPressure(SEScalarPressure::mmHg);
     status["diastolic_arterialPressure"] = m_engine->GetCardiovascularSystem()->GetDiastolicArterialPressure(SEScalarPressure::mmHg);
     status["respiration_rate"] = m_engine->GetRespiratorySystem()->GetRespirationRate(SEScalarFrequency::Per_min);
-    status["name"] = "SBS Engine";
+    status["hash"] = "abcdefg";
+    
     return status;
 }
 
 void Engine::operator()()
 {
     using Clock = std::chrono::high_resolution_clock;
+    
+    curl_global_init(CURL_GLOBAL_ALL);
+    
+    double timeElapsed = 0.0;
     while (Running())
     {
         Clock::time_point start = Clock::now();
@@ -64,17 +71,29 @@ void Engine::operator()()
 
             std::lock_guard<std::mutex> lock(m_pressureMutex);
             
-
-            if (m_newPressure)
-            {
-                m_newPressure = false;
-
-                SEChestCompressionForce compression;
-                compression.GetForce().SetValue(m_pressure, SEScalarForce::N);
-                // std::cout<<"enter the print pressure "
-                m_engine->ProcessAction(compression);
-                // std::cout << "Arterial Pressure: " << m_engine->GetCardiovascularSystem()->GetArterialPressure(SEScalarPressure::mmHg) << "\n";
-                
+        }
+        if (timeElapsed > 500.0) {
+            timeElapsed = 0;
+            /* Now specify the POST data */ 
+            crow::json::wvalue status;
+            status["heart_rate"] = m_engine->GetCardiovascularSystem()->GetHeartRate(SEScalarFrequency::Per_min);
+            status["oxygen_saturation"] = m_engine->GetBloodChemistrySystem()->GetOxygenSaturation();
+            status["systolic_arterial_pressure"] = m_engine->GetCardiovascularSystem()->GetSystolicArterialPressure(SEScalarPressure::mmHg);
+            status["diastolic_arterialPressure"] = m_engine->GetCardiovascularSystem()->GetDiastolicArterialPressure(SEScalarPressure::mmHg);
+            status["respiration_rate"] = m_engine->GetRespiratorySystem()->GetRespirationRate(SEScalarFrequency::Per_min);
+            status["hash"] = "abcdefg";
+            /* get a curl handle */ 
+            CURL * curl = curl_easy_init();
+            if (curl) {
+                curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:8081/update");
+                char* result=strdup(crow::json::dump(status).c_str());
+                curl_easy_setopt(curl, CURLOPT_POSTFIELDSIZE, (long)strlen(result));
+                curl_easy_setopt(curl, CURLOPT_POSTFIELDS, result);
+                CURLcode res = curl_easy_perform(curl);
+                if(res != CURLE_OK)
+                    fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+                curl_easy_cleanup(curl);
+                free(result);
             }
         }
 
@@ -87,6 +106,7 @@ void Engine::operator()()
         {
             std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<long int>(m_dt - executionTime)));
         }
+        timeElapsed += m_dt;
     }
 }
 

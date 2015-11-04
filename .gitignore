@@ -132,3 +132,13 @@ buildNumber.properties
 
 # Ignore bin for biogears
 
+
+.classpath
+
+.project
+
+*.prefs
+
+*.plist
+
+biogears/bin/BioGearsServer.dSYM/Contents/Resources/DWARF/BioGearsServer

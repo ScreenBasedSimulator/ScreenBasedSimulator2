@@ -1,6 +1,7 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 #include <mutex>
+#include <curl/curl.h>
 #include "Runnable.h"
 #include "BioGearsPhysiologyEngine.h"
 #include "Driver.h"

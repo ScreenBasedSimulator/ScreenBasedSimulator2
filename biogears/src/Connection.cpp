@@ -37,6 +37,13 @@ void Connection::operator()()
         return x;
     });
 
+    CROW_ROUTE(app, "/patient/status")
+    .methods("POST"_method)
+    ([this](const crow::request& req){
+        crow::json::wvalue x = GetPatientStatus();
+        return x;
+    });
+
     app.port(18080).multithreaded().run();
     
 }
