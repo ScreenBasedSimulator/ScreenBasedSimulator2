@@ -50,6 +50,7 @@ crow::json::wvalue Engine::GetPatientStatus() {
     status["SystolicArterialPressure"] = m_engine->GetCardiovascularSystem()->GetSystolicArterialPressure(SEScalarPressure::mmHg);
     status["DiastolicArterialPressure"] = m_engine->GetCardiovascularSystem()->GetDiastolicArterialPressure(SEScalarPressure::mmHg);
     status["RespirationRate"] = m_engine->GetRespiratorySystem()->GetRespirationRate(SEScalarFrequency::Per_min);
+    status["name"] = "SBS Engine";
     return status;
 }
 
