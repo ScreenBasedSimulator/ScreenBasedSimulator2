@@ -14,11 +14,11 @@ public class StatusProtocol {
      * Key Name        |Value         |Specification
      * ----------------|--------------|---------
      * hash  (Required)|sykwrvmb      |Unique hash ID for a specific patient
-     * heartrate       |66.03         |double value round to two decimal places
-     * resprate        |75.48         |double value round to two decimal places
-     * systolicbp      |37.99         |double value round to two decimal places
-     * diastolicbp     |120.91        |double value round to two decimal places
-     * oxygen          |93.60         |double value round to two decimal places
+     * HeartRate       |66.03         |double value round to two decimal places
+     * RespirationRate        |75.48         |double value round to two decimal places
+     * SystolicArterialPressure      |37.99         |double value round to two decimal places
+     * DiastolicArterialPressure     |120.91        |double value round to two decimal places
+     * OxygenSaturation          |93.60         |double value round to two decimal places
      *
      * Specifications:
      * > up to six key-values are transferred each time;

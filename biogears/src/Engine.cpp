@@ -45,11 +45,11 @@ crow::json::wvalue Engine::GetPatientStatus() {
      * diastolicbp    |120.91        |double value round to two decimal places
      * oxygen         |93.60         |double value round to two decimal places
      */
-    status["HeartRate"] = m_engine->GetCardiovascularSystem()->GetHeartRate(SEScalarFrequency::Per_min);
-    status["OxygenSaturation"] = m_engine->GetBloodChemistrySystem()->GetOxygenSaturation();
-    status["SystolicArterialPressure"] = m_engine->GetCardiovascularSystem()->GetSystolicArterialPressure(SEScalarPressure::mmHg);
-    status["DiastolicArterialPressure"] = m_engine->GetCardiovascularSystem()->GetDiastolicArterialPressure(SEScalarPressure::mmHg);
-    status["RespirationRate"] = m_engine->GetRespiratorySystem()->GetRespirationRate(SEScalarFrequency::Per_min);
+    status["heart_rate"] = m_engine->GetCardiovascularSystem()->GetHeartRate(SEScalarFrequency::Per_min);
+    status["oxygen_saturation"] = m_engine->GetBloodChemistrySystem()->GetOxygenSaturation();
+    status["systolic_arterial_pressure"] = m_engine->GetCardiovascularSystem()->GetSystolicArterialPressure(SEScalarPressure::mmHg);
+    status["diastolic_arterialPressure"] = m_engine->GetCardiovascularSystem()->GetDiastolicArterialPressure(SEScalarPressure::mmHg);
+    status["respiration_rate"] = m_engine->GetRespiratorySystem()->GetRespirationRate(SEScalarFrequency::Per_min);
     status["name"] = "SBS Engine";
     return status;
 }

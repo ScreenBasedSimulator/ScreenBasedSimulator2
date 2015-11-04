@@ -29,11 +29,11 @@ public class PatientStatus {
         System.out.println("Test Method invoked " + new Object() {
         }.getClass().getEnclosingMethod().getName());
         EnumMap<Metric, String> metricDoubleMap = new EnumMap<>(Metric.class);
-        metricDoubleMap.put(Metric.HEARTRATE, 50 + 20 * Math.random() + "");
-        metricDoubleMap.put(Metric.SYSTOLICBP, Math.random() * 100 + "");
-        metricDoubleMap.put(Metric.DIASTOLICBP, Math.random() * 20 + 100 + "");
-        metricDoubleMap.put(Metric.OXYGEN, Math.random() * 120 + "");
-        metricDoubleMap.put(Metric.RESPRATE, 60.0 + Math.random() * 20 + "");
+        metricDoubleMap.put(Metric.HEART_RATE, 50 + 20 * Math.random() + "");
+        metricDoubleMap.put(Metric.SYSTOLIC_ARTERIAL_PRESSURE, Math.random() * 100 + "");
+        metricDoubleMap.put(Metric.DIASTOLIC_ARTERIAL_PRESSURE, Math.random() * 20 + 100 + "");
+        metricDoubleMap.put(Metric.OXYGEN_SATURATION, Math.random() * 120 + "");
+        metricDoubleMap.put(Metric.RESPIRATION_RATE, 60.0 + Math.random() * 20 + "");
         return new PatientStatus(metricDoubleMap, Patient.generateRandomPatient());
     }
 
@@ -65,7 +65,7 @@ public class PatientStatus {
     }
 
     public enum Metric {
-        HEARTRATE, RESPRATE, SYSTOLICBP, DIASTOLICBP, OXYGEN;
+        HEART_RATE, RESPIRATION_RATE, SYSTOLIC_ARTERIAL_PRESSURE, DIASTOLIC_ARTERIAL_PRESSURE, OXYGEN_SATURATION;
 
         @Override
         public String toString() {
