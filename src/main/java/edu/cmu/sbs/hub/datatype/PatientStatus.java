@@ -13,11 +13,12 @@ public class PatientStatus {
     Map<Metric, String> metricMap = new EnumMap<>(Metric.class);
 
     public PatientStatus(EnumMap<Metric, String> metricMap, Patient patient) {
-        validateEnumMap(metricMap);
+        //validateEnumMap(metricMap);
         this.metricMap = metricMap;
         this.patient = patient;
     }
 
+    // TODO does not work properly, fix
     public static void validateEnumMap(EnumMap<Metric, String> metricMap) {
         if (metricMap.size() != Metric.values().length || metricMap.keySet().containsAll(Arrays.asList(Metric.values()))) {
             throw new IllegalArgumentException("Map is not complete");

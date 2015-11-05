@@ -11,7 +11,9 @@ import java.util.concurrent.TimeUnit;
 
 public class Broadcast {
 
-    final private static String serverIP = "";
+    final private static String serverIP = "128.237.223.236";
+    final private static int port = 18080;
+    final private static String url = "/patient/status";
 
     public static void main(String[] args) {
 
@@ -23,7 +25,7 @@ public class Broadcast {
             SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss");
             String time = currentTime.format(cal.getTime());
 
-            HttpRequest.post("http://" + serverIP + "/update").send(serialize(status)).code();
+            HttpRequest.post("http://" + serverIP + ":" + port + url).send(serialize(status)).code();
             System.out.println("Sent at " + time);
         };
 
