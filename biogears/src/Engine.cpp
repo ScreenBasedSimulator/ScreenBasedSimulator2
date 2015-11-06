@@ -22,6 +22,7 @@
 #include <chrono>
 #include <thread>
 #include <cstring>
+#include "substance/SESubstanceManager.h"
 #include "patient/actions/SESubstanceBolus.h"
 
 Engine::Engine(Driver * pDriver)
@@ -47,7 +48,6 @@ crow::json::wvalue Engine::GetPatientStatus() {
      * diastolicbp    |120.91        |double value round to two decimal places
      * oxygen         |93.60         |double value round to two decimal places
      */
-    crow::json::wvalue status;
     status["heart_rate"] = m_engine->GetCardiovascularSystem()->GetHeartRate(SEScalarFrequency::Per_min);
     status["oxygen_saturation"] = m_engine->GetBloodChemistrySystem()->GetOxygenSaturation();
     status["systolic_arterial_pressure"] = m_engine->GetCardiovascularSystem()->GetSystolicArterialPressure(SEScalarPressure::mmHg);
@@ -114,14 +114,14 @@ void Engine::BolusDrug(std::string drugName, double concentration, double dose)
 {
 
     // std::lock_guard<std::mutex> lock(m_pressureMutex);
-    const SESubstance* succs = bg->GetSubstanceManager().GetSubstance(drugName);
+    const SESubstance* succs = m_engine->GetSubstanceManager().GetSubstance(drugName);
 
     // Create a substance bolus action to administer the substance
     SESubstanceBolus bolus(*succs);
     bolus.GetConcentration().SetValue(concentration,SEScalarMassPerVolume::ug_Per_mL);
     bolus.GetDose().SetValue(dose,SEScalarVolume::mL);
     bolus.SetAdminRoute(CDM::enumSubstanceAdministration::Intravenous);
-    bg->ProcessAction(bolus);
+    m_engine->ProcessAction(bolus);
     std::cout << "Giving the patient Succinylcholine.\n\n";
 }
 void Engine::SetPressure(double pressure)
