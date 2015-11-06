@@ -122,7 +122,8 @@ void Engine::BolusDrug(std::string drugName, double concentration, double dose)
     bolus.GetDose().SetValue(dose,SEScalarVolume::mL);
     bolus.SetAdminRoute(CDM::enumSubstanceAdministration::Intravenous);
     m_engine->ProcessAction(bolus);
-    std::cout << "Giving the patient Succinylcholine.\n\n";
+    std::cout << "Giving the patient .\n\n" << drugName << " with " 
+    << dose << " dosage and " << concentration << " concentration" <<endl;
 }
 void Engine::SetPressure(double pressure)
 {

@@ -17,6 +17,7 @@ public:
     void Run();
     void HandleMessage(const std::string& message);
     crow::json::wvalue GetPatientStatus();
+    void BolusDrug(std::string drugName, double concentration, double dose);
 
 private:
     Engine* m_engine;
