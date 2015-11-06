@@ -22,6 +22,7 @@
 #include <chrono>
 #include <thread>
 #include <cstring>
+#include "patient/actions/SESubstanceBolus.h"
 
 Engine::Engine(Driver * pDriver)
 {
@@ -109,7 +110,20 @@ void Engine::operator()()
         timeElapsed += m_dt;
     }
 }
+void Engine::BolusDrug(std::string drugName, double concentration, double dose)
+{
 
+    // std::lock_guard<std::mutex> lock(m_pressureMutex);
+    const SESubstance* succs = bg->GetSubstanceManager().GetSubstance(drugName);
+
+    // Create a substance bolus action to administer the substance
+    SESubstanceBolus bolus(*succs);
+    bolus.GetConcentration().SetValue(concentration,SEScalarMassPerVolume::ug_Per_mL);
+    bolus.GetDose().SetValue(dose,SEScalarVolume::mL);
+    bolus.SetAdminRoute(CDM::enumSubstanceAdministration::Intravenous);
+    bg->ProcessAction(bolus);
+    std::cout << "Giving the patient Succinylcholine.\n\n";
+}
 void Engine::SetPressure(double pressure)
 {
     std::lock_guard<std::mutex> lock(m_pressureMutex);
