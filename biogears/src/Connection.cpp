@@ -21,6 +21,9 @@ void Connection::handleMessage(std::string message) {
 crow::json::wvalue Connection::GetPatientStatus() {
     return m_pDriver->GetPatientStatus();
 }
+void Connection::BolusDrug(std::string drugName, double concentration, double dose){
+    m_pDriver->BolusDrug(drugName, concentration, dose);
+}
 
 void Connection::operator()()
 {
@@ -32,16 +35,25 @@ void Connection::operator()()
         return "BioGear Server by Screen Based Simulation Team";
     });
 
-    CROW_ROUTE(app, "/patient/status")([this](){
+    CROW_ROUTE(app, "/patient/status")
+    .methods("GET"_method)
+    ([this](){
         crow::json::wvalue x = GetPatientStatus();
         return x;
     });
 
-    CROW_ROUTE(app, "/patient/status")
+    CROW_ROUTE(app,"/patient/injection")
     .methods("POST"_method)
     ([this](const crow::request& req){
-        crow::json::wvalue x = GetPatientStatus();
-        return x;
+        auto x = crow::json::load(req.body);
+        if (!x)
+            return crow::response(400);
+        std::string drugName = x["drug_name"].s();
+        double concentration = x["concentration"].d();
+        double dose = x["dose"].d();
+        
+        BolusDrug(drugName, concentration, dose);
+        return crow::response{"successful"};
     });
 
     app.port(18080).multithreaded().run();
