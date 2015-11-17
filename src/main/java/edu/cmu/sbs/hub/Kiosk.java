@@ -1,5 +1,6 @@
 package edu.cmu.sbs.hub;
 
+import edu.cmu.sbs.protocol.ActionProtocol;
 import edu.cmu.sbs.protocol.StatusProtocol;
 
 public class Kiosk {
@@ -12,5 +13,9 @@ public class Kiosk {
 
     public void receive(StatusProtocol statusProtocol) {
         roster.locatePatient(statusProtocol.getPatientHash()).updateStatus(statusProtocol.toEnumMap());
+    }
+
+    public void receive(ActionProtocol actionProtocol) {
+
     }
 }

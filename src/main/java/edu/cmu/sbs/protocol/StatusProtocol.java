@@ -37,14 +37,9 @@ public class StatusProtocol {
      */
     public boolean validate() throws ProtocolException {
 
+        return true;
+
         // TODO statusMap validation. check if the status comply with specifications
-        if (false) {
-
-        } else {
-            throw new ProtocolException("Illegal statusProtocol format!");
-        }
-
-        return false;
     }
 
     public EnumMap<PatientStatus.Metric, String> toEnumMap() {

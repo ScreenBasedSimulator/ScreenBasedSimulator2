@@ -56,12 +56,6 @@ public class PatientStatus {
 
     @Override
     public String toString() {
-//        StringBuilder sb = new StringBuilder();
-//        sb.append("hash").append(",").append(patient.patientHash).append("\n");
-//        for (Metric metric : Metric.values()) {
-//            sb.append(metric.toString()).append(",").append(metricMap.get(metric)).append("\n");
-//        }
-//        return sb.toString();
         return gson.toJson(metricMap);
     }
 
