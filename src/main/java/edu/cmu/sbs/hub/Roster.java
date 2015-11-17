@@ -1,29 +1,33 @@
 package edu.cmu.sbs.hub;
 
 import edu.cmu.sbs.hub.datatype.Patient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 
 public class Roster {
 
+    final private Logger logger = LoggerFactory.getLogger(this.getClass());
     private HashMap<String, Patient> patientMap;
 
     public Roster() {
 
         this.patientMap = new HashMap<>();
 
-        // Temporarily fix the bug of 'Patient does not exist' by adding a pre-exist patient
-        // Should remove this after hub - unity can communicate
+        // PatientAlpha - for testing purpose only
         Patient preExistingPatient = new Patient("abcdefg", "PatientAlpha", Patient.Gender.FEMALE, 22, 100.0, 5.5);
         patientMap.put(preExistingPatient.patientHash, preExistingPatient);
 
     }
 
-    public Patient locatePatient(String hash) {
+    public Patient locatePatient(String hash) throws NoSuchElementException {
         if (patientMap.containsKey(hash)) {
             return patientMap.get(hash);
         } else {
-            throw new IllegalArgumentException("Patient \"" + hash + "\" does not exist!");
+            logger.error("Patient \"" + hash + "\" does not exist!");
+            throw new NoSuchElementException("Patient \"\" + hash + \"\" does not exist!");
         }
     }
 
@@ -31,7 +35,7 @@ public class Roster {
          if (patientMap.containsKey(patient.patientHash)) {
              patientMap.put(patient.patientHash, patient);
          } else {
-             throw new IllegalArgumentException("Patient Already Exist!");
+             logger.error("Patient Already Exist!");
          }
     }
 
