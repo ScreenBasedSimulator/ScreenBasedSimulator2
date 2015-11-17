@@ -15,6 +15,8 @@ public:
     Engine(Driver* pDriver);
     void Initialize();
     void SetPressure(double pressure);
+    void BolusDrug(std::string drugName, double concentration, double dose);
+    void AnesthesiaMachine(double oxygenFraction);
     crow::json::wvalue GetPatientStatus();
 
 private:

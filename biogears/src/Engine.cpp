@@ -22,6 +22,11 @@
 #include <chrono>
 #include <thread>
 #include <cstring>
+#include "substance/SESubstanceManager.h"
+#include "patient/actions/SESubstanceBolus.h"
+#include "system/equipment/Anesthesia/SEAnesthesiaMachine.h"
+#include "system/equipment/Anesthesia/SEAnesthesiaMachineOxygenBottle.h"
+#include "system/equipment/Anesthesia/actions/SEAnesthesiaMachineConfiguration.h"
 
 Engine::Engine(Driver * pDriver)
 {
@@ -46,7 +51,6 @@ crow::json::wvalue Engine::GetPatientStatus() {
      * diastolicbp    |120.91        |double value round to two decimal places
      * oxygen         |93.60         |double value round to two decimal places
      */
-    crow::json::wvalue status;
     status["heart_rate"] = m_engine->GetCardiovascularSystem()->GetHeartRate(SEScalarFrequency::Per_min);
     status["oxygen_saturation"] = m_engine->GetBloodChemistrySystem()->GetOxygenSaturation();
     status["systolic_arterial_pressure"] = m_engine->GetCardiovascularSystem()->GetSystolicArterialPressure(SEScalarPressure::mmHg);
@@ -109,7 +113,47 @@ void Engine::operator()()
         timeElapsed += m_dt;
     }
 }
+void Engine::BolusDrug(std::string drugName, double concentration, double dose)
+{
 
+    // std::lock_guard<std::mutex> lock(m_pressureMutex);
+    const SESubstance* succs = m_engine->GetSubstanceManager().GetSubstance(drugName);
+
+    // Create a substance bolus action to administer the substance
+    SESubstanceBolus bolus(*succs);
+    bolus.GetConcentration().SetValue(concentration,SEScalarMassPerVolume::ug_Per_mL);
+    bolus.GetDose().SetValue(dose,SEScalarVolume::mL);
+    bolus.SetAdminRoute(CDM::enumSubstanceAdministration::Intravenous);
+    m_engine->ProcessAction(bolus);
+    std::cout << "Giving the patient .\n\n" << drugName << " with " 
+    << dose << " dosage and " << concentration << " concentration" <<endl;
+}
+
+void Engine::AnesthesiaMachine(double oxygenFraction){
+    SEAnesthesiaMachineConfiguration AMConfig(m_engine->GetSubstanceManager());
+
+    // You can set configuration by modifing the configuration class directly
+    // Or you can point to an XML with configuration data.
+    // Modifying the class will keep any old settings that are not provided in the config
+    // Using a xml will set the anesthesia machine to only the property states specified in the file
+    SEAnesthesiaMachine& config = AMConfig.GetConfiguration();
+    config.SetState(CDM::enumOnOff::On);
+    config.GetInletFlow().SetValue(2.0, SEScalarVolumePerTime::L_Per_min);
+    config.GetInspiratoryExpiratoryRatio().SetValue(.5);
+    config.GetOxygenFraction().SetValue(oxygenFraction);
+    config.SetOxygenSource(CDM::enumAnesthesiaMachineOxygenSource::Wall);
+    config.GetPositiveEndExpiredPressure().SetValue(0.0, SEScalarPressure::cmH2O);
+    config.SetPrimaryGas(CDM::enumAnesthesiaMachinePrimaryGas::Nitrogen);
+    config.GetReliefValvePressure().SetValue(20.0, SEScalarPressure::cmH2O);
+    config.GetRespiratoryRate().SetValue(12, SEScalarFrequency::Per_min);
+    config.GetVentilatorPressure().SetValue(0.0, SEScalarPressure::cmH2O);
+    config.SetVentilatorMask(CDM::enumOnOff::On);
+    config.GetOxygenBottleOne().GetVolume().SetValue(660.0, SEScalarVolume::L);
+    config.GetOxygenBottleTwo().GetVolume().SetValue(660.0, SEScalarVolume::L);
+
+    m_engine->ProcessAction(AMConfig);
+    std::cout << "Turning on the Anesthesia Machine and placing mask on patient for spontaneous breathing with machine connection.\n\n";
+}
 void Engine::SetPressure(double pressure)
 {
     std::lock_guard<std::mutex> lock(m_pressureMutex);

@@ -44,6 +44,14 @@ crow::json::wvalue Driver::GetPatientStatus()
    return m_engine->GetPatientStatus();
 }
 
+void Driver::BolusDrug(std::string drugName, double concentration, double dose){
+    m_engine->BolusDrug(drugName, concentration, dose);
+}
+
+void Driver::AnesthesiaMachine(double oxygenFraction){
+    m_engine->AnesthesiaMachine(oxygenFraction);
+}
+
 int main()
 {
     Driver driver;
