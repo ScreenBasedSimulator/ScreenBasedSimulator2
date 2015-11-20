@@ -16,11 +16,13 @@ public:
     void Initialize();
     void SetPressure(double pressure);
     void BolusDrug(std::string drugName, double concentration, double dose);
-    void AnesthesiaMachine(double oxygenFraction);
+    void AnesthesiaMachine(double oxygenFraction, bool status);
     crow::json::wvalue GetPatientStatus();
+
 
 private:
     std::unique_ptr<PhysiologyEngine> m_engine;
+    SEAnesthesiaMachineConfiguration m_anesthesiaMachineConfig;
     Driver * m_pDriver;
     double m_dt = 0.0;
 

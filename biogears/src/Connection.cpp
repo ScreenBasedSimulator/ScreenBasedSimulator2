@@ -25,8 +25,8 @@ void Connection::BolusDrug(std::string drugName, double concentration, double do
     m_pDriver->BolusDrug(drugName, concentration, dose);
 }
 
-void Connection::AnesthesiaMachine(double oxygenFraction){
-    m_pDriver->AnesthesiaMachine(oxygenFraction);
+void Connection::AnesthesiaMachine(double oxygenFraction, bool status){
+    m_pDriver->AnesthesiaMachine(oxygenFraction, status);
 }
 
 void Connection::operator()()
@@ -67,8 +67,10 @@ void Connection::operator()()
         if (!x)
             return crow::response(400);
         double oxygenFraction = x["oxygen_fraction"].d();
-        
-        AnesthesiaMachine(oxygenFraction);
+        bool status = x["status"];.b();
+
+
+        AnesthesiaMachine(oxygenFraction, status);
         return crow::response{"successful"};
     });
 

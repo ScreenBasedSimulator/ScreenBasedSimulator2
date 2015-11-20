@@ -48,8 +48,8 @@ void Driver::BolusDrug(std::string drugName, double concentration, double dose){
     m_engine->BolusDrug(drugName, concentration, dose);
 }
 
-void Driver::AnesthesiaMachine(double oxygenFraction){
-    m_engine->AnesthesiaMachine(oxygenFraction);
+void Driver::AnesthesiaMachine(double oxygenFraction, bool status){
+    m_engine->AnesthesiaMachine(oxygenFraction, status);
 }
 
 int main()

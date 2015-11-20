@@ -18,7 +18,7 @@ private:
     void handleMessage(std::string a);
     crow::json::wvalue GetPatientStatus();
     void BolusDrug(std::string drugName, double concentration, double dose);
-    void AnesthesiaMachine(double oxygenFraction);
+    void AnesthesiaMachine(double oxygenFraction, bool status);
 };
 
 #endif

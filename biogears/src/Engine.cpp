@@ -41,6 +41,22 @@ void Engine::Initialize()
     }
 
     m_dt = m_engine->GetTimeStep(SEScalarTime::s) * 1000.0;
+    SEAnesthesiaMachineConfiguration m_anesthesiaMachineConfig = new SEAnesthesiaMachineConfiguration(m_engine->GetSubstanceManager());
+
+    SEAnesthesiaMachine& config = m_anesthesiaMachineConfig.GetConfiguration();
+    config.SetState(CDM::enumOnOff::Off); //changed it to Off at the beginning
+    config.GetInletFlow().SetValue(2.0, SEScalarVolumePerTime::L_Per_min);
+    config.GetInspiratoryExpiratoryRatio().SetValue(.5);
+    config.GetOxygenFraction().SetValue(0.21); //0.21 in the air
+    config.SetOxygenSource(CDM::enumAnesthesiaMachineOxygenSource::Wall);
+    config.GetPositiveEndExpiredPressure().SetValue(0.0, SEScalarPressure::cmH2O);
+    config.SetPrimaryGas(CDM::enumAnesthesiaMachinePrimaryGas::Nitrogen);
+    config.GetReliefValvePressure().SetValue(20.0, SEScalarPressure::cmH2O);
+    config.GetRespiratoryRate().SetValue(12, SEScalarFrequency::Per_min);
+    config.GetVentilatorPressure().SetValue(0.0, SEScalarPressure::cmH2O);
+    config.SetVentilatorMask(CDM::enumOnOff::On);
+    config.GetOxygenBottleOne().GetVolume().SetValue(660.0, SEScalarVolume::L);
+    config.GetOxygenBottleTwo().GetVolume().SetValue(660.0, SEScalarVolume::L);
 }
 
 crow::json::wvalue Engine::GetPatientStatus() {
@@ -129,29 +145,21 @@ void Engine::BolusDrug(std::string drugName, double concentration, double dose)
     << dose << " dosage and " << concentration << " concentration" <<endl;
 }
 
-void Engine::AnesthesiaMachine(double oxygenFraction){
-    SEAnesthesiaMachineConfiguration AMConfig(m_engine->GetSubstanceManager());
-
+void Engine::AnesthesiaMachine(double oxygenFraction, bool status){
     // You can set configuration by modifing the configuration class directly
     // Or you can point to an XML with configuration data.
     // Modifying the class will keep any old settings that are not provided in the config
     // Using a xml will set the anesthesia machine to only the property states specified in the file
-    SEAnesthesiaMachine& config = AMConfig.GetConfiguration();
-    config.SetState(CDM::enumOnOff::On);
-    config.GetInletFlow().SetValue(2.0, SEScalarVolumePerTime::L_Per_min);
-    config.GetInspiratoryExpiratoryRatio().SetValue(.5);
-    config.GetOxygenFraction().SetValue(oxygenFraction);
-    config.SetOxygenSource(CDM::enumAnesthesiaMachineOxygenSource::Wall);
-    config.GetPositiveEndExpiredPressure().SetValue(0.0, SEScalarPressure::cmH2O);
-    config.SetPrimaryGas(CDM::enumAnesthesiaMachinePrimaryGas::Nitrogen);
-    config.GetReliefValvePressure().SetValue(20.0, SEScalarPressure::cmH2O);
-    config.GetRespiratoryRate().SetValue(12, SEScalarFrequency::Per_min);
-    config.GetVentilatorPressure().SetValue(0.0, SEScalarPressure::cmH2O);
-    config.SetVentilatorMask(CDM::enumOnOff::On);
-    config.GetOxygenBottleOne().GetVolume().SetValue(660.0, SEScalarVolume::L);
-    config.GetOxygenBottleTwo().GetVolume().SetValue(660.0, SEScalarVolume::L);
+    SEAnesthesiaMachine& config = m_anesthesiaMachineConfig.GetConfiguration();
 
-    m_engine->ProcessAction(AMConfig);
+    if (status == true) {
+        config.GetOxygenFraction().SetValue(oxygenFraction); 
+        config.SetState(CDM::enumOnOff::On);
+    } else {
+        config.SetState(CDM::enumOnOff::Off);
+    }
+
+    m_engine->ProcessAction(m_anesthesiaMachineConfig);
     std::cout << "Turning on the Anesthesia Machine and placing mask on patient for spontaneous breathing with machine connection.\n\n";
 }
 void Engine::SetPressure(double pressure)
