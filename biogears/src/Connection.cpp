@@ -67,7 +67,7 @@ void Connection::operator()()
         if (!x)
             return crow::response(400);
         double oxygenFraction = x["oxygen_fraction"].d();
-        bool status = x["status"];.b();
+        bool status = x["status"].b();
 
 
         AnesthesiaMachine(oxygenFraction, status);

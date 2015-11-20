@@ -5,6 +5,8 @@
 #include "Runnable.h"
 #include "BioGearsPhysiologyEngine.h"
 #include "Driver.h"
+#include "system/equipment/Anesthesia/SEAnesthesiaMachine.h"
+#include "system/equipment/Anesthesia/actions/SEAnesthesiaMachineConfiguration.h"
 
 class Driver;
 
