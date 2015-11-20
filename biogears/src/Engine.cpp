@@ -41,9 +41,9 @@ void Engine::Initialize()
     }
 
     m_dt = m_engine->GetTimeStep(SEScalarTime::s) * 1000.0;
-    SEAnesthesiaMachineConfiguration m_anesthesiaMachineConfig = new SEAnesthesiaMachineConfiguration(m_engine->GetSubstanceManager());
+    m_pAnesthesiaMachineConfig = new SEAnesthesiaMachineConfiguration(m_engine->GetSubstanceManager());
 
-    SEAnesthesiaMachine& config = m_anesthesiaMachineConfig.GetConfiguration();
+    SEAnesthesiaMachine& config = m_pAnesthesiaMachineConfig->GetConfiguration();
     config.SetState(CDM::enumOnOff::Off); //changed it to Off at the beginning
     config.GetInletFlow().SetValue(2.0, SEScalarVolumePerTime::L_Per_min);
     config.GetInspiratoryExpiratoryRatio().SetValue(.5);
@@ -150,7 +150,7 @@ void Engine::AnesthesiaMachine(double oxygenFraction, bool status){
     // Or you can point to an XML with configuration data.
     // Modifying the class will keep any old settings that are not provided in the config
     // Using a xml will set the anesthesia machine to only the property states specified in the file
-    SEAnesthesiaMachine& config = m_anesthesiaMachineConfig.GetConfiguration();
+    SEAnesthesiaMachine& config = m_pAnesthesiaMachineConfig->GetConfiguration();
 
     if (status == true) {
         config.GetOxygenFraction().SetValue(oxygenFraction); 
@@ -159,7 +159,7 @@ void Engine::AnesthesiaMachine(double oxygenFraction, bool status){
         config.SetState(CDM::enumOnOff::Off);
     }
 
-    m_engine->ProcessAction(m_anesthesiaMachineConfig);
+    m_engine->ProcessAction(&m_pAnesthesiaMachineConfig);
     std::cout << "Turning on the Anesthesia Machine and placing mask on patient for spontaneous breathing with machine connection.\n\n";
 }
 void Engine::SetPressure(double pressure)

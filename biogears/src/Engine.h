@@ -24,7 +24,7 @@ public:
 
 private:
     std::unique_ptr<PhysiologyEngine> m_engine;
-    SEAnesthesiaMachineConfiguration m_anesthesiaMachineConfig;
+    SEAnesthesiaMachineConfiguration* m_pAnesthesiaMachineConfig;
     Driver * m_pDriver;
     double m_dt = 0.0;
 
