@@ -163,12 +163,14 @@ void Engine::AnesthesiaMachine(double oxygenFraction, bool status){
     if (status == true) {
         config.GetOxygenFraction().SetValue(oxygenFraction); 
         config.SetState(CDM::enumOnOff::On);
+        std::cout << "Turning on the Anesthesia Machine and placing mask on patient for spontaneous breathing with machine connection.\n\n";
     } else {
         config.SetState(CDM::enumOnOff::Off);
+        std::cout << "Turning off the Anesthesia Machine and removing the mask.\n\n";
     }
 
     m_engine->ProcessAction(*m_pAnesthesiaMachineConfig);
-    std::cout << "Turning on the Anesthesia Machine and placing mask on patient for spontaneous breathing with machine connection.\n\n";
+    
 }
 void Engine::SetPressure(double pressure)
 {
