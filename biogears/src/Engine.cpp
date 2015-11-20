@@ -84,6 +84,7 @@ void Engine::operator()()
     curl_global_init(CURL_GLOBAL_ALL);
     
     double timeElapsed = 0.0;
+    int failureCount = 0; //if it fails to connect for five times, the program is terminated.
     while (Running())
     {
         Clock::time_point start = Clock::now();
@@ -104,14 +105,21 @@ void Engine::operator()()
             status["hash"] = "abcdefg";
             /* get a curl handle */ 
             CURL * curl = curl_easy_init();
+
             if (curl) {
                 curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:8081/update");
                 char* result=strdup(crow::json::dump(status).c_str());
                 curl_easy_setopt(curl, CURLOPT_POSTFIELDSIZE, (long)strlen(result));
                 curl_easy_setopt(curl, CURLOPT_POSTFIELDS, result);
                 CURLcode res = curl_easy_perform(curl);
-                if(res != CURLE_OK)
+                if(res != CURLE_OK) {
                     fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+                    failureCount++;
+                    if (failureCount > 4) exit(1);
+                } else {
+                    failureCount = 0;
+                }
+
                 curl_easy_cleanup(curl);
                 free(result);
             }
