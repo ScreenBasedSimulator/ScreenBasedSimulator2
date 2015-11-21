@@ -25,7 +25,7 @@ public class Reception {
 
         this.kiosk = kiosk;
 
-        port(8081);
+        port(6666);
 
         // Receive status update from BioGears Engine
         post("/update", (request, response) -> {
