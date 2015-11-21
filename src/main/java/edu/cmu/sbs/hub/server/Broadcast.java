@@ -13,6 +13,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Broadcast {
 
+    final private static String bioIP = "128.2.7.38";
+    final private static int bioPort = 23333;
+    final private static String bioURL = "/patient/injection";
+
     final private static String serverIP = "0.0.0.0";
     final private static int port = 8081;
     final private static String url = "/update";
@@ -25,9 +29,10 @@ public class Broadcast {
 
             PatientStatus status = PatientStatus.getRandomFakeStatus();
 
-            HttpRequest.post("http://" + serverIP + ":" + port + url).send(serialize(status)).code();
+            HttpRequest.post(getURL(serverIP, port, url)).send(serialize(status)).code();
             logger.info("Sent at : " + LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME));
         };
+
 
         ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         executorService.scheduleAtFixedRate(testRun, 0, 800, TimeUnit.MILLISECONDS);
@@ -35,5 +40,9 @@ public class Broadcast {
 
     public static String serialize(PatientStatus status) {
         return status.toString();
+    }
+
+    private static String getURL(String ip, int port, String url) {
+        return "http://" + ip + ":" + port + url;
     }
 }

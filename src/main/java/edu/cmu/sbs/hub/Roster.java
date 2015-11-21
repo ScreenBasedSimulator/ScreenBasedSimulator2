@@ -1,11 +1,11 @@
 package edu.cmu.sbs.hub;
 
 import edu.cmu.sbs.hub.datatype.Patient;
+import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
-import java.util.NoSuchElementException;
 
 public class Roster {
 
@@ -22,21 +22,21 @@ public class Roster {
 
     }
 
-    public Patient locatePatient(String hash) throws NoSuchElementException {
+    public Patient locatePatient(String hash) throws PatientNotFoundException {
         if (patientMap.containsKey(hash)) {
             return patientMap.get(hash);
         } else {
-            logger.error("Patient \"" + hash + "\" does not exist!");
-            throw new NoSuchElementException("Patient \"\" + hash + \"\" does not exist!");
+            throw new PatientNotFoundException("Patient \"\" + hash + \"\" does not exist!");
         }
     }
 
     public void checkInPatient(Patient patient) {
-         if (patientMap.containsKey(patient.patientHash)) {
-             patientMap.put(patient.patientHash, patient);
-         } else {
-             logger.error("Patient Already Exist!");
-         }
+
+        if (patientMap.containsKey(patient.patientHash)) {
+            patientMap.put(patient.patientHash, patient);
+        } else {
+            logger.error("Patient Already Exist!");
+        }
     }
 
 

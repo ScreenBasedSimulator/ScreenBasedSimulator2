@@ -1,10 +1,14 @@
 package edu.cmu.sbs.hub.datatype;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.EnumMap;
 
 public class Patient {
+
+    private static Logger logger = LoggerFactory.getLogger("Patient");
 
     public final String patientHash;
     public final String name;
@@ -24,8 +28,7 @@ public class Patient {
     }
 
     public static Patient generateRandomPatient() {
-        System.out.println("Test Method invoked " + new Object() {
-        }.getClass().getEnclosingMethod().getName());
+        logger.info("RandomPatient invoked");
         return new Patient(RandomStringUtils.random(8, "qwertyuiopasdfghjklzxcvbnm1234567890"), RandomStringUtils.random(5, "abcdefghijkmon"), Gender.FEMALE, ((int) (Math.random() * 50 + 10)), Math.random() * 50 + 10, Math.random() * 9 + 2);
     }
 
@@ -34,6 +37,10 @@ public class Patient {
             status = new PatientStatus(metricMap, this);
         }
         status.updateStatus(metricMap);
+    }
+
+    public PatientStatus getStatus() {
+        return status;
     }
 
     @Override
@@ -50,6 +57,14 @@ public class Patient {
     @Override
     public int hashCode() {
         return patientHash.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "name='" + name + '\'' +
+                ", Hash='" + patientHash + '\'' +
+                '}';
     }
 
     public enum Gender {

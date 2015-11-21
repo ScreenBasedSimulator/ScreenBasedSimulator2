@@ -29,6 +29,10 @@ public class StatusProtocol {
 
     public Map<String, String> statusMap;
 
+    public StatusProtocol(Map statusMap) {
+        this.statusMap = statusMap;
+    }
+
     /**
      * Validate boolean.
      *
@@ -48,7 +52,9 @@ public class StatusProtocol {
 
             EnumMap<PatientStatus.Metric, String> enumMap = new EnumMap<>(PatientStatus.Metric.class);
             for (String key : statusMap.keySet()) {
-                enumMap.put(PatientStatus.Metric.valueOf(key.toUpperCase()), statusMap.get(key));
+                if (!key.toUpperCase().equals("HASH")) {
+                    enumMap.put(PatientStatus.Metric.valueOf(key.toUpperCase()), statusMap.get(key));
+                }
             }
             return enumMap;
 
@@ -64,11 +70,17 @@ public class StatusProtocol {
     public String getPatientHash() {
         try {
             validate();
-
             return statusMap.get("hash");
-        } catch (ProtocolException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "StatusProtocol{" +
+                "statusMap=" + statusMap +
+                '}';
     }
 }
