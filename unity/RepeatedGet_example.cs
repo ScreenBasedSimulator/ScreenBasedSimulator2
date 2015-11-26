@@ -1,6 +1,7 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using SimpleJSON	;
 
 public class Menu : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class Menu : MonoBehaviour {
 	public string IP = "127.0.0.1";
 	public int Port = 25001;
 //	private Rigidbody rb;
-	public string url = "http://google.com";
+	public string url = "128.237.199.121:8088/unity/status";
 //	public Rigidbody projectile;
 //	public Text content;
 	public int i;
@@ -39,7 +40,7 @@ public class Menu : MonoBehaviour {
 				GUI.Label(new Rect(100, 125, 100, 25), "Connections: " + Network.connections.Length);
 
 				if (GUI.Button(new Rect(100, 150, 100, 25), "coolGet")){
-
+					Debug.Log (url);
 					WWW www = new WWW(url);
 					StartCoroutine(WaitForRequest(www));
 				}
@@ -52,7 +53,7 @@ public class Menu : MonoBehaviour {
 	IEnumerator WaitForRequest(WWW www)
 	{
 		yield return www;
-		yield return new WaitForSeconds(3);
+//		yield return new WaitForSeconds(3);
 			// check for errors
 		if (www.error == null)
 		{
@@ -67,20 +68,23 @@ public class Menu : MonoBehaviour {
 	{
 		while (true) {
 			Debug.Log ("repeated action:");
-			string url = "http://google.com";
+			print(url);
 			WWW w = new WWW (url);
 			yield return w;
 			print(Time.time);
-			yield return new WaitForSeconds (1);
+			yield return new WaitForSeconds(3);
 			print (Time.time);
 			if (w.error == null) {
 				Debug.Log ("WWW Ok!: " + w.text);
 			} else {
 				Debug.Log ("WWW Error: " + w.error);
 			}    
-//		content.text = w.text;;
+//			content.text = w.text;
+			var jsonBooks = JSON.Parse(w.text);
+			Debug.Log ("heart rate:" + jsonBooks["metricMap"]["heart_rate"].Value);
 		}
 	}
+
 	void Test(){
 //		Rigidbody instance = Instantiate(projectile);
 //		instance.velocity = Random.insideUnitSphere * 5;
