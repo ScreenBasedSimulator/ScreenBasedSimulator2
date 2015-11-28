@@ -107,7 +107,7 @@ void Engine::operator()()
             CURL * curl = curl_easy_init();
 
             if (curl) {
-                curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:8081/update");
+                curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:6666/update");
                 char* result=strdup(crow::json::dump(status).c_str());
                 curl_easy_setopt(curl, CURLOPT_POSTFIELDSIZE, (long)strlen(result));
                 curl_easy_setopt(curl, CURLOPT_POSTFIELDS, result);
