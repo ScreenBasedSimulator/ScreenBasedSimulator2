@@ -34,7 +34,7 @@ make linux
 ***
 
 ## Hub HTTP Protocol
-Port: 6666
+Port: 26666
 
 Address  |Method | Service | Function | Success Return Value
 ---------|-------|---------|----------|---------------------
