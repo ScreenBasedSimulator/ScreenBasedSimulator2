@@ -17,7 +17,7 @@ brew install boost google-perftools
 make mac
 ```
 
-4. cd to /bin
+4. cd to `/bin`
 5. run `./BioGearsServer`
 
 
