@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import edu.cmu.sbs.hub.Kiosk;
 import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.protocol.StatusProtocol;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +28,6 @@ public class Reception {
         Logger logger = LoggerFactory.getLogger("Reception");
 
         port(26666);
-
         post("/biogears/update", (request, response) -> {
 
             logger.info(LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME) + " received " + request.body());
