@@ -1,13 +1,14 @@
 package edu.cmu.sbs.hub.server;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import edu.cmu.sbs.hub.Kiosk;
-import edu.cmu.sbs.hub.datatype.exception.IllegalProtocol;
 import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.protocol.StatusProtocol;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.Type;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -16,8 +17,8 @@ import static spark.Spark.*;
 
 public class Reception {
 
-    final private String FAILURE = "Failure";
-    final private String SUCCESS = "Success";
+    final private String FAILURE = "Failure\n";
+    final private String SUCCESS = "Success\n";
 
     private Gson gson = new Gson();
 
@@ -32,7 +33,10 @@ public class Reception {
             logger.info(LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME) + " received " + request.body());
 
             try {
-                kiosk.receive(new StatusProtocol(gson.fromJson(request.body(), Map.class)));
+                Type castType = new TypeToken<Map<String, String>>() {
+                }.getType();
+
+                kiosk.receive(new StatusProtocol(gson.fromJson(request.body(), castType)));
 
                 return SUCCESS;
             } catch (PatientNotFoundException e) {
@@ -43,8 +47,6 @@ public class Reception {
 
         // TODO establish transfer protocol
         get("/unity/status", (request, response) -> {
-
-            //return PatientStatus.getRandomFakeStatus();
 
             try {
                 return kiosk.locatePatient("abcdefg").getStatus().toString();
@@ -57,26 +59,43 @@ public class Reception {
 
         });
 
+        // No create for now.
         // TODO establish create protocol
-        get("/unity/create", (request, response) -> {
-            try {
-                kiosk.createPatient(request.toString());
-                return SUCCESS;
-            } catch (IllegalProtocol illegalProtocol) {
-                logger.error(illegalProtocol.getMessage());
-                return FAILURE;
-            }
-
-
-        });
+        //get("/unity/create", (request, response) -> {
+        //    try {
+        //        kiosk.createPatient(request.toString());
+        //        return SUCCESS;
+        //    } catch (IllegalProtocol illegalProtocol) {
+        //        logger.error(illegalProtocol.getMessage());
+        //        return FAILURE;
+        //    }
+        //
+        //
+        //});
 
         // TODO establish Action pattern
-        get("/unity/:action", (request, response) -> {
-            if (request.params(":action").equals("inject")) {
-                logger.info("Inject Action Received");
-                Action.inject();
+        get("/unity/action/:action", (request, response) -> {
+
+            String action = request.params(":action").toLowerCase();
+
+            logger.info(action + " Action Received");
+
+            switch (action) {
+                case "nooxygen":
+                    Action.noOxygen();
+                    return SUCCESS;
+
+                case "resumeoxygen":
+                    Action.resumeOxygen();
+                    return SUCCESS;
+
+                case "revive":
+                    Action.revive();
+                    return SUCCESS;
+
+                default:
+                    return FAILURE;
             }
-            return 0;
         });
     }
 }
