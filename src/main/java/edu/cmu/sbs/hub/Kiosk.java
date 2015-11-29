@@ -1,6 +1,7 @@
 package edu.cmu.sbs.hub;
 
 import edu.cmu.sbs.hub.datatype.Patient;
+import edu.cmu.sbs.hub.datatype.exception.IllegalProtocol;
 import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.protocol.StatusProtocol;
 import org.slf4j.Logger;
@@ -23,7 +24,14 @@ public class Kiosk {
         return roster.locatePatient(hash);
     }
 
-    //public void receive(ActionProtocol actionProtocol) {
-    //
-    //}
+    public Patient createPatient(String request) throws IllegalProtocol {
+        Patient patient = parsePatient(request);
+        roster.checkInPatient(patient);
+        return patient;
+    }
+
+    // TODO conplete parse Patient from request string
+    private Patient parsePatient(String request) throws IllegalProtocol {
+        return Patient.generateRandomPatient();
+    }
 }
