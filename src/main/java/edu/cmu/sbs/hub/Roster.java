@@ -26,16 +26,16 @@ public class Roster {
         if (patientMap.containsKey(hash)) {
             return patientMap.get(hash);
         } else {
-            throw new PatientNotFoundException("Patient \"\" + hash + \"\" does not exist!");
+            logger.error("Patient " + hash + " does not exist!");
+            throw new PatientNotFoundException("Patient " + hash + " does not exist!");
         }
     }
 
     public void checkInPatient(Patient patient) {
-
         if (patientMap.containsKey(patient.patientHash)) {
             patientMap.put(patient.patientHash, patient);
         } else {
-            logger.error("Patient Already Exist!");
+            logger.error("Patient Already checked in");
         }
     }
 

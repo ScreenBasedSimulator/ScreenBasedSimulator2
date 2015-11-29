@@ -2,6 +2,7 @@ package edu.cmu.sbs.hub.server;
 
 import com.google.gson.Gson;
 import edu.cmu.sbs.hub.Kiosk;
+import edu.cmu.sbs.hub.datatype.exception.IllegalProtocol;
 import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.protocol.StatusProtocol;
 import org.slf4j.Logger;
@@ -15,51 +16,62 @@ import static spark.Spark.*;
 
 public class Reception {
 
-    private Gson gson = new Gson();
+    final private String FAILURE = "Failure";
+    final private String SUCCESS = "Success";
 
-    private Kiosk kiosk;
+    private Gson gson = new Gson();
 
     public Reception(Kiosk kiosk) {
 
         Logger logger = LoggerFactory.getLogger("Reception");
 
-        this.kiosk = kiosk;
+        port(26666);
 
-        port(6666);
-
-        // Receive status update from BioGears Engine
-        post("/update", (request, response) -> {
+        post("/biogears/update", (request, response) -> {
 
             logger.info(LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME) + " received " + request.body());
 
             try {
                 kiosk.receive(new StatusProtocol(gson.fromJson(request.body(), Map.class)));
 
-                return true;
+                return SUCCESS;
             } catch (PatientNotFoundException e) {
                 logger.error(e.getMessage());
-                return false;
+                return FAILURE;
             }
         });
 
-        // TODO establish tranfter protocal
+        // TODO establish transfer protocol
         get("/unity/status", (request, response) -> {
 
             //return PatientStatus.getRandomFakeStatus();
 
             try {
-
-                return kiosk.locatePatient("abcdefg").getStatus();
+                return kiosk.locatePatient("abcdefg").getStatus().toString();
             } catch (PatientNotFoundException e) {
                 logger.error(e.getMessage());
-                return "Error 404";
+                return FAILURE;
             } finally {
-                System.out.println("Success");
+                logger.info("Status Update Success");
             }
 
         });
 
-        get("/test/:action", (request, response) -> {
+        // TODO establish create protocol
+        get("/unity/create", (request, response) -> {
+            try {
+                kiosk.createPatient(request.toString());
+                return SUCCESS;
+            } catch (IllegalProtocol illegalProtocol) {
+                logger.error(illegalProtocol.getMessage());
+                return FAILURE;
+            }
+
+
+        });
+
+        // TODO establish Action pattern
+        get("/unity/:action", (request, response) -> {
             if (request.params(":action").equals("inject")) {
                 logger.info("Inject Action Received");
                 Action.inject();
@@ -67,6 +79,4 @@ public class Reception {
             return 0;
         });
     }
-
-
 }
