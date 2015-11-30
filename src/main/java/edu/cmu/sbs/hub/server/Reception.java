@@ -99,6 +99,9 @@ public class Reception {
                 case "kill":
                     Action.kill();
                     return SUCCESS;
+                case "inject":
+                		Action.inject(request.queryParams("drug_name"), Double.parseDouble(request.queryParams("dose")));
+                		return SUCCESS;
 
                 default:
                     return FAILURE;
