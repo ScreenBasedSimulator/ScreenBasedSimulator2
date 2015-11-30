@@ -40,7 +40,7 @@ public class Reception {
 
                 if (!kill && counter != 0) {
                     counter--;
-                } else {
+                } else if (!kill) {
                     Action.kill();
                     kill = true;
                 }
