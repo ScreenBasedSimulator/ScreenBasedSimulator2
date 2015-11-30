@@ -24,13 +24,27 @@ public class Action {
     }
 
     public static boolean noOxygen() {
-        HttpRequest.post(getURL(bioIP, bioPort, machineURL)).send("{oxygen_fraction:0, status: false}").code();
+        HttpRequest
+        		.post(getURL(bioIP, bioPort, machineURL))
+        		.send("{oxygen_fraction:0, status: false}")
+        		.code();
         return true;
     }
 
     public static boolean resumeOxygen() {
-        HttpRequest.post(getURL(bioIP, bioPort, machineURL)).send("{oxygen_fraction:0.5, status: true}").code();
+        HttpRequest
+        		.post(getURL(bioIP, bioPort, machineURL))
+        		.send("{oxygen_fraction:0.5, status: true}")
+        		.code();
         return true;
+    }
+    
+    public static boolean inject(String drugName, Double dose) {
+    	HttpRequest
+    			.post(getURL(bioIP, bioPort, machineURL))
+    			.send(String.format("{drug_name:'%s', dose: %f, concentration: 20.0}", drugName, dose))
+    			.code();
+    	return true;
     }
 
     private static String getURL(String ip, int port, String url) {
