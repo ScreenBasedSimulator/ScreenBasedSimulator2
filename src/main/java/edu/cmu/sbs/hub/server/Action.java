@@ -10,8 +10,15 @@ public class Action {
     final private static String machineURL = "/anesthesia_machine";
 
 
+    public static boolean kill() {
+        HttpRequest.post(getURL(bioIP, bioPort, injectionURL)).send("{drug_name:'Succinylcholine', dose: 200000.0, concentration: 100.0}").code();
+
+        return true;
+    }
+
     public static boolean revive() {
-        HttpRequest.post(getURL(bioIP, bioPort, injectionURL)).send("{drug_name:'Succinylcholine', dose: 200.0, concentration: 12.0}").code();
+
+        // TODO revive
 
         return true;
     }

@@ -5,7 +5,6 @@ import com.google.gson.reflect.TypeToken;
 import edu.cmu.sbs.hub.Kiosk;
 import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.protocol.StatusProtocol;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,9 +17,10 @@ import static spark.Spark.*;
 
 public class Reception {
 
+    private static int counter = 50;
+    private static boolean kill = false;
     final private String FAILURE = "Failure\n";
     final private String SUCCESS = "Success\n";
-
     private Gson gson = new Gson();
 
     public Reception(Kiosk kiosk) {
@@ -37,6 +37,13 @@ public class Reception {
                 }.getType();
 
                 kiosk.receive(new StatusProtocol(gson.fromJson(request.body(), castType)));
+
+                if (!kill && counter != 0) {
+                    counter--;
+                } else {
+                    Action.kill();
+                    kill = true;
+                }
 
                 return SUCCESS;
             } catch (PatientNotFoundException e) {
@@ -89,8 +96,8 @@ public class Reception {
                     Action.resumeOxygen();
                     return SUCCESS;
 
-                case "revive":
-                    Action.revive();
+                case "kill":
+                    Action.kill();
                     return SUCCESS;
 
                 default:
