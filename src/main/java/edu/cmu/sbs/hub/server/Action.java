@@ -11,7 +11,7 @@ public class Action {
 
 
     public static boolean kill() {
-        HttpRequest.post(getURL(bioIP, bioPort, injectionURL)).send("{drug_name:'Succinylcholine', dose: 200000.0, concentration: 100.0}").code();
+        HttpRequest.post(getURL(bioIP, bioPort, injectionURL)).send("{\"drug_name\":\"Succinylcholine\", \"dose\": 20000.0, \"concentration\": 100.0}").code();
 
         return true;
     }
@@ -42,8 +42,8 @@ public class Action {
     public static boolean inject(String drugName, Double dose) {
     	HttpRequest
     			.post(getURL(bioIP, bioPort, machineURL))
-    			.send(String.format("{drug_name:'%s', dose: %f, concentration: 20.0}", drugName, dose))
-    			.code();
+                .send(String.format("{\"drug_name\":\"%s\", \"dose\": %f, \"concentration\": 20.0}", drugName, dose))
+                .code();
     	return true;
     }
 
