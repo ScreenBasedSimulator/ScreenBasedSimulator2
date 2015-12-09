@@ -17,7 +17,7 @@ import static spark.Spark.*;
 
 public class Reception {
 
-    private static int counter = 50;
+    private static int counter = 10;
     private static boolean kill = false;
     final private String FAILURE = "Failure\n";
     final private String SUCCESS = "Success\n";
@@ -81,25 +81,28 @@ public class Reception {
         //});
 
         // TODO establish Action pattern
-        get("/unity/action/:action", (request, response) -> {
+        post("/unity/action/:action", (request, response) -> {
 
             String action = request.params(":action").toLowerCase();
 
             logger.info(action + " Action Received");
 
             switch (action) {
-                case "nooxygen":
-                    Action.noOxygen();
-                    return SUCCESS;
-
-                case "resumeoxygen":
-                    Action.resumeOxygen();
+                case "oxygen":
+                	  String status = request.queryParams("status");
+                	  if (status.equals("on")) {
+                	  	Action.resumeOxygen();
+                	  } else {
+                	  	Action.noOxygen();
+                	  }
                     return SUCCESS;
 
                 case "kill":
                     Action.kill();
                     return SUCCESS;
                 case "inject":
+                		System.out.println(request.queryParams("drug_name"));
+                		System.out.println(Double.parseDouble(request.queryParams("dose")));
                 		Action.inject(request.queryParams("drug_name"), Double.parseDouble(request.queryParams("dose")));
                 		return SUCCESS;
 

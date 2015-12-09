@@ -30,7 +30,7 @@ public class Kiosk {
         return patient;
     }
 
-    // TODO conplete parse Patient from request string
+    // TODO complete parse Patient from request string
     private Patient parsePatient(String request) throws IllegalProtocol {
         return Patient.generateRandomPatient();
     }

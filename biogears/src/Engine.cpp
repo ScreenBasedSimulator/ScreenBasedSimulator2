@@ -45,15 +45,15 @@ void Engine::Initialize()
 
     SEAnesthesiaMachine& config = m_pAnesthesiaMachineConfig->GetConfiguration();
     config.SetState(CDM::enumOnOff::Off); //changed it to Off at the beginning
-    config.GetInletFlow().SetValue(2.0, SEScalarVolumePerTime::L_Per_min);
-    config.GetInspiratoryExpiratoryRatio().SetValue(.5);
+    config.GetInletFlow().SetValue(5.0, SEScalarVolumePerTime::L_Per_min);
+    config.GetInspiratoryExpiratoryRatio().SetValue(1.0);
     config.GetOxygenFraction().SetValue(0.21); //0.21 in the air
     config.SetOxygenSource(CDM::enumAnesthesiaMachineOxygenSource::Wall);
-    config.GetPositiveEndExpiredPressure().SetValue(0.0, SEScalarPressure::cmH2O);
+    config.GetPositiveEndExpiredPressure().SetValue(1.0, SEScalarPressure::cmH2O);
     config.SetPrimaryGas(CDM::enumAnesthesiaMachinePrimaryGas::Nitrogen);
     config.GetReliefValvePressure().SetValue(20.0, SEScalarPressure::cmH2O);
-    config.GetRespiratoryRate().SetValue(12, SEScalarFrequency::Per_min);
-    config.GetVentilatorPressure().SetValue(0.0, SEScalarPressure::cmH2O);
+    config.GetRespiratoryRate().SetValue(18.0, SEScalarFrequency::Per_min);
+    config.GetVentilatorPressure().SetValue(10.0, SEScalarPressure::cmH2O);
     config.SetVentilatorMask(CDM::enumOnOff::On);
     config.GetOxygenBottleOne().GetVolume().SetValue(660.0, SEScalarVolume::L);
     config.GetOxygenBottleTwo().GetVolume().SetValue(660.0, SEScalarVolume::L);
@@ -115,7 +115,7 @@ void Engine::operator()()
                 if(res != CURLE_OK) {
                     fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
                     failureCount++;
-                    if (failureCount > 4) exit(1);
+                    //if (failureCount > 4) exit(1);
                 } else {
                     failureCount = 0;
                 }
@@ -143,14 +143,19 @@ void Engine::BolusDrug(std::string drugName, double concentration, double dose)
     // std::lock_guard<std::mutex> lock(m_pressureMutex);
     const SESubstance* succs = m_engine->GetSubstanceManager().GetSubstance(drugName);
 
-    // Create a substance bolus action to administer the substance
-    SESubstanceBolus bolus(*succs);
-    bolus.GetConcentration().SetValue(concentration,SEScalarMassPerVolume::ug_Per_mL);
-    bolus.GetDose().SetValue(dose,SEScalarVolume::mL);
-    bolus.SetAdminRoute(CDM::enumSubstanceAdministration::Intravenous);
-    m_engine->ProcessAction(bolus);
-    std::cout << "Giving the patient .\n\n" << drugName << " with " 
-    << dose << " dosage and " << concentration << " concentration" <<endl;
+    if (succs) {
+        // Create a substance bolus action to administer the substance
+        SESubstanceBolus bolus(*succs);
+        bolus.GetConcentration().SetValue(concentration,SEScalarMassPerVolume::ug_Per_mL);
+        bolus.GetDose().SetValue(dose,SEScalarVolume::mL);
+        bolus.SetAdminRoute(CDM::enumSubstanceAdministration::Intravenous);
+        m_engine->ProcessAction(bolus);
+        std::cout << "Giving the patient .\n\n" << drugName << " with " 
+        << dose << " dosage and " << concentration << " concentration" <<endl;
+    } else {
+        std::cout << drugName << " does not exist" <<endl;
+    }
+    
 }
 
 void Engine::AnesthesiaMachine(double oxygenFraction, bool status){
