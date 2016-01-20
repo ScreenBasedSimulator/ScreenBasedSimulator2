@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class Kiosk {
 
-    final private Roster roster;
+    final public Roster roster;
     private Logger logger = LoggerFactory.getLogger("Kiosk");
 
     public Kiosk() {
