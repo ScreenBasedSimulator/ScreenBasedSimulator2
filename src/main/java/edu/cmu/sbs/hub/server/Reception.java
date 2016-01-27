@@ -3,10 +3,11 @@ package edu.cmu.sbs.hub.server;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import edu.cmu.sbs.hub.Kiosk;
-import edu.cmu.sbs.hub.datatype.Patient;
 import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.hub.logging.RecordKeeperEZ;
 import edu.cmu.sbs.protocol.StatusProtocol;
+import org.joda.time.DateTime;
+import org.joda.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,14 +24,14 @@ public class Reception {
     private static boolean kill = false;
     final private String FAILURE = "Failure\n";
     final private String SUCCESS = "Success\n";
+    final private DateTime startTime;
     private Gson gson = new Gson();
     private Action actionBag = new Action();
     private RecordKeeperEZ recordKeeperEZ;
-    // TODO access time!
-    private String time = "Time 404";
-
 
     public Reception(Kiosk kiosk) {
+
+        startTime = new DateTime();
 
         Logger logger = LoggerFactory.getLogger("Reception");
 
@@ -89,7 +90,6 @@ public class Reception {
         //
         //});
 
-        // TODO add second variable to make action related to patient
         post("/unity/action/:action", (request, response) -> {
 
             String action = request.params(":action").toLowerCase();
@@ -106,14 +106,16 @@ public class Reception {
                         actionBag.noOxygen();
                     }
 
-                    // TODO need to acccess Patient
-                    recordKeeperEZ.log(Patient.generateRandomPatient(), makeActionStamp(action));
+                    //logging
+                    logAction(action);
+
                     return SUCCESS;
 
                 case "kill":
                     actionBag.kill();
 
-                    recordKeeperEZ.log(Patient.generateRandomPatient(), makeActionStamp(action));
+                    //logging
+                    logAction(action);
 
                     return SUCCESS;
                 case "inject":
@@ -122,8 +124,8 @@ public class Reception {
                     System.out.println(Double.parseDouble(request.queryParams("dose")));
                     actionBag.inject(request.queryParams("drug_name"), Double.parseDouble(request.queryParams("dose")));
 
-                    // TODO inject content is unrecorded
-                    recordKeeperEZ.log(Patient.generateRandomPatient(), makeActionStamp(action));
+                    // TODO inject content is unlogged
+                    logAction(action);
 
                     return SUCCESS;
 
@@ -133,7 +135,11 @@ public class Reception {
         });
     }
 
-    public String makeActionStamp(String action) {
-        return String.format("%1$%-10s %2$10s", time + " :", action);
+    public void logAction(String action) {
+        recordKeeperEZ.log(format(action));
+    }
+
+    private String format(String entry) {
+        return String.format("%1$%-15s %2$10s", new Duration(startTime, new DateTime()) + " :", entry);
     }
 }
