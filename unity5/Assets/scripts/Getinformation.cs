@@ -56,7 +56,7 @@ public class Getinformation : MonoBehaviour {
 		dos = GUI.TextField(new Rect(60,80,200,30),dos,15);
 	}
 
-	IEnumerator RepeatedGet()
+	IEnumerator RepeatedGet() //Xing: change it
 	{
 		while (true) {
 			WWW w = new WWW (url);
