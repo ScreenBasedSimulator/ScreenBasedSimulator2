@@ -177,6 +177,20 @@ namespace mil
     {
       namespace datamodel
       {
+        class ScalarPressureData;
+      }
+    }
+  }
+}
+
+namespace mil
+{
+  namespace tatrc
+  {
+    namespace physiology
+    {
+      namespace datamodel
+      {
         class ScalarMassPerTimeData;
       }
     }
@@ -214,7 +228,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) EnergySystemData: public ::mil::tatrc::physiology::datamodel::SystemData
+        class EnergySystemData: public ::mil::tatrc::physiology::datamodel::SystemData
         {
           public:
           /**
@@ -750,6 +764,82 @@ namespace mil
           //@}
 
           /**
+           * @name ExerciseMeanArterialPressureDelta
+           *
+           * @brief Accessor and modifier functions for the %ExerciseMeanArterialPressureDelta
+           * optional element.
+           */
+          //@{
+
+          /**
+           * @brief Element type.
+           */
+          typedef ::mil::tatrc::physiology::datamodel::ScalarPressureData ExerciseMeanArterialPressureDelta_type;
+
+          /**
+           * @brief Element optional container type.
+           */
+          typedef ::xsd::cxx::tree::optional< ExerciseMeanArterialPressureDelta_type > ExerciseMeanArterialPressureDelta_optional;
+
+          /**
+           * @brief Element traits type.
+           */
+          typedef ::xsd::cxx::tree::traits< ExerciseMeanArterialPressureDelta_type, char > ExerciseMeanArterialPressureDelta_traits;
+
+          /**
+           * @brief Return a read-only (constant) reference to the element
+           * container.
+           *
+           * @return A constant reference to the optional container.
+           */
+          const ExerciseMeanArterialPressureDelta_optional&
+          ExerciseMeanArterialPressureDelta () const;
+
+          /**
+           * @brief Return a read-write reference to the element container.
+           *
+           * @return A reference to the optional container.
+           */
+          ExerciseMeanArterialPressureDelta_optional&
+          ExerciseMeanArterialPressureDelta ();
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x A new value to set.
+           *
+           * This function makes a copy of its argument and sets it as
+           * the new value of the element.
+           */
+          void
+          ExerciseMeanArterialPressureDelta (const ExerciseMeanArterialPressureDelta_type& x);
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x An optional container with the new value to set.
+           *
+           * If the value is present in @a x then this function makes a copy 
+           * of this value and sets it as the new value of the element.
+           * Otherwise the element container is set the 'not present' state.
+           */
+          void
+          ExerciseMeanArterialPressureDelta (const ExerciseMeanArterialPressureDelta_optional& x);
+
+          /**
+           * @brief Set the element value without copying.
+           *
+           * @param p A new value to use.
+           *
+           * This function will try to use the passed value directly instead
+           * of making a copy.
+           */
+          void
+          ExerciseMeanArterialPressureDelta (::std::unique_ptr< ExerciseMeanArterialPressureDelta_type > p);
+
+          //@}
+
+          /**
            * @name OxygenConsumptionRate
            *
            * @brief Accessor and modifier functions for the %OxygenConsumptionRate
@@ -1141,6 +1231,7 @@ namespace mil
           RespiratoryQuotient_optional RespiratoryQuotient_;
           KetoneProductionRate_optional KetoneProductionRate_;
           LactateProductionRate_optional LactateProductionRate_;
+          ExerciseMeanArterialPressureDelta_optional ExerciseMeanArterialPressureDelta_;
           OxygenConsumptionRate_optional OxygenConsumptionRate_;
           SkinTemperature_optional SkinTemperature_;
           SweatRate_optional SweatRate_;
@@ -1163,7 +1254,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const EnergySystemData&);
       }
@@ -1206,7 +1296,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const EnergySystemData&);
       }

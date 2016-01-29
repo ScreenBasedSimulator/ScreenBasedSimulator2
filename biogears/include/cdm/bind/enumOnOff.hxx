@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumOnOff
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumOnOff: public ::xml_schema::string
+        class enumOnOff: public ::xml_schema::string
         {
           public:
 
@@ -276,11 +276,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumOnOff::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumOnOff&);
       }
@@ -323,15 +321,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumOnOff&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumOnOff&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumOnOff&);

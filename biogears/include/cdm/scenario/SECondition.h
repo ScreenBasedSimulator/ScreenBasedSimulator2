@@ -12,6 +12,7 @@ specific language governing permissions and limitations under the License.
 
 #pragma once
 CDM_BIND_DECL(ConditionData);
+class SESubstanceManager;
 
 class DLL_DECL SECondition : public Loggable
 {
@@ -24,6 +25,8 @@ public:
 
 	virtual void Reset(); //reset values
 	virtual void Clear(); //clear memory
+
+	static SECondition* newFromBind(const CDM::ConditionData& condition, SESubstanceManager& substances);
 
 	bool Load(const CDM::ConditionData& in);
 	std::unique_ptr<CDM::ConditionData> Unload() const;

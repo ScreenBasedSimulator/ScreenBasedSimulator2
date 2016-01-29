@@ -158,7 +158,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) SubstancePharmacodynamicsData: public ::mil::tatrc::physiology::datamodel::ObjectData
+        class SubstancePharmacodynamicsData: public ::mil::tatrc::physiology::datamodel::ObjectData
         {
           public:
           /**
@@ -905,7 +905,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const SubstancePharmacodynamicsData&);
       }
@@ -948,7 +947,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const SubstancePharmacodynamicsData&);
       }

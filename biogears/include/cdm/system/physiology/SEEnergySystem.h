@@ -68,6 +68,10 @@ public:
 	virtual SEScalarAmountPerTime& GetKetoneProductionRate();
 	virtual double GetKetoneProductionRate(const std::shared_ptr<CCompoundUnit>& unit) const;
 
+	virtual bool HasExerciseMeanArterialPressureDelta() const;
+	virtual SEScalarPressure& GetExerciseMeanArterialPressureDelta();
+	virtual double GetExerciseMeanArterialPressureDelta(const std::shared_ptr<CCompoundUnit>& unit) const;
+
 	virtual bool HasOxygenConsumptionRate() const;
 	virtual SEScalarVolumePerTime& GetOxygenConsumptionRate();
 	virtual double GetOxygenConsumptionRate(const std::shared_ptr<CCompoundUnit>& unit) const;
@@ -93,6 +97,7 @@ protected:
 	SEScalar*				m_RespiratoryQuotient;
 	SEScalarAmountPerTime*	m_LactateProductionRate;
 	SEScalarAmountPerTime*	m_KetoneProductionRate;
+	SEScalarPressure*		m_ExerciseMeanArterialPressureDelta;
 	SEScalarVolumePerTime*	m_OxygenConsumptionRate;
 	SEScalarTemperature*	m_SkinTemperature;
 	SEScalarMassPerTime*	m_SweatRate;

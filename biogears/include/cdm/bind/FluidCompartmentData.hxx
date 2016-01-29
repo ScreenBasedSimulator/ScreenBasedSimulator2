@@ -158,7 +158,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) FluidCompartmentData: public ::mil::tatrc::physiology::datamodel::CompartmentData
+        class FluidCompartmentData: public ::mil::tatrc::physiology::datamodel::CompartmentData
         {
           public:
           /**
@@ -653,7 +653,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const FluidCompartmentData&);
       }
@@ -696,7 +695,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const FluidCompartmentData&);
       }

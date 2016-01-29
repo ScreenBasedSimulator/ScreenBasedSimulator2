@@ -130,7 +130,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) InhalerCompartmentDataRequestData: public ::mil::tatrc::physiology::datamodel::DataRequestData
+        class InhalerCompartmentDataRequestData: public ::mil::tatrc::physiology::datamodel::DataRequestData
         {
           public:
           /**
@@ -377,7 +377,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const InhalerCompartmentDataRequestData&);
       }
@@ -420,7 +419,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const InhalerCompartmentDataRequestData&);
       }

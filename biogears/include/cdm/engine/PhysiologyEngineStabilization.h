@@ -33,6 +33,7 @@ protected:
 public:
 
 	virtual bool StabilizeRestingState(PhysiologyEngine& engine)=0;
+	virtual bool StabilizeFeedbackState(PhysiologyEngine& engine) = 0;
 	virtual bool StabilizeConditions(PhysiologyEngine& engine, const std::vector<const SECondition*>& conditions)=0;
 	
 	virtual void LogProgress(bool b);

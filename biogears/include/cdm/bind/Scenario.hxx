@@ -106,9 +106,15 @@ namespace mil
 
 #include "ConditionData.hxx"
 
+#include "ConditionListData.hxx"
+
 #include "ActionData.hxx"
 
+#include "ActionListData.hxx"
+
 #include "DataRequestData.hxx"
+
+#include "DataRequestListData.hxx"
 
 #include "PatientDataRequestData.hxx"
 
@@ -177,6 +183,765 @@ namespace mil
       namespace datamodel
       {
         /**
+         * @name Parsing functions for the %ConditionList document root.
+         */
+        //@{
+
+        /**
+         * @brief Parse a URI or a local file.
+         *
+         * @param uri A URI or a local file name.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (const ::std::string& uri,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a URI or a local file with an error handler.
+         *
+         * @param uri A URI or a local file name.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (const ::std::string& uri,
+                       ::xml_schema::error_handler& eh,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a URI or a local file with a Xerces-C++ DOM error
+         * handler.
+         *
+         * @param uri A URI or a local file name.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (const ::std::string& uri,
+                       ::xercesc::DOMErrorHandler& eh,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream.
+         *
+         * @param is A standrad input stream.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::std::istream& is,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with an error handler.
+         *
+         * @param is A standrad input stream.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::std::istream& is,
+                       ::xml_schema::error_handler& eh,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a Xerces-C++ DOM error
+         * handler.
+         *
+         * @param is A standrad input stream.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::std::istream& is,
+                       ::xercesc::DOMErrorHandler& eh,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a resource id.
+         *
+         * @param is A standrad input stream.
+         * @param id A resource id.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * The resource id is used to identify the document being parsed in
+         * diagnostics as well as to resolve relative paths.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::std::istream& is,
+                       const ::std::string& id,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a resource id and an
+         * error handler.
+         *
+         * @param is A standrad input stream.
+         * @param id A resource id.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * The resource id is used to identify the document being parsed in
+         * diagnostics as well as to resolve relative paths.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::std::istream& is,
+                       const ::std::string& id,
+                       ::xml_schema::error_handler& eh,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a resource id and a
+         * Xerces-C++ DOM error handler.
+         *
+         * @param is A standrad input stream.
+         * @param id A resource id.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * The resource id is used to identify the document being parsed in
+         * diagnostics as well as to resolve relative paths.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::std::istream& is,
+                       const ::std::string& id,
+                       ::xercesc::DOMErrorHandler& eh,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ input source.
+         *
+         * @param is A Xerces-C++ input source.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::xercesc::InputSource& is,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ input source with an error handler.
+         *
+         * @param is A Xerces-C++ input source.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::xercesc::InputSource& is,
+                       ::xml_schema::error_handler& eh,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
+         * error handler.
+         *
+         * @param is A Xerces-C++ input source.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::xercesc::InputSource& is,
+                       ::xercesc::DOMErrorHandler& eh,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ DOM document.
+         *
+         * @param d A Xerces-C++ DOM document.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (const ::xercesc::DOMDocument& d,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ DOM document.
+         *
+         * @param d A pointer to the Xerces-C++ DOM document.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function is normally used together with the keep_dom and
+         * own_dom parsing flags to assign ownership of the DOM document
+         * to the object model.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ConditionListData >
+        ConditionList (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
+                       ::xml_schema::flags f = 0,
+                       const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        //@}
+
+        /**
+         * @name Parsing functions for the %ActionList document root.
+         */
+        //@{
+
+        /**
+         * @brief Parse a URI or a local file.
+         *
+         * @param uri A URI or a local file name.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (const ::std::string& uri,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a URI or a local file with an error handler.
+         *
+         * @param uri A URI or a local file name.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (const ::std::string& uri,
+                    ::xml_schema::error_handler& eh,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a URI or a local file with a Xerces-C++ DOM error
+         * handler.
+         *
+         * @param uri A URI or a local file name.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (const ::std::string& uri,
+                    ::xercesc::DOMErrorHandler& eh,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream.
+         *
+         * @param is A standrad input stream.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::std::istream& is,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with an error handler.
+         *
+         * @param is A standrad input stream.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::std::istream& is,
+                    ::xml_schema::error_handler& eh,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a Xerces-C++ DOM error
+         * handler.
+         *
+         * @param is A standrad input stream.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::std::istream& is,
+                    ::xercesc::DOMErrorHandler& eh,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a resource id.
+         *
+         * @param is A standrad input stream.
+         * @param id A resource id.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * The resource id is used to identify the document being parsed in
+         * diagnostics as well as to resolve relative paths.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::std::istream& is,
+                    const ::std::string& id,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a resource id and an
+         * error handler.
+         *
+         * @param is A standrad input stream.
+         * @param id A resource id.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * The resource id is used to identify the document being parsed in
+         * diagnostics as well as to resolve relative paths.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::std::istream& is,
+                    const ::std::string& id,
+                    ::xml_schema::error_handler& eh,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a resource id and a
+         * Xerces-C++ DOM error handler.
+         *
+         * @param is A standrad input stream.
+         * @param id A resource id.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * The resource id is used to identify the document being parsed in
+         * diagnostics as well as to resolve relative paths.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::std::istream& is,
+                    const ::std::string& id,
+                    ::xercesc::DOMErrorHandler& eh,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ input source.
+         *
+         * @param is A Xerces-C++ input source.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::xercesc::InputSource& is,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ input source with an error handler.
+         *
+         * @param is A Xerces-C++ input source.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::xercesc::InputSource& is,
+                    ::xml_schema::error_handler& eh,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
+         * error handler.
+         *
+         * @param is A Xerces-C++ input source.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::xercesc::InputSource& is,
+                    ::xercesc::DOMErrorHandler& eh,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ DOM document.
+         *
+         * @param d A Xerces-C++ DOM document.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (const ::xercesc::DOMDocument& d,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ DOM document.
+         *
+         * @param d A pointer to the Xerces-C++ DOM document.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function is normally used together with the keep_dom and
+         * own_dom parsing flags to assign ownership of the DOM document
+         * to the object model.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ActionListData >
+        ActionList (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
+                    ::xml_schema::flags f = 0,
+                    const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        //@}
+
+        /**
+         * @name Parsing functions for the %DataRequestList document root.
+         */
+        //@{
+
+        /**
+         * @brief Parse a URI or a local file.
+         *
+         * @param uri A URI or a local file name.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (const ::std::string& uri,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a URI or a local file with an error handler.
+         *
+         * @param uri A URI or a local file name.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (const ::std::string& uri,
+                         ::xml_schema::error_handler& eh,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a URI or a local file with a Xerces-C++ DOM error
+         * handler.
+         *
+         * @param uri A URI or a local file name.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (const ::std::string& uri,
+                         ::xercesc::DOMErrorHandler& eh,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream.
+         *
+         * @param is A standrad input stream.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::std::istream& is,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with an error handler.
+         *
+         * @param is A standrad input stream.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::std::istream& is,
+                         ::xml_schema::error_handler& eh,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a Xerces-C++ DOM error
+         * handler.
+         *
+         * @param is A standrad input stream.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::std::istream& is,
+                         ::xercesc::DOMErrorHandler& eh,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a resource id.
+         *
+         * @param is A standrad input stream.
+         * @param id A resource id.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * The resource id is used to identify the document being parsed in
+         * diagnostics as well as to resolve relative paths.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::std::istream& is,
+                         const ::std::string& id,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a resource id and an
+         * error handler.
+         *
+         * @param is A standrad input stream.
+         * @param id A resource id.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * The resource id is used to identify the document being parsed in
+         * diagnostics as well as to resolve relative paths.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::std::istream& is,
+                         const ::std::string& id,
+                         ::xml_schema::error_handler& eh,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a standard input stream with a resource id and a
+         * Xerces-C++ DOM error handler.
+         *
+         * @param is A standrad input stream.
+         * @param id A resource id.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * The resource id is used to identify the document being parsed in
+         * diagnostics as well as to resolve relative paths.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::std::istream& is,
+                         const ::std::string& id,
+                         ::xercesc::DOMErrorHandler& eh,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ input source.
+         *
+         * @param is A Xerces-C++ input source.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function uses exceptions to report parsing errors.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::xercesc::InputSource& is,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ input source with an error handler.
+         *
+         * @param is A Xerces-C++ input source.
+         * @param eh An error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::xercesc::InputSource& is,
+                         ::xml_schema::error_handler& eh,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
+         * error handler.
+         *
+         * @param is A Xerces-C++ input source.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function reports parsing errors by calling the error handler.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::xercesc::InputSource& is,
+                         ::xercesc::DOMErrorHandler& eh,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ DOM document.
+         *
+         * @param d A Xerces-C++ DOM document.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (const ::xercesc::DOMDocument& d,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        /**
+         * @brief Parse a Xerces-C++ DOM document.
+         *
+         * @param d A pointer to the Xerces-C++ DOM document.
+         * @param f Parsing flags.
+         * @param p Parsing properties. 
+         * @return A pointer to the root of the object model.
+         *
+         * This function is normally used together with the keep_dom and
+         * own_dom parsing flags to assign ownership of the DOM document
+         * to the object model.
+         */
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DataRequestListData >
+        DataRequestList (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
+                         ::xml_schema::flags f = 0,
+                         const ::xml_schema::properties& p = ::xml_schema::properties ());
+
+        //@}
+
+        /**
          * @name Parsing functions for the %Scenario document root.
          */
         //@{
@@ -191,7 +956,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (const ::std::string& uri,
                   ::xml_schema::flags f = 0,
@@ -208,7 +972,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (const ::std::string& uri,
                   ::xml_schema::error_handler& eh,
@@ -227,7 +990,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (const ::std::string& uri,
                   ::xercesc::DOMErrorHandler& eh,
@@ -244,7 +1006,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::std::istream& is,
                   ::xml_schema::flags f = 0,
@@ -261,7 +1022,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::std::istream& is,
                   ::xml_schema::error_handler& eh,
@@ -280,7 +1040,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::std::istream& is,
                   ::xercesc::DOMErrorHandler& eh,
@@ -301,7 +1060,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::std::istream& is,
                   const ::std::string& id,
@@ -324,7 +1082,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::std::istream& is,
                   const ::std::string& id,
@@ -348,7 +1105,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::std::istream& is,
                   const ::std::string& id,
@@ -366,7 +1122,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::xercesc::InputSource& is,
                   ::xml_schema::flags f = 0,
@@ -383,7 +1138,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::xercesc::InputSource& is,
                   ::xml_schema::error_handler& eh,
@@ -402,7 +1156,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::xercesc::InputSource& is,
                   ::xercesc::DOMErrorHandler& eh,
@@ -417,7 +1170,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (const ::xercesc::DOMDocument& d,
                   ::xml_schema::flags f = 0,
@@ -435,7 +1187,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ScenarioData >
         Scenario (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                   ::xml_schema::flags f = 0,
@@ -464,6 +1215,483 @@ namespace mil
       namespace datamodel
       {
         /**
+         * @name Serialization functions for the %ConditionList document root.
+         */
+        //@{
+
+        /**
+         * @brief Serialize to a standard output stream.
+         *
+         * @param os A standrad output stream.
+         * @param x An object model to serialize.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function uses exceptions to report serialization errors.
+         */
+        void
+        ConditionList (::std::ostream& os,
+                       const ::mil::tatrc::physiology::datamodel::ConditionListData& x, 
+                       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                       const ::std::string& e = "UTF-8",
+                       ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a standard output stream with an error handler.
+         *
+         * @param os A standrad output stream.
+         * @param x An object model to serialize.
+         * @param eh An error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        ConditionList (::std::ostream& os,
+                       const ::mil::tatrc::physiology::datamodel::ConditionListData& x, 
+                       ::xml_schema::error_handler& eh,
+                       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                       const ::std::string& e = "UTF-8",
+                       ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a standard output stream with a Xerces-C++ DOM
+         * error handler.
+         *
+         * @param os A standrad output stream.
+         * @param x An object model to serialize.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        ConditionList (::std::ostream& os,
+                       const ::mil::tatrc::physiology::datamodel::ConditionListData& x, 
+                       ::xercesc::DOMErrorHandler& eh,
+                       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                       const ::std::string& e = "UTF-8",
+                       ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a Xerces-C++ XML format target.
+         *
+         * @param ft A Xerces-C++ XML format target.
+         * @param x An object model to serialize.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function uses exceptions to report serialization errors.
+         */
+        void
+        ConditionList (::xercesc::XMLFormatTarget& ft,
+                       const ::mil::tatrc::physiology::datamodel::ConditionListData& x, 
+                       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                       const ::std::string& e = "UTF-8",
+                       ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a Xerces-C++ XML format target with an error
+         * handler.
+         *
+         * @param ft A Xerces-C++ XML format target.
+         * @param x An object model to serialize.
+         * @param eh An error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        ConditionList (::xercesc::XMLFormatTarget& ft,
+                       const ::mil::tatrc::physiology::datamodel::ConditionListData& x, 
+                       ::xml_schema::error_handler& eh,
+                       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                       const ::std::string& e = "UTF-8",
+                       ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a Xerces-C++ XML format target with a
+         * Xerces-C++ DOM error handler.
+         *
+         * @param ft A Xerces-C++ XML format target.
+         * @param x An object model to serialize.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        ConditionList (::xercesc::XMLFormatTarget& ft,
+                       const ::mil::tatrc::physiology::datamodel::ConditionListData& x, 
+                       ::xercesc::DOMErrorHandler& eh,
+                       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                       const ::std::string& e = "UTF-8",
+                       ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to an existing Xerces-C++ DOM document.
+         *
+         * @param d A Xerces-C++ DOM document.
+         * @param x An object model to serialize.
+         * @param f Serialization flags.
+         *
+         * Note that it is your responsibility to create the DOM document
+         * with the correct root element as well as set the necessary
+         * namespace mapping attributes.
+         */
+        void
+        ConditionList (::xercesc::DOMDocument& d,
+                       const ::mil::tatrc::physiology::datamodel::ConditionListData& x,
+                       ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a new Xerces-C++ DOM document.
+         *
+         * @param x An object model to serialize.
+         * @param m A namespace information map.
+         * @param f Serialization flags.
+         * @return A pointer to the new Xerces-C++ DOM document.
+         */
+        ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
+        ConditionList (const ::mil::tatrc::physiology::datamodel::ConditionListData& x, 
+                       const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                       ::xml_schema::flags f = 0);
+
+        //@}
+
+        /**
+         * @name Serialization functions for the %ActionList document root.
+         */
+        //@{
+
+        /**
+         * @brief Serialize to a standard output stream.
+         *
+         * @param os A standrad output stream.
+         * @param x An object model to serialize.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function uses exceptions to report serialization errors.
+         */
+        void
+        ActionList (::std::ostream& os,
+                    const ::mil::tatrc::physiology::datamodel::ActionListData& x, 
+                    const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                    const ::std::string& e = "UTF-8",
+                    ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a standard output stream with an error handler.
+         *
+         * @param os A standrad output stream.
+         * @param x An object model to serialize.
+         * @param eh An error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        ActionList (::std::ostream& os,
+                    const ::mil::tatrc::physiology::datamodel::ActionListData& x, 
+                    ::xml_schema::error_handler& eh,
+                    const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                    const ::std::string& e = "UTF-8",
+                    ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a standard output stream with a Xerces-C++ DOM
+         * error handler.
+         *
+         * @param os A standrad output stream.
+         * @param x An object model to serialize.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        ActionList (::std::ostream& os,
+                    const ::mil::tatrc::physiology::datamodel::ActionListData& x, 
+                    ::xercesc::DOMErrorHandler& eh,
+                    const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                    const ::std::string& e = "UTF-8",
+                    ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a Xerces-C++ XML format target.
+         *
+         * @param ft A Xerces-C++ XML format target.
+         * @param x An object model to serialize.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function uses exceptions to report serialization errors.
+         */
+        void
+        ActionList (::xercesc::XMLFormatTarget& ft,
+                    const ::mil::tatrc::physiology::datamodel::ActionListData& x, 
+                    const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                    const ::std::string& e = "UTF-8",
+                    ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a Xerces-C++ XML format target with an error
+         * handler.
+         *
+         * @param ft A Xerces-C++ XML format target.
+         * @param x An object model to serialize.
+         * @param eh An error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        ActionList (::xercesc::XMLFormatTarget& ft,
+                    const ::mil::tatrc::physiology::datamodel::ActionListData& x, 
+                    ::xml_schema::error_handler& eh,
+                    const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                    const ::std::string& e = "UTF-8",
+                    ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a Xerces-C++ XML format target with a
+         * Xerces-C++ DOM error handler.
+         *
+         * @param ft A Xerces-C++ XML format target.
+         * @param x An object model to serialize.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        ActionList (::xercesc::XMLFormatTarget& ft,
+                    const ::mil::tatrc::physiology::datamodel::ActionListData& x, 
+                    ::xercesc::DOMErrorHandler& eh,
+                    const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                    const ::std::string& e = "UTF-8",
+                    ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to an existing Xerces-C++ DOM document.
+         *
+         * @param d A Xerces-C++ DOM document.
+         * @param x An object model to serialize.
+         * @param f Serialization flags.
+         *
+         * Note that it is your responsibility to create the DOM document
+         * with the correct root element as well as set the necessary
+         * namespace mapping attributes.
+         */
+        void
+        ActionList (::xercesc::DOMDocument& d,
+                    const ::mil::tatrc::physiology::datamodel::ActionListData& x,
+                    ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a new Xerces-C++ DOM document.
+         *
+         * @param x An object model to serialize.
+         * @param m A namespace information map.
+         * @param f Serialization flags.
+         * @return A pointer to the new Xerces-C++ DOM document.
+         */
+        ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
+        ActionList (const ::mil::tatrc::physiology::datamodel::ActionListData& x, 
+                    const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                    ::xml_schema::flags f = 0);
+
+        //@}
+
+        /**
+         * @name Serialization functions for the %DataRequestList document root.
+         */
+        //@{
+
+        /**
+         * @brief Serialize to a standard output stream.
+         *
+         * @param os A standrad output stream.
+         * @param x An object model to serialize.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function uses exceptions to report serialization errors.
+         */
+        void
+        DataRequestList (::std::ostream& os,
+                         const ::mil::tatrc::physiology::datamodel::DataRequestListData& x, 
+                         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                         const ::std::string& e = "UTF-8",
+                         ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a standard output stream with an error handler.
+         *
+         * @param os A standrad output stream.
+         * @param x An object model to serialize.
+         * @param eh An error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        DataRequestList (::std::ostream& os,
+                         const ::mil::tatrc::physiology::datamodel::DataRequestListData& x, 
+                         ::xml_schema::error_handler& eh,
+                         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                         const ::std::string& e = "UTF-8",
+                         ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a standard output stream with a Xerces-C++ DOM
+         * error handler.
+         *
+         * @param os A standrad output stream.
+         * @param x An object model to serialize.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        DataRequestList (::std::ostream& os,
+                         const ::mil::tatrc::physiology::datamodel::DataRequestListData& x, 
+                         ::xercesc::DOMErrorHandler& eh,
+                         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                         const ::std::string& e = "UTF-8",
+                         ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a Xerces-C++ XML format target.
+         *
+         * @param ft A Xerces-C++ XML format target.
+         * @param x An object model to serialize.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function uses exceptions to report serialization errors.
+         */
+        void
+        DataRequestList (::xercesc::XMLFormatTarget& ft,
+                         const ::mil::tatrc::physiology::datamodel::DataRequestListData& x, 
+                         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                         const ::std::string& e = "UTF-8",
+                         ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a Xerces-C++ XML format target with an error
+         * handler.
+         *
+         * @param ft A Xerces-C++ XML format target.
+         * @param x An object model to serialize.
+         * @param eh An error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        DataRequestList (::xercesc::XMLFormatTarget& ft,
+                         const ::mil::tatrc::physiology::datamodel::DataRequestListData& x, 
+                         ::xml_schema::error_handler& eh,
+                         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                         const ::std::string& e = "UTF-8",
+                         ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a Xerces-C++ XML format target with a
+         * Xerces-C++ DOM error handler.
+         *
+         * @param ft A Xerces-C++ XML format target.
+         * @param x An object model to serialize.
+         * @param eh A Xerces-C++ DOM error handler.
+         * @param m A namespace information map.
+         * @param e A character encoding to produce XML in.
+         * @param f Serialization flags.
+         *
+         * This function reports serialization errors by calling the error
+         * handler.
+         */
+        void
+        DataRequestList (::xercesc::XMLFormatTarget& ft,
+                         const ::mil::tatrc::physiology::datamodel::DataRequestListData& x, 
+                         ::xercesc::DOMErrorHandler& eh,
+                         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                         const ::std::string& e = "UTF-8",
+                         ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to an existing Xerces-C++ DOM document.
+         *
+         * @param d A Xerces-C++ DOM document.
+         * @param x An object model to serialize.
+         * @param f Serialization flags.
+         *
+         * Note that it is your responsibility to create the DOM document
+         * with the correct root element as well as set the necessary
+         * namespace mapping attributes.
+         */
+        void
+        DataRequestList (::xercesc::DOMDocument& d,
+                         const ::mil::tatrc::physiology::datamodel::DataRequestListData& x,
+                         ::xml_schema::flags f = 0);
+
+        /**
+         * @brief Serialize to a new Xerces-C++ DOM document.
+         *
+         * @param x An object model to serialize.
+         * @param m A namespace information map.
+         * @param f Serialization flags.
+         * @return A pointer to the new Xerces-C++ DOM document.
+         */
+        ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
+        DataRequestList (const ::mil::tatrc::physiology::datamodel::DataRequestListData& x, 
+                         const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                         ::xml_schema::flags f = 0);
+
+        //@}
+
+        /**
          * @name Serialization functions for the %Scenario document root.
          */
         //@{
@@ -479,7 +1707,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         Scenario (::std::ostream& os,
                   const ::mil::tatrc::physiology::datamodel::ScenarioData& x, 
@@ -500,7 +1727,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Scenario (::std::ostream& os,
                   const ::mil::tatrc::physiology::datamodel::ScenarioData& x, 
@@ -523,7 +1749,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Scenario (::std::ostream& os,
                   const ::mil::tatrc::physiology::datamodel::ScenarioData& x, 
@@ -543,7 +1768,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         Scenario (::xercesc::XMLFormatTarget& ft,
                   const ::mil::tatrc::physiology::datamodel::ScenarioData& x, 
@@ -565,7 +1789,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Scenario (::xercesc::XMLFormatTarget& ft,
                   const ::mil::tatrc::physiology::datamodel::ScenarioData& x, 
@@ -588,7 +1811,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Scenario (::xercesc::XMLFormatTarget& ft,
                   const ::mil::tatrc::physiology::datamodel::ScenarioData& x, 
@@ -608,7 +1830,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         Scenario (::xercesc::DOMDocument& d,
                   const ::mil::tatrc::physiology::datamodel::ScenarioData& x,
@@ -622,7 +1843,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         Scenario (const ::mil::tatrc::physiology::datamodel::ScenarioData& x, 
                   const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),

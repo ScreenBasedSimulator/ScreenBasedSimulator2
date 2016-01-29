@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumSide
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumSide: public ::xml_schema::string
+        class enumSide: public ::xml_schema::string
         {
           public:
 
@@ -276,11 +276,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumSide::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumSide&);
       }
@@ -323,15 +321,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumSide&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumSide&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumSide&);

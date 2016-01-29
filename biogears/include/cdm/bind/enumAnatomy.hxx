@@ -115,7 +115,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumAnatomy
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumAnatomy: public ::mil::tatrc::physiology::datamodel::enumCompartment
+        class enumAnatomy: public ::mil::tatrc::physiology::datamodel::enumCompartment
         {
           public:
 
@@ -357,11 +357,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumAnatomy::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumAnatomy&);
       }
@@ -404,15 +402,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumAnatomy&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumAnatomy&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumAnatomy&);

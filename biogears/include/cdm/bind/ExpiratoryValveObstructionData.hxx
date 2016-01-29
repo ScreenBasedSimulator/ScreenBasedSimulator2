@@ -130,7 +130,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ExpiratoryValveObstructionData: public ::mil::tatrc::physiology::datamodel::AnesthesiaMachineActionData
+        class ExpiratoryValveObstructionData: public ::mil::tatrc::physiology::datamodel::AnesthesiaMachineActionData
         {
           public:
           /**
@@ -309,7 +309,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ExpiratoryValveObstructionData&);
       }
@@ -352,7 +351,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ExpiratoryValveObstructionData&);
       }

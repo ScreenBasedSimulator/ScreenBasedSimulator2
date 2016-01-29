@@ -128,7 +128,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) TestErrorStatisticsData: public ::xml_schema::type
+        class TestErrorStatisticsData: public ::xml_schema::type
         {
           public:
           /**
@@ -938,7 +938,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const TestErrorStatisticsData&);
       }
@@ -981,7 +980,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const TestErrorStatisticsData&);
       }

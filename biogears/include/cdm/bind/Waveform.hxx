@@ -156,7 +156,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) Waveform: public ::xml_schema::type
+        class Waveform: public ::xml_schema::type
         {
           public:
           /**
@@ -473,7 +473,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const Waveform&);
       }
@@ -516,7 +515,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const Waveform&);
       }

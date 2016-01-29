@@ -104,7 +104,7 @@ namespace mil
 
 #include "CompleteBloodCountData.hxx"
 
-#include "CompleteMetabolicPanelData.hxx"
+#include "ComprehensiveMetabolicPanelData.hxx"
 
 #include "enumPresenceIndicator.hxx"
 
@@ -181,7 +181,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (const ::std::string& uri,
                                ::xml_schema::flags f = 0,
@@ -198,7 +197,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (const ::std::string& uri,
                                ::xml_schema::error_handler& eh,
@@ -217,7 +215,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (const ::std::string& uri,
                                ::xercesc::DOMErrorHandler& eh,
@@ -234,7 +231,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::std::istream& is,
                                ::xml_schema::flags f = 0,
@@ -251,7 +247,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::std::istream& is,
                                ::xml_schema::error_handler& eh,
@@ -270,7 +265,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::std::istream& is,
                                ::xercesc::DOMErrorHandler& eh,
@@ -291,7 +285,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::std::istream& is,
                                const ::std::string& id,
@@ -314,7 +307,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::std::istream& is,
                                const ::std::string& id,
@@ -338,7 +330,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::std::istream& is,
                                const ::std::string& id,
@@ -356,7 +347,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::xercesc::InputSource& is,
                                ::xml_schema::flags f = 0,
@@ -373,7 +363,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::xercesc::InputSource& is,
                                ::xml_schema::error_handler& eh,
@@ -392,7 +381,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::xercesc::InputSource& is,
                                ::xercesc::DOMErrorHandler& eh,
@@ -407,7 +395,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (const ::xercesc::DOMDocument& d,
                                ::xml_schema::flags f = 0,
@@ -425,7 +412,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData >
         PulmonaryFunctionTest (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                                ::xml_schema::flags f = 0,
@@ -448,7 +434,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (const ::std::string& uri,
                             ::xml_schema::flags f = 0,
@@ -465,7 +450,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (const ::std::string& uri,
                             ::xml_schema::error_handler& eh,
@@ -484,7 +468,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (const ::std::string& uri,
                             ::xercesc::DOMErrorHandler& eh,
@@ -501,7 +484,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::std::istream& is,
                             ::xml_schema::flags f = 0,
@@ -518,7 +500,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::std::istream& is,
                             ::xml_schema::error_handler& eh,
@@ -537,7 +518,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::std::istream& is,
                             ::xercesc::DOMErrorHandler& eh,
@@ -558,7 +538,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::std::istream& is,
                             const ::std::string& id,
@@ -581,7 +560,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::std::istream& is,
                             const ::std::string& id,
@@ -605,7 +583,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::std::istream& is,
                             const ::std::string& id,
@@ -623,7 +600,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::xercesc::InputSource& is,
                             ::xml_schema::flags f = 0,
@@ -640,7 +616,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::xercesc::InputSource& is,
                             ::xml_schema::error_handler& eh,
@@ -659,7 +634,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::xercesc::InputSource& is,
                             ::xercesc::DOMErrorHandler& eh,
@@ -674,7 +648,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (const ::xercesc::DOMDocument& d,
                             ::xml_schema::flags f = 0,
@@ -692,7 +665,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteBloodCountData >
         CompleteBloodCount (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                             ::xml_schema::flags f = 0,
@@ -701,7 +673,7 @@ namespace mil
         //@}
 
         /**
-         * @name Parsing functions for the %CompleteMetabolicPanel document root.
+         * @name Parsing functions for the %ComprehensiveMetabolicPanel document root.
          */
         //@{
 
@@ -715,11 +687,10 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (const ::std::string& uri,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (const ::std::string& uri,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a URI or a local file with an error handler.
@@ -732,12 +703,11 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (const ::std::string& uri,
-                                ::xml_schema::error_handler& eh,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (const ::std::string& uri,
+                                     ::xml_schema::error_handler& eh,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a URI or a local file with a Xerces-C++ DOM error
@@ -751,12 +721,11 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (const ::std::string& uri,
-                                ::xercesc::DOMErrorHandler& eh,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (const ::std::string& uri,
+                                     ::xercesc::DOMErrorHandler& eh,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a standard input stream.
@@ -768,11 +737,10 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::std::istream& is,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::std::istream& is,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a standard input stream with an error handler.
@@ -785,12 +753,11 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::std::istream& is,
-                                ::xml_schema::error_handler& eh,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::std::istream& is,
+                                     ::xml_schema::error_handler& eh,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a standard input stream with a Xerces-C++ DOM error
@@ -804,12 +771,11 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::std::istream& is,
-                                ::xercesc::DOMErrorHandler& eh,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::std::istream& is,
+                                     ::xercesc::DOMErrorHandler& eh,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a standard input stream with a resource id.
@@ -825,12 +791,11 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::std::istream& is,
-                                const ::std::string& id,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::std::istream& is,
+                                     const ::std::string& id,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a standard input stream with a resource id and an
@@ -848,13 +813,12 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::std::istream& is,
-                                const ::std::string& id,
-                                ::xml_schema::error_handler& eh,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::std::istream& is,
+                                     const ::std::string& id,
+                                     ::xml_schema::error_handler& eh,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a standard input stream with a resource id and a
@@ -872,13 +836,12 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::std::istream& is,
-                                const ::std::string& id,
-                                ::xercesc::DOMErrorHandler& eh,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::std::istream& is,
+                                     const ::std::string& id,
+                                     ::xercesc::DOMErrorHandler& eh,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a Xerces-C++ input source.
@@ -890,11 +853,10 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::xercesc::InputSource& is,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::xercesc::InputSource& is,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a Xerces-C++ input source with an error handler.
@@ -907,12 +869,11 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::xercesc::InputSource& is,
-                                ::xml_schema::error_handler& eh,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::xercesc::InputSource& is,
+                                     ::xml_schema::error_handler& eh,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a Xerces-C++ input source with a Xerces-C++ DOM
@@ -926,12 +887,11 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::xercesc::InputSource& is,
-                                ::xercesc::DOMErrorHandler& eh,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::xercesc::InputSource& is,
+                                     ::xercesc::DOMErrorHandler& eh,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a Xerces-C++ DOM document.
@@ -941,11 +901,10 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (const ::xercesc::DOMDocument& d,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (const ::xercesc::DOMDocument& d,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         /**
          * @brief Parse a Xerces-C++ DOM document.
@@ -959,11 +918,10 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
-        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData >
-        CompleteMetabolicPanel (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
-                                ::xml_schema::flags f = 0,
-                                const ::xml_schema::properties& p = ::xml_schema::properties ());
+        ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData >
+        ComprehensiveMetabolicPanel (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
+                                     ::xml_schema::flags f = 0,
+                                     const ::xml_schema::properties& p = ::xml_schema::properties ());
 
         //@}
 
@@ -982,7 +940,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (const ::std::string& uri,
                     ::xml_schema::flags f = 0,
@@ -999,7 +956,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (const ::std::string& uri,
                     ::xml_schema::error_handler& eh,
@@ -1018,7 +974,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (const ::std::string& uri,
                     ::xercesc::DOMErrorHandler& eh,
@@ -1035,7 +990,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::std::istream& is,
                     ::xml_schema::flags f = 0,
@@ -1052,7 +1006,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::std::istream& is,
                     ::xml_schema::error_handler& eh,
@@ -1071,7 +1024,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::std::istream& is,
                     ::xercesc::DOMErrorHandler& eh,
@@ -1092,7 +1044,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::std::istream& is,
                     const ::std::string& id,
@@ -1115,7 +1066,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::std::istream& is,
                     const ::std::string& id,
@@ -1139,7 +1089,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::std::istream& is,
                     const ::std::string& id,
@@ -1157,7 +1106,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::xercesc::InputSource& is,
                     ::xml_schema::flags f = 0,
@@ -1174,7 +1122,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::xercesc::InputSource& is,
                     ::xml_schema::error_handler& eh,
@@ -1193,7 +1140,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::xercesc::InputSource& is,
                     ::xercesc::DOMErrorHandler& eh,
@@ -1208,7 +1154,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (const ::xercesc::DOMDocument& d,
                     ::xml_schema::flags f = 0,
@@ -1226,7 +1171,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::UrinalysisData >
         Urinalysis (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                     ::xml_schema::flags f = 0,
@@ -1270,7 +1214,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         PulmonaryFunctionTest (::std::ostream& os,
                                const ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData& x, 
@@ -1291,7 +1234,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PulmonaryFunctionTest (::std::ostream& os,
                                const ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData& x, 
@@ -1314,7 +1256,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PulmonaryFunctionTest (::std::ostream& os,
                                const ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData& x, 
@@ -1334,7 +1275,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         PulmonaryFunctionTest (::xercesc::XMLFormatTarget& ft,
                                const ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData& x, 
@@ -1356,7 +1296,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PulmonaryFunctionTest (::xercesc::XMLFormatTarget& ft,
                                const ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData& x, 
@@ -1379,7 +1318,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PulmonaryFunctionTest (::xercesc::XMLFormatTarget& ft,
                                const ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData& x, 
@@ -1399,7 +1337,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         PulmonaryFunctionTest (::xercesc::DOMDocument& d,
                                const ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData& x,
@@ -1413,7 +1350,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         PulmonaryFunctionTest (const ::mil::tatrc::physiology::datamodel::PulmonaryFunctionTestData& x, 
                                const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -1437,7 +1373,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CompleteBloodCount (::std::ostream& os,
                             const ::mil::tatrc::physiology::datamodel::CompleteBloodCountData& x, 
@@ -1458,7 +1393,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CompleteBloodCount (::std::ostream& os,
                             const ::mil::tatrc::physiology::datamodel::CompleteBloodCountData& x, 
@@ -1481,7 +1415,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CompleteBloodCount (::std::ostream& os,
                             const ::mil::tatrc::physiology::datamodel::CompleteBloodCountData& x, 
@@ -1501,7 +1434,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CompleteBloodCount (::xercesc::XMLFormatTarget& ft,
                             const ::mil::tatrc::physiology::datamodel::CompleteBloodCountData& x, 
@@ -1523,7 +1455,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CompleteBloodCount (::xercesc::XMLFormatTarget& ft,
                             const ::mil::tatrc::physiology::datamodel::CompleteBloodCountData& x, 
@@ -1546,7 +1477,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CompleteBloodCount (::xercesc::XMLFormatTarget& ft,
                             const ::mil::tatrc::physiology::datamodel::CompleteBloodCountData& x, 
@@ -1566,7 +1496,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         CompleteBloodCount (::xercesc::DOMDocument& d,
                             const ::mil::tatrc::physiology::datamodel::CompleteBloodCountData& x,
@@ -1580,7 +1509,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         CompleteBloodCount (const ::mil::tatrc::physiology::datamodel::CompleteBloodCountData& x, 
                             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -1589,7 +1517,7 @@ namespace mil
         //@}
 
         /**
-         * @name Serialization functions for the %CompleteMetabolicPanel document root.
+         * @name Serialization functions for the %ComprehensiveMetabolicPanel document root.
          */
         //@{
 
@@ -1604,13 +1532,12 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
-        CompleteMetabolicPanel (::std::ostream& os,
-                                const ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData& x, 
-                                const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-                                const ::std::string& e = "UTF-8",
-                                ::xml_schema::flags f = 0);
+        ComprehensiveMetabolicPanel (::std::ostream& os,
+                                     const ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData& x, 
+                                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                                     const ::std::string& e = "UTF-8",
+                                     ::xml_schema::flags f = 0);
 
         /**
          * @brief Serialize to a standard output stream with an error handler.
@@ -1625,14 +1552,13 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
-        CompleteMetabolicPanel (::std::ostream& os,
-                                const ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData& x, 
-                                ::xml_schema::error_handler& eh,
-                                const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-                                const ::std::string& e = "UTF-8",
-                                ::xml_schema::flags f = 0);
+        ComprehensiveMetabolicPanel (::std::ostream& os,
+                                     const ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData& x, 
+                                     ::xml_schema::error_handler& eh,
+                                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                                     const ::std::string& e = "UTF-8",
+                                     ::xml_schema::flags f = 0);
 
         /**
          * @brief Serialize to a standard output stream with a Xerces-C++ DOM
@@ -1648,14 +1574,13 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
-        CompleteMetabolicPanel (::std::ostream& os,
-                                const ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData& x, 
-                                ::xercesc::DOMErrorHandler& eh,
-                                const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-                                const ::std::string& e = "UTF-8",
-                                ::xml_schema::flags f = 0);
+        ComprehensiveMetabolicPanel (::std::ostream& os,
+                                     const ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData& x, 
+                                     ::xercesc::DOMErrorHandler& eh,
+                                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                                     const ::std::string& e = "UTF-8",
+                                     ::xml_schema::flags f = 0);
 
         /**
          * @brief Serialize to a Xerces-C++ XML format target.
@@ -1668,13 +1593,12 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
-        CompleteMetabolicPanel (::xercesc::XMLFormatTarget& ft,
-                                const ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData& x, 
-                                const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-                                const ::std::string& e = "UTF-8",
-                                ::xml_schema::flags f = 0);
+        ComprehensiveMetabolicPanel (::xercesc::XMLFormatTarget& ft,
+                                     const ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData& x, 
+                                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                                     const ::std::string& e = "UTF-8",
+                                     ::xml_schema::flags f = 0);
 
         /**
          * @brief Serialize to a Xerces-C++ XML format target with an error
@@ -1690,14 +1614,13 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
-        CompleteMetabolicPanel (::xercesc::XMLFormatTarget& ft,
-                                const ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData& x, 
-                                ::xml_schema::error_handler& eh,
-                                const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-                                const ::std::string& e = "UTF-8",
-                                ::xml_schema::flags f = 0);
+        ComprehensiveMetabolicPanel (::xercesc::XMLFormatTarget& ft,
+                                     const ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData& x, 
+                                     ::xml_schema::error_handler& eh,
+                                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                                     const ::std::string& e = "UTF-8",
+                                     ::xml_schema::flags f = 0);
 
         /**
          * @brief Serialize to a Xerces-C++ XML format target with a
@@ -1713,14 +1636,13 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
-        CompleteMetabolicPanel (::xercesc::XMLFormatTarget& ft,
-                                const ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData& x, 
-                                ::xercesc::DOMErrorHandler& eh,
-                                const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-                                const ::std::string& e = "UTF-8",
-                                ::xml_schema::flags f = 0);
+        ComprehensiveMetabolicPanel (::xercesc::XMLFormatTarget& ft,
+                                     const ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData& x, 
+                                     ::xercesc::DOMErrorHandler& eh,
+                                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                                     const ::std::string& e = "UTF-8",
+                                     ::xml_schema::flags f = 0);
 
         /**
          * @brief Serialize to an existing Xerces-C++ DOM document.
@@ -1733,11 +1655,10 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
-        CompleteMetabolicPanel (::xercesc::DOMDocument& d,
-                                const ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData& x,
-                                ::xml_schema::flags f = 0);
+        ComprehensiveMetabolicPanel (::xercesc::DOMDocument& d,
+                                     const ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData& x,
+                                     ::xml_schema::flags f = 0);
 
         /**
          * @brief Serialize to a new Xerces-C++ DOM document.
@@ -1747,11 +1668,10 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
-        CompleteMetabolicPanel (const ::mil::tatrc::physiology::datamodel::CompleteMetabolicPanelData& x, 
-                                const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
-                                ::xml_schema::flags f = 0);
+        ComprehensiveMetabolicPanel (const ::mil::tatrc::physiology::datamodel::ComprehensiveMetabolicPanelData& x, 
+                                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
+                                     ::xml_schema::flags f = 0);
 
         //@}
 
@@ -1771,7 +1691,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         Urinalysis (::std::ostream& os,
                     const ::mil::tatrc::physiology::datamodel::UrinalysisData& x, 
@@ -1792,7 +1711,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Urinalysis (::std::ostream& os,
                     const ::mil::tatrc::physiology::datamodel::UrinalysisData& x, 
@@ -1815,7 +1733,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Urinalysis (::std::ostream& os,
                     const ::mil::tatrc::physiology::datamodel::UrinalysisData& x, 
@@ -1835,7 +1752,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         Urinalysis (::xercesc::XMLFormatTarget& ft,
                     const ::mil::tatrc::physiology::datamodel::UrinalysisData& x, 
@@ -1857,7 +1773,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Urinalysis (::xercesc::XMLFormatTarget& ft,
                     const ::mil::tatrc::physiology::datamodel::UrinalysisData& x, 
@@ -1880,7 +1795,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Urinalysis (::xercesc::XMLFormatTarget& ft,
                     const ::mil::tatrc::physiology::datamodel::UrinalysisData& x, 
@@ -1900,7 +1814,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         Urinalysis (::xercesc::DOMDocument& d,
                     const ::mil::tatrc::physiology::datamodel::UrinalysisData& x,
@@ -1914,7 +1827,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         Urinalysis (const ::mil::tatrc::physiology::datamodel::UrinalysisData& x, 
                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),

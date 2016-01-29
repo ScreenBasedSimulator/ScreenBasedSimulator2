@@ -228,139 +228,9 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) RespiratorySystemData: public ::mil::tatrc::physiology::datamodel::SystemData
+        class RespiratorySystemData: public ::mil::tatrc::physiology::datamodel::SystemData
         {
           public:
-          /**
-           * @name StartOfInhale
-           *
-           * @brief Accessor and modifier functions for the %StartOfInhale
-           * optional element.
-           */
-          //@{
-
-          /**
-           * @brief Element type.
-           */
-          typedef ::xml_schema::boolean StartOfInhale_type;
-
-          /**
-           * @brief Element optional container type.
-           */
-          typedef ::xsd::cxx::tree::optional< StartOfInhale_type > StartOfInhale_optional;
-
-          /**
-           * @brief Element traits type.
-           */
-          typedef ::xsd::cxx::tree::traits< StartOfInhale_type, char > StartOfInhale_traits;
-
-          /**
-           * @brief Return a read-only (constant) reference to the element
-           * container.
-           *
-           * @return A constant reference to the optional container.
-           */
-          const StartOfInhale_optional&
-          StartOfInhale () const;
-
-          /**
-           * @brief Return a read-write reference to the element container.
-           *
-           * @return A reference to the optional container.
-           */
-          StartOfInhale_optional&
-          StartOfInhale ();
-
-          /**
-           * @brief Set the element value.
-           *
-           * @param x A new value to set.
-           *
-           * This function makes a copy of its argument and sets it as
-           * the new value of the element.
-           */
-          void
-          StartOfInhale (const StartOfInhale_type& x);
-
-          /**
-           * @brief Set the element value.
-           *
-           * @param x An optional container with the new value to set.
-           *
-           * If the value is present in @a x then this function makes a copy 
-           * of this value and sets it as the new value of the element.
-           * Otherwise the element container is set the 'not present' state.
-           */
-          void
-          StartOfInhale (const StartOfInhale_optional& x);
-
-          //@}
-
-          /**
-           * @name StartOfExhale
-           *
-           * @brief Accessor and modifier functions for the %StartOfExhale
-           * optional element.
-           */
-          //@{
-
-          /**
-           * @brief Element type.
-           */
-          typedef ::xml_schema::boolean StartOfExhale_type;
-
-          /**
-           * @brief Element optional container type.
-           */
-          typedef ::xsd::cxx::tree::optional< StartOfExhale_type > StartOfExhale_optional;
-
-          /**
-           * @brief Element traits type.
-           */
-          typedef ::xsd::cxx::tree::traits< StartOfExhale_type, char > StartOfExhale_traits;
-
-          /**
-           * @brief Return a read-only (constant) reference to the element
-           * container.
-           *
-           * @return A constant reference to the optional container.
-           */
-          const StartOfExhale_optional&
-          StartOfExhale () const;
-
-          /**
-           * @brief Return a read-write reference to the element container.
-           *
-           * @return A reference to the optional container.
-           */
-          StartOfExhale_optional&
-          StartOfExhale ();
-
-          /**
-           * @brief Set the element value.
-           *
-           * @param x A new value to set.
-           *
-           * This function makes a copy of its argument and sets it as
-           * the new value of the element.
-           */
-          void
-          StartOfExhale (const StartOfExhale_type& x);
-
-          /**
-           * @brief Set the element value.
-           *
-           * @param x An optional container with the new value to set.
-           *
-           * If the value is present in @a x then this function makes a copy 
-           * of this value and sets it as the new value of the element.
-           * Otherwise the element container is set the 'not present' state.
-           */
-          void
-          StartOfExhale (const StartOfExhale_optional& x);
-
-          //@}
-
           /**
            * @name EndTidalCarbonDioxideFraction
            *
@@ -1430,8 +1300,6 @@ namespace mil
                  ::xml_schema::flags);
 
           protected:
-          StartOfInhale_optional StartOfInhale_;
-          StartOfExhale_optional StartOfExhale_;
           EndTidalCarbonDioxideFraction_optional EndTidalCarbonDioxideFraction_;
           InspiratoryExpiratoryRatio_optional InspiratoryExpiratoryRatio_;
           PulmonaryCompliance_optional PulmonaryCompliance_;
@@ -1463,7 +1331,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const RespiratorySystemData&);
       }
@@ -1506,7 +1373,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const RespiratorySystemData&);
       }

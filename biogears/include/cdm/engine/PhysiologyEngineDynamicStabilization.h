@@ -25,7 +25,7 @@ class DLL_DECL PropertyConvergence
 {
 	friend PhysiologyEngineDynamicStabilizationCriteria;	
 protected:
-	PropertyConvergence(SEDataRequest* dr);
+	PropertyConvergence(SEDataRequest* dr);// Yes, I will delete it
 public:
 	virtual ~PropertyConvergence();
 
@@ -99,6 +99,35 @@ protected:
 	SEScalarTime*        m_MaximumAllowedStabilizationTime;
 
 	std::vector<PropertyConvergence*> m_PropertyConvergence;
+
+};
+
+class DLL_DECL PhysiologyEngineDynamicStabilizer : public Loggable
+{
+public:
+	PhysiologyEngineDynamicStabilizer(double timeStep_s, const PhysiologyEngineDynamicStabilizationCriteria& criteria);
+	virtual ~PhysiologyEngineDynamicStabilizer(){};
+
+	void Converge();
+	bool HasConverged(){ return m_converged; }
+	bool HasConvergedOptional(){ return m_convergedOptional; }
+	bool HasExceededTime(){ return m_exceededTime; }
+
+protected:
+
+	bool   m_converged;
+	bool   m_convergedOptional;
+	bool   m_exceededTime;
+	bool   m_hasOptionalProperties;
+	double m_dT_s;
+	double m_totTime_s;// Total time we have been converging
+	double m_covTime_s;// Convergence Window Length
+	double m_minTime_s;// Minimum amount of time to run before testing
+	double m_maxTime_s;// Maximum amount of time to run before we quit
+	double m_passTime_s;
+	double m_optsPassTime_s;
+
+	const std::vector<PropertyConvergence*>& m_properties;
 };
 
 CDM_BIND_DECL(PhysiologyEngineDynamicStabilizationData)
@@ -118,10 +147,15 @@ protected:
 public:
 
 	bool StabilizeRestingState(PhysiologyEngine& engine);
+	bool StabilizeFeedbackState(PhysiologyEngine& engine);
 	bool StabilizeConditions(PhysiologyEngine& engine, const std::vector<const SECondition*>& conditions);
 
 	PhysiologyEngineDynamicStabilizationCriteria& GetRestingCriteria();
 	const PhysiologyEngineDynamicStabilizationCriteria& GetRestingCriteria() const;
+
+	bool HasFeedbackCriteria() const;
+	PhysiologyEngineDynamicStabilizationCriteria& GetFeedbackCriteria();
+	const PhysiologyEngineDynamicStabilizationCriteria* GetFeedbackCriteria() const;
 
 	void RemoveConditionCriteria(const std::string& name);
 	void AddConditionCriteria(PhysiologyEngineDynamicStabilizationCriteria& criteria);
@@ -133,6 +167,7 @@ protected:
 	bool Stabilize(PhysiologyEngine& engine, const PhysiologyEngineDynamicStabilizationCriteria& criteria);
 
 	PhysiologyEngineDynamicStabilizationCriteria m_RestingCriteria;
+	PhysiologyEngineDynamicStabilizationCriteria* m_FeedbackCriteria;
 	std::vector<PhysiologyEngineDynamicStabilizationCriteria*> m_ConditionCriteria;
 
 	bool Merge();

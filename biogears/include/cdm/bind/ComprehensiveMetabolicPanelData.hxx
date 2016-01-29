@@ -33,11 +33,11 @@
 
 /**
  * @file
- * @brief Generated from CompleteMetabolicPanelData.xsd.
+ * @brief Generated from ComprehensiveMetabolicPanelData.xsd.
  */
 
-#ifndef COMPLETE_METABOLIC_PANEL_DATA_HXX
-#define COMPLETE_METABOLIC_PANEL_DATA_HXX
+#ifndef COMPREHENSIVE_METABOLIC_PANEL_DATA_HXX
+#define COMPREHENSIVE_METABOLIC_PANEL_DATA_HXX
 
 #ifndef XSD_CXX11
 #define XSD_CXX11
@@ -76,7 +76,7 @@ namespace mil
     {
       namespace datamodel
       {
-        class CompleteMetabolicPanelData;
+        class ComprehensiveMetabolicPanelData;
       }
     }
   }
@@ -140,11 +140,11 @@ namespace mil
       namespace datamodel
       {
         /**
-         * @brief Class corresponding to the %CompleteMetabolicPanelData schema type.
+         * @brief Class corresponding to the %ComprehensiveMetabolicPanelData schema type.
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) CompleteMetabolicPanelData: public ::mil::tatrc::physiology::datamodel::PatientAssessmentData
+        class ComprehensiveMetabolicPanelData: public ::mil::tatrc::physiology::datamodel::PatientAssessmentData
         {
           public:
           /**
@@ -1220,7 +1220,7 @@ namespace mil
            * @brief Create an instance from the ultimate base and
            * initializers for required elements and attributes.
            */
-          CompleteMetabolicPanelData ();
+          ComprehensiveMetabolicPanelData ();
 
           /**
            * @brief Create an instance from a DOM element.
@@ -1230,9 +1230,9 @@ namespace mil
            * @param c A pointer to the object that will contain the new
            * instance.
            */
-          CompleteMetabolicPanelData (const ::xercesc::DOMElement& e,
-                                      ::xml_schema::flags f = 0,
-                                      ::xml_schema::container* c = 0);
+          ComprehensiveMetabolicPanelData (const ::xercesc::DOMElement& e,
+                                           ::xml_schema::flags f = 0,
+                                           ::xml_schema::container* c = 0);
 
           /**
            * @brief Copy constructor.
@@ -1243,9 +1243,9 @@ namespace mil
            *
            * For polymorphic object models use the @c _clone function instead.
            */
-          CompleteMetabolicPanelData (const CompleteMetabolicPanelData& x,
-                                      ::xml_schema::flags f = 0,
-                                      ::xml_schema::container* c = 0);
+          ComprehensiveMetabolicPanelData (const ComprehensiveMetabolicPanelData& x,
+                                           ::xml_schema::flags f = 0,
+                                           ::xml_schema::container* c = 0);
 
           /**
            * @brief Copy the instance polymorphically.
@@ -1258,7 +1258,7 @@ namespace mil
            * used for copying and should be used for polymorphic object
            * models instead of the copy constructor.
            */
-          virtual CompleteMetabolicPanelData*
+          virtual ComprehensiveMetabolicPanelData*
           _clone (::xml_schema::flags f = 0,
                   ::xml_schema::container* c = 0) const;
 
@@ -1270,8 +1270,8 @@ namespace mil
            *
            * For polymorphic object models use the @c _clone function instead.
            */
-          CompleteMetabolicPanelData&
-          operator= (const CompleteMetabolicPanelData& x);
+          ComprehensiveMetabolicPanelData&
+          operator= (const ComprehensiveMetabolicPanelData& x);
 
           //@}
 
@@ -1279,7 +1279,7 @@ namespace mil
            * @brief Destructor.
            */
           virtual 
-          ~CompleteMetabolicPanelData ();
+          ~ComprehensiveMetabolicPanelData ();
 
           // Implementation.
           //
@@ -1324,9 +1324,8 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
-        operator<< (::std::ostream&, const CompleteMetabolicPanelData&);
+        operator<< (::std::ostream&, const ComprehensiveMetabolicPanelData&);
       }
     }
   }
@@ -1367,9 +1366,8 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
-        operator<< (::xercesc::DOMElement&, const CompleteMetabolicPanelData&);
+        operator<< (::xercesc::DOMElement&, const ComprehensiveMetabolicPanelData&);
       }
     }
   }
@@ -1389,4 +1387,4 @@ namespace mil
 //
 // End epilogue.
 
-#endif // COMPLETE_METABOLIC_PANEL_DATA_HXX
+#endif // COMPREHENSIVE_METABOLIC_PANEL_DATA_HXX

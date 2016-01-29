@@ -128,7 +128,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) DrugsConfiguration: public ::xml_schema::type
+        class DrugsConfiguration: public ::xml_schema::type
         {
           public:
           /**
@@ -299,7 +299,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const DrugsConfiguration&);
       }
@@ -342,7 +341,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const DrugsConfiguration&);
       }

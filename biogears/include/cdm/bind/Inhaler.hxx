@@ -169,7 +169,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (const ::std::string& uri,
                  ::xml_schema::flags f = 0,
@@ -186,7 +185,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (const ::std::string& uri,
                  ::xml_schema::error_handler& eh,
@@ -205,7 +203,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (const ::std::string& uri,
                  ::xercesc::DOMErrorHandler& eh,
@@ -222,7 +219,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::std::istream& is,
                  ::xml_schema::flags f = 0,
@@ -239,7 +235,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::std::istream& is,
                  ::xml_schema::error_handler& eh,
@@ -258,7 +253,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::std::istream& is,
                  ::xercesc::DOMErrorHandler& eh,
@@ -279,7 +273,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::std::istream& is,
                  const ::std::string& id,
@@ -302,7 +295,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::std::istream& is,
                  const ::std::string& id,
@@ -326,7 +318,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::std::istream& is,
                  const ::std::string& id,
@@ -344,7 +335,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::xercesc::InputSource& is,
                  ::xml_schema::flags f = 0,
@@ -361,7 +351,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::xercesc::InputSource& is,
                  ::xml_schema::error_handler& eh,
@@ -380,7 +369,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::xercesc::InputSource& is,
                  ::xercesc::DOMErrorHandler& eh,
@@ -395,7 +383,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (const ::xercesc::DOMDocument& d,
                  ::xml_schema::flags f = 0,
@@ -413,7 +400,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerData >
         Inhaler (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                  ::xml_schema::flags f = 0,
@@ -436,7 +422,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (const ::std::string& uri,
                              ::xml_schema::flags f = 0,
@@ -453,7 +438,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (const ::std::string& uri,
                              ::xml_schema::error_handler& eh,
@@ -472,7 +456,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (const ::std::string& uri,
                              ::xercesc::DOMErrorHandler& eh,
@@ -489,7 +472,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::std::istream& is,
                              ::xml_schema::flags f = 0,
@@ -506,7 +488,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::std::istream& is,
                              ::xml_schema::error_handler& eh,
@@ -525,7 +506,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::std::istream& is,
                              ::xercesc::DOMErrorHandler& eh,
@@ -546,7 +526,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::std::istream& is,
                              const ::std::string& id,
@@ -569,7 +548,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::std::istream& is,
                              const ::std::string& id,
@@ -593,7 +571,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::std::istream& is,
                              const ::std::string& id,
@@ -611,7 +588,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::xercesc::InputSource& is,
                              ::xml_schema::flags f = 0,
@@ -628,7 +604,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::xercesc::InputSource& is,
                              ::xml_schema::error_handler& eh,
@@ -647,7 +622,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::xercesc::InputSource& is,
                              ::xercesc::DOMErrorHandler& eh,
@@ -662,7 +636,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (const ::xercesc::DOMDocument& d,
                              ::xml_schema::flags f = 0,
@@ -680,7 +653,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData >
         InhalerCompartments (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                              ::xml_schema::flags f = 0,
@@ -724,7 +696,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         Inhaler (::std::ostream& os,
                  const ::mil::tatrc::physiology::datamodel::InhalerData& x, 
@@ -745,7 +716,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Inhaler (::std::ostream& os,
                  const ::mil::tatrc::physiology::datamodel::InhalerData& x, 
@@ -768,7 +738,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Inhaler (::std::ostream& os,
                  const ::mil::tatrc::physiology::datamodel::InhalerData& x, 
@@ -788,7 +757,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         Inhaler (::xercesc::XMLFormatTarget& ft,
                  const ::mil::tatrc::physiology::datamodel::InhalerData& x, 
@@ -810,7 +778,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Inhaler (::xercesc::XMLFormatTarget& ft,
                  const ::mil::tatrc::physiology::datamodel::InhalerData& x, 
@@ -833,7 +800,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Inhaler (::xercesc::XMLFormatTarget& ft,
                  const ::mil::tatrc::physiology::datamodel::InhalerData& x, 
@@ -853,7 +819,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         Inhaler (::xercesc::DOMDocument& d,
                  const ::mil::tatrc::physiology::datamodel::InhalerData& x,
@@ -867,7 +832,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         Inhaler (const ::mil::tatrc::physiology::datamodel::InhalerData& x, 
                  const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -891,7 +855,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         InhalerCompartments (::std::ostream& os,
                              const ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData& x, 
@@ -912,7 +875,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         InhalerCompartments (::std::ostream& os,
                              const ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData& x, 
@@ -935,7 +897,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         InhalerCompartments (::std::ostream& os,
                              const ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData& x, 
@@ -955,7 +916,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         InhalerCompartments (::xercesc::XMLFormatTarget& ft,
                              const ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData& x, 
@@ -977,7 +937,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         InhalerCompartments (::xercesc::XMLFormatTarget& ft,
                              const ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData& x, 
@@ -1000,7 +959,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         InhalerCompartments (::xercesc::XMLFormatTarget& ft,
                              const ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData& x, 
@@ -1020,7 +978,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         InhalerCompartments (::xercesc::DOMDocument& d,
                              const ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData& x,
@@ -1034,7 +991,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         InhalerCompartments (const ::mil::tatrc::physiology::datamodel::InhalerCompartmentsData& x, 
                              const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),

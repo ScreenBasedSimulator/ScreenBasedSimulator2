@@ -107,6 +107,20 @@ namespace mil
     {
       namespace datamodel
       {
+        class BaroreceptorConfiguration;
+      }
+    }
+  }
+}
+
+namespace mil
+{
+  namespace tatrc
+  {
+    namespace physiology
+    {
+      namespace datamodel
+      {
         class BloodChemistryConfiguration;
       }
     }
@@ -256,9 +270,85 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) BioGearsConfigurationData: public ::mil::tatrc::physiology::datamodel::PhysiologyEngineConfigurationData
+        class BioGearsConfigurationData: public ::mil::tatrc::physiology::datamodel::PhysiologyEngineConfigurationData
         {
           public:
+          /**
+           * @name BaroreceptorConfiguration
+           *
+           * @brief Accessor and modifier functions for the %BaroreceptorConfiguration
+           * optional element.
+           */
+          //@{
+
+          /**
+           * @brief Element type.
+           */
+          typedef ::mil::tatrc::physiology::datamodel::BaroreceptorConfiguration BaroreceptorConfiguration_type;
+
+          /**
+           * @brief Element optional container type.
+           */
+          typedef ::xsd::cxx::tree::optional< BaroreceptorConfiguration_type > BaroreceptorConfiguration_optional;
+
+          /**
+           * @brief Element traits type.
+           */
+          typedef ::xsd::cxx::tree::traits< BaroreceptorConfiguration_type, char > BaroreceptorConfiguration_traits;
+
+          /**
+           * @brief Return a read-only (constant) reference to the element
+           * container.
+           *
+           * @return A constant reference to the optional container.
+           */
+          const BaroreceptorConfiguration_optional&
+          BaroreceptorConfiguration () const;
+
+          /**
+           * @brief Return a read-write reference to the element container.
+           *
+           * @return A reference to the optional container.
+           */
+          BaroreceptorConfiguration_optional&
+          BaroreceptorConfiguration ();
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x A new value to set.
+           *
+           * This function makes a copy of its argument and sets it as
+           * the new value of the element.
+           */
+          void
+          BaroreceptorConfiguration (const BaroreceptorConfiguration_type& x);
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x An optional container with the new value to set.
+           *
+           * If the value is present in @a x then this function makes a copy 
+           * of this value and sets it as the new value of the element.
+           * Otherwise the element container is set the 'not present' state.
+           */
+          void
+          BaroreceptorConfiguration (const BaroreceptorConfiguration_optional& x);
+
+          /**
+           * @brief Set the element value without copying.
+           *
+           * @param p A new value to use.
+           *
+           * This function will try to use the passed value directly instead
+           * of making a copy.
+           */
+          void
+          BaroreceptorConfiguration (::std::unique_ptr< BaroreceptorConfiguration_type > p);
+
+          //@}
+
           /**
            * @name BloodChemistryConfiguration
            *
@@ -1100,6 +1190,7 @@ namespace mil
                  ::xml_schema::flags);
 
           protected:
+          BaroreceptorConfiguration_optional BaroreceptorConfiguration_;
           BloodChemistryConfiguration_optional BloodChemistryConfiguration_;
           CardiovascularConfiguration_optional CardiovascularConfiguration_;
           CircuitConfiguration_optional CircuitConfiguration_;
@@ -1128,7 +1219,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const BioGearsConfigurationData&);
       }
@@ -1171,7 +1261,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const BioGearsConfigurationData&);
       }

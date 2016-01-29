@@ -183,7 +183,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (const ::std::string& uri,
                               ::xml_schema::flags f = 0,
@@ -200,7 +199,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (const ::std::string& uri,
                               ::xml_schema::error_handler& eh,
@@ -219,7 +217,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (const ::std::string& uri,
                               ::xercesc::DOMErrorHandler& eh,
@@ -236,7 +233,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::std::istream& is,
                               ::xml_schema::flags f = 0,
@@ -253,7 +249,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::std::istream& is,
                               ::xml_schema::error_handler& eh,
@@ -272,7 +267,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::std::istream& is,
                               ::xercesc::DOMErrorHandler& eh,
@@ -293,7 +287,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::std::istream& is,
                               const ::std::string& id,
@@ -316,7 +309,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::std::istream& is,
                               const ::std::string& id,
@@ -340,7 +332,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::std::istream& is,
                               const ::std::string& id,
@@ -358,7 +349,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::xercesc::InputSource& is,
                               ::xml_schema::flags f = 0,
@@ -375,7 +365,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::xercesc::InputSource& is,
                               ::xml_schema::error_handler& eh,
@@ -394,7 +383,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::xercesc::InputSource& is,
                               ::xercesc::DOMErrorHandler& eh,
@@ -409,7 +397,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (const ::xercesc::DOMDocument& d,
                               ::xml_schema::flags f = 0,
@@ -427,7 +414,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData >
         BloodChemistrySystem (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                               ::xml_schema::flags f = 0,
@@ -450,7 +436,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (const ::std::string& uri,
                               ::xml_schema::flags f = 0,
@@ -467,7 +452,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (const ::std::string& uri,
                               ::xml_schema::error_handler& eh,
@@ -486,7 +470,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (const ::std::string& uri,
                               ::xercesc::DOMErrorHandler& eh,
@@ -503,7 +486,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::std::istream& is,
                               ::xml_schema::flags f = 0,
@@ -520,7 +502,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::std::istream& is,
                               ::xml_schema::error_handler& eh,
@@ -539,7 +520,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::std::istream& is,
                               ::xercesc::DOMErrorHandler& eh,
@@ -560,7 +540,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::std::istream& is,
                               const ::std::string& id,
@@ -583,7 +562,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::std::istream& is,
                               const ::std::string& id,
@@ -607,7 +585,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::std::istream& is,
                               const ::std::string& id,
@@ -625,7 +602,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::xercesc::InputSource& is,
                               ::xml_schema::flags f = 0,
@@ -642,7 +618,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::xercesc::InputSource& is,
                               ::xml_schema::error_handler& eh,
@@ -661,7 +636,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::xercesc::InputSource& is,
                               ::xercesc::DOMErrorHandler& eh,
@@ -676,7 +650,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (const ::xercesc::DOMDocument& d,
                               ::xml_schema::flags f = 0,
@@ -694,7 +667,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CardiovascularSystemData >
         CardiovascularSystem (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                               ::xml_schema::flags f = 0,
@@ -717,7 +689,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (const ::std::string& uri,
                     ::xml_schema::flags f = 0,
@@ -734,7 +705,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (const ::std::string& uri,
                     ::xml_schema::error_handler& eh,
@@ -753,7 +723,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (const ::std::string& uri,
                     ::xercesc::DOMErrorHandler& eh,
@@ -770,7 +739,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::std::istream& is,
                     ::xml_schema::flags f = 0,
@@ -787,7 +755,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::std::istream& is,
                     ::xml_schema::error_handler& eh,
@@ -806,7 +773,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::std::istream& is,
                     ::xercesc::DOMErrorHandler& eh,
@@ -827,7 +793,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::std::istream& is,
                     const ::std::string& id,
@@ -850,7 +815,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::std::istream& is,
                     const ::std::string& id,
@@ -874,7 +838,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::std::istream& is,
                     const ::std::string& id,
@@ -892,7 +855,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::xercesc::InputSource& is,
                     ::xml_schema::flags f = 0,
@@ -909,7 +871,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::xercesc::InputSource& is,
                     ::xml_schema::error_handler& eh,
@@ -928,7 +889,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::xercesc::InputSource& is,
                     ::xercesc::DOMErrorHandler& eh,
@@ -943,7 +903,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (const ::xercesc::DOMDocument& d,
                     ::xml_schema::flags f = 0,
@@ -961,7 +920,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::DrugSystemData >
         DrugSystem (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                     ::xml_schema::flags f = 0,
@@ -984,7 +942,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (const ::std::string& uri,
                          ::xml_schema::flags f = 0,
@@ -1001,7 +958,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (const ::std::string& uri,
                          ::xml_schema::error_handler& eh,
@@ -1020,7 +976,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (const ::std::string& uri,
                          ::xercesc::DOMErrorHandler& eh,
@@ -1037,7 +992,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::std::istream& is,
                          ::xml_schema::flags f = 0,
@@ -1054,7 +1008,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::std::istream& is,
                          ::xml_schema::error_handler& eh,
@@ -1073,7 +1026,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::std::istream& is,
                          ::xercesc::DOMErrorHandler& eh,
@@ -1094,7 +1046,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::std::istream& is,
                          const ::std::string& id,
@@ -1117,7 +1068,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::std::istream& is,
                          const ::std::string& id,
@@ -1141,7 +1091,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::std::istream& is,
                          const ::std::string& id,
@@ -1159,7 +1108,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::xercesc::InputSource& is,
                          ::xml_schema::flags f = 0,
@@ -1176,7 +1124,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::xercesc::InputSource& is,
                          ::xml_schema::error_handler& eh,
@@ -1195,7 +1142,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::xercesc::InputSource& is,
                          ::xercesc::DOMErrorHandler& eh,
@@ -1210,7 +1156,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (const ::xercesc::DOMDocument& d,
                          ::xml_schema::flags f = 0,
@@ -1228,7 +1173,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EndocrineSystemData >
         EndocrineSystem (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                          ::xml_schema::flags f = 0,
@@ -1251,7 +1195,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (const ::std::string& uri,
                            ::xml_schema::flags f = 0,
@@ -1268,7 +1211,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (const ::std::string& uri,
                            ::xml_schema::error_handler& eh,
@@ -1287,7 +1229,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (const ::std::string& uri,
                            ::xercesc::DOMErrorHandler& eh,
@@ -1304,7 +1245,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::std::istream& is,
                            ::xml_schema::flags f = 0,
@@ -1321,7 +1261,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::std::istream& is,
                            ::xml_schema::error_handler& eh,
@@ -1340,7 +1279,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::std::istream& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -1361,7 +1299,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::std::istream& is,
                            const ::std::string& id,
@@ -1384,7 +1321,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::std::istream& is,
                            const ::std::string& id,
@@ -1408,7 +1344,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::std::istream& is,
                            const ::std::string& id,
@@ -1426,7 +1361,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::xercesc::InputSource& is,
                            ::xml_schema::flags f = 0,
@@ -1443,7 +1377,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::xercesc::InputSource& is,
                            ::xml_schema::error_handler& eh,
@@ -1462,7 +1395,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::xercesc::InputSource& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -1477,7 +1409,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (const ::xercesc::DOMDocument& d,
                            ::xml_schema::flags f = 0,
@@ -1495,7 +1426,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::EnergySystemData >
         EnergySystemData_ (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                            ::xml_schema::flags f = 0,
@@ -1518,7 +1448,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (const ::std::string& uri,
                                 ::xml_schema::flags f = 0,
@@ -1535,7 +1464,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (const ::std::string& uri,
                                 ::xml_schema::error_handler& eh,
@@ -1554,7 +1482,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (const ::std::string& uri,
                                 ::xercesc::DOMErrorHandler& eh,
@@ -1571,7 +1498,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::std::istream& is,
                                 ::xml_schema::flags f = 0,
@@ -1588,7 +1514,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::std::istream& is,
                                 ::xml_schema::error_handler& eh,
@@ -1607,7 +1532,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::std::istream& is,
                                 ::xercesc::DOMErrorHandler& eh,
@@ -1628,7 +1552,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::std::istream& is,
                                 const ::std::string& id,
@@ -1651,7 +1574,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::std::istream& is,
                                 const ::std::string& id,
@@ -1675,7 +1597,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::std::istream& is,
                                 const ::std::string& id,
@@ -1693,7 +1614,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::xercesc::InputSource& is,
                                 ::xml_schema::flags f = 0,
@@ -1710,7 +1630,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::xercesc::InputSource& is,
                                 ::xml_schema::error_handler& eh,
@@ -1729,7 +1648,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::xercesc::InputSource& is,
                                 ::xercesc::DOMErrorHandler& eh,
@@ -1744,7 +1662,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (const ::xercesc::DOMDocument& d,
                                 ::xml_schema::flags f = 0,
@@ -1762,7 +1679,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData >
         GastrointestinalSystem (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                                 ::xml_schema::flags f = 0,
@@ -1785,7 +1701,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (const ::std::string& uri,
                        ::xml_schema::flags f = 0,
@@ -1802,7 +1717,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (const ::std::string& uri,
                        ::xml_schema::error_handler& eh,
@@ -1821,7 +1735,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (const ::std::string& uri,
                        ::xercesc::DOMErrorHandler& eh,
@@ -1838,7 +1751,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::std::istream& is,
                        ::xml_schema::flags f = 0,
@@ -1855,7 +1767,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::std::istream& is,
                        ::xml_schema::error_handler& eh,
@@ -1874,7 +1785,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::std::istream& is,
                        ::xercesc::DOMErrorHandler& eh,
@@ -1895,7 +1805,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::std::istream& is,
                        const ::std::string& id,
@@ -1918,7 +1827,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::std::istream& is,
                        const ::std::string& id,
@@ -1942,7 +1850,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::std::istream& is,
                        const ::std::string& id,
@@ -1960,7 +1867,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::xercesc::InputSource& is,
                        ::xml_schema::flags f = 0,
@@ -1977,7 +1883,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::xercesc::InputSource& is,
                        ::xml_schema::error_handler& eh,
@@ -1996,7 +1901,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::xercesc::InputSource& is,
                        ::xercesc::DOMErrorHandler& eh,
@@ -2011,7 +1915,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (const ::xercesc::DOMDocument& d,
                        ::xml_schema::flags f = 0,
@@ -2029,7 +1932,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::NervousSystemData >
         NervousSystem (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                        ::xml_schema::flags f = 0,
@@ -2052,7 +1954,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (const ::std::string& uri,
                      ::xml_schema::flags f = 0,
@@ -2069,7 +1970,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (const ::std::string& uri,
                      ::xml_schema::error_handler& eh,
@@ -2088,7 +1988,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (const ::std::string& uri,
                      ::xercesc::DOMErrorHandler& eh,
@@ -2105,7 +2004,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::std::istream& is,
                      ::xml_schema::flags f = 0,
@@ -2122,7 +2020,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::std::istream& is,
                      ::xml_schema::error_handler& eh,
@@ -2141,7 +2038,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::std::istream& is,
                      ::xercesc::DOMErrorHandler& eh,
@@ -2162,7 +2058,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::std::istream& is,
                      const ::std::string& id,
@@ -2185,7 +2080,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::std::istream& is,
                      const ::std::string& id,
@@ -2209,7 +2103,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::std::istream& is,
                      const ::std::string& id,
@@ -2227,7 +2120,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::xercesc::InputSource& is,
                      ::xml_schema::flags f = 0,
@@ -2244,7 +2136,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::xercesc::InputSource& is,
                      ::xml_schema::error_handler& eh,
@@ -2263,7 +2154,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::xercesc::InputSource& is,
                      ::xercesc::DOMErrorHandler& eh,
@@ -2278,7 +2168,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (const ::xercesc::DOMDocument& d,
                      ::xml_schema::flags f = 0,
@@ -2296,7 +2185,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RenalSystemData >
         RenalSystem (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                      ::xml_schema::flags f = 0,
@@ -2319,7 +2207,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (const ::std::string& uri,
                            ::xml_schema::flags f = 0,
@@ -2336,7 +2223,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (const ::std::string& uri,
                            ::xml_schema::error_handler& eh,
@@ -2355,7 +2241,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (const ::std::string& uri,
                            ::xercesc::DOMErrorHandler& eh,
@@ -2372,7 +2257,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::std::istream& is,
                            ::xml_schema::flags f = 0,
@@ -2389,7 +2273,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::std::istream& is,
                            ::xml_schema::error_handler& eh,
@@ -2408,7 +2291,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::std::istream& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -2429,7 +2311,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::std::istream& is,
                            const ::std::string& id,
@@ -2452,7 +2333,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::std::istream& is,
                            const ::std::string& id,
@@ -2476,7 +2356,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::std::istream& is,
                            const ::std::string& id,
@@ -2494,7 +2373,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::xercesc::InputSource& is,
                            ::xml_schema::flags f = 0,
@@ -2511,7 +2389,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::xercesc::InputSource& is,
                            ::xml_schema::error_handler& eh,
@@ -2530,7 +2407,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::xercesc::InputSource& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -2545,7 +2421,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (const ::xercesc::DOMDocument& d,
                            ::xml_schema::flags f = 0,
@@ -2563,7 +2438,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::RespiratorySystemData >
         RespiratorySystem (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                            ::xml_schema::flags f = 0,
@@ -2607,7 +2481,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         BloodChemistrySystem (::std::ostream& os,
                               const ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData& x, 
@@ -2628,7 +2501,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         BloodChemistrySystem (::std::ostream& os,
                               const ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData& x, 
@@ -2651,7 +2523,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         BloodChemistrySystem (::std::ostream& os,
                               const ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData& x, 
@@ -2671,7 +2542,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         BloodChemistrySystem (::xercesc::XMLFormatTarget& ft,
                               const ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData& x, 
@@ -2693,7 +2563,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         BloodChemistrySystem (::xercesc::XMLFormatTarget& ft,
                               const ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData& x, 
@@ -2716,7 +2585,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         BloodChemistrySystem (::xercesc::XMLFormatTarget& ft,
                               const ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData& x, 
@@ -2736,7 +2604,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         BloodChemistrySystem (::xercesc::DOMDocument& d,
                               const ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData& x,
@@ -2750,7 +2617,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         BloodChemistrySystem (const ::mil::tatrc::physiology::datamodel::BloodChemistrySystemData& x, 
                               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -2774,7 +2640,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CardiovascularSystem (::std::ostream& os,
                               const ::mil::tatrc::physiology::datamodel::CardiovascularSystemData& x, 
@@ -2795,7 +2660,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CardiovascularSystem (::std::ostream& os,
                               const ::mil::tatrc::physiology::datamodel::CardiovascularSystemData& x, 
@@ -2818,7 +2682,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CardiovascularSystem (::std::ostream& os,
                               const ::mil::tatrc::physiology::datamodel::CardiovascularSystemData& x, 
@@ -2838,7 +2701,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CardiovascularSystem (::xercesc::XMLFormatTarget& ft,
                               const ::mil::tatrc::physiology::datamodel::CardiovascularSystemData& x, 
@@ -2860,7 +2722,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CardiovascularSystem (::xercesc::XMLFormatTarget& ft,
                               const ::mil::tatrc::physiology::datamodel::CardiovascularSystemData& x, 
@@ -2883,7 +2744,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CardiovascularSystem (::xercesc::XMLFormatTarget& ft,
                               const ::mil::tatrc::physiology::datamodel::CardiovascularSystemData& x, 
@@ -2903,7 +2763,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         CardiovascularSystem (::xercesc::DOMDocument& d,
                               const ::mil::tatrc::physiology::datamodel::CardiovascularSystemData& x,
@@ -2917,7 +2776,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         CardiovascularSystem (const ::mil::tatrc::physiology::datamodel::CardiovascularSystemData& x, 
                               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -2941,7 +2799,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         DrugSystem (::std::ostream& os,
                     const ::mil::tatrc::physiology::datamodel::DrugSystemData& x, 
@@ -2962,7 +2819,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         DrugSystem (::std::ostream& os,
                     const ::mil::tatrc::physiology::datamodel::DrugSystemData& x, 
@@ -2985,7 +2841,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         DrugSystem (::std::ostream& os,
                     const ::mil::tatrc::physiology::datamodel::DrugSystemData& x, 
@@ -3005,7 +2860,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         DrugSystem (::xercesc::XMLFormatTarget& ft,
                     const ::mil::tatrc::physiology::datamodel::DrugSystemData& x, 
@@ -3027,7 +2881,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         DrugSystem (::xercesc::XMLFormatTarget& ft,
                     const ::mil::tatrc::physiology::datamodel::DrugSystemData& x, 
@@ -3050,7 +2903,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         DrugSystem (::xercesc::XMLFormatTarget& ft,
                     const ::mil::tatrc::physiology::datamodel::DrugSystemData& x, 
@@ -3070,7 +2922,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         DrugSystem (::xercesc::DOMDocument& d,
                     const ::mil::tatrc::physiology::datamodel::DrugSystemData& x,
@@ -3084,7 +2935,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         DrugSystem (const ::mil::tatrc::physiology::datamodel::DrugSystemData& x, 
                     const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -3108,7 +2958,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         EndocrineSystem (::std::ostream& os,
                          const ::mil::tatrc::physiology::datamodel::EndocrineSystemData& x, 
@@ -3129,7 +2978,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         EndocrineSystem (::std::ostream& os,
                          const ::mil::tatrc::physiology::datamodel::EndocrineSystemData& x, 
@@ -3152,7 +3000,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         EndocrineSystem (::std::ostream& os,
                          const ::mil::tatrc::physiology::datamodel::EndocrineSystemData& x, 
@@ -3172,7 +3019,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         EndocrineSystem (::xercesc::XMLFormatTarget& ft,
                          const ::mil::tatrc::physiology::datamodel::EndocrineSystemData& x, 
@@ -3194,7 +3040,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         EndocrineSystem (::xercesc::XMLFormatTarget& ft,
                          const ::mil::tatrc::physiology::datamodel::EndocrineSystemData& x, 
@@ -3217,7 +3062,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         EndocrineSystem (::xercesc::XMLFormatTarget& ft,
                          const ::mil::tatrc::physiology::datamodel::EndocrineSystemData& x, 
@@ -3237,7 +3081,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         EndocrineSystem (::xercesc::DOMDocument& d,
                          const ::mil::tatrc::physiology::datamodel::EndocrineSystemData& x,
@@ -3251,7 +3094,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         EndocrineSystem (const ::mil::tatrc::physiology::datamodel::EndocrineSystemData& x, 
                          const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -3275,7 +3117,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         EnergySystemData_ (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::EnergySystemData& x, 
@@ -3296,7 +3137,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         EnergySystemData_ (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::EnergySystemData& x, 
@@ -3319,7 +3159,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         EnergySystemData_ (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::EnergySystemData& x, 
@@ -3339,7 +3178,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         EnergySystemData_ (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::EnergySystemData& x, 
@@ -3361,7 +3199,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         EnergySystemData_ (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::EnergySystemData& x, 
@@ -3384,7 +3221,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         EnergySystemData_ (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::EnergySystemData& x, 
@@ -3404,7 +3240,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         EnergySystemData_ (::xercesc::DOMDocument& d,
                            const ::mil::tatrc::physiology::datamodel::EnergySystemData& x,
@@ -3418,7 +3253,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         EnergySystemData_ (const ::mil::tatrc::physiology::datamodel::EnergySystemData& x, 
                            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -3442,7 +3276,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         GastrointestinalSystem (::std::ostream& os,
                                 const ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData& x, 
@@ -3463,7 +3296,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         GastrointestinalSystem (::std::ostream& os,
                                 const ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData& x, 
@@ -3486,7 +3318,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         GastrointestinalSystem (::std::ostream& os,
                                 const ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData& x, 
@@ -3506,7 +3337,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         GastrointestinalSystem (::xercesc::XMLFormatTarget& ft,
                                 const ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData& x, 
@@ -3528,7 +3358,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         GastrointestinalSystem (::xercesc::XMLFormatTarget& ft,
                                 const ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData& x, 
@@ -3551,7 +3380,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         GastrointestinalSystem (::xercesc::XMLFormatTarget& ft,
                                 const ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData& x, 
@@ -3571,7 +3399,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         GastrointestinalSystem (::xercesc::DOMDocument& d,
                                 const ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData& x,
@@ -3585,7 +3412,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         GastrointestinalSystem (const ::mil::tatrc::physiology::datamodel::GastrointestinalSystemData& x, 
                                 const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -3609,7 +3435,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         NervousSystem (::std::ostream& os,
                        const ::mil::tatrc::physiology::datamodel::NervousSystemData& x, 
@@ -3630,7 +3455,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         NervousSystem (::std::ostream& os,
                        const ::mil::tatrc::physiology::datamodel::NervousSystemData& x, 
@@ -3653,7 +3477,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         NervousSystem (::std::ostream& os,
                        const ::mil::tatrc::physiology::datamodel::NervousSystemData& x, 
@@ -3673,7 +3496,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         NervousSystem (::xercesc::XMLFormatTarget& ft,
                        const ::mil::tatrc::physiology::datamodel::NervousSystemData& x, 
@@ -3695,7 +3517,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         NervousSystem (::xercesc::XMLFormatTarget& ft,
                        const ::mil::tatrc::physiology::datamodel::NervousSystemData& x, 
@@ -3718,7 +3539,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         NervousSystem (::xercesc::XMLFormatTarget& ft,
                        const ::mil::tatrc::physiology::datamodel::NervousSystemData& x, 
@@ -3738,7 +3558,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         NervousSystem (::xercesc::DOMDocument& d,
                        const ::mil::tatrc::physiology::datamodel::NervousSystemData& x,
@@ -3752,7 +3571,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         NervousSystem (const ::mil::tatrc::physiology::datamodel::NervousSystemData& x, 
                        const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -3776,7 +3594,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         RenalSystem (::std::ostream& os,
                      const ::mil::tatrc::physiology::datamodel::RenalSystemData& x, 
@@ -3797,7 +3614,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         RenalSystem (::std::ostream& os,
                      const ::mil::tatrc::physiology::datamodel::RenalSystemData& x, 
@@ -3820,7 +3636,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         RenalSystem (::std::ostream& os,
                      const ::mil::tatrc::physiology::datamodel::RenalSystemData& x, 
@@ -3840,7 +3655,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         RenalSystem (::xercesc::XMLFormatTarget& ft,
                      const ::mil::tatrc::physiology::datamodel::RenalSystemData& x, 
@@ -3862,7 +3676,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         RenalSystem (::xercesc::XMLFormatTarget& ft,
                      const ::mil::tatrc::physiology::datamodel::RenalSystemData& x, 
@@ -3885,7 +3698,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         RenalSystem (::xercesc::XMLFormatTarget& ft,
                      const ::mil::tatrc::physiology::datamodel::RenalSystemData& x, 
@@ -3905,7 +3717,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         RenalSystem (::xercesc::DOMDocument& d,
                      const ::mil::tatrc::physiology::datamodel::RenalSystemData& x,
@@ -3919,7 +3730,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         RenalSystem (const ::mil::tatrc::physiology::datamodel::RenalSystemData& x, 
                      const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -3943,7 +3753,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         RespiratorySystem (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::RespiratorySystemData& x, 
@@ -3964,7 +3773,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         RespiratorySystem (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::RespiratorySystemData& x, 
@@ -3987,7 +3795,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         RespiratorySystem (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::RespiratorySystemData& x, 
@@ -4007,7 +3814,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         RespiratorySystem (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::RespiratorySystemData& x, 
@@ -4029,7 +3835,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         RespiratorySystem (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::RespiratorySystemData& x, 
@@ -4052,7 +3857,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         RespiratorySystem (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::RespiratorySystemData& x, 
@@ -4072,7 +3876,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         RespiratorySystem (::xercesc::DOMDocument& d,
                            const ::mil::tatrc::physiology::datamodel::RespiratorySystemData& x,
@@ -4086,7 +3889,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         RespiratorySystem (const ::mil::tatrc::physiology::datamodel::RespiratorySystemData& x, 
                            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),

@@ -158,7 +158,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ActiveHeatingData: public ::mil::tatrc::physiology::datamodel::ObjectData
+        class ActiveHeatingData: public ::mil::tatrc::physiology::datamodel::ObjectData
         {
           public:
           /**
@@ -491,7 +491,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ActiveHeatingData&);
       }
@@ -534,7 +533,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ActiveHeatingData&);
       }

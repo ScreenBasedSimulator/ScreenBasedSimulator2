@@ -56,10 +56,13 @@ public:
 	virtual bool HasPatientFile() const;
 	virtual void InvalidatePatientFile();
 
+	virtual std::vector<SEAction*>& GetActions();
 	virtual const std::vector<SEAction*>& GetActions() const;
 
+	virtual std::vector<SECondition*>& GetConditions();
 	virtual const std::vector<SECondition*>& GetConditions() const;
 
+	virtual std::vector<SEDataRequest*>& GetRequestedData();
 	virtual const std::vector<SEDataRequest*>& GetRequestedData() const;
 
 	virtual double GetSamplesPerSecond() const;

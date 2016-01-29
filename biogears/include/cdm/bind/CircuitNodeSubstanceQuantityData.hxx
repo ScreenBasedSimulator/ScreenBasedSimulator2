@@ -200,7 +200,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) CircuitNodeSubstanceQuantityData: public ::mil::tatrc::physiology::datamodel::ObjectData
+        class CircuitNodeSubstanceQuantityData: public ::mil::tatrc::physiology::datamodel::ObjectData
         {
           public:
           /**
@@ -1534,7 +1534,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const CircuitNodeSubstanceQuantityData&);
       }
@@ -1577,7 +1576,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const CircuitNodeSubstanceQuantityData&);
       }
