@@ -116,7 +116,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ScalarFlowResistanceData: public ::mil::tatrc::physiology::datamodel::ScalarData
+        class ScalarFlowResistanceData: public ::mil::tatrc::physiology::datamodel::ScalarData
         {
           public:
           /**
@@ -201,7 +201,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ScalarFlowResistanceData&);
       }
@@ -244,7 +243,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ScalarFlowResistanceData&);
       }

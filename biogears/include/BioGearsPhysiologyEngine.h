@@ -36,5 +36,5 @@ specific language governing permissions and limitations under the License.
 	#endif
 #endif
 
-BIOGEARS_API std::unique_ptr<PhysiologyEngine> CreateBioGearsEngine(const char* logfile=""); 
+BIOGEARS_API std::unique_ptr<PhysiologyEngine> CreateBioGearsEngine(const std::string& logfile=""); 
 BIOGEARS_API std::unique_ptr<PhysiologyEngine> CreateBioGearsEngine(Logger* logger);

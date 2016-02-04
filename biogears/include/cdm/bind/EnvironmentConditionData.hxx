@@ -116,7 +116,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) EnvironmentConditionData: public ::mil::tatrc::physiology::datamodel::ConditionData
+        class EnvironmentConditionData: public ::mil::tatrc::physiology::datamodel::ConditionData
         {
           public:
           /**
@@ -193,7 +193,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const EnvironmentConditionData&);
       }
@@ -236,7 +235,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const EnvironmentConditionData&);
       }

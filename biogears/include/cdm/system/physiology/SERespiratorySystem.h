@@ -40,12 +40,6 @@ protected:
 	void Unload(CDM::RespiratorySystemData& data) const;
 public:
 
-	virtual void SetStartOfInhale(bool cycleStart) { m_StartOfInhale = cycleStart; }
-	virtual bool IsStartOfInhale() const {return m_StartOfInhale;}
-
-	virtual void SetStartOfExhale(bool cycleStart) { m_StartOfExhale = cycleStart; }
-	virtual bool IsStartOfExhale() const {return m_StartOfExhale;};
-
 	virtual bool HasEndTidalCarbonDioxideFraction() const;
 	virtual SEScalarFraction& GetEndTidalCarbonDioxideFraction();
 	virtual double GetEndTidalCarbonDioxideFraction() const;
@@ -100,9 +94,6 @@ public:
 
 
 protected:
-
-	bool						m_StartOfInhale;
-	bool						m_StartOfExhale;
 
 	SEScalarFraction*			m_EndTidalCarbonDioxideFraction;
 	SEScalar*					m_InspiratoryExpiratoryRatio;

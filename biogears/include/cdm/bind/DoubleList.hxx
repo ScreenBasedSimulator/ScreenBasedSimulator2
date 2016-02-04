@@ -116,7 +116,7 @@ namespace mil
          * This class has an interface of a standard C++ sequence (e.g.,
          * std::vector).
          */
-        class __attribute__ ((visibility ("default"))) DoubleList: public ::xml_schema::simple_type,
+        class DoubleList: public ::xml_schema::simple_type,
           public ::xsd::cxx::tree::list< ::xml_schema::double_, char, ::xsd::cxx::tree::schema_type::double_ >
         {
           public:
@@ -239,7 +239,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const DoubleList&);
       }
@@ -282,15 +281,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const DoubleList&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const DoubleList&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const DoubleList&);

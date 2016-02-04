@@ -116,7 +116,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ScalarVolumePerTimePerAreaData: public ::mil::tatrc::physiology::datamodel::ScalarData
+        class ScalarVolumePerTimePerAreaData: public ::mil::tatrc::physiology::datamodel::ScalarData
         {
           public:
           /**
@@ -201,7 +201,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ScalarVolumePerTimePerAreaData&);
       }
@@ -244,7 +243,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ScalarVolumePerTimePerAreaData&);
       }

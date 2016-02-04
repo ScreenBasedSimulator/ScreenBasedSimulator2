@@ -114,7 +114,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ConditionData: public ::xml_schema::type
+        class ConditionData: public ::xml_schema::type
         {
           public:
           /**
@@ -293,7 +293,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ConditionData&);
       }
@@ -336,7 +335,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ConditionData&);
       }

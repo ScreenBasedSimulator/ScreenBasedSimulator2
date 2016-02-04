@@ -116,7 +116,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) CircuitTransporterData: public ::mil::tatrc::physiology::datamodel::ObjectData
+        class CircuitTransporterData: public ::mil::tatrc::physiology::datamodel::ObjectData
         {
           public:
           /**
@@ -219,7 +219,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const CircuitTransporterData&);
       }
@@ -262,15 +261,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const CircuitTransporterData&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const CircuitTransporterData&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const CircuitTransporterData&);

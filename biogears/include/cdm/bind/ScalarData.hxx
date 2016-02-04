@@ -116,7 +116,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ScalarData: public ::mil::tatrc::physiology::datamodel::PropertyData
+        class ScalarData: public ::mil::tatrc::physiology::datamodel::PropertyData
         {
           public:
           /**
@@ -351,7 +351,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ScalarData&);
       }
@@ -394,7 +393,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ScalarData&);
       }

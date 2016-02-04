@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumPupilState
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumPupilState: public ::xml_schema::string
+        class enumPupilState: public ::xml_schema::string
         {
           public:
 
@@ -277,11 +277,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumPupilState::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumPupilState&);
       }
@@ -324,15 +322,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumPupilState&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumPupilState&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumPupilState&);

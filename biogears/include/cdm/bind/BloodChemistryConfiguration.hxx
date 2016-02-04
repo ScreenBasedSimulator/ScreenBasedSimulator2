@@ -170,7 +170,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) BloodChemistryConfiguration: public ::xml_schema::type
+        class BloodChemistryConfiguration: public ::xml_schema::type
         {
           public:
           /**
@@ -580,7 +580,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const BloodChemistryConfiguration&);
       }
@@ -623,7 +622,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const BloodChemistryConfiguration&);
       }

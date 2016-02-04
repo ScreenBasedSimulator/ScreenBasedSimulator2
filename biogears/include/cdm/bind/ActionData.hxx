@@ -112,11 +112,9 @@ namespace mil
         /**
          * @brief Class corresponding to the %ActionData schema type.
          *
-         * An action for a physiology engine to take in and process
-         *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ActionData: public ::xml_schema::type
+        class ActionData: public ::xml_schema::type
         {
           public:
           /**
@@ -295,7 +293,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ActionData&);
       }
@@ -338,7 +335,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ActionData&);
       }

@@ -130,7 +130,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) OxygenWallPortPressureLossData: public ::mil::tatrc::physiology::datamodel::AnesthesiaMachineActionData
+        class OxygenWallPortPressureLossData: public ::mil::tatrc::physiology::datamodel::AnesthesiaMachineActionData
         {
           public:
           /**
@@ -301,7 +301,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const OxygenWallPortPressureLossData&);
       }
@@ -344,7 +343,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const OxygenWallPortPressureLossData&);
       }

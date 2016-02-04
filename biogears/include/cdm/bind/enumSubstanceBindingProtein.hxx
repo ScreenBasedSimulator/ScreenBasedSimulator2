@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumSubstanceBindingProtein
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumSubstanceBindingProtein: public ::xml_schema::string
+        class enumSubstanceBindingProtein: public ::xml_schema::string
         {
           public:
 
@@ -277,11 +277,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumSubstanceBindingProtein::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumSubstanceBindingProtein&);
       }
@@ -324,15 +322,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumSubstanceBindingProtein&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumSubstanceBindingProtein&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumSubstanceBindingProtein&);

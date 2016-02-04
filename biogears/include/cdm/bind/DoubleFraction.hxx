@@ -114,7 +114,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) DoubleFraction: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
+        class DoubleFraction: public ::xsd::cxx::tree::fundamental_base< ::xml_schema::double_, char, ::xml_schema::simple_type, ::xsd::cxx::tree::schema_type::double_ >
         {
           public:
           /**
@@ -225,7 +225,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const DoubleFraction&);
       }
@@ -268,15 +267,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const DoubleFraction&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const DoubleFraction&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const DoubleFraction&);

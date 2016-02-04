@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumPatientEvent
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumPatientEvent: public ::xml_schema::string
+        class enumPatientEvent: public ::xml_schema::string
         {
           public:
 
@@ -154,6 +154,9 @@ namespace mil
             RespiratoryAcidosis,
             RespiratoryAlkalosis,
             RightMainstemIntubation,
+            StartOfCardiacCycle,
+            StartOfExhale,
+            StartOfInhale,
             Tachycardia,
             Tachypnea
           };
@@ -288,8 +291,8 @@ namespace mil
           _xsd_enumPatientEvent_convert () const;
 
           public:
-          static const char* const _xsd_enumPatientEvent_literals_[34];
-          static const value _xsd_enumPatientEvent_indexes_[34];
+          static const char* const _xsd_enumPatientEvent_literals_[37];
+          static const value _xsd_enumPatientEvent_indexes_[37];
 
           //@endcond
         };
@@ -308,11 +311,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumPatientEvent::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumPatientEvent&);
       }
@@ -355,15 +356,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumPatientEvent&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumPatientEvent&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumPatientEvent&);

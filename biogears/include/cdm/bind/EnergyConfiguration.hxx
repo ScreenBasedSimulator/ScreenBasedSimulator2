@@ -198,7 +198,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) EnergyConfiguration: public ::xml_schema::type
+        class EnergyConfiguration: public ::xml_schema::type
         {
           public:
           /**
@@ -993,7 +993,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const EnergyConfiguration&);
       }
@@ -1036,7 +1035,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const EnergyConfiguration&);
       }

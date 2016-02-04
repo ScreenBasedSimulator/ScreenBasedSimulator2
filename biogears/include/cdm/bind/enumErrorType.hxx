@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumErrorType
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumErrorType: public ::xml_schema::string
+        class enumErrorType: public ::xml_schema::string
         {
           public:
 
@@ -275,11 +275,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumErrorType::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumErrorType&);
       }
@@ -322,15 +320,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumErrorType&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumErrorType&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumErrorType&);

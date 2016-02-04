@@ -115,7 +115,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumAnesthesiaMachine
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumAnesthesiaMachine: public ::mil::tatrc::physiology::datamodel::enumCompartment
+        class enumAnesthesiaMachine: public ::mil::tatrc::physiology::datamodel::enumCompartment
         {
           public:
 
@@ -287,11 +287,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumAnesthesiaMachine::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumAnesthesiaMachine&);
       }
@@ -334,15 +332,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumAnesthesiaMachine&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumAnesthesiaMachine&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumAnesthesiaMachine&);

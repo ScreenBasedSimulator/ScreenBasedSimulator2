@@ -17,6 +17,9 @@ specific language governing permissions and limitations under the License.
 class DLL_DECL SEEventHandler : public Loggable
 {
 public:
+	SEEventHandler(Logger* logger) : Loggable(logger) {};
+	virtual ~SEEventHandler(){};
+
 	virtual void HandlePatientEvent(CDM::enumPatientEvent::value type, bool active, const SEScalarTime* time = nullptr)=0;
 	virtual void HandleAnesthesiaMachineEvent(CDM::enumAnesthesiaMachineEvent::value type, bool active, const SEScalarTime* time = nullptr) = 0;
 };

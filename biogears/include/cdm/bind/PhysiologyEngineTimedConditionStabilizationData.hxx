@@ -130,7 +130,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) PhysiologyEngineTimedConditionStabilizationData: public ::mil::tatrc::physiology::datamodel::PhysiologyEngineConditionStabilizationData
+        class PhysiologyEngineTimedConditionStabilizationData: public ::mil::tatrc::physiology::datamodel::PhysiologyEngineConditionStabilizationData
         {
           public:
           /**
@@ -311,7 +311,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const PhysiologyEngineTimedConditionStabilizationData&);
       }
@@ -354,7 +353,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const PhysiologyEngineTimedConditionStabilizationData&);
       }

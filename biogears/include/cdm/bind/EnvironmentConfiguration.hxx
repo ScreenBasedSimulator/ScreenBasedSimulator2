@@ -156,7 +156,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) EnvironmentConfiguration: public ::xml_schema::type
+        class EnvironmentConfiguration: public ::xml_schema::type
         {
           public:
           /**
@@ -720,7 +720,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const EnvironmentConfiguration&);
       }
@@ -763,7 +762,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const EnvironmentConfiguration&);
       }

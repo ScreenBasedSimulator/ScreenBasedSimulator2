@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumPneumothoraxType
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumPneumothoraxType: public ::xml_schema::string
+        class enumPneumothoraxType: public ::xml_schema::string
         {
           public:
 
@@ -276,11 +276,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumPneumothoraxType::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumPneumothoraxType&);
       }
@@ -323,15 +321,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumPneumothoraxType&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumPneumothoraxType&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumPneumothoraxType&);

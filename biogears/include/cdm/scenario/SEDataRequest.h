@@ -12,6 +12,7 @@ specific language governing permissions and limitations under the License.
 
 #pragma once
 CDM_BIND_DECL(DataRequestData)
+class SESubstanceManager;
 class CCompoundUnit;
 
 class DLL_DECL SEDataRequest : public Loggable
@@ -23,6 +24,8 @@ public:
 
 	virtual void Reset(); //reset values
 	virtual void Clear(); //clear memory
+
+	static SEDataRequest* newFromBind(const CDM::DataRequestData& dataRequest, SESubstanceManager& substances);
 
 	bool Load(const CDM::DataRequestData& in);
 	std::unique_ptr<CDM::DataRequestData> Unload() const;

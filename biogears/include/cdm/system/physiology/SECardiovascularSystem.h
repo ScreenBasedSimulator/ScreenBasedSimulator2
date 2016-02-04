@@ -41,9 +41,6 @@ protected:
 	void Unload(CDM::CardiovascularSystemData& data) const;
 public:
 
-	virtual void SetStartOfCardiacCycle(bool cycleStart){ m_StartOfCardiacCycle = cycleStart; }
-	virtual bool IsStartOfCardiacCycle() const { return m_StartOfCardiacCycle; }
-
 	virtual bool HasArterialPressure() const;
 	virtual SEScalarPressure& GetArterialPressure();
 	virtual double GetArterialPressure(const std::shared_ptr<CCompoundUnit>& unit) const;
@@ -142,8 +139,6 @@ public:
 	virtual double GetSystemicVascularResistance(const std::shared_ptr<CCompoundUnit>& unit) const;
 
 protected:
-
-	bool						m_StartOfCardiacCycle;
 
 	SEScalarPressure*           m_ArterialPressure;
 	SEScalarVolume*             m_BloodVolume;

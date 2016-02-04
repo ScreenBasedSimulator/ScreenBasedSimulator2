@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumClarityIndicator
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumClarityIndicator: public ::xml_schema::string
+        class enumClarityIndicator: public ::xml_schema::string
         {
           public:
 
@@ -278,11 +278,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumClarityIndicator::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumClarityIndicator&);
       }
@@ -325,15 +323,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumClarityIndicator&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumClarityIndicator&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumClarityIndicator&);

@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumBioGearsPath
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumBioGearsPath: public ::xml_schema::string
+        class enumBioGearsPath: public ::xml_schema::string
         {
           public:
 
@@ -264,6 +264,7 @@ namespace mil
             TemperatureGroundToCore,
             CoreToSkin,
             CoreToTemperatureGround,
+            SkinToTemperatureGround,
             RightRenalArteryConnectionPath,
             RightRenalArteryPath,
             RightAfferentArteriolePath,
@@ -495,8 +496,8 @@ namespace mil
           _xsd_enumBioGearsPath_convert () const;
 
           public:
-          static const char* const _xsd_enumBioGearsPath_literals_[241];
-          static const value _xsd_enumBioGearsPath_indexes_[241];
+          static const char* const _xsd_enumBioGearsPath_literals_[242];
+          static const value _xsd_enumBioGearsPath_indexes_[242];
 
           //@endcond
         };
@@ -515,11 +516,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumBioGearsPath::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumBioGearsPath&);
       }
@@ -562,15 +561,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumBioGearsPath&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumBioGearsPath&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumBioGearsPath&);

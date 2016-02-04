@@ -144,7 +144,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) PhysiologyEngineDynamicStabilizationData: public ::mil::tatrc::physiology::datamodel::PhysiologyEngineStabilizationData
+        class PhysiologyEngineDynamicStabilizationData: public ::mil::tatrc::physiology::datamodel::PhysiologyEngineStabilizationData
         {
           public:
           /**
@@ -202,6 +202,82 @@ namespace mil
            */
           void
           RestingStabilizationCriteria (::std::unique_ptr< RestingStabilizationCriteria_type > p);
+
+          //@}
+
+          /**
+           * @name FeedbackStabilizationCriteria
+           *
+           * @brief Accessor and modifier functions for the %FeedbackStabilizationCriteria
+           * optional element.
+           */
+          //@{
+
+          /**
+           * @brief Element type.
+           */
+          typedef ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationCriteriaData FeedbackStabilizationCriteria_type;
+
+          /**
+           * @brief Element optional container type.
+           */
+          typedef ::xsd::cxx::tree::optional< FeedbackStabilizationCriteria_type > FeedbackStabilizationCriteria_optional;
+
+          /**
+           * @brief Element traits type.
+           */
+          typedef ::xsd::cxx::tree::traits< FeedbackStabilizationCriteria_type, char > FeedbackStabilizationCriteria_traits;
+
+          /**
+           * @brief Return a read-only (constant) reference to the element
+           * container.
+           *
+           * @return A constant reference to the optional container.
+           */
+          const FeedbackStabilizationCriteria_optional&
+          FeedbackStabilizationCriteria () const;
+
+          /**
+           * @brief Return a read-write reference to the element container.
+           *
+           * @return A reference to the optional container.
+           */
+          FeedbackStabilizationCriteria_optional&
+          FeedbackStabilizationCriteria ();
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x A new value to set.
+           *
+           * This function makes a copy of its argument and sets it as
+           * the new value of the element.
+           */
+          void
+          FeedbackStabilizationCriteria (const FeedbackStabilizationCriteria_type& x);
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x An optional container with the new value to set.
+           *
+           * If the value is present in @a x then this function makes a copy 
+           * of this value and sets it as the new value of the element.
+           * Otherwise the element container is set the 'not present' state.
+           */
+          void
+          FeedbackStabilizationCriteria (const FeedbackStabilizationCriteria_optional& x);
+
+          /**
+           * @brief Set the element value without copying.
+           *
+           * @param p A new value to use.
+           *
+           * This function will try to use the passed value directly instead
+           * of making a copy.
+           */
+          void
+          FeedbackStabilizationCriteria (::std::unique_ptr< FeedbackStabilizationCriteria_type > p);
 
           //@}
 
@@ -371,6 +447,7 @@ namespace mil
 
           protected:
           ::xsd::cxx::tree::one< RestingStabilizationCriteria_type > RestingStabilizationCriteria_;
+          FeedbackStabilizationCriteria_optional FeedbackStabilizationCriteria_;
           ConditionStabilization_sequence ConditionStabilization_;
 
           //@endcond
@@ -390,7 +467,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const PhysiologyEngineDynamicStabilizationData&);
       }
@@ -433,7 +509,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const PhysiologyEngineDynamicStabilizationData&);
       }

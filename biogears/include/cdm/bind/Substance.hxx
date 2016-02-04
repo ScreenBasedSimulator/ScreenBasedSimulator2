@@ -193,7 +193,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (const ::std::string& uri,
                    ::xml_schema::flags f = 0,
@@ -210,7 +209,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (const ::std::string& uri,
                    ::xml_schema::error_handler& eh,
@@ -229,7 +227,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (const ::std::string& uri,
                    ::xercesc::DOMErrorHandler& eh,
@@ -246,7 +243,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::std::istream& is,
                    ::xml_schema::flags f = 0,
@@ -263,7 +259,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::std::istream& is,
                    ::xml_schema::error_handler& eh,
@@ -282,7 +277,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::std::istream& is,
                    ::xercesc::DOMErrorHandler& eh,
@@ -303,7 +297,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::std::istream& is,
                    const ::std::string& id,
@@ -326,7 +319,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::std::istream& is,
                    const ::std::string& id,
@@ -350,7 +342,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::std::istream& is,
                    const ::std::string& id,
@@ -368,7 +359,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::xercesc::InputSource& is,
                    ::xml_schema::flags f = 0,
@@ -385,7 +375,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::xercesc::InputSource& is,
                    ::xml_schema::error_handler& eh,
@@ -404,7 +393,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::xercesc::InputSource& is,
                    ::xercesc::DOMErrorHandler& eh,
@@ -419,7 +407,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (const ::xercesc::DOMDocument& d,
                    ::xml_schema::flags f = 0,
@@ -437,7 +424,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceData >
         Substance (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                    ::xml_schema::flags f = 0,
@@ -460,7 +446,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (const ::std::string& uri,
                            ::xml_schema::flags f = 0,
@@ -477,7 +462,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (const ::std::string& uri,
                            ::xml_schema::error_handler& eh,
@@ -496,7 +480,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (const ::std::string& uri,
                            ::xercesc::DOMErrorHandler& eh,
@@ -513,7 +496,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::std::istream& is,
                            ::xml_schema::flags f = 0,
@@ -530,7 +512,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::std::istream& is,
                            ::xml_schema::error_handler& eh,
@@ -549,7 +530,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::std::istream& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -570,7 +550,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::std::istream& is,
                            const ::std::string& id,
@@ -593,7 +572,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::std::istream& is,
                            const ::std::string& id,
@@ -617,7 +595,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::std::istream& is,
                            const ::std::string& id,
@@ -635,7 +612,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::xercesc::InputSource& is,
                            ::xml_schema::flags f = 0,
@@ -652,7 +628,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::xercesc::InputSource& is,
                            ::xml_schema::error_handler& eh,
@@ -671,7 +646,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::xercesc::InputSource& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -686,7 +660,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (const ::xercesc::DOMDocument& d,
                            ::xml_schema::flags f = 0,
@@ -704,7 +677,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::SubstanceCompoundData >
         SubstanceCompound (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                            ::xml_schema::flags f = 0,
@@ -748,7 +720,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         Substance (::std::ostream& os,
                    const ::mil::tatrc::physiology::datamodel::SubstanceData& x, 
@@ -769,7 +740,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Substance (::std::ostream& os,
                    const ::mil::tatrc::physiology::datamodel::SubstanceData& x, 
@@ -792,7 +762,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Substance (::std::ostream& os,
                    const ::mil::tatrc::physiology::datamodel::SubstanceData& x, 
@@ -812,7 +781,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         Substance (::xercesc::XMLFormatTarget& ft,
                    const ::mil::tatrc::physiology::datamodel::SubstanceData& x, 
@@ -834,7 +802,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Substance (::xercesc::XMLFormatTarget& ft,
                    const ::mil::tatrc::physiology::datamodel::SubstanceData& x, 
@@ -857,7 +824,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         Substance (::xercesc::XMLFormatTarget& ft,
                    const ::mil::tatrc::physiology::datamodel::SubstanceData& x, 
@@ -877,7 +843,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         Substance (::xercesc::DOMDocument& d,
                    const ::mil::tatrc::physiology::datamodel::SubstanceData& x,
@@ -891,7 +856,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         Substance (const ::mil::tatrc::physiology::datamodel::SubstanceData& x, 
                    const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -915,7 +879,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         SubstanceCompound (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::SubstanceCompoundData& x, 
@@ -936,7 +899,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         SubstanceCompound (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::SubstanceCompoundData& x, 
@@ -959,7 +921,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         SubstanceCompound (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::SubstanceCompoundData& x, 
@@ -979,7 +940,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         SubstanceCompound (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::SubstanceCompoundData& x, 
@@ -1001,7 +961,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         SubstanceCompound (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::SubstanceCompoundData& x, 
@@ -1024,7 +983,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         SubstanceCompound (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::SubstanceCompoundData& x, 
@@ -1044,7 +1002,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         SubstanceCompound (::xercesc::DOMDocument& d,
                            const ::mil::tatrc::physiology::datamodel::SubstanceCompoundData& x,
@@ -1058,7 +1015,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         SubstanceCompound (const ::mil::tatrc::physiology::datamodel::SubstanceCompoundData& x, 
                            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
