@@ -18,6 +18,8 @@ public class Getinformation : MonoBehaviour {
 	string diastolic_arterialpressure = "null";
 	string systolic_arterial_pressure = "null";
 	string respiration_rate = "null";
+	private string gameStatus = "gaming";
+
 	void Start(){
 		StartCoroutine(RepeatedGet());
 		
@@ -27,41 +29,60 @@ public class Getinformation : MonoBehaviour {
 	void OnGUI () {
 		guiStyle.fontSize = 20;
 		guiStyle.normal.textColor = Color.white;
-		GUI.Label(new Rect(10,10,Screen.width,50),"Please input the drugname and dosage");
-//		GUI.Label(new Rect(100, 100, 100, 25), "Client");
-		if(GUI.Button(new Rect(10,120,100,30),"Submit"))
-		{
-			Debug.Log("Submit input to hub");
-			StartCoroutine(SendDrug(drugname, dos));
-			Debug.Log("FInished Submit input to hub");
-		}
-		GUI.Label (new Rect (10,150,160,20), "Anesthesia Machine");
+		GUI.contentColor = Color.black;
 
-		if(GUI.Button(new Rect(10,170,100,30),"Turn ON "))
+		if (gameStatus == "gaming")
 		{
-			Debug.Log("Turn ON anesthesia machine");
-			StartCoroutine(SendAnesthesiaMachine("on"));
-		}
-		if(GUI.Button(new Rect(110,170,100,30),"Turn OFF"))
-		{
-			Debug.Log("Turn OFF anesthesia machine");
-			StartCoroutine(SendAnesthesiaMachine("off"));
-		}
+			GUI.Label(new Rect(10,10,Screen.width,50),"Please input the drugname and dosage");
+	//		GUI.Label(new Rect(100, 100, 100, 25), "Client");
+			if(GUI.Button(new Rect(10,120,100,30),"Submit"))
+			{
+				Debug.Log("Submit input to hub");
+				StartCoroutine(SendDrug(drugname, dos));
+				Debug.Log("FInished Submit input to hub");
+			}
+			GUI.Label (new Rect (10,150,160,20), "Anesthesia Machine");
 
-		// call code
-		if(GUI.Button(new Rect(600, 10, 100, 30), "Call Code"))
-		{
-			Debug.Log ("Call code");
-			StartCoroutine(SendCallCode("blue"));
-		}
+			if(GUI.Button(new Rect(10,170,100,30),"Turn ON "))
+			{
+				Debug.Log("Turn ON anesthesia machine");
+				StartCoroutine(SendAnesthesiaMachine("on"));
+			}
+			if(GUI.Button(new Rect(110,170,100,30),"Turn OFF"))
+			{
+				Debug.Log("Turn OFF anesthesia machine");
+				StartCoroutine(SendAnesthesiaMachine("off"));
+			}
 
-		GUI.Label(new Rect(40,200,Screen.width,50),"Patient Status:");
-		GUI.Label(new Rect(40,220,Screen.width,50),oxygenStr,guiStyle);
-		GUI.Label(new Rect(40,240,Screen.width,50),"Heart Rate: "  +  heart,guiStyle);
-		GUI.Label(new Rect(40,260,Screen.width,50),"Arterial Pressure: " + systolic_arterial_pressure + "/" + diastolic_arterialpressure,guiStyle);
-		GUI.Label (new Rect (40, 280, Screen.width, 50), "Respiration Rate: " + respiration_rate,guiStyle);
-		drugname = GUI.TextField(new Rect(60,40,200,30),drugname,15);
-		dos = GUI.TextField(new Rect(60,80,200,30),dos,15);
+			// call code
+			if(GUI.Button(new Rect(600, 10, 100, 30), "Call Code"))
+			{
+				Debug.Log ("Call code");
+				StartCoroutine(SendCallCode("blue"));
+			}
+
+			// Debrief message
+			if (GUI.Button (new Rect (600, 40, 100, 30), "Debrief")) 
+			{
+				Debug.Log ("Debrief");
+				gameStatus = "debrief";
+			}
+
+			GUI.Label(new Rect(40,200,Screen.width,50),"Patient Status:");
+			GUI.Label(new Rect(40,220,Screen.width,50),oxygenStr,guiStyle);
+			GUI.Label(new Rect(40,240,Screen.width,50),"Heart Rate: "  +  heart,guiStyle);
+			GUI.Label(new Rect(40,260,Screen.width,50),"Arterial Pressure: " + systolic_arterial_pressure + "/" + diastolic_arterialpressure,guiStyle);
+			GUI.Label (new Rect (40, 280, Screen.width, 50), "Respiration Rate: " + respiration_rate,guiStyle);
+			drugname = GUI.TextField(new Rect(60,40,200,30),drugname,15);
+			dos = GUI.TextField(new Rect(60,80,200,30),dos,15);
+		}
+		if (gameStatus == "debrief") 
+		{
+			GUI.Label(new Rect(70,50,40,50),"Score:");
+			GUI.Label(new Rect(110,50,40,50),"100");
+			string debrief = "you did good!\nblablabla\nblabla\n\nblablabla\nbla";
+			GUI.TextField(new Rect(100, 100, 400, 200), debrief, 100);
+		}
 	}
 
 	IEnumerator RepeatedGet()
