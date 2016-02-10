@@ -40,6 +40,10 @@ public class Patient {
     }
 
     public PatientStatus getStatus() {
+        if (name.equals("PatientAlpha")) {
+            return PatientStatus.getRandomFakeStatus();
+        }
+
         return status;
     }
 

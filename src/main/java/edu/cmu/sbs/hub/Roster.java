@@ -6,12 +6,11 @@ import edu.cmu.sbs.hub.logging.RecordKeeperEZ;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Date;
 import java.util.HashMap;
 
 public class Roster {
 
-    final public RecordKeeperEZ recordKeeperEZ = new RecordKeeperEZ(new Date());
+    final public RecordKeeperEZ recordKeeperEZ = new RecordKeeperEZ();
     final private Logger logger = LoggerFactory.getLogger(this.getClass());
     private HashMap<String, Patient> patientMap;
 
