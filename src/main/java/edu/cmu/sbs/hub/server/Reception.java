@@ -66,6 +66,8 @@ public class Reception {
         get("/unity/status", (request, response) -> {
 
             try {
+                // TODO for test patient, it will ALWAYS return a random data instead of actual Biogears data.
+
                 return kiosk.locatePatient("abcdefg").getStatus().toString();
             } catch (PatientNotFoundException e) {
                 logger.error(e.getMessage());
