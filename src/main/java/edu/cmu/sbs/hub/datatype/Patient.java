@@ -40,6 +40,10 @@ public class Patient {
     }
 
     public PatientStatus getStatus() {
+        if (name.equals("PatientAlpha")) {
+            return PatientStatus.getRandomFakeStatus();
+        }
+
         return status;
     }
 
@@ -62,8 +66,11 @@ public class Patient {
     @Override
     public String toString() {
         return "Patient{" +
-                "name='" + name + '\'' +
-                ", Hash='" + patientHash + '\'' +
+                "height=" + height +
+                ", weight=" + weight +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", name='" + name + '\'' +
                 '}';
     }
 
