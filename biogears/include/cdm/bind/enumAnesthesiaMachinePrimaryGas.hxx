@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumAnesthesiaMachinePrimaryGas
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumAnesthesiaMachinePrimaryGas: public ::xml_schema::string
+        class enumAnesthesiaMachinePrimaryGas: public ::xml_schema::string
         {
           public:
 
@@ -276,11 +276,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumAnesthesiaMachinePrimaryGas::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumAnesthesiaMachinePrimaryGas&);
       }
@@ -323,15 +321,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumAnesthesiaMachinePrimaryGas&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumAnesthesiaMachinePrimaryGas&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumAnesthesiaMachinePrimaryGas&);

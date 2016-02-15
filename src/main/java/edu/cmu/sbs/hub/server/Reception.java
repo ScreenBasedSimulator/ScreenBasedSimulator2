@@ -1,36 +1,145 @@
 package edu.cmu.sbs.hub.server;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import edu.cmu.sbs.hub.Kiosk;
+import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
+import edu.cmu.sbs.hub.logging.RecordKeeperEZ;
 import edu.cmu.sbs.protocol.StatusProtocol;
+import org.joda.time.DateTime;
+import org.joda.time.Duration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.Type;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 
-import static spark.Spark.port;
-import static spark.Spark.post;
+import static spark.Spark.*;
 
 public class Reception {
 
+    private static int counter = 10;
+    private static boolean kill = false;
+    final private String FAILURE = "Failure\n";
+    final private String SUCCESS = "Success\n";
+    final private DateTime startTime;
     private Gson gson = new Gson();
-
-    private Kiosk kiosk;
+    private Action actionBag = new Action();
+    private RecordKeeperEZ recordKeeperEZ;
 
     public Reception(Kiosk kiosk) {
 
-        this.kiosk = kiosk;
+        startTime = new DateTime();
 
-        port(8081);
-        post("/update", (request, response) -> {
+        Logger logger = LoggerFactory.getLogger("Reception");
 
-            System.out.println("Received at : " + LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME));
-            System.out.println("received:\n" + request.body());
+        recordKeeperEZ = kiosk.roster.recordKeeperEZ;
 
-            kiosk.receive(gson.fromJson(request.body(), StatusProtocol.class));
+        port(26666);
+        post("/biogears/update", (request, response) -> {
 
-            return 1;
+            logger.info(LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME) + " received " + request.body());
+
+            try {
+                Type castType = new TypeToken<Map<String, String>>() {
+                }.getType();
+
+                kiosk.receive(new StatusProtocol(gson.fromJson(request.body(), castType)));
+
+                if (!kill && counter != 0) {
+                    counter--;
+                } else if (!kill) {
+                    actionBag.kill();
+                    kill = true;
+                }
+
+                return SUCCESS;
+            } catch (PatientNotFoundException e) {
+                logger.error(e.getMessage());
+                return FAILURE;
+            }
+        });
+
+        // TODO establish transfer protocol
+        get("/unity/status", (request, response) -> {
+
+            try {
+                return kiosk.locatePatient("abcdefg").getStatus().toString();
+            } catch (PatientNotFoundException e) {
+                logger.error(e.getMessage());
+                return FAILURE;
+            } finally {
+                logger.info("Status Update Success");
+            }
+
+        });
+
+        // No create for now.
+        // TODO establish create protocol
+        //get("/unity/create", (request, response) -> {
+        //    try {
+        //        kiosk.createPatient(request.toString());
+        //        return SUCCESS;
+        //    } catch (IllegalProtocol illegalProtocol) {
+        //        logger.error(illegalProtocol.getMessage());
+        //        return FAILURE;
+        //    }
+        //
+        //
+        //});
+
+        post("/unity/action/:action", (request, response) -> {
+
+            String action = request.params(":action").toLowerCase();
+
+            logger.info(action + " Action Received");
+
+            switch (action) {
+                case "oxygen":
+                    String status = request.queryParams("status");
+
+                    if (status.equals("on")) {
+                        actionBag.resumeOxygen();
+                    } else {
+                        actionBag.noOxygen();
+                    }
+
+                    //logging
+                    logAction(action);
+
+                    return SUCCESS;
+
+                case "kill":
+                    actionBag.kill();
+
+                    //logging
+                    logAction(action);
+
+                    return SUCCESS;
+                case "inject":
+
+                    System.out.println(request.queryParams("drug_name"));
+                    System.out.println(Double.parseDouble(request.queryParams("dose")));
+                    actionBag.inject(request.queryParams("drug_name"), Double.parseDouble(request.queryParams("dose")));
+
+                    // TODO inject content is unlogged
+                    logAction(action);
+
+                    return SUCCESS;
+
+                default:
+                    return FAILURE;
+            }
         });
     }
 
+    public void logAction(String action) {
+        recordKeeperEZ.log(format(action));
+    }
 
+    private String format(String entry) {
+        return String.format("%1$%-15s %2$10s", new Duration(startTime, new DateTime()) + " :", entry);
+    }
 }

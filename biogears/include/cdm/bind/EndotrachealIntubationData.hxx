@@ -130,7 +130,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) EndotrachealIntubationData: public ::mil::tatrc::physiology::datamodel::IntubationData
+        class EndotrachealIntubationData: public ::mil::tatrc::physiology::datamodel::IntubationData
         {
           public:
           /**
@@ -309,7 +309,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const EndotrachealIntubationData&);
       }
@@ -352,7 +351,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const EndotrachealIntubationData&);
       }

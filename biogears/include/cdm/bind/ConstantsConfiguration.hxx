@@ -142,7 +142,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ConstantsConfiguration: public ::xml_schema::type
+        class ConstantsConfiguration: public ::xml_schema::type
         {
           public:
           /**
@@ -475,7 +475,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ConstantsConfiguration&);
       }
@@ -518,7 +517,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ConstantsConfiguration&);
       }

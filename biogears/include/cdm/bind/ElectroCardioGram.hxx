@@ -165,7 +165,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (const ::std::string& uri,
                            ::xml_schema::flags f = 0,
@@ -182,7 +181,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (const ::std::string& uri,
                            ::xml_schema::error_handler& eh,
@@ -201,7 +199,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (const ::std::string& uri,
                            ::xercesc::DOMErrorHandler& eh,
@@ -218,7 +215,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::std::istream& is,
                            ::xml_schema::flags f = 0,
@@ -235,7 +231,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::std::istream& is,
                            ::xml_schema::error_handler& eh,
@@ -254,7 +249,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::std::istream& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -275,7 +269,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::std::istream& is,
                            const ::std::string& id,
@@ -298,7 +291,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::std::istream& is,
                            const ::std::string& id,
@@ -322,7 +314,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::std::istream& is,
                            const ::std::string& id,
@@ -340,7 +331,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::xercesc::InputSource& is,
                            ::xml_schema::flags f = 0,
@@ -357,7 +347,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::xercesc::InputSource& is,
                            ::xml_schema::error_handler& eh,
@@ -376,7 +365,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::xercesc::InputSource& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -391,7 +379,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (const ::xercesc::DOMDocument& d,
                            ::xml_schema::flags f = 0,
@@ -409,7 +396,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramData >
         ElectroCardioGram (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                            ::xml_schema::flags f = 0,
@@ -432,7 +418,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (const ::std::string& uri,
                                    ::xml_schema::flags f = 0,
@@ -449,7 +434,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (const ::std::string& uri,
                                    ::xml_schema::error_handler& eh,
@@ -468,7 +452,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (const ::std::string& uri,
                                    ::xercesc::DOMErrorHandler& eh,
@@ -485,7 +468,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::std::istream& is,
                                    ::xml_schema::flags f = 0,
@@ -502,7 +484,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::std::istream& is,
                                    ::xml_schema::error_handler& eh,
@@ -521,7 +502,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::std::istream& is,
                                    ::xercesc::DOMErrorHandler& eh,
@@ -542,7 +522,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::std::istream& is,
                                    const ::std::string& id,
@@ -565,7 +544,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::std::istream& is,
                                    const ::std::string& id,
@@ -589,7 +567,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::std::istream& is,
                                    const ::std::string& id,
@@ -607,7 +584,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::xercesc::InputSource& is,
                                    ::xml_schema::flags f = 0,
@@ -624,7 +600,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::xercesc::InputSource& is,
                                    ::xml_schema::error_handler& eh,
@@ -643,7 +618,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::xercesc::InputSource& is,
                                    ::xercesc::DOMErrorHandler& eh,
@@ -658,7 +632,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (const ::xercesc::DOMDocument& d,
                                    ::xml_schema::flags f = 0,
@@ -676,7 +649,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData >
         ElectroCardioGramWaveform (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                                    ::xml_schema::flags f = 0,
@@ -720,7 +692,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGram (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::ElectroCardioGramData& x, 
@@ -741,7 +712,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGram (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::ElectroCardioGramData& x, 
@@ -764,7 +734,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGram (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::ElectroCardioGramData& x, 
@@ -784,7 +753,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGram (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::ElectroCardioGramData& x, 
@@ -806,7 +774,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGram (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::ElectroCardioGramData& x, 
@@ -829,7 +796,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGram (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::ElectroCardioGramData& x, 
@@ -849,7 +815,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGram (::xercesc::DOMDocument& d,
                            const ::mil::tatrc::physiology::datamodel::ElectroCardioGramData& x,
@@ -863,7 +828,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         ElectroCardioGram (const ::mil::tatrc::physiology::datamodel::ElectroCardioGramData& x, 
                            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -887,7 +851,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGramWaveform (::std::ostream& os,
                                    const ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData& x, 
@@ -908,7 +871,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGramWaveform (::std::ostream& os,
                                    const ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData& x, 
@@ -931,7 +893,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGramWaveform (::std::ostream& os,
                                    const ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData& x, 
@@ -951,7 +912,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGramWaveform (::xercesc::XMLFormatTarget& ft,
                                    const ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData& x, 
@@ -973,7 +933,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGramWaveform (::xercesc::XMLFormatTarget& ft,
                                    const ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData& x, 
@@ -996,7 +955,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGramWaveform (::xercesc::XMLFormatTarget& ft,
                                    const ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData& x, 
@@ -1016,7 +974,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         ElectroCardioGramWaveform (::xercesc::DOMDocument& d,
                                    const ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData& x,
@@ -1030,7 +987,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         ElectroCardioGramWaveform (const ::mil::tatrc::physiology::datamodel::ElectroCardioGramWaveformData& x, 
                                    const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),

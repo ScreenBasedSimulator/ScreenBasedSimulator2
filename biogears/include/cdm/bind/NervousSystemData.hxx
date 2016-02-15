@@ -107,21 +107,7 @@ namespace mil
     {
       namespace datamodel
       {
-        class ScalarFrequencyData;
-      }
-    }
-  }
-}
-
-namespace mil
-{
-  namespace tatrc
-  {
-    namespace physiology
-    {
-      namespace datamodel
-      {
-        class ScalarPressurePerVolumeData;
+        class ScalarData;
       }
     }
   }
@@ -144,13 +130,13 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) NervousSystemData: public ::mil::tatrc::physiology::datamodel::SystemData
+        class NervousSystemData: public ::mil::tatrc::physiology::datamodel::SystemData
         {
           public:
           /**
-           * @name DeltaHeartRate
+           * @name BaroreceptorHeartRateScale
            *
-           * @brief Accessor and modifier functions for the %DeltaHeartRate
+           * @brief Accessor and modifier functions for the %BaroreceptorHeartRateScale
            * optional element.
            */
           //@{
@@ -158,17 +144,17 @@ namespace mil
           /**
            * @brief Element type.
            */
-          typedef ::mil::tatrc::physiology::datamodel::ScalarFrequencyData DeltaHeartRate_type;
+          typedef ::mil::tatrc::physiology::datamodel::ScalarData BaroreceptorHeartRateScale_type;
 
           /**
            * @brief Element optional container type.
            */
-          typedef ::xsd::cxx::tree::optional< DeltaHeartRate_type > DeltaHeartRate_optional;
+          typedef ::xsd::cxx::tree::optional< BaroreceptorHeartRateScale_type > BaroreceptorHeartRateScale_optional;
 
           /**
            * @brief Element traits type.
            */
-          typedef ::xsd::cxx::tree::traits< DeltaHeartRate_type, char > DeltaHeartRate_traits;
+          typedef ::xsd::cxx::tree::traits< BaroreceptorHeartRateScale_type, char > BaroreceptorHeartRateScale_traits;
 
           /**
            * @brief Return a read-only (constant) reference to the element
@@ -176,16 +162,16 @@ namespace mil
            *
            * @return A constant reference to the optional container.
            */
-          const DeltaHeartRate_optional&
-          DeltaHeartRate () const;
+          const BaroreceptorHeartRateScale_optional&
+          BaroreceptorHeartRateScale () const;
 
           /**
            * @brief Return a read-write reference to the element container.
            *
            * @return A reference to the optional container.
            */
-          DeltaHeartRate_optional&
-          DeltaHeartRate ();
+          BaroreceptorHeartRateScale_optional&
+          BaroreceptorHeartRateScale ();
 
           /**
            * @brief Set the element value.
@@ -196,7 +182,7 @@ namespace mil
            * the new value of the element.
            */
           void
-          DeltaHeartRate (const DeltaHeartRate_type& x);
+          BaroreceptorHeartRateScale (const BaroreceptorHeartRateScale_type& x);
 
           /**
            * @brief Set the element value.
@@ -208,7 +194,7 @@ namespace mil
            * Otherwise the element container is set the 'not present' state.
            */
           void
-          DeltaHeartRate (const DeltaHeartRate_optional& x);
+          BaroreceptorHeartRateScale (const BaroreceptorHeartRateScale_optional& x);
 
           /**
            * @brief Set the element value without copying.
@@ -219,14 +205,14 @@ namespace mil
            * of making a copy.
            */
           void
-          DeltaHeartRate (::std::unique_ptr< DeltaHeartRate_type > p);
+          BaroreceptorHeartRateScale (::std::unique_ptr< BaroreceptorHeartRateScale_type > p);
 
           //@}
 
           /**
-           * @name DeltaHeartElastance
+           * @name BaroreceptorHeartElastanceScale
            *
-           * @brief Accessor and modifier functions for the %DeltaHeartElastance
+           * @brief Accessor and modifier functions for the %BaroreceptorHeartElastanceScale
            * optional element.
            */
           //@{
@@ -234,17 +220,17 @@ namespace mil
           /**
            * @brief Element type.
            */
-          typedef ::mil::tatrc::physiology::datamodel::ScalarPressurePerVolumeData DeltaHeartElastance_type;
+          typedef ::mil::tatrc::physiology::datamodel::ScalarData BaroreceptorHeartElastanceScale_type;
 
           /**
            * @brief Element optional container type.
            */
-          typedef ::xsd::cxx::tree::optional< DeltaHeartElastance_type > DeltaHeartElastance_optional;
+          typedef ::xsd::cxx::tree::optional< BaroreceptorHeartElastanceScale_type > BaroreceptorHeartElastanceScale_optional;
 
           /**
            * @brief Element traits type.
            */
-          typedef ::xsd::cxx::tree::traits< DeltaHeartElastance_type, char > DeltaHeartElastance_traits;
+          typedef ::xsd::cxx::tree::traits< BaroreceptorHeartElastanceScale_type, char > BaroreceptorHeartElastanceScale_traits;
 
           /**
            * @brief Return a read-only (constant) reference to the element
@@ -252,16 +238,16 @@ namespace mil
            *
            * @return A constant reference to the optional container.
            */
-          const DeltaHeartElastance_optional&
-          DeltaHeartElastance () const;
+          const BaroreceptorHeartElastanceScale_optional&
+          BaroreceptorHeartElastanceScale () const;
 
           /**
            * @brief Return a read-write reference to the element container.
            *
            * @return A reference to the optional container.
            */
-          DeltaHeartElastance_optional&
-          DeltaHeartElastance ();
+          BaroreceptorHeartElastanceScale_optional&
+          BaroreceptorHeartElastanceScale ();
 
           /**
            * @brief Set the element value.
@@ -272,7 +258,7 @@ namespace mil
            * the new value of the element.
            */
           void
-          DeltaHeartElastance (const DeltaHeartElastance_type& x);
+          BaroreceptorHeartElastanceScale (const BaroreceptorHeartElastanceScale_type& x);
 
           /**
            * @brief Set the element value.
@@ -284,7 +270,7 @@ namespace mil
            * Otherwise the element container is set the 'not present' state.
            */
           void
-          DeltaHeartElastance (const DeltaHeartElastance_optional& x);
+          BaroreceptorHeartElastanceScale (const BaroreceptorHeartElastanceScale_optional& x);
 
           /**
            * @brief Set the element value without copying.
@@ -295,7 +281,159 @@ namespace mil
            * of making a copy.
            */
           void
-          DeltaHeartElastance (::std::unique_ptr< DeltaHeartElastance_type > p);
+          BaroreceptorHeartElastanceScale (::std::unique_ptr< BaroreceptorHeartElastanceScale_type > p);
+
+          //@}
+
+          /**
+           * @name BaroreceptorResistanceScale
+           *
+           * @brief Accessor and modifier functions for the %BaroreceptorResistanceScale
+           * optional element.
+           */
+          //@{
+
+          /**
+           * @brief Element type.
+           */
+          typedef ::mil::tatrc::physiology::datamodel::ScalarData BaroreceptorResistanceScale_type;
+
+          /**
+           * @brief Element optional container type.
+           */
+          typedef ::xsd::cxx::tree::optional< BaroreceptorResistanceScale_type > BaroreceptorResistanceScale_optional;
+
+          /**
+           * @brief Element traits type.
+           */
+          typedef ::xsd::cxx::tree::traits< BaroreceptorResistanceScale_type, char > BaroreceptorResistanceScale_traits;
+
+          /**
+           * @brief Return a read-only (constant) reference to the element
+           * container.
+           *
+           * @return A constant reference to the optional container.
+           */
+          const BaroreceptorResistanceScale_optional&
+          BaroreceptorResistanceScale () const;
+
+          /**
+           * @brief Return a read-write reference to the element container.
+           *
+           * @return A reference to the optional container.
+           */
+          BaroreceptorResistanceScale_optional&
+          BaroreceptorResistanceScale ();
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x A new value to set.
+           *
+           * This function makes a copy of its argument and sets it as
+           * the new value of the element.
+           */
+          void
+          BaroreceptorResistanceScale (const BaroreceptorResistanceScale_type& x);
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x An optional container with the new value to set.
+           *
+           * If the value is present in @a x then this function makes a copy 
+           * of this value and sets it as the new value of the element.
+           * Otherwise the element container is set the 'not present' state.
+           */
+          void
+          BaroreceptorResistanceScale (const BaroreceptorResistanceScale_optional& x);
+
+          /**
+           * @brief Set the element value without copying.
+           *
+           * @param p A new value to use.
+           *
+           * This function will try to use the passed value directly instead
+           * of making a copy.
+           */
+          void
+          BaroreceptorResistanceScale (::std::unique_ptr< BaroreceptorResistanceScale_type > p);
+
+          //@}
+
+          /**
+           * @name BaroreceptorComplianceScale
+           *
+           * @brief Accessor and modifier functions for the %BaroreceptorComplianceScale
+           * optional element.
+           */
+          //@{
+
+          /**
+           * @brief Element type.
+           */
+          typedef ::mil::tatrc::physiology::datamodel::ScalarData BaroreceptorComplianceScale_type;
+
+          /**
+           * @brief Element optional container type.
+           */
+          typedef ::xsd::cxx::tree::optional< BaroreceptorComplianceScale_type > BaroreceptorComplianceScale_optional;
+
+          /**
+           * @brief Element traits type.
+           */
+          typedef ::xsd::cxx::tree::traits< BaroreceptorComplianceScale_type, char > BaroreceptorComplianceScale_traits;
+
+          /**
+           * @brief Return a read-only (constant) reference to the element
+           * container.
+           *
+           * @return A constant reference to the optional container.
+           */
+          const BaroreceptorComplianceScale_optional&
+          BaroreceptorComplianceScale () const;
+
+          /**
+           * @brief Return a read-write reference to the element container.
+           *
+           * @return A reference to the optional container.
+           */
+          BaroreceptorComplianceScale_optional&
+          BaroreceptorComplianceScale ();
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x A new value to set.
+           *
+           * This function makes a copy of its argument and sets it as
+           * the new value of the element.
+           */
+          void
+          BaroreceptorComplianceScale (const BaroreceptorComplianceScale_type& x);
+
+          /**
+           * @brief Set the element value.
+           *
+           * @param x An optional container with the new value to set.
+           *
+           * If the value is present in @a x then this function makes a copy 
+           * of this value and sets it as the new value of the element.
+           * Otherwise the element container is set the 'not present' state.
+           */
+          void
+          BaroreceptorComplianceScale (const BaroreceptorComplianceScale_optional& x);
+
+          /**
+           * @brief Set the element value without copying.
+           *
+           * @param p A new value to use.
+           *
+           * This function will try to use the passed value directly instead
+           * of making a copy.
+           */
+          void
+          BaroreceptorComplianceScale (::std::unique_ptr< BaroreceptorComplianceScale_type > p);
 
           //@}
 
@@ -380,8 +518,10 @@ namespace mil
                  ::xml_schema::flags);
 
           protected:
-          DeltaHeartRate_optional DeltaHeartRate_;
-          DeltaHeartElastance_optional DeltaHeartElastance_;
+          BaroreceptorHeartRateScale_optional BaroreceptorHeartRateScale_;
+          BaroreceptorHeartElastanceScale_optional BaroreceptorHeartElastanceScale_;
+          BaroreceptorResistanceScale_optional BaroreceptorResistanceScale_;
+          BaroreceptorComplianceScale_optional BaroreceptorComplianceScale_;
 
           //@endcond
         };
@@ -400,7 +540,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const NervousSystemData&);
       }
@@ -443,7 +582,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const NervousSystemData&);
       }

@@ -65,10 +65,15 @@ protected:
 public:
 
 	bool StabilizeRestingState(PhysiologyEngine& engine);
+	bool StabilizeFeedbackState(PhysiologyEngine& engine);
 	bool StabilizeConditions(PhysiologyEngine& engine, const std::vector<const SECondition*>& conditions);
 
 	SEScalarTime& GetRestingStabilizationTime();
 	double GetRestingStabilizationTime(const std::shared_ptr<CCompoundUnit>& unit) const;
+
+	bool HasFeedbackStabilizationTime() const;
+	SEScalarTime& GetFeedbackStabilizationTime();
+	double GetFeedbackStabilizationTime(const std::shared_ptr<CCompoundUnit>& unit) const;
 
 	void RemoveConditionCriteria(const std::string& name);
 	void AddConditionCriteria(PhysiologyEngineTimedStabilizationCriteria& criteria);
@@ -80,5 +85,6 @@ protected:
 	bool Stabilize(PhysiologyEngine& engine, const SEScalarTime& time);
 
 	SEScalarTime m_RestingStabilizationTime;
+	SEScalarTime* m_FeedbackStabilizationTime;
 	std::vector<PhysiologyEngineTimedStabilizationCriteria*> m_ConditionCriteria;
 };

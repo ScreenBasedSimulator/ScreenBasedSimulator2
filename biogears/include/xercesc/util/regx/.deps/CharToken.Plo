@@ -1,48 +1,71 @@
 xercesc/util/regx/CharToken.lo: xercesc/util/regx/CharToken.cpp \
- /usr/arm-linux-gnueabihf/include/stdc-predef.h \
- xercesc/util/regx/CharToken.hpp xercesc/util/regx/Token.hpp \
- xercesc/util/RuntimeException.hpp xercesc/util/XercesDefs.hpp \
- xercesc/util/Xerces_autoconf_config.hpp \
- /usr/arm-linux-gnueabihf/include/inttypes.h \
- /usr/arm-linux-gnueabihf/include/features.h \
- /usr/arm-linux-gnueabihf/include/sys/cdefs.h \
- /usr/arm-linux-gnueabihf/include/bits/wordsize.h \
- /usr/arm-linux-gnueabihf/include/gnu/stubs.h \
- /usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stdint.h \
- /usr/arm-linux-gnueabihf/include/stdint.h \
- /usr/arm-linux-gnueabihf/include/bits/wchar.h \
- /usr/arm-linux-gnueabihf/include/sys/types.h \
- /usr/arm-linux-gnueabihf/include/bits/types.h \
- /usr/arm-linux-gnueabihf/include/bits/typesizes.h \
- /usr/arm-linux-gnueabihf/include/time.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stddef.h \
- /usr/arm-linux-gnueabihf/include/endian.h \
- /usr/arm-linux-gnueabihf/include/bits/endian.h \
- /usr/arm-linux-gnueabihf/include/bits/byteswap.h \
- /usr/arm-linux-gnueabihf/include/bits/byteswap-16.h \
- /usr/arm-linux-gnueabihf/include/sys/select.h \
- /usr/arm-linux-gnueabihf/include/bits/select.h \
- /usr/arm-linux-gnueabihf/include/bits/sigset.h \
- /usr/arm-linux-gnueabihf/include/bits/time.h \
- /usr/arm-linux-gnueabihf/include/bits/select2.h \
- /usr/arm-linux-gnueabihf/include/sys/sysmacros.h \
- /usr/arm-linux-gnueabihf/include/bits/pthreadtypes.h \
- xercesc/util/XercesVersion.hpp xercesc/util/XMLException.hpp \
- xercesc/util/XMemory.hpp /usr/arm-linux-gnueabihf/include/stdlib.h \
- /usr/arm-linux-gnueabihf/include/bits/waitflags.h \
- /usr/arm-linux-gnueabihf/include/bits/waitstatus.h \
- /usr/arm-linux-gnueabihf/include/xlocale.h \
- /usr/arm-linux-gnueabihf/include/alloca.h \
- /usr/arm-linux-gnueabihf/include/bits/stdlib-bsearch.h \
- /usr/arm-linux-gnueabihf/include/bits/stdlib-float.h \
- /usr/arm-linux-gnueabihf/include/bits/stdlib.h \
- xercesc/util/XMLExceptMsgs.hpp xercesc/dom/DOMError.hpp \
- xercesc/util/XMLUni.hpp xercesc/framework/XMLErrorReporter.hpp \
- xercesc/util/PlatformUtils.hpp xercesc/util/PanicHandler.hpp \
- xercesc/util/XMLFileMgr.hpp xercesc/util/XMLMutexMgr.hpp
-
-/usr/arm-linux-gnueabihf/include/stdc-predef.h:
+  xercesc/util/regx/CharToken.hpp xercesc/util/regx/Token.hpp \
+  xercesc/util/RuntimeException.hpp xercesc/util/XercesDefs.hpp \
+  xercesc/util/Xerces_autoconf_config.hpp /usr/include/inttypes.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/Availability.h \
+  /usr/include/AvailabilityInternal.h /usr/include/_types.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/i386/_types.h /usr/include/sys/_pthread/_pthread_types.h \
+  /usr/include/sys/_types/_wchar_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h \
+  /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h \
+  /usr/include/sys/_types/_int16_t.h /usr/include/sys/_types/_int32_t.h \
+  /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h \
+  /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h \
+  /usr/include/_types/_uint64_t.h /usr/include/sys/_types/_intptr_t.h \
+  /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h \
+  /usr/include/_types/_uintmax_t.h /usr/include/sys/types.h \
+  /usr/include/sys/appleapiopts.h /usr/include/machine/types.h \
+  /usr/include/i386/types.h /usr/include/machine/endian.h \
+  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
+  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/libkern/i386/_OSByteOrder.h \
+  /usr/include/sys/_types/_dev_t.h /usr/include/sys/_types/_blkcnt_t.h \
+  /usr/include/sys/_types/_blksize_t.h /usr/include/sys/_types/_gid_t.h \
+  /usr/include/sys/_types/_in_addr_t.h \
+  /usr/include/sys/_types/_in_port_t.h /usr/include/sys/_types/_ino_t.h \
+  /usr/include/sys/_types/_ino64_t.h /usr/include/sys/_types/_key_t.h \
+  /usr/include/sys/_types/_mode_t.h /usr/include/sys/_types/_nlink_t.h \
+  /usr/include/sys/_types/_id_t.h /usr/include/sys/_types/_pid_t.h \
+  /usr/include/sys/_types/_off_t.h /usr/include/sys/_types/_uid_t.h \
+  /usr/include/sys/_types/_clock_t.h /usr/include/sys/_types/_size_t.h \
+  /usr/include/sys/_types/_ssize_t.h /usr/include/sys/_types/_time_t.h \
+  /usr/include/sys/_types/_useconds_t.h \
+  /usr/include/sys/_types/_suseconds_t.h \
+  /usr/include/sys/_types/_rsize_t.h /usr/include/sys/_types/_errno_t.h \
+  /usr/include/sys/_types/_fd_def.h \
+  /usr/include/sys/_types/_fd_setsize.h \
+  /usr/include/sys/_types/_fd_set.h /usr/include/sys/_types/_fd_clr.h \
+  /usr/include/sys/_types/_fd_zero.h /usr/include/sys/_types/_fd_isset.h \
+  /usr/include/sys/_types/_fd_copy.h \
+  /usr/include/sys/_pthread/_pthread_attr_t.h \
+  /usr/include/sys/_pthread/_pthread_cond_t.h \
+  /usr/include/sys/_pthread/_pthread_condattr_t.h \
+  /usr/include/sys/_pthread/_pthread_mutex_t.h \
+  /usr/include/sys/_pthread/_pthread_mutexattr_t.h \
+  /usr/include/sys/_pthread/_pthread_once_t.h \
+  /usr/include/sys/_pthread/_pthread_rwlock_t.h \
+  /usr/include/sys/_pthread/_pthread_rwlockattr_t.h \
+  /usr/include/sys/_pthread/_pthread_t.h \
+  /usr/include/sys/_pthread/_pthread_key_t.h \
+  /usr/include/sys/_types/_fsblkcnt_t.h \
+  /usr/include/sys/_types/_fsfilcnt_t.h xercesc/util/XercesVersion.hpp \
+  xercesc/util/XMLException.hpp xercesc/util/XMemory.hpp \
+  /usr/include/stdlib.h /usr/include/sys/wait.h \
+  /usr/include/sys/signal.h /usr/include/machine/signal.h \
+  /usr/include/i386/signal.h /usr/include/machine/_mcontext.h \
+  /usr/include/i386/_mcontext.h /usr/include/mach/i386/_structs.h \
+  /usr/include/sys/_types/_sigaltstack.h \
+  /usr/include/sys/_types/_ucontext.h \
+  /usr/include/sys/_types/_sigset_t.h /usr/include/sys/resource.h \
+  /usr/include/sys/_types/_timeval.h /usr/include/alloca.h \
+  /usr/include/sys/_types/_ct_rune_t.h /usr/include/sys/_types/_rune_t.h \
+  /usr/include/sys/_types/_null.h xercesc/util/XMLExceptMsgs.hpp \
+  xercesc/dom/DOMError.hpp xercesc/util/XMLUni.hpp \
+  xercesc/framework/XMLErrorReporter.hpp xercesc/util/PlatformUtils.hpp \
+  xercesc/util/PanicHandler.hpp xercesc/util/XMLFileMgr.hpp \
+  xercesc/util/XMLMutexMgr.hpp
 
 xercesc/util/regx/CharToken.hpp:
 
@@ -54,55 +77,159 @@ xercesc/util/XercesDefs.hpp:
 
 xercesc/util/Xerces_autoconf_config.hpp:
 
-/usr/arm-linux-gnueabihf/include/inttypes.h:
+/usr/include/inttypes.h:
 
-/usr/arm-linux-gnueabihf/include/features.h:
+/usr/include/sys/cdefs.h:
 
-/usr/arm-linux-gnueabihf/include/sys/cdefs.h:
+/usr/include/sys/_symbol_aliasing.h:
 
-/usr/arm-linux-gnueabihf/include/bits/wordsize.h:
+/usr/include/sys/_posix_availability.h:
 
-/usr/arm-linux-gnueabihf/include/gnu/stubs.h:
+/usr/include/Availability.h:
 
-/usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h:
+/usr/include/AvailabilityInternal.h:
 
-/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stdint.h:
+/usr/include/_types.h:
 
-/usr/arm-linux-gnueabihf/include/stdint.h:
+/usr/include/sys/_types.h:
 
-/usr/arm-linux-gnueabihf/include/bits/wchar.h:
+/usr/include/machine/_types.h:
 
-/usr/arm-linux-gnueabihf/include/sys/types.h:
+/usr/include/i386/_types.h:
 
-/usr/arm-linux-gnueabihf/include/bits/types.h:
+/usr/include/sys/_pthread/_pthread_types.h:
 
-/usr/arm-linux-gnueabihf/include/bits/typesizes.h:
+/usr/include/sys/_types/_wchar_t.h:
 
-/usr/arm-linux-gnueabihf/include/time.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h:
 
-/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stddef.h:
+/usr/include/stdint.h:
 
-/usr/arm-linux-gnueabihf/include/endian.h:
+/usr/include/sys/_types/_int8_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/endian.h:
+/usr/include/sys/_types/_int16_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/byteswap.h:
+/usr/include/sys/_types/_int32_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/byteswap-16.h:
+/usr/include/sys/_types/_int64_t.h:
 
-/usr/arm-linux-gnueabihf/include/sys/select.h:
+/usr/include/_types/_uint8_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/select.h:
+/usr/include/_types/_uint16_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/sigset.h:
+/usr/include/_types/_uint32_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/time.h:
+/usr/include/_types/_uint64_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/select2.h:
+/usr/include/sys/_types/_intptr_t.h:
 
-/usr/arm-linux-gnueabihf/include/sys/sysmacros.h:
+/usr/include/sys/_types/_uintptr_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/pthreadtypes.h:
+/usr/include/_types/_intmax_t.h:
+
+/usr/include/_types/_uintmax_t.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/appleapiopts.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/i386/types.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/i386/endian.h:
+
+/usr/include/sys/_endian.h:
+
+/usr/include/libkern/_OSByteOrder.h:
+
+/usr/include/libkern/i386/_OSByteOrder.h:
+
+/usr/include/sys/_types/_dev_t.h:
+
+/usr/include/sys/_types/_blkcnt_t.h:
+
+/usr/include/sys/_types/_blksize_t.h:
+
+/usr/include/sys/_types/_gid_t.h:
+
+/usr/include/sys/_types/_in_addr_t.h:
+
+/usr/include/sys/_types/_in_port_t.h:
+
+/usr/include/sys/_types/_ino_t.h:
+
+/usr/include/sys/_types/_ino64_t.h:
+
+/usr/include/sys/_types/_key_t.h:
+
+/usr/include/sys/_types/_mode_t.h:
+
+/usr/include/sys/_types/_nlink_t.h:
+
+/usr/include/sys/_types/_id_t.h:
+
+/usr/include/sys/_types/_pid_t.h:
+
+/usr/include/sys/_types/_off_t.h:
+
+/usr/include/sys/_types/_uid_t.h:
+
+/usr/include/sys/_types/_clock_t.h:
+
+/usr/include/sys/_types/_size_t.h:
+
+/usr/include/sys/_types/_ssize_t.h:
+
+/usr/include/sys/_types/_time_t.h:
+
+/usr/include/sys/_types/_useconds_t.h:
+
+/usr/include/sys/_types/_suseconds_t.h:
+
+/usr/include/sys/_types/_rsize_t.h:
+
+/usr/include/sys/_types/_errno_t.h:
+
+/usr/include/sys/_types/_fd_def.h:
+
+/usr/include/sys/_types/_fd_setsize.h:
+
+/usr/include/sys/_types/_fd_set.h:
+
+/usr/include/sys/_types/_fd_clr.h:
+
+/usr/include/sys/_types/_fd_zero.h:
+
+/usr/include/sys/_types/_fd_isset.h:
+
+/usr/include/sys/_types/_fd_copy.h:
+
+/usr/include/sys/_pthread/_pthread_attr_t.h:
+
+/usr/include/sys/_pthread/_pthread_cond_t.h:
+
+/usr/include/sys/_pthread/_pthread_condattr_t.h:
+
+/usr/include/sys/_pthread/_pthread_mutex_t.h:
+
+/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
+
+/usr/include/sys/_pthread/_pthread_once_t.h:
+
+/usr/include/sys/_pthread/_pthread_rwlock_t.h:
+
+/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
+
+/usr/include/sys/_pthread/_pthread_t.h:
+
+/usr/include/sys/_pthread/_pthread_key_t.h:
+
+/usr/include/sys/_types/_fsblkcnt_t.h:
+
+/usr/include/sys/_types/_fsfilcnt_t.h:
 
 xercesc/util/XercesVersion.hpp:
 
@@ -110,21 +237,39 @@ xercesc/util/XMLException.hpp:
 
 xercesc/util/XMemory.hpp:
 
-/usr/arm-linux-gnueabihf/include/stdlib.h:
+/usr/include/stdlib.h:
 
-/usr/arm-linux-gnueabihf/include/bits/waitflags.h:
+/usr/include/sys/wait.h:
 
-/usr/arm-linux-gnueabihf/include/bits/waitstatus.h:
+/usr/include/sys/signal.h:
 
-/usr/arm-linux-gnueabihf/include/xlocale.h:
+/usr/include/machine/signal.h:
 
-/usr/arm-linux-gnueabihf/include/alloca.h:
+/usr/include/i386/signal.h:
 
-/usr/arm-linux-gnueabihf/include/bits/stdlib-bsearch.h:
+/usr/include/machine/_mcontext.h:
 
-/usr/arm-linux-gnueabihf/include/bits/stdlib-float.h:
+/usr/include/i386/_mcontext.h:
 
-/usr/arm-linux-gnueabihf/include/bits/stdlib.h:
+/usr/include/mach/i386/_structs.h:
+
+/usr/include/sys/_types/_sigaltstack.h:
+
+/usr/include/sys/_types/_ucontext.h:
+
+/usr/include/sys/_types/_sigset_t.h:
+
+/usr/include/sys/resource.h:
+
+/usr/include/sys/_types/_timeval.h:
+
+/usr/include/alloca.h:
+
+/usr/include/sys/_types/_ct_rune_t.h:
+
+/usr/include/sys/_types/_rune_t.h:
+
+/usr/include/sys/_types/_null.h:
 
 xercesc/util/XMLExceptMsgs.hpp:
 

@@ -12,6 +12,7 @@ specific language governing permissions and limitations under the License.
 
 #pragma once
 class SEScenario;
+class SEEventHandler;
 
 class SEPatient;
 class SEPatientAssessment;
@@ -101,60 +102,21 @@ public:
 
 	//--------------------------------------------------------------------------------------------------
 	/// \brief
-	/// Executes the provided scenario file
-	///
-	/// There are two ways to run an engie : Statically via a scenario file and dynamically via the Actions API.
-	/// This will statically execute the engine with the instructions (patient,actions,conditions) in the scenario file.
-	/// It will provide a tab delimited file containing the requested output at each engine time step
-	/// (Unless null is provided for the output file)	
-	/// An unsupported action will result in immediate halting of the engine
-	/// If an engine does not provide the requested output, NaN will be provided
-	/// After each time step is executed, the engine will call the functionality provided by the
-	/// SESceanarioCustomExec given (Unless nullptr is passed in instead of a class)
-	///
-	//--------------------------------------------------------------------------------------------------
-	virtual bool ExecuteScenario(const char* scenarioFile, const char* resultsFile=nullptr, SEScenarioCustomExec* cExec=nullptr) = 0;
-
-	//--------------------------------------------------------------------------------------------------
-	/// \brief
-	/// Executes the provided scenario file
-	///
-	/// There are two ways to run an engie : Statically via a scenario file and dynamically via the Actions API.
-	/// This will statically execute the engine with the instructions (patient,actions,conditions) in the scenario file.
-	/// It will provide a tab delimited file containing the requested output at each engine time step
-	/// (Unless null is provided for the output file)	
-	/// An unsupported action will result in immediate halting of the engine
-	/// If an engine does not provide the requested output, NaN will be provided
-	///
-	//--------------------------------------------------------------------------------------------------
-	virtual bool ExecuteScenario(const SEScenario& scenario, const char* resultsFile = nullptr, SEScenarioCustomExec* cExec = nullptr) = 0;
-
-	//--------------------------------------------------------------------------------------------------
-	/// \brief
-	/// Cancels the currently executing scenario file
-	///	
-	//--------------------------------------------------------------------------------------------------
-	virtual void CancelScenario() = 0;
-
-	//--------------------------------------------------------------------------------------------------
-	/// \brief
 	/// locates the xml patient file and reads in the values. 
 	///
-	/// There are two ways to run an engie : Statically via a scenario file and dynamically via the Actions API.
 	/// This will create an engine that you can send instructions (patient,actions,conditions) to dynamically.
-	/// This call will initialized the engine for dynamic calls. The return value will indicate success or 
-	/// failure of the creation of the engine. (Some combinations of patients and conditions may not work)
+	/// The return value will indicate success failure of the creation of the engine.  
+	/// Some combinations of patients and conditions may prevent the engine from stabilizing
 	///
 	//--------------------------------------------------------------------------------------------------
-	virtual bool InitializeEngine(const char *patientFilename, const std::vector<const SECondition*>* conditions = nullptr) = 0;
+	virtual bool InitializeEngine(const std::string& patientFile, const std::vector<const SECondition*>* conditions = nullptr) = 0;
 
 	//--------------------------------------------------------------------------------------------------
 	/// \brief
 	///
-	/// There are two ways to run an engie : Statically via a scenario file and dynamically via the Actions API.
 	/// This will create an engine that you can send instructions (patient,actions,conditions) to dynamically.
-	/// This call will initialized the engine for dynamic calls. The return value will indicate success or 
-	/// failure of the creation of the engine. (Some combinations of patients and conditions may not work)
+	/// The return value will indicate success failure of the creation of the engine.  
+	/// Some combinations of patients and conditions may prevent the engine from stabilizing
 	///
 	//--------------------------------------------------------------------------------------------------
 	virtual bool InitializeEngine(const SEPatient& patient, const std::vector<const SECondition*>* conditions = nullptr) = 0;
@@ -222,6 +184,12 @@ public:
 	///
 	//--------------------------------------------------------------------------------------------------
 	virtual SESubstanceManager& GetSubstanceManager() = 0;
+
+	//--------------------------------------------------------------------------------------------------
+	/// \brief
+	/// Add a callback object that will be called whenever a pateint or anesthesia machine event changes state
+	//--------------------------------------------------------------------------------------------------
+	virtual void SetEventHandler(SEEventHandler* handler) = 0;
 
 	//--------------------------------------------------------------------------------------------------
 	/// \brief

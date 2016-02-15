@@ -172,7 +172,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) TissueCompartmentData: public ::mil::tatrc::physiology::datamodel::CompartmentData
+        class TissueCompartmentData: public ::mil::tatrc::physiology::datamodel::CompartmentData
         {
           public:
           /**
@@ -821,7 +821,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const TissueCompartmentData&);
       }
@@ -864,7 +863,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const TissueCompartmentData&);
       }

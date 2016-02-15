@@ -1,138 +1,152 @@
 xercesc/validators/common/DFAContentModel.lo: \
- xercesc/validators/common/DFAContentModel.cpp \
- /usr/arm-linux-gnueabihf/include/stdc-predef.h \
- xercesc/util/RuntimeException.hpp xercesc/util/XercesDefs.hpp \
- xercesc/util/Xerces_autoconf_config.hpp \
- /usr/arm-linux-gnueabihf/include/inttypes.h \
- /usr/arm-linux-gnueabihf/include/features.h \
- /usr/arm-linux-gnueabihf/include/sys/cdefs.h \
- /usr/arm-linux-gnueabihf/include/bits/wordsize.h \
- /usr/arm-linux-gnueabihf/include/gnu/stubs.h \
- /usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stdint.h \
- /usr/arm-linux-gnueabihf/include/stdint.h \
- /usr/arm-linux-gnueabihf/include/bits/wchar.h \
- /usr/arm-linux-gnueabihf/include/sys/types.h \
- /usr/arm-linux-gnueabihf/include/bits/types.h \
- /usr/arm-linux-gnueabihf/include/bits/typesizes.h \
- /usr/arm-linux-gnueabihf/include/time.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stddef.h \
- /usr/arm-linux-gnueabihf/include/endian.h \
- /usr/arm-linux-gnueabihf/include/bits/endian.h \
- /usr/arm-linux-gnueabihf/include/bits/byteswap.h \
- /usr/arm-linux-gnueabihf/include/bits/byteswap-16.h \
- /usr/arm-linux-gnueabihf/include/sys/select.h \
- /usr/arm-linux-gnueabihf/include/bits/select.h \
- /usr/arm-linux-gnueabihf/include/bits/sigset.h \
- /usr/arm-linux-gnueabihf/include/bits/time.h \
- /usr/arm-linux-gnueabihf/include/bits/select2.h \
- /usr/arm-linux-gnueabihf/include/sys/sysmacros.h \
- /usr/arm-linux-gnueabihf/include/bits/pthreadtypes.h \
- xercesc/util/XercesVersion.hpp xercesc/util/XMLException.hpp \
- xercesc/util/XMemory.hpp /usr/arm-linux-gnueabihf/include/stdlib.h \
- /usr/arm-linux-gnueabihf/include/bits/waitflags.h \
- /usr/arm-linux-gnueabihf/include/bits/waitstatus.h \
- /usr/arm-linux-gnueabihf/include/xlocale.h \
- /usr/arm-linux-gnueabihf/include/alloca.h \
- /usr/arm-linux-gnueabihf/include/bits/stdlib-bsearch.h \
- /usr/arm-linux-gnueabihf/include/bits/stdlib-float.h \
- /usr/arm-linux-gnueabihf/include/bits/stdlib.h \
- xercesc/util/XMLExceptMsgs.hpp xercesc/dom/DOMError.hpp \
- xercesc/util/XMLUni.hpp xercesc/framework/XMLErrorReporter.hpp \
- xercesc/framework/XMLBuffer.hpp xercesc/util/PlatformUtils.hpp \
- xercesc/util/PanicHandler.hpp xercesc/util/XMLFileMgr.hpp \
- xercesc/util/XMLMutexMgr.hpp xercesc/framework/MemoryManager.hpp \
- /usr/arm-linux-gnueabihf/include/string.h \
- /usr/arm-linux-gnueabihf/include/bits/string3.h \
- xercesc/framework/XMLElementDecl.hpp xercesc/framework/XMLAttr.hpp \
- xercesc/util/QName.hpp xercesc/util/XMLString.hpp \
- xercesc/util/BaseRefVectorOf.hpp \
- xercesc/util/ArrayIndexOutOfBoundsException.hpp \
- xercesc/util/XMLEnumerator.hpp xercesc/util/BaseRefVectorOf.c \
- /usr/arm-linux-gnueabihf/include/assert.h xercesc/util/XMLUniDefs.hpp \
- xercesc/internal/XSerializable.hpp xercesc/internal/XSerializeEngine.hpp \
- xercesc/util/RefHashTableOf.hpp xercesc/util/Hashers.hpp \
- xercesc/util/IllegalArgumentException.hpp \
- xercesc/util/NoSuchElementException.hpp xercesc/util/RefHashTableOf.c \
- xercesc/util/Janitor.hpp xercesc/util/Janitor.c \
- xercesc/util/NullPointerException.hpp \
- /usr/arm-linux-gnueabihf/include/c++/4.9.2/new \
- /usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/c++config.h \
- /usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/os_defines.h \
- /usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/cpu_defines.h \
- /usr/arm-linux-gnueabihf/include/c++/4.9.2/exception \
- /usr/arm-linux-gnueabihf/include/c++/4.9.2/bits/atomic_lockfree_defines.h \
- xercesc/util/ValueVectorOf.hpp xercesc/util/ValueVectorOf.c \
- xercesc/internal/XSerializationException.hpp \
- xercesc/internal/XProtoType.hpp xercesc/framework/XMLAttDef.hpp \
- xercesc/validators/datatype/DatatypeValidator.hpp \
- xercesc/util/KVStringPair.hpp xercesc/util/regx/RegularExpression.hpp \
- xercesc/util/RefArrayVectorOf.hpp xercesc/util/RefArrayVectorOf.c \
- xercesc/util/regx/Op.hpp xercesc/util/RefVectorOf.hpp \
- xercesc/util/RefVectorOf.c xercesc/util/regx/TokenFactory.hpp \
- xercesc/util/regx/Token.hpp xercesc/util/Mutexes.hpp \
- xercesc/util/regx/BMPattern.hpp xercesc/util/regx/OpFactory.hpp \
- xercesc/util/regx/RegxUtil.hpp \
- xercesc/validators/schema/SchemaSymbols.hpp \
- xercesc/framework/psvi/XSSimpleTypeDefinition.hpp \
- xercesc/framework/psvi/XSTypeDefinition.hpp \
- xercesc/framework/psvi/XSObject.hpp \
- xercesc/framework/psvi/XSConstants.hpp \
- xercesc/framework/ValidationContext.hpp xercesc/util/NameIdPool.hpp \
- xercesc/util/NameIdPool.c xercesc/framework/XMLAttDefList.hpp \
- xercesc/framework/XMLValidator.hpp \
- xercesc/framework/XMLValidityCodes.hpp \
- xercesc/validators/common/CMAny.hpp xercesc/validators/common/CMNode.hpp \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include-fixed/limits.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include-fixed/syslimits.h \
- /usr/arm-linux-gnueabihf/include/limits.h \
- /usr/arm-linux-gnueabihf/include/bits/posix1_lim.h \
- /usr/arm-linux-gnueabihf/include/bits/local_lim.h \
- /usr/arm-linux-gnueabihf/include/linux/limits.h \
- /usr/arm-linux-gnueabihf/include/bits/posix2_lim.h \
- /usr/arm-linux-gnueabihf/include/bits/xopen_lim.h \
- /usr/arm-linux-gnueabihf/include/bits/stdio_lim.h \
- xercesc/validators/common/ContentSpecNode.hpp \
- xercesc/validators/common/CMStateSet.hpp \
- xercesc/validators/common/CMBinaryOp.hpp \
- xercesc/validators/common/CMLeaf.hpp \
- xercesc/validators/common/CMRepeatingLeaf.hpp \
- xercesc/validators/common/CMUnaryOp.hpp \
- xercesc/validators/common/DFAContentModel.hpp \
- xercesc/framework/XMLContentModel.hpp \
- xercesc/validators/common/ContentLeafNameTypeVector.hpp \
- xercesc/validators/common/Grammar.hpp \
- xercesc/framework/XMLEntityDecl.hpp \
- xercesc/framework/XMLNotationDecl.hpp \
- xercesc/validators/schema/SubstitutionGroupComparator.hpp \
- xercesc/util/StringPool.hpp \
- xercesc/validators/common/GrammarResolver.hpp \
- xercesc/framework/XMLGrammarPool.hpp xercesc/framework/psvi/XSModel.hpp \
- xercesc/framework/psvi/XSNamedMap.hpp \
- xercesc/util/RefHash2KeysTableOf.hpp xercesc/util/RefHash2KeysTableOf.c \
- xercesc/framework/psvi/XSNamedMap.c \
- xercesc/validators/schema/SchemaElementDecl.hpp \
- xercesc/validators/schema/ComplexTypeInfo.hpp \
- xercesc/validators/schema/SchemaAttDef.hpp \
- xercesc/validators/datatype/UnionDatatypeValidator.hpp \
- xercesc/validators/schema/PSVIDefs.hpp \
- xercesc/validators/schema/identity/IdentityConstraint.hpp \
- xercesc/validators/schema/identity/IC_Field.hpp \
- xercesc/validators/schema/identity/XPathMatcher.hpp \
- xercesc/util/ValueStackOf.hpp xercesc/util/EmptyStackException.hpp \
- xercesc/util/ValueStackOf.c \
- xercesc/validators/schema/XercesElementWildcard.hpp \
- xercesc/util/XMLInteger.hpp /usr/arm-linux-gnueabihf/include/math.h \
- /usr/arm-linux-gnueabihf/include/bits/huge_val.h \
- /usr/arm-linux-gnueabihf/include/bits/huge_valf.h \
- /usr/arm-linux-gnueabihf/include/bits/huge_vall.h \
- /usr/arm-linux-gnueabihf/include/bits/inf.h \
- /usr/arm-linux-gnueabihf/include/bits/nan.h \
- /usr/arm-linux-gnueabihf/include/bits/mathdef.h \
- /usr/arm-linux-gnueabihf/include/bits/mathcalls.h \
- /usr/arm-linux-gnueabihf/include/bits/mathinline.h
-
-/usr/arm-linux-gnueabihf/include/stdc-predef.h:
+  xercesc/validators/common/DFAContentModel.cpp \
+  xercesc/util/RuntimeException.hpp xercesc/util/XercesDefs.hpp \
+  xercesc/util/Xerces_autoconf_config.hpp /usr/include/inttypes.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/Availability.h \
+  /usr/include/AvailabilityInternal.h /usr/include/_types.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/i386/_types.h /usr/include/sys/_pthread/_pthread_types.h \
+  /usr/include/sys/_types/_wchar_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h \
+  /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h \
+  /usr/include/sys/_types/_int16_t.h /usr/include/sys/_types/_int32_t.h \
+  /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h \
+  /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h \
+  /usr/include/_types/_uint64_t.h /usr/include/sys/_types/_intptr_t.h \
+  /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h \
+  /usr/include/_types/_uintmax_t.h /usr/include/sys/types.h \
+  /usr/include/sys/appleapiopts.h /usr/include/machine/types.h \
+  /usr/include/i386/types.h /usr/include/machine/endian.h \
+  /usr/include/i386/endian.h /usr/include/sys/_endian.h \
+  /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/libkern/i386/_OSByteOrder.h \
+  /usr/include/sys/_types/_dev_t.h /usr/include/sys/_types/_blkcnt_t.h \
+  /usr/include/sys/_types/_blksize_t.h /usr/include/sys/_types/_gid_t.h \
+  /usr/include/sys/_types/_in_addr_t.h \
+  /usr/include/sys/_types/_in_port_t.h /usr/include/sys/_types/_ino_t.h \
+  /usr/include/sys/_types/_ino64_t.h /usr/include/sys/_types/_key_t.h \
+  /usr/include/sys/_types/_mode_t.h /usr/include/sys/_types/_nlink_t.h \
+  /usr/include/sys/_types/_id_t.h /usr/include/sys/_types/_pid_t.h \
+  /usr/include/sys/_types/_off_t.h /usr/include/sys/_types/_uid_t.h \
+  /usr/include/sys/_types/_clock_t.h /usr/include/sys/_types/_size_t.h \
+  /usr/include/sys/_types/_ssize_t.h /usr/include/sys/_types/_time_t.h \
+  /usr/include/sys/_types/_useconds_t.h \
+  /usr/include/sys/_types/_suseconds_t.h \
+  /usr/include/sys/_types/_rsize_t.h /usr/include/sys/_types/_errno_t.h \
+  /usr/include/sys/_types/_fd_def.h \
+  /usr/include/sys/_types/_fd_setsize.h \
+  /usr/include/sys/_types/_fd_set.h /usr/include/sys/_types/_fd_clr.h \
+  /usr/include/sys/_types/_fd_zero.h /usr/include/sys/_types/_fd_isset.h \
+  /usr/include/sys/_types/_fd_copy.h \
+  /usr/include/sys/_pthread/_pthread_attr_t.h \
+  /usr/include/sys/_pthread/_pthread_cond_t.h \
+  /usr/include/sys/_pthread/_pthread_condattr_t.h \
+  /usr/include/sys/_pthread/_pthread_mutex_t.h \
+  /usr/include/sys/_pthread/_pthread_mutexattr_t.h \
+  /usr/include/sys/_pthread/_pthread_once_t.h \
+  /usr/include/sys/_pthread/_pthread_rwlock_t.h \
+  /usr/include/sys/_pthread/_pthread_rwlockattr_t.h \
+  /usr/include/sys/_pthread/_pthread_t.h \
+  /usr/include/sys/_pthread/_pthread_key_t.h \
+  /usr/include/sys/_types/_fsblkcnt_t.h \
+  /usr/include/sys/_types/_fsfilcnt_t.h xercesc/util/XercesVersion.hpp \
+  xercesc/util/XMLException.hpp xercesc/util/XMemory.hpp \
+  /usr/include/stdlib.h /usr/include/sys/wait.h \
+  /usr/include/sys/signal.h /usr/include/machine/signal.h \
+  /usr/include/i386/signal.h /usr/include/machine/_mcontext.h \
+  /usr/include/i386/_mcontext.h /usr/include/mach/i386/_structs.h \
+  /usr/include/sys/_types/_sigaltstack.h \
+  /usr/include/sys/_types/_ucontext.h \
+  /usr/include/sys/_types/_sigset_t.h /usr/include/sys/resource.h \
+  /usr/include/sys/_types/_timeval.h /usr/include/alloca.h \
+  /usr/include/sys/_types/_ct_rune_t.h /usr/include/sys/_types/_rune_t.h \
+  /usr/include/sys/_types/_null.h xercesc/util/XMLExceptMsgs.hpp \
+  xercesc/dom/DOMError.hpp xercesc/util/XMLUni.hpp \
+  xercesc/framework/XMLErrorReporter.hpp xercesc/framework/XMLBuffer.hpp \
+  xercesc/util/PlatformUtils.hpp xercesc/util/PanicHandler.hpp \
+  xercesc/util/XMLFileMgr.hpp xercesc/util/XMLMutexMgr.hpp \
+  xercesc/framework/MemoryManager.hpp /usr/include/string.h \
+  /usr/include/strings.h xercesc/framework/XMLElementDecl.hpp \
+  xercesc/framework/XMLAttr.hpp xercesc/util/QName.hpp \
+  xercesc/util/XMLString.hpp xercesc/util/BaseRefVectorOf.hpp \
+  xercesc/util/ArrayIndexOutOfBoundsException.hpp \
+  xercesc/util/XMLEnumerator.hpp xercesc/util/BaseRefVectorOf.c \
+  /usr/include/assert.h xercesc/util/XMLUniDefs.hpp \
+  xercesc/internal/XSerializable.hpp \
+  xercesc/internal/XSerializeEngine.hpp xercesc/util/RefHashTableOf.hpp \
+  xercesc/util/Hashers.hpp xercesc/util/IllegalArgumentException.hpp \
+  xercesc/util/NoSuchElementException.hpp xercesc/util/RefHashTableOf.c \
+  xercesc/util/Janitor.hpp xercesc/util/Janitor.c \
+  xercesc/util/NullPointerException.hpp \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__config \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstddef \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits \
+  xercesc/util/ValueVectorOf.hpp xercesc/util/ValueVectorOf.c \
+  xercesc/internal/XSerializationException.hpp \
+  xercesc/internal/XProtoType.hpp xercesc/framework/XMLAttDef.hpp \
+  xercesc/validators/datatype/DatatypeValidator.hpp \
+  xercesc/util/KVStringPair.hpp xercesc/util/regx/RegularExpression.hpp \
+  xercesc/util/RefArrayVectorOf.hpp xercesc/util/RefArrayVectorOf.c \
+  xercesc/util/regx/Op.hpp xercesc/util/RefVectorOf.hpp \
+  xercesc/util/RefVectorOf.c xercesc/util/regx/TokenFactory.hpp \
+  xercesc/util/regx/Token.hpp xercesc/util/Mutexes.hpp \
+  xercesc/util/regx/BMPattern.hpp xercesc/util/regx/OpFactory.hpp \
+  xercesc/util/regx/RegxUtil.hpp \
+  xercesc/validators/schema/SchemaSymbols.hpp \
+  xercesc/framework/psvi/XSSimpleTypeDefinition.hpp \
+  xercesc/framework/psvi/XSTypeDefinition.hpp \
+  xercesc/framework/psvi/XSObject.hpp \
+  xercesc/framework/psvi/XSConstants.hpp \
+  xercesc/framework/ValidationContext.hpp xercesc/util/NameIdPool.hpp \
+  xercesc/util/NameIdPool.c xercesc/framework/XMLAttDefList.hpp \
+  xercesc/framework/XMLValidator.hpp \
+  xercesc/framework/XMLValidityCodes.hpp \
+  xercesc/validators/common/CMAny.hpp \
+  xercesc/validators/common/CMNode.hpp \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/limits.h \
+  /usr/include/limits.h /usr/include/machine/limits.h \
+  /usr/include/i386/limits.h /usr/include/i386/_limits.h \
+  /usr/include/sys/syslimits.h \
+  xercesc/validators/common/ContentSpecNode.hpp \
+  xercesc/validators/common/CMStateSet.hpp \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/emmintrin.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/xmmintrin.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/mmintrin.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/mm_malloc.h \
+  xercesc/validators/common/CMBinaryOp.hpp \
+  xercesc/validators/common/CMLeaf.hpp \
+  xercesc/validators/common/CMRepeatingLeaf.hpp \
+  xercesc/validators/common/CMUnaryOp.hpp \
+  xercesc/validators/common/DFAContentModel.hpp \
+  xercesc/framework/XMLContentModel.hpp \
+  xercesc/validators/common/ContentLeafNameTypeVector.hpp \
+  xercesc/validators/common/Grammar.hpp \
+  xercesc/framework/XMLEntityDecl.hpp \
+  xercesc/framework/XMLNotationDecl.hpp \
+  xercesc/validators/schema/SubstitutionGroupComparator.hpp \
+  xercesc/util/StringPool.hpp \
+  xercesc/validators/common/GrammarResolver.hpp \
+  xercesc/framework/XMLGrammarPool.hpp \
+  xercesc/framework/psvi/XSModel.hpp \
+  xercesc/framework/psvi/XSNamedMap.hpp \
+  xercesc/util/RefHash2KeysTableOf.hpp \
+  xercesc/util/RefHash2KeysTableOf.c xercesc/framework/psvi/XSNamedMap.c \
+  xercesc/validators/schema/SchemaElementDecl.hpp \
+  xercesc/validators/schema/ComplexTypeInfo.hpp \
+  xercesc/validators/schema/SchemaAttDef.hpp \
+  xercesc/validators/datatype/UnionDatatypeValidator.hpp \
+  xercesc/validators/schema/PSVIDefs.hpp \
+  xercesc/validators/schema/identity/IdentityConstraint.hpp \
+  xercesc/validators/schema/identity/IC_Field.hpp \
+  xercesc/validators/schema/identity/XPathMatcher.hpp \
+  xercesc/util/ValueStackOf.hpp xercesc/util/EmptyStackException.hpp \
+  xercesc/util/ValueStackOf.c \
+  xercesc/validators/schema/XercesElementWildcard.hpp \
+  xercesc/util/XMLInteger.hpp /usr/include/math.h
 
 xercesc/util/RuntimeException.hpp:
 
@@ -140,55 +154,159 @@ xercesc/util/XercesDefs.hpp:
 
 xercesc/util/Xerces_autoconf_config.hpp:
 
-/usr/arm-linux-gnueabihf/include/inttypes.h:
+/usr/include/inttypes.h:
 
-/usr/arm-linux-gnueabihf/include/features.h:
+/usr/include/sys/cdefs.h:
 
-/usr/arm-linux-gnueabihf/include/sys/cdefs.h:
+/usr/include/sys/_symbol_aliasing.h:
 
-/usr/arm-linux-gnueabihf/include/bits/wordsize.h:
+/usr/include/sys/_posix_availability.h:
 
-/usr/arm-linux-gnueabihf/include/gnu/stubs.h:
+/usr/include/Availability.h:
 
-/usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h:
+/usr/include/AvailabilityInternal.h:
 
-/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stdint.h:
+/usr/include/_types.h:
 
-/usr/arm-linux-gnueabihf/include/stdint.h:
+/usr/include/sys/_types.h:
 
-/usr/arm-linux-gnueabihf/include/bits/wchar.h:
+/usr/include/machine/_types.h:
 
-/usr/arm-linux-gnueabihf/include/sys/types.h:
+/usr/include/i386/_types.h:
 
-/usr/arm-linux-gnueabihf/include/bits/types.h:
+/usr/include/sys/_pthread/_pthread_types.h:
 
-/usr/arm-linux-gnueabihf/include/bits/typesizes.h:
+/usr/include/sys/_types/_wchar_t.h:
 
-/usr/arm-linux-gnueabihf/include/time.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h:
 
-/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include/stddef.h:
+/usr/include/stdint.h:
 
-/usr/arm-linux-gnueabihf/include/endian.h:
+/usr/include/sys/_types/_int8_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/endian.h:
+/usr/include/sys/_types/_int16_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/byteswap.h:
+/usr/include/sys/_types/_int32_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/byteswap-16.h:
+/usr/include/sys/_types/_int64_t.h:
 
-/usr/arm-linux-gnueabihf/include/sys/select.h:
+/usr/include/_types/_uint8_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/select.h:
+/usr/include/_types/_uint16_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/sigset.h:
+/usr/include/_types/_uint32_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/time.h:
+/usr/include/_types/_uint64_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/select2.h:
+/usr/include/sys/_types/_intptr_t.h:
 
-/usr/arm-linux-gnueabihf/include/sys/sysmacros.h:
+/usr/include/sys/_types/_uintptr_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/pthreadtypes.h:
+/usr/include/_types/_intmax_t.h:
+
+/usr/include/_types/_uintmax_t.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/appleapiopts.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/i386/types.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/i386/endian.h:
+
+/usr/include/sys/_endian.h:
+
+/usr/include/libkern/_OSByteOrder.h:
+
+/usr/include/libkern/i386/_OSByteOrder.h:
+
+/usr/include/sys/_types/_dev_t.h:
+
+/usr/include/sys/_types/_blkcnt_t.h:
+
+/usr/include/sys/_types/_blksize_t.h:
+
+/usr/include/sys/_types/_gid_t.h:
+
+/usr/include/sys/_types/_in_addr_t.h:
+
+/usr/include/sys/_types/_in_port_t.h:
+
+/usr/include/sys/_types/_ino_t.h:
+
+/usr/include/sys/_types/_ino64_t.h:
+
+/usr/include/sys/_types/_key_t.h:
+
+/usr/include/sys/_types/_mode_t.h:
+
+/usr/include/sys/_types/_nlink_t.h:
+
+/usr/include/sys/_types/_id_t.h:
+
+/usr/include/sys/_types/_pid_t.h:
+
+/usr/include/sys/_types/_off_t.h:
+
+/usr/include/sys/_types/_uid_t.h:
+
+/usr/include/sys/_types/_clock_t.h:
+
+/usr/include/sys/_types/_size_t.h:
+
+/usr/include/sys/_types/_ssize_t.h:
+
+/usr/include/sys/_types/_time_t.h:
+
+/usr/include/sys/_types/_useconds_t.h:
+
+/usr/include/sys/_types/_suseconds_t.h:
+
+/usr/include/sys/_types/_rsize_t.h:
+
+/usr/include/sys/_types/_errno_t.h:
+
+/usr/include/sys/_types/_fd_def.h:
+
+/usr/include/sys/_types/_fd_setsize.h:
+
+/usr/include/sys/_types/_fd_set.h:
+
+/usr/include/sys/_types/_fd_clr.h:
+
+/usr/include/sys/_types/_fd_zero.h:
+
+/usr/include/sys/_types/_fd_isset.h:
+
+/usr/include/sys/_types/_fd_copy.h:
+
+/usr/include/sys/_pthread/_pthread_attr_t.h:
+
+/usr/include/sys/_pthread/_pthread_cond_t.h:
+
+/usr/include/sys/_pthread/_pthread_condattr_t.h:
+
+/usr/include/sys/_pthread/_pthread_mutex_t.h:
+
+/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
+
+/usr/include/sys/_pthread/_pthread_once_t.h:
+
+/usr/include/sys/_pthread/_pthread_rwlock_t.h:
+
+/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
+
+/usr/include/sys/_pthread/_pthread_t.h:
+
+/usr/include/sys/_pthread/_pthread_key_t.h:
+
+/usr/include/sys/_types/_fsblkcnt_t.h:
+
+/usr/include/sys/_types/_fsfilcnt_t.h:
 
 xercesc/util/XercesVersion.hpp:
 
@@ -196,21 +314,39 @@ xercesc/util/XMLException.hpp:
 
 xercesc/util/XMemory.hpp:
 
-/usr/arm-linux-gnueabihf/include/stdlib.h:
+/usr/include/stdlib.h:
 
-/usr/arm-linux-gnueabihf/include/bits/waitflags.h:
+/usr/include/sys/wait.h:
 
-/usr/arm-linux-gnueabihf/include/bits/waitstatus.h:
+/usr/include/sys/signal.h:
 
-/usr/arm-linux-gnueabihf/include/xlocale.h:
+/usr/include/machine/signal.h:
 
-/usr/arm-linux-gnueabihf/include/alloca.h:
+/usr/include/i386/signal.h:
 
-/usr/arm-linux-gnueabihf/include/bits/stdlib-bsearch.h:
+/usr/include/machine/_mcontext.h:
 
-/usr/arm-linux-gnueabihf/include/bits/stdlib-float.h:
+/usr/include/i386/_mcontext.h:
 
-/usr/arm-linux-gnueabihf/include/bits/stdlib.h:
+/usr/include/mach/i386/_structs.h:
+
+/usr/include/sys/_types/_sigaltstack.h:
+
+/usr/include/sys/_types/_ucontext.h:
+
+/usr/include/sys/_types/_sigset_t.h:
+
+/usr/include/sys/resource.h:
+
+/usr/include/sys/_types/_timeval.h:
+
+/usr/include/alloca.h:
+
+/usr/include/sys/_types/_ct_rune_t.h:
+
+/usr/include/sys/_types/_rune_t.h:
+
+/usr/include/sys/_types/_null.h:
 
 xercesc/util/XMLExceptMsgs.hpp:
 
@@ -232,9 +368,9 @@ xercesc/util/XMLMutexMgr.hpp:
 
 xercesc/framework/MemoryManager.hpp:
 
-/usr/arm-linux-gnueabihf/include/string.h:
+/usr/include/string.h:
 
-/usr/arm-linux-gnueabihf/include/bits/string3.h:
+/usr/include/strings.h:
 
 xercesc/framework/XMLElementDecl.hpp:
 
@@ -252,7 +388,7 @@ xercesc/util/XMLEnumerator.hpp:
 
 xercesc/util/BaseRefVectorOf.c:
 
-/usr/arm-linux-gnueabihf/include/assert.h:
+/usr/include/assert.h:
 
 xercesc/util/XMLUniDefs.hpp:
 
@@ -276,17 +412,17 @@ xercesc/util/Janitor.c:
 
 xercesc/util/NullPointerException.hpp:
 
-/usr/arm-linux-gnueabihf/include/c++/4.9.2/new:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/new:
 
-/usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/c++config.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__config:
 
-/usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/os_defines.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/exception:
 
-/usr/arm-linux-gnueabihf/include/c++/4.9.2/arm-linux-gnueabihf/bits/cpu_defines.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstddef:
 
-/usr/arm-linux-gnueabihf/include/c++/4.9.2/exception:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h:
 
-/usr/arm-linux-gnueabihf/include/c++/4.9.2/bits/atomic_lockfree_defines.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits:
 
 xercesc/util/ValueVectorOf.hpp:
 
@@ -352,27 +488,29 @@ xercesc/validators/common/CMAny.hpp:
 
 xercesc/validators/common/CMNode.hpp:
 
-/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include-fixed/limits.h:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/limits.h:
 
-/usr/lib/gcc-cross/arm-linux-gnueabihf/4.9/include-fixed/syslimits.h:
+/usr/include/limits.h:
 
-/usr/arm-linux-gnueabihf/include/limits.h:
+/usr/include/machine/limits.h:
 
-/usr/arm-linux-gnueabihf/include/bits/posix1_lim.h:
+/usr/include/i386/limits.h:
 
-/usr/arm-linux-gnueabihf/include/bits/local_lim.h:
+/usr/include/i386/_limits.h:
 
-/usr/arm-linux-gnueabihf/include/linux/limits.h:
-
-/usr/arm-linux-gnueabihf/include/bits/posix2_lim.h:
-
-/usr/arm-linux-gnueabihf/include/bits/xopen_lim.h:
-
-/usr/arm-linux-gnueabihf/include/bits/stdio_lim.h:
+/usr/include/sys/syslimits.h:
 
 xercesc/validators/common/ContentSpecNode.hpp:
 
 xercesc/validators/common/CMStateSet.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/emmintrin.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/xmmintrin.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/mmintrin.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/mm_malloc.h:
 
 xercesc/validators/common/CMBinaryOp.hpp:
 
@@ -438,20 +576,4 @@ xercesc/validators/schema/XercesElementWildcard.hpp:
 
 xercesc/util/XMLInteger.hpp:
 
-/usr/arm-linux-gnueabihf/include/math.h:
-
-/usr/arm-linux-gnueabihf/include/bits/huge_val.h:
-
-/usr/arm-linux-gnueabihf/include/bits/huge_valf.h:
-
-/usr/arm-linux-gnueabihf/include/bits/huge_vall.h:
-
-/usr/arm-linux-gnueabihf/include/bits/inf.h:
-
-/usr/arm-linux-gnueabihf/include/bits/nan.h:
-
-/usr/arm-linux-gnueabihf/include/bits/mathdef.h:
-
-/usr/arm-linux-gnueabihf/include/bits/mathcalls.h:
-
-/usr/arm-linux-gnueabihf/include/bits/mathinline.h:
+/usr/include/math.h:

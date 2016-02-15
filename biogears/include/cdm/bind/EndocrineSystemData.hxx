@@ -130,7 +130,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) EndocrineSystemData: public ::mil::tatrc::physiology::datamodel::SystemData
+        class EndocrineSystemData: public ::mil::tatrc::physiology::datamodel::SystemData
         {
           public:
           /**
@@ -309,7 +309,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const EndocrineSystemData&);
       }
@@ -352,7 +351,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const EndocrineSystemData&);
       }

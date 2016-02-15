@@ -46,6 +46,7 @@ bool DLL_DECL CreateFilePath(const std::string&);
 std::string DLL_DECL Replace(std::string original, std::string replace, std::string withThis);
 void DLL_DECL ListFiles(const std::string& dir, std::vector<std::string>& files, const std::string& mask = "");
 std::string DLL_DECL GetCurrentWorkingDirectory();
+void DLL_DECL DeleteDirectory(const std::string &dir, bool bDeleteSubdirectories=true);
 
 DLL_DECL extern std::recursive_mutex g_fileSystemMutex;
 

@@ -116,7 +116,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) PhysiologySystemDataRequestData: public ::mil::tatrc::physiology::datamodel::DataRequestData
+        class PhysiologySystemDataRequestData: public ::mil::tatrc::physiology::datamodel::DataRequestData
         {
           public:
           /**
@@ -201,7 +201,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const PhysiologySystemDataRequestData&);
       }
@@ -244,7 +243,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const PhysiologySystemDataRequestData&);
       }

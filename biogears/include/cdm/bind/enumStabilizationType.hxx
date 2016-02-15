@@ -113,7 +113,7 @@ namespace mil
          * @brief Enumeration class corresponding to the %enumStabilizationType
          * schema type.
          */
-        class __attribute__ ((visibility ("default"))) enumStabilizationType: public ::xml_schema::string
+        class enumStabilizationType: public ::xml_schema::string
         {
           public:
 
@@ -123,7 +123,8 @@ namespace mil
           enum value
           {
             Resting,
-            Condition
+            Condition,
+            Feedback
           };
 
           /**
@@ -256,8 +257,8 @@ namespace mil
           _xsd_enumStabilizationType_convert () const;
 
           public:
-          static const char* const _xsd_enumStabilizationType_literals_[2];
-          static const value _xsd_enumStabilizationType_indexes_[2];
+          static const char* const _xsd_enumStabilizationType_literals_[3];
+          static const value _xsd_enumStabilizationType_indexes_[3];
 
           //@endcond
         };
@@ -276,11 +277,9 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, enumStabilizationType::value);
 
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const enumStabilizationType&);
       }
@@ -323,15 +322,12 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const enumStabilizationType&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMAttr&, const enumStabilizationType&);
 
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xml_schema::list_stream&,
                     const enumStabilizationType&);

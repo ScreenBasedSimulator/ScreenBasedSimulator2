@@ -70,6 +70,13 @@ public:
 
 	virtual void SetEvent(CDM::enumAnesthesiaMachineEvent::value state, bool active, const SEScalarTime& time);
 	virtual bool IsEventActive(CDM::enumAnesthesiaMachineEvent::value state) const;
+	/** @name ForwardEvents
+	*  @brief - Set a callback class to invoke when any event changes
+	*  @details - Note that the handler callback can and will be called in the middle of a time step
+	*             So system and compartment objects may not be completely up to date when called.
+	*             Use the PhysiologyEngineInterface::SetEventHandler to ensure that all engine
+	*             data is up to date at the time the callback is invoked
+	*/
 	virtual void ForwardEvents(SEEventHandler* handler);
 
 	virtual CDM::enumOnOff::value GetState() const;

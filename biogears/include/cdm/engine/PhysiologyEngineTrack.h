@@ -87,18 +87,18 @@ public:
 	PhysiologyEngineTrack(PhysiologyEngine& engine);
 	virtual ~PhysiologyEngineTrack();
 		
-	void ConnectRequest(SEDataRequest& dr, SEDataRequestScalar& ds);
-
 	DataTrack& GetDataTrack();
 	std::string GetResultFileName(){ return m_ResultsFile; }
+
+	void ConnectRequest(SEDataRequest& dr, SEDataRequestScalar& ds);
 
 	virtual void RequestData(const std::vector<SEDataRequest*>& requests, const std::string& resultsFile);
 
 	virtual void TrackData(double currentTime_s);
+	virtual void PullData();
+	virtual void ProcessRequest(SEDataRequest& dr);
 	
 protected:
-
-	virtual void ProcessRequest(SEDataRequest& dr);
 
 	PhysiologyEngine&            m_Engine;
 	std::vector<SEDataRequest*>  m_Requests;

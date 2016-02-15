@@ -144,7 +144,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ArrayData: public ::mil::tatrc::physiology::datamodel::PropertyData
+        class ArrayData: public ::mil::tatrc::physiology::datamodel::PropertyData
         {
           public:
           /**
@@ -477,7 +477,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ArrayData&);
       }
@@ -520,7 +519,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ArrayData&);
       }

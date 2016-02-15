@@ -142,7 +142,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ErrorList: public ::xml_schema::type
+        class ErrorList: public ::xml_schema::type
         {
           public:
           /**
@@ -382,7 +382,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ErrorList&);
       }
@@ -425,7 +424,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ErrorList&);
       }

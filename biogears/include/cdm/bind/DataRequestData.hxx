@@ -112,13 +112,9 @@ namespace mil
         /**
          * @brief Class corresponding to the %DataRequestData schema type.
          *
-         * Defines a piece of data to be tracked during the execution of the
-         * scenario
-         * For example, this can identify data to that will be written to a file
-         *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) DataRequestData: public ::xml_schema::type
+        class DataRequestData: public ::xml_schema::type
         {
           public:
           /**
@@ -364,7 +360,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const DataRequestData&);
       }
@@ -407,7 +402,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const DataRequestData&);
       }

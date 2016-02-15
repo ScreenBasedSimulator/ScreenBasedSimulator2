@@ -116,7 +116,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ChronicVentricularSystolicDysfunctionData: public ::mil::tatrc::physiology::datamodel::ChronicHeartFailureData
+        class ChronicVentricularSystolicDysfunctionData: public ::mil::tatrc::physiology::datamodel::ChronicHeartFailureData
         {
           public:
           /**
@@ -193,7 +193,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ChronicVentricularSystolicDysfunctionData&);
       }
@@ -236,7 +235,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ChronicVentricularSystolicDysfunctionData&);
       }

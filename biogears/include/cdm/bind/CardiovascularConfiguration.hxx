@@ -142,7 +142,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) CardiovascularConfiguration: public ::xml_schema::type
+        class CardiovascularConfiguration: public ::xml_schema::type
         {
           public:
           /**
@@ -398,7 +398,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const CardiovascularConfiguration&);
       }
@@ -441,7 +440,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const CardiovascularConfiguration&);
       }

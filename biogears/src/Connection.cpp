@@ -25,6 +25,10 @@ void Connection::BolusDrug(std::string drugName, double concentration, double do
     m_pDriver->BolusDrug(drugName, concentration, dose);
 }
 
+void Connection::AnesthesiaMachine(double oxygenFraction, bool status){
+    m_pDriver->AnesthesiaMachine(oxygenFraction, status);
+}
+
 void Connection::operator()()
 {
     SetRunning(true);
@@ -56,6 +60,20 @@ void Connection::operator()()
         return crow::response{"successful"};
     });
 
-    app.port(18080).multithreaded().run();
+    CROW_ROUTE(app,"/anesthesia_machine")
+    .methods("POST"_method)
+    ([this](const crow::request& req){
+        auto x = crow::json::load(req.body);
+        if (!x)
+            return crow::response(400);
+        double oxygenFraction = x["oxygen_fraction"].d();
+        bool status = x["status"].b();
+
+
+        AnesthesiaMachine(oxygenFraction, status);
+        return crow::response{"successful"};
+    });
+
+    app.port(23333).multithreaded().run();
     
 }

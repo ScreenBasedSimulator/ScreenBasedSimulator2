@@ -144,7 +144,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ChestCompressionForceScaleData: public ::mil::tatrc::physiology::datamodel::ChestCompressionData
+        class ChestCompressionForceScaleData: public ::mil::tatrc::physiology::datamodel::ChestCompressionData
         {
           public:
           /**
@@ -400,7 +400,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ChestCompressionForceScaleData&);
       }
@@ -443,7 +442,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ChestCompressionForceScaleData&);
       }

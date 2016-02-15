@@ -228,7 +228,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) BloodChemistrySystemData: public ::mil::tatrc::physiology::datamodel::SystemData
+        class BloodChemistrySystemData: public ::mil::tatrc::physiology::datamodel::SystemData
         {
           public:
           /**
@@ -3872,7 +3872,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const BloodChemistrySystemData&);
       }
@@ -3915,7 +3914,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const BloodChemistrySystemData&);
       }

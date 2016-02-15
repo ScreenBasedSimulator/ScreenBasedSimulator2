@@ -130,7 +130,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ConsciousRespirationData: public ::mil::tatrc::physiology::datamodel::PatientActionData
+        class ConsciousRespirationData: public ::mil::tatrc::physiology::datamodel::PatientActionData
         {
           public:
           /**
@@ -297,7 +297,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ConsciousRespirationData&);
       }
@@ -340,7 +339,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ConsciousRespirationData&);
       }

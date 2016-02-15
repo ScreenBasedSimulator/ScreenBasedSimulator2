@@ -41,16 +41,26 @@ protected:
 
 public:
 
-	virtual bool HasDeltaHeartRate() const;
-	virtual SEScalarFrequency& GetDeltaHeartRate();
-	virtual double GetDeltaHeartRate(const std::shared_ptr<CCompoundUnit>& unit) const;
+	virtual bool HasBaroreceptorHeartRateScale() const;
+	virtual SEScalar& GetBaroreceptorHeartRateScale();
+	virtual double GetBaroreceptorHeartRateScale(const std::shared_ptr<CCompoundUnit>& unit) const;
 
-	virtual bool HasDeltaHeartElastance() const;
-	virtual SEScalarPressurePerVolume& GetDeltaHeartElastance();
-	virtual double GetDeltaHeartElastance(const std::shared_ptr<CCompoundUnit>& unit) const;
+	virtual bool HasBaroreceptorHeartElastanceScale() const;
+	virtual SEScalar& GetBaroreceptorHeartElastanceScale();
+	virtual double GetBaroreceptorHeartElastanceScale(const std::shared_ptr<CCompoundUnit>& unit) const;
+
+	virtual bool HasBaroreceptorResistanceScale() const;
+	virtual SEScalar& GetBaroreceptorResistanceScale();
+	virtual double GetBaroreceptorResistanceScale(const std::shared_ptr<CCompoundUnit>& unit) const;
+
+	virtual bool HasBaroreceptorComplianceScale() const;
+	virtual SEScalar& GetBaroreceptorComplianceScale();
+	virtual double GetBaroreceptorComplianceScale(const std::shared_ptr<CCompoundUnit>& unit) const;
 
 protected:
 
-	SEScalarFrequency*         m_DeltaHeartRate;
-	SEScalarPressurePerVolume* m_DeltaHeartElastance;
+	SEScalar*				   m_BaroreceptorHeartRateScale;
+	SEScalar*				   m_BaroreceptorHeartElastanceScale;
+	SEScalar*				   m_BaroreceptorResistanceScale;
+	SEScalar*				   m_BaroreceptorComplianceScale;
 };

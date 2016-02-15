@@ -128,7 +128,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) SubstanceFractionData: public ::xml_schema::type
+        class SubstanceFractionData: public ::xml_schema::type
         {
           public:
           /**
@@ -368,7 +368,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const SubstanceFractionData&);
       }
@@ -411,7 +410,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const SubstanceFractionData&);
       }

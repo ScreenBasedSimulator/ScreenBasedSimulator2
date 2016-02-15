@@ -29,6 +29,10 @@ public class StatusProtocol {
 
     public Map<String, String> statusMap;
 
+    public StatusProtocol(Map statusMap) {
+        this.statusMap = statusMap;
+    }
+
     /**
      * Validate boolean.
      *
@@ -37,14 +41,9 @@ public class StatusProtocol {
      */
     public boolean validate() throws ProtocolException {
 
+        return true;
+
         // TODO statusMap validation. check if the status comply with specifications
-        if (false) {
-
-        } else {
-            throw new ProtocolException("Illegal statusProtocol format!");
-        }
-
-        return false;
     }
 
     public EnumMap<PatientStatus.Metric, String> toEnumMap() {
@@ -53,7 +52,9 @@ public class StatusProtocol {
 
             EnumMap<PatientStatus.Metric, String> enumMap = new EnumMap<>(PatientStatus.Metric.class);
             for (String key : statusMap.keySet()) {
-                enumMap.put(PatientStatus.Metric.valueOf(key.toUpperCase()), statusMap.get(key));
+                if (!key.toUpperCase().equals("HASH")) {
+                    enumMap.put(PatientStatus.Metric.valueOf(key.toUpperCase()), statusMap.get(key));
+                }
             }
             return enumMap;
 
@@ -69,11 +70,17 @@ public class StatusProtocol {
     public String getPatientHash() {
         try {
             validate();
-
             return statusMap.get("hash");
-        } catch (ProtocolException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "StatusProtocol{" +
+                "statusMap=" + statusMap +
+                '}';
     }
 }

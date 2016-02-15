@@ -12,6 +12,7 @@ specific language governing permissions and limitations under the License.
 
 #pragma once
 CDM_BIND_DECL(ActionData);
+class SESubstanceManager;
 
 class DLL_DECL SEAction : public Loggable
 {
@@ -30,6 +31,8 @@ public:
 	/** Actions can be turned off or on with various data combinations
 	*  This method will encapsulate that logic in a single function */
 	virtual bool IsActive() const { return IsValid(); }
+
+	static SEAction* newFromBind(const CDM::ActionData& action, SESubstanceManager& substances);
 
 	bool Load(const CDM::ActionData& in);
 	std::unique_ptr<CDM::ActionData> Unload() const;

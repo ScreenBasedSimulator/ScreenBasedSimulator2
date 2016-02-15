@@ -144,7 +144,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) HemorrhageData: public ::mil::tatrc::physiology::datamodel::PatientActionData
+        class HemorrhageData: public ::mil::tatrc::physiology::datamodel::PatientActionData
         {
           public:
           /**
@@ -384,7 +384,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const HemorrhageData&);
       }
@@ -427,7 +426,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const HemorrhageData&);
       }

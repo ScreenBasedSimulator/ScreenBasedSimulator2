@@ -177,7 +177,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (const ::std::string& uri,
                            ::xml_schema::flags f = 0,
@@ -194,7 +193,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (const ::std::string& uri,
                            ::xml_schema::error_handler& eh,
@@ -213,7 +211,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (const ::std::string& uri,
                            ::xercesc::DOMErrorHandler& eh,
@@ -230,7 +227,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::std::istream& is,
                            ::xml_schema::flags f = 0,
@@ -247,7 +243,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::std::istream& is,
                            ::xml_schema::error_handler& eh,
@@ -266,7 +261,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::std::istream& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -287,7 +281,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::std::istream& is,
                            const ::std::string& id,
@@ -310,7 +303,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::std::istream& is,
                            const ::std::string& id,
@@ -334,7 +326,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::std::istream& is,
                            const ::std::string& id,
@@ -352,7 +343,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::xercesc::InputSource& is,
                            ::xml_schema::flags f = 0,
@@ -369,7 +359,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::xercesc::InputSource& is,
                            ::xml_schema::error_handler& eh,
@@ -388,7 +377,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::xercesc::InputSource& is,
                            ::xercesc::DOMErrorHandler& eh,
@@ -403,7 +391,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (const ::xercesc::DOMDocument& d,
                            ::xml_schema::flags f = 0,
@@ -421,7 +408,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitCalculatorData >
         CircuitCalculator (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                            ::xml_schema::flags f = 0,
@@ -444,7 +430,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (const ::std::string& uri,
                             ::xml_schema::flags f = 0,
@@ -461,7 +446,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (const ::std::string& uri,
                             ::xml_schema::error_handler& eh,
@@ -480,7 +464,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (const ::std::string& uri,
                             ::xercesc::DOMErrorHandler& eh,
@@ -497,7 +480,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::std::istream& is,
                             ::xml_schema::flags f = 0,
@@ -514,7 +496,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::std::istream& is,
                             ::xml_schema::error_handler& eh,
@@ -533,7 +514,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::std::istream& is,
                             ::xercesc::DOMErrorHandler& eh,
@@ -554,7 +534,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::std::istream& is,
                             const ::std::string& id,
@@ -577,7 +556,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::std::istream& is,
                             const ::std::string& id,
@@ -601,7 +579,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::std::istream& is,
                             const ::std::string& id,
@@ -619,7 +596,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::xercesc::InputSource& is,
                             ::xml_schema::flags f = 0,
@@ -636,7 +612,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::xercesc::InputSource& is,
                             ::xml_schema::error_handler& eh,
@@ -655,7 +630,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::xercesc::InputSource& is,
                             ::xercesc::DOMErrorHandler& eh,
@@ -670,7 +644,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (const ::xercesc::DOMDocument& d,
                             ::xml_schema::flags f = 0,
@@ -688,7 +661,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitTransporterData >
         CircuitTransporter (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                             ::xml_schema::flags f = 0,
@@ -711,7 +683,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (const ::std::string& uri,
                           ::xml_schema::flags f = 0,
@@ -728,7 +699,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (const ::std::string& uri,
                           ::xml_schema::error_handler& eh,
@@ -747,7 +717,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (const ::std::string& uri,
                           ::xercesc::DOMErrorHandler& eh,
@@ -764,7 +733,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::std::istream& is,
                           ::xml_schema::flags f = 0,
@@ -781,7 +749,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::std::istream& is,
                           ::xml_schema::error_handler& eh,
@@ -800,7 +767,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::std::istream& is,
                           ::xercesc::DOMErrorHandler& eh,
@@ -821,7 +787,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::std::istream& is,
                           const ::std::string& id,
@@ -844,7 +809,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::std::istream& is,
                           const ::std::string& id,
@@ -868,7 +832,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::std::istream& is,
                           const ::std::string& id,
@@ -886,7 +849,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::xercesc::InputSource& is,
                           ::xml_schema::flags f = 0,
@@ -903,7 +865,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::xercesc::InputSource& is,
                           ::xml_schema::error_handler& eh,
@@ -922,7 +883,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::xercesc::InputSource& is,
                           ::xercesc::DOMErrorHandler& eh,
@@ -937,7 +897,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (const ::xercesc::DOMDocument& d,
                           ::xml_schema::flags f = 0,
@@ -955,7 +914,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::CircuitContainerData >
         CircuitContainer (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                           ::xml_schema::flags f = 0,
@@ -999,7 +957,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitCalculator (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::CircuitCalculatorData& x, 
@@ -1020,7 +977,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitCalculator (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::CircuitCalculatorData& x, 
@@ -1043,7 +999,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitCalculator (::std::ostream& os,
                            const ::mil::tatrc::physiology::datamodel::CircuitCalculatorData& x, 
@@ -1063,7 +1018,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitCalculator (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::CircuitCalculatorData& x, 
@@ -1085,7 +1039,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitCalculator (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::CircuitCalculatorData& x, 
@@ -1108,7 +1061,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitCalculator (::xercesc::XMLFormatTarget& ft,
                            const ::mil::tatrc::physiology::datamodel::CircuitCalculatorData& x, 
@@ -1128,7 +1080,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitCalculator (::xercesc::DOMDocument& d,
                            const ::mil::tatrc::physiology::datamodel::CircuitCalculatorData& x,
@@ -1142,7 +1093,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         CircuitCalculator (const ::mil::tatrc::physiology::datamodel::CircuitCalculatorData& x, 
                            const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -1166,7 +1116,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitTransporter (::std::ostream& os,
                             const ::mil::tatrc::physiology::datamodel::CircuitTransporterData& x, 
@@ -1187,7 +1136,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitTransporter (::std::ostream& os,
                             const ::mil::tatrc::physiology::datamodel::CircuitTransporterData& x, 
@@ -1210,7 +1158,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitTransporter (::std::ostream& os,
                             const ::mil::tatrc::physiology::datamodel::CircuitTransporterData& x, 
@@ -1230,7 +1177,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitTransporter (::xercesc::XMLFormatTarget& ft,
                             const ::mil::tatrc::physiology::datamodel::CircuitTransporterData& x, 
@@ -1252,7 +1198,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitTransporter (::xercesc::XMLFormatTarget& ft,
                             const ::mil::tatrc::physiology::datamodel::CircuitTransporterData& x, 
@@ -1275,7 +1220,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitTransporter (::xercesc::XMLFormatTarget& ft,
                             const ::mil::tatrc::physiology::datamodel::CircuitTransporterData& x, 
@@ -1295,7 +1239,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitTransporter (::xercesc::DOMDocument& d,
                             const ::mil::tatrc::physiology::datamodel::CircuitTransporterData& x,
@@ -1309,7 +1252,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         CircuitTransporter (const ::mil::tatrc::physiology::datamodel::CircuitTransporterData& x, 
                             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -1333,7 +1275,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitContainer (::std::ostream& os,
                           const ::mil::tatrc::physiology::datamodel::CircuitContainerData& x, 
@@ -1354,7 +1295,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitContainer (::std::ostream& os,
                           const ::mil::tatrc::physiology::datamodel::CircuitContainerData& x, 
@@ -1377,7 +1317,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitContainer (::std::ostream& os,
                           const ::mil::tatrc::physiology::datamodel::CircuitContainerData& x, 
@@ -1397,7 +1336,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitContainer (::xercesc::XMLFormatTarget& ft,
                           const ::mil::tatrc::physiology::datamodel::CircuitContainerData& x, 
@@ -1419,7 +1357,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitContainer (::xercesc::XMLFormatTarget& ft,
                           const ::mil::tatrc::physiology::datamodel::CircuitContainerData& x, 
@@ -1442,7 +1379,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitContainer (::xercesc::XMLFormatTarget& ft,
                           const ::mil::tatrc::physiology::datamodel::CircuitContainerData& x, 
@@ -1462,7 +1398,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         CircuitContainer (::xercesc::DOMDocument& d,
                           const ::mil::tatrc::physiology::datamodel::CircuitContainerData& x,
@@ -1476,7 +1411,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         CircuitContainer (const ::mil::tatrc::physiology::datamodel::CircuitContainerData& x, 
                           const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),

@@ -142,7 +142,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) Systemic: public ::xml_schema::type
+        class Systemic: public ::xml_schema::type
         {
           public:
           /**
@@ -719,7 +719,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const Systemic&);
       }
@@ -762,7 +761,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const Systemic&);
       }

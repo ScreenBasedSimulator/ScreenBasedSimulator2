@@ -181,7 +181,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (const ::std::string& uri,
                                             ::xml_schema::flags f = 0,
@@ -198,7 +197,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (const ::std::string& uri,
                                             ::xml_schema::error_handler& eh,
@@ -217,7 +215,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (const ::std::string& uri,
                                             ::xercesc::DOMErrorHandler& eh,
@@ -234,7 +231,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::std::istream& is,
                                             ::xml_schema::flags f = 0,
@@ -251,7 +247,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::std::istream& is,
                                             ::xml_schema::error_handler& eh,
@@ -270,7 +265,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::std::istream& is,
                                             ::xercesc::DOMErrorHandler& eh,
@@ -291,7 +285,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::std::istream& is,
                                             const ::std::string& id,
@@ -314,7 +307,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::std::istream& is,
                                             const ::std::string& id,
@@ -338,7 +330,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::std::istream& is,
                                             const ::std::string& id,
@@ -356,7 +347,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::xercesc::InputSource& is,
                                             ::xml_schema::flags f = 0,
@@ -373,7 +363,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::xercesc::InputSource& is,
                                             ::xml_schema::error_handler& eh,
@@ -392,7 +381,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::xercesc::InputSource& is,
                                             ::xercesc::DOMErrorHandler& eh,
@@ -407,7 +395,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (const ::xercesc::DOMDocument& d,
                                             ::xml_schema::flags f = 0,
@@ -425,7 +412,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData >
         PhysiologyEngineTimedStabilization (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                                             ::xml_schema::flags f = 0,
@@ -448,7 +434,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (const ::std::string& uri,
                                               ::xml_schema::flags f = 0,
@@ -465,7 +450,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (const ::std::string& uri,
                                               ::xml_schema::error_handler& eh,
@@ -484,7 +468,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (const ::std::string& uri,
                                               ::xercesc::DOMErrorHandler& eh,
@@ -501,7 +484,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::std::istream& is,
                                               ::xml_schema::flags f = 0,
@@ -518,7 +500,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::std::istream& is,
                                               ::xml_schema::error_handler& eh,
@@ -537,7 +518,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::std::istream& is,
                                               ::xercesc::DOMErrorHandler& eh,
@@ -558,7 +538,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::std::istream& is,
                                               const ::std::string& id,
@@ -581,7 +560,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::std::istream& is,
                                               const ::std::string& id,
@@ -605,7 +583,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::std::istream& is,
                                               const ::std::string& id,
@@ -623,7 +600,6 @@ namespace mil
          *
          * This function uses exceptions to report parsing errors.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::xercesc::InputSource& is,
                                               ::xml_schema::flags f = 0,
@@ -640,7 +616,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::xercesc::InputSource& is,
                                               ::xml_schema::error_handler& eh,
@@ -659,7 +634,6 @@ namespace mil
          *
          * This function reports parsing errors by calling the error handler.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::xercesc::InputSource& is,
                                               ::xercesc::DOMErrorHandler& eh,
@@ -674,7 +648,6 @@ namespace mil
          * @param p Parsing properties. 
          * @return A pointer to the root of the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (const ::xercesc::DOMDocument& d,
                                               ::xml_schema::flags f = 0,
@@ -692,7 +665,6 @@ namespace mil
          * own_dom parsing flags to assign ownership of the DOM document
          * to the object model.
          */
-        __attribute__ ((visibility ("default")))
         ::std::unique_ptr< ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData >
         PhysiologyEngineDynamicStabilization (::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument > d,
                                               ::xml_schema::flags f = 0,
@@ -736,7 +708,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineTimedStabilization (::std::ostream& os,
                                             const ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData& x, 
@@ -757,7 +728,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineTimedStabilization (::std::ostream& os,
                                             const ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData& x, 
@@ -780,7 +750,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineTimedStabilization (::std::ostream& os,
                                             const ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData& x, 
@@ -800,7 +769,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineTimedStabilization (::xercesc::XMLFormatTarget& ft,
                                             const ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData& x, 
@@ -822,7 +790,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineTimedStabilization (::xercesc::XMLFormatTarget& ft,
                                             const ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData& x, 
@@ -845,7 +812,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineTimedStabilization (::xercesc::XMLFormatTarget& ft,
                                             const ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData& x, 
@@ -865,7 +831,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineTimedStabilization (::xercesc::DOMDocument& d,
                                             const ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData& x,
@@ -879,7 +844,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         PhysiologyEngineTimedStabilization (const ::mil::tatrc::physiology::datamodel::PhysiologyEngineTimedStabilizationData& x, 
                                             const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),
@@ -903,7 +867,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineDynamicStabilization (::std::ostream& os,
                                               const ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData& x, 
@@ -924,7 +887,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineDynamicStabilization (::std::ostream& os,
                                               const ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData& x, 
@@ -947,7 +909,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineDynamicStabilization (::std::ostream& os,
                                               const ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData& x, 
@@ -967,7 +928,6 @@ namespace mil
          *
          * This function uses exceptions to report serialization errors.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineDynamicStabilization (::xercesc::XMLFormatTarget& ft,
                                               const ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData& x, 
@@ -989,7 +949,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineDynamicStabilization (::xercesc::XMLFormatTarget& ft,
                                               const ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData& x, 
@@ -1012,7 +971,6 @@ namespace mil
          * This function reports serialization errors by calling the error
          * handler.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineDynamicStabilization (::xercesc::XMLFormatTarget& ft,
                                               const ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData& x, 
@@ -1032,7 +990,6 @@ namespace mil
          * with the correct root element as well as set the necessary
          * namespace mapping attributes.
          */
-        __attribute__ ((visibility ("default")))
         void
         PhysiologyEngineDynamicStabilization (::xercesc::DOMDocument& d,
                                               const ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData& x,
@@ -1046,7 +1003,6 @@ namespace mil
          * @param f Serialization flags.
          * @return A pointer to the new Xerces-C++ DOM document.
          */
-        __attribute__ ((visibility ("default")))
         ::xml_schema::dom::unique_ptr< ::xercesc::DOMDocument >
         PhysiologyEngineDynamicStabilization (const ::mil::tatrc::physiology::datamodel::PhysiologyEngineDynamicStabilizationData& x, 
                                               const ::xml_schema::namespace_infomap& m = ::xml_schema::namespace_infomap (),

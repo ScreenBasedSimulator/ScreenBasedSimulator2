@@ -158,7 +158,7 @@ namespace mil
          *
          * @nosubgrouping
          */
-        class __attribute__ ((visibility ("default"))) ThermalApplicationData: public ::mil::tatrc::physiology::datamodel::EnvironmentActionData
+        class ThermalApplicationData: public ::mil::tatrc::physiology::datamodel::EnvironmentActionData
         {
           public:
           /**
@@ -491,7 +491,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         ::std::ostream&
         operator<< (::std::ostream&, const ThermalApplicationData&);
       }
@@ -534,7 +533,6 @@ namespace mil
     {
       namespace datamodel
       {
-        __attribute__ ((visibility ("default")))
         void
         operator<< (::xercesc::DOMElement&, const ThermalApplicationData&);
       }

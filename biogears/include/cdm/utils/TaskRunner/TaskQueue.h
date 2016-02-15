@@ -23,4 +23,5 @@ class TaskQueue
 {
 public:
     virtual std::unique_ptr<Task> GetNextTask() = 0;
+    virtual void ReportTaskComplete() = 0;
 };
