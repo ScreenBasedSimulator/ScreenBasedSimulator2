@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<SubstanceCompound xmlns="uri:/mil/tatrc/physiology/datamodel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="">
-    <Name>Saline</Name>
-    <Component>
-        <SubstanceName>Sodium</SubstanceName>
-    </Component>
-</SubstanceCompound>
