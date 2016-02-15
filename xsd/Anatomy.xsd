@@ -1,0 +1,123 @@
+<!-- @brief Anatomical compartment hierarchy and other anatomical data structures.  --> 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="uri:/mil/tatrc/physiology/datamodel" xmlns="uri:/mil/tatrc/physiology/datamodel" elementFormDefault="qualified">
+	
+	<xs:include schemaLocation="Compartment.xsd"/>
+	<xs:include schemaLocation="Substance.xsd"/>
+	
+	<xs:simpleType name="enumAnatomy">
+		<xs:restriction base="enumCompartment">
+			<xs:enumeration value="Head"/>
+			<!----><xs:enumeration value="Brain"/>
+			<!----><xs:enumeration value="Neck"/>
+			<!--  --><xs:enumeration value="Esophagus"/>
+			<!--  --><xs:enumeration value="Trachea"/>
+			<xs:enumeration value="Core"/>
+			<!----><xs:enumeration value="Bone"/>
+			<!----><xs:enumeration value="Fat"/>
+			<!----><xs:enumeration value="Muscle"/>
+			<!----><xs:enumeration value="Pulmonary"/>
+			<!--  --><xs:enumeration value="PulmonaryArteries"/>         
+			<!--  --><xs:enumeration value="PulmonaryCapillaries"/>
+			<!--  --><xs:enumeration value="PulmonaryVeins"/>
+			<!--  --><xs:enumeration value="PulmonaryShunt"/>
+			<!--  --><xs:enumeration value="Lungs"/>
+			<!--    --><xs:enumeration value="LeftLung"/>
+			<!--      --><xs:enumeration value="LeftDeadSpace"/>			
+			<!--      --><xs:enumeration value="LeftAlveoli"/>
+			<!--      --><xs:enumeration value="LeftPulmonaryArteries"/>			
+			<!--      --><xs:enumeration value="LeftPulmonaryCapillaries"/>			
+			<!--      --><xs:enumeration value="LeftPulmonaryVeins"/>
+			<!--      --><xs:enumeration value="LeftPulmonaryShunt"/>			
+			<!--    --><xs:enumeration value="RightLung"/>			
+			<!--      --><xs:enumeration value="RightDeadSpace"/>
+			<!--      --><xs:enumeration value="RightAlveoli"/>
+			<!--      --><xs:enumeration value="RightPulmonaryArteries"/>
+			<!--      --><xs:enumeration value="RightPulmonaryCapillaries"/>
+			<!--      --><xs:enumeration value="RightPulmonaryVeins"/>
+			<!--      --><xs:enumeration value="RightPulmonaryShunt"/>
+			<!--  --><xs:enumeration value="PleuralCavity"/>
+			<!--    --><xs:enumeration value="LeftPleuralCavity"/>
+			<!--    --><xs:enumeration value="RightPleuralCavity"/>
+			<!----><xs:enumeration value="Cardiothoracic"/>
+			<!--  --><xs:enumeration value="Aorta"/>
+			<!--  --><xs:enumeration value="Heart"/>
+			<!--    --><xs:enumeration value="Myocardium"/>
+			<!--    --><xs:enumeration value="LeftHeart"/>
+			<!--    --><xs:enumeration value="RightHeart"/>
+			<!--  --><xs:enumeration value="Pericardium"/>
+			<!--  --><xs:enumeration value="VenaCava"/>			
+		    <!----><xs:enumeration value="Abdomen"/>
+			<!--  --><xs:enumeration value="UpperUrinaryTract"/>
+		    <!--    --><xs:enumeration value="Kidneys"/>
+			<!--      --><xs:enumeration value="LeftKidney"/>
+			<!--      	--><xs:enumeration value="LeftRenalArtery"/>
+			<!--      	--><xs:enumeration value="LeftRenalVein"/>
+			<!--      	--><xs:enumeration value="LeftNephron"/>
+			<!--      		--><xs:enumeration value="LeftAfferentArteriole"/>
+			<!--      		--><xs:enumeration value="LeftGlomerularCapillaries"/>
+			<!--            --><xs:enumeration value="LeftEfferentArteriole"/>
+			<!--            --><xs:enumeration value="LeftPeritubularCapillaries"/>
+			<!--      		--><xs:enumeration value="LeftBowmansCapsules"/>
+			<!--      		--><xs:enumeration value="LeftTubules"/>
+			<!--      	--><xs:enumeration value="LeftUreter"/>
+			<!--      --><xs:enumeration value="RightKidney"/>
+			<!--      	--><xs:enumeration value="RightRenalArtery"/>
+			<!--      	--><xs:enumeration value="RightRenalVein"/>
+			<!--      	--><xs:enumeration value="RightNephron"/>
+			<!--      		--><xs:enumeration value="RightAfferentArteriole"/>
+			<!--      		--><xs:enumeration value="RightGlomerularCapillaries"/>
+			<!--            --><xs:enumeration value="RightEfferentArteriole"/>
+			<!--            --><xs:enumeration value="RightPeritubularCapillaries"/>
+			<!--      		--><xs:enumeration value="RightBowmansCapsules"/>
+			<!--      		--><xs:enumeration value="RightTubules"/>
+			<!--      	--><xs:enumeration value="RightUreter"/>			
+			<!--  --><xs:enumeration value="LowerUrinaryTract"/>
+			<!--    --><xs:enumeration value="Urethra"/> 
+			<!--    --><xs:enumeration value="Bladder"/>
+			<!--  --><xs:enumeration value="Gut"/>
+			<!--    --><xs:enumeration value="Splanchnic"/>
+			<!--    --><xs:enumeration value="SmallIntestine"/>
+			<!--    --><xs:enumeration value="LargeIntestine"/>						
+			<!--  --><xs:enumeration value="Liver"/>
+			<!--  --><xs:enumeration value="Spleen"/>
+			<!--  --><xs:enumeration value="Stomach"/>						
+			<xs:enumeration value="Periphery"/>
+			<!----><xs:enumeration value="LeftArm"/>
+			<!----><xs:enumeration value="LeftLeg"/>
+			<!----><xs:enumeration value="RightArm"/>
+			<!----><xs:enumeration value="RightLeg"/>
+			<!----><xs:enumeration value="Skin"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="AnatomyCompartmentData">
+		<xs:complexContent>
+			<xs:restriction base="CompartmentData">
+				<xs:attribute name="Name" type="enumAnatomy" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="AnatomyCompartmentsData">
+		<xs:complexContent>
+			<xs:extension base="ObjectData">
+				<xs:sequence>
+					<xs:element name="Compartment" type="AnatomyCompartmentData" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AnatomyCompartments" type="AnatomyCompartmentsData"/>
+	
+	<!-- Derived type that IS used in substance xml files -->
+	<xs:complexType name="SubstanceAnatomyEffectData">
+		<xs:complexContent>
+			<xs:extension base="SubstanceCompartmentEffectData">
+				<xs:sequence>          
+				</xs:sequence>
+				<xs:attribute name="AnatomyCompartment" type="enumAnatomy" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

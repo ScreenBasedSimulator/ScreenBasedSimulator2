@@ -1,0 +1,613 @@
+<!-- @brief Basic data structure for holding and orgainizing data -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="uri:/mil/tatrc/physiology/datamodel" xmlns="uri:/mil/tatrc/physiology/datamodel" elementFormDefault="qualified">
+  
+  <!-- @brief The basic data containing class.
+       @details Properties are structures that actually contain data, they are analogous to basic inherient data types of a language
+       - Examples: Enumerations/Strings, Arrays, Scalars and Booleans. Double values are represented by Scalars which are doubles AND a unit of measure.       
+  -->
+  <xs:complexType name="PropertyData" abstract="true">
+    
+  </xs:complexType>
+  
+  <!-- @brief The basic data encapsulating class.
+       @details Objects are structures that are organize Properties into an Object Oriented Design Pattern. Objects can contain properteis and other 'child' objects
+       - Examples: Substances/Drugs, Patients, Physiological systems, Circuits, etc.
+  -->
+  <xs:complexType name="ObjectData" abstract="true">
+    
+  </xs:complexType>
+  
+  <!-- @brief Double array specification. -->
+  <xs:simpleType name="DoubleList">
+    <xs:list itemType="xs:double"/>
+  </xs:simpleType>
+  
+  <!-- Below we create specific Properteis like Enums, Arrays, and Scalars. -->
+  
+  <!-- @brief Enumeration for specifying patient side-->
+  <xs:simpleType name="enumSide">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left"/>
+      <xs:enumeration value="Right"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <!-- @brief Enumeration for specifying an open or closed state. -->
+  <xs:simpleType name="enumOpenClosed">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Open"/>
+      <xs:enumeration value="Closed"/>			
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <!-- @brief Enumeration for specifying an on or off state. -->
+  <xs:simpleType name="enumOnOff">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="On"/>
+      <xs:enumeration value="Off"/>			
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="enumErrorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Standard"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="ErrorData">
+    <xs:attribute name="value" type="xs:double" use="required"/>
+    <xs:attribute name="type" type="enumErrorType" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="ErrorList">
+    <xs:sequence>
+      <xs:element name="Value" type="DoubleList" minOccurs="1" maxOccurs="1"/>   
+    </xs:sequence>  
+    <xs:attribute name="type" type="enumErrorType" use="required"/>        
+  </xs:complexType> 
+  
+  <!-- @brief A unitless scalar. -->
+  <xs:complexType name="ScalarData">
+    <xs:complexContent>
+      <xs:extension base="PropertyData">
+        <xs:attribute name="value" type="xs:double" use="required"/>
+        <xs:attribute name="unit" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief Double between -1 and 1-->
+  <xs:simpleType name="DoubleFraction">
+    <xs:restriction base="xs:double">
+      <xs:minInclusive value="-1"/>
+      <xs:maxInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- @brief A unitless scalar greater or equal to -1 and less that or equal to 1. -->
+  <xs:complexType name="ScalarFractionData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="value" type="DoubleFraction" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding amount quanties (ex. ct, mol) -->
+  <xs:complexType name="ScalarAmountData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding amount per mass quanties (ex. mol/g)-->
+  <xs:complexType name="ScalarAmountPerMassData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding amount per time quanties (ex. mol/min)-->
+  <xs:complexType name="ScalarAmountPerTimeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>  
+  
+  <!-- @brief A scalar for holding amount per volume quanties (ex. mol/L)-->
+  <xs:complexType name="ScalarAmountPerVolumeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding area quanties (ex. m^2)-->
+  <xs:complexType name="ScalarAreaData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding area per time quanties (ex. m^2/s)-->
+  <xs:complexType name="ScalarAreaPerTimePerPressureData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding electric capacitance quanties (ex. F) -->
+  <xs:complexType name="ScalarElectricCapacitanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding electric charge quanties (ex. C) -->
+  <xs:complexType name="ScalarElectricChargeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding electric current quanties (ex. A) -->
+  <xs:complexType name="ScalarElectricCurrentData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding electric potential quanties (ex. V) -->
+  <xs:complexType name="ScalarElectricPotentialData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding electric inductance quanties (ex. H) -->
+  <xs:complexType name="ScalarElectricInductanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding electric resistance quanties (ex. ohm) -->
+  <xs:complexType name="ScalarElectricResistanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding energy quanties (ex. J) -->
+  <xs:complexType name="ScalarEnergyData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding energy per amount quanties (ex. J/mol)-->
+  <xs:complexType name="ScalarEnergyPerAmountData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding energy per mass quanties (ex. J/kg) -->
+  <xs:complexType name="ScalarEnergyPerMassData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding flow resistance quanties (ex. Pa s/m^3) -->
+  <xs:complexType name="ScalarFlowResistanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding flow compliance quanties (ex. L/cmH2O) -->
+  <xs:complexType name="ScalarFlowComplianceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding flow elastance quanties (ex. cmH2O/L) -->
+  <xs:complexType name="ScalarFlowElastanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding flow inertance quanties (ex. mmHg s^2/mL) -->
+  <xs:complexType name="ScalarFlowInertanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding force quanties (ex.  kg m/s^2)-->
+  <xs:complexType name="ScalarForceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding frequency quanties (ex. 1/s) -->
+  <xs:complexType name="ScalarFrequencyData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding heat resistance quanties (ex. K/W) -->
+  <xs:complexType name="ScalarHeatResistanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding heat resistance area quanties (ex. rsi) -->
+  <xs:complexType name="ScalarHeatResistanceAreaData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding heat capacitance quanties (ex. J/K) -->
+  <xs:complexType name="ScalarHeatCapacitanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding heat capacitance per mass quanties (ex. J/K kg) -->
+  <xs:complexType name="ScalarHeatCapacitancePerMassData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding heat conductance quanties (ex. W/K) -->
+  <xs:complexType name="ScalarHeatConductanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding heat conductance per area quanties (ex. W/m^2 K) -->
+  <xs:complexType name="ScalarHeatConductancePerAreaData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding heat inductance quanties (ex. K s/W) -->
+  <xs:complexType name="ScalarHeatInductanceData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding inverse pressure quanties (ex. 1/Pa) -->
+  <xs:complexType name="ScalarInversePressureData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding length quanties (ex. ft) -->
+  <xs:complexType name="ScalarLengthData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding length per time quanties (ex. ft/s^2) -->
+  <xs:complexType name="ScalarLengthPerTimeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding length per time per pressure quanties (ex. m/s mmHg) -->
+  <xs:complexType name="ScalarLengthPerTimePerPressureData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding mass quanties (ex. g) -->
+  <xs:complexType name="ScalarMassData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding mass per amount quanties (ex. g/mol)-->
+  <xs:complexType name="ScalarMassPerAmountData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief  A scalar for holding mass per volume quanties (ex. ug/mL) -->
+  <xs:complexType name="ScalarMassPerVolumeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding mass per mass quanties (ex. ug/kg) -->
+  <xs:complexType name="ScalarMassPerMassData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding mass per time quanties (ex. ug/s) -->
+  <xs:complexType name="ScalarMassPerTimeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding osmolality quanties (ex. Osm/kg)-->
+  <xs:complexType name="ScalarOsmolalityData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding osmolarity quanties (ex. Osm/L)-->
+  <xs:complexType name="ScalarOsmolarityData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding power quanties (ex. W) -->
+  <xs:complexType name="ScalarPowerData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding pressure quanties (ex. mmHg) -->
+  <xs:complexType name="ScalarPressureData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding pressure per volume quanties (ex. mmHg/mL) -->
+  <xs:complexType name="ScalarPressurePerVolumeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding time quanties (ex. s) -->
+  <xs:complexType name="ScalarTimeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding temperature quanties (ex. degC) -->
+  <xs:complexType name="ScalarTemperatureData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding volume quanties (ex. mL) -->
+  <xs:complexType name="ScalarVolumeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding volume per time quanties (ex. mL/s) -->
+  <xs:complexType name="ScalarVolumePerTimeData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding volume per pressure quanties (ex. mL/cmH2O) -->
+  <xs:complexType name="ScalarVolumePerPressureData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding volume per time per area quanties (ex. mL/s cm2 g) -->
+  <xs:complexType name="ScalarVolumePerTimePerAreaData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding volume per time per mass quanties (ex. mL/s g) -->
+  <xs:complexType name="ScalarVolumePerTimePerMassData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding volume per time per pressure quanties (ex. "mL/s mmHg) -->
+  <xs:complexType name="ScalarVolumePerTimePerPressureData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief A scalar for holding volume per time per pressure per are quanties (ex. "mL/s mmHg cm2) -->
+  <xs:complexType name="ScalarVolumePerTimePerPressurePerAreaData">
+    <xs:complexContent>
+      <xs:restriction base="ScalarData">
+        <xs:attribute name="unit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- Array Property Data Forms -->
+  
+  <xs:complexType name="ArrayData">
+    <xs:complexContent>
+      <xs:extension base="PropertyData">
+        <xs:sequence>
+          <xs:element name="Value" type="DoubleList" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Error" type="ErrorList" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="unit" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>  
+  
+  <!-- Function Property Data Forms -->
+  
+  <!-- @brief Two arrays paired where the abscissa index is a function of the same ordinate index -->
+  <xs:complexType name="FunctionData">
+    <xs:complexContent>
+      <xs:extension base="PropertyData">
+        <xs:sequence>
+          <xs:element name="Abscissa" type="DoubleList" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Ordinate" type="DoubleList" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="AbscissaUnit" type="xs:string" use="optional"/>
+        <xs:attribute name="OrdinateUnit" type="xs:string" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  <!-- @brief Volumes as a function of time -->
+  <xs:complexType name="FunctionTimeVsVolumeData">
+    <xs:complexContent>
+      <xs:restriction base="FunctionData">
+        <xs:sequence>
+          <xs:element name="Abscissa" type="DoubleList" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Ordinate" type="DoubleList" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="AbscissaUnit" type="xs:string" use="required"/>
+        <xs:attribute name="OrdinateUnit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <!-- @brief Electric potential as a function of time -->
+  <xs:complexType name="FunctionTimeVsElectricPotentialData">
+    <xs:complexContent>
+      <xs:restriction base="FunctionData">
+        <xs:sequence>
+          <xs:element name="Abscissa" type="DoubleList" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Ordinate" type="DoubleList" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="AbscissaUnit" type="xs:string" use="required"/>
+        <xs:attribute name="OrdinateUnit" type="xs:string" use="required"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+</xs:schema>

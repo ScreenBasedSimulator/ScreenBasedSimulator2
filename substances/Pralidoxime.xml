@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Substance xmlns="uri:/mil/tatrc/physiology/datamodel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" State="Liquid" xsi:schemaLocation="">
+    <Name>Pralidoxime</Name>
+    <MolarMass value="176.6" unit="g/mol"/>
+    <Clearance>
+        <Systemic>
+            <FractionExcretedInFeces value="0.0"/>
+            <FractionUnboundInPlasma value="1.0"/>
+            <IntrinsicClearance value="0.0" unit="mL/min kg"/>
+            <RenalClearance value="7.2" unit="mL/min kg"/>
+            <SystemicClearance value="15.0" unit="mL/min kg"/>
+        </Systemic>
+        <RenalDynamics>
+            <Clearance value="7.2" unit="mL/min kg"/>
+        </RenalDynamics>
+    </Clearance>
+    <Pharmacokinetics>
+        <AcidDissociationConstant value="5.78"/>
+        <BindingProtein>Albumin</BindingProtein>
+        <BloodPlasmaRatio value="1.564"/>
+        <FractionUnboundInPlasma value="1.0"/>
+        <IonicState>WeakBase</IonicState>
+        <LogP value="1.564"/>
+    </Pharmacokinetics>
+    <Pharmacodynamics>
+        <Bronchodilation value="0.0"/>
+        <DiastolicPressureModifier value="0.15"/>
+        <EC50 value="0.2855" unit="ug/mL"/>
+        <HeartRateModifier value="0.45"/>
+        <NeuromuscularBlock value="0.0"/>
+        <PupilState>Dialated</PupilState>
+        <RespirationRateModifier value="0.3"/>
+        <Sedation value="0.0"/>
+        <SystolicPressureModifier value="0.15"/>
+        <TidalVolumeModifier value="0.0"/>
+    </Pharmacodynamics>
+</Substance>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Substance xmlns="uri:/mil/tatrc/physiology/datamodel" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" State="Gas" xsi:schemaLocation="">
+    <Name>Cortexiphan</Name>
+    <Density value="3213.0" unit="g/m^3"/>
+    <MolarMass value="70.91" unit="g/mol"/>
+    <RelativeDiffusionCoefficient value="44.2"/>
+    <SolubilityCoefficient value="1.58" unit="1/atm"/>
+    <Clearance>
+        <Systemic>
+            <FractionExcretedInFeces value="0.0"/>
+            <FractionUnboundInPlasma value="1.0"/>
+            <IntrinsicClearance value="0.0" unit="mL/min kg"/>
+            <RenalClearance value="0.0" unit="mL/min kg"/>
+            <SystemicClearance value="2.0" unit="mL/min kg"/>
+        </Systemic>
+        <RenalDynamics>
+            <Clearance value="0.0" unit="mL/min kg"/>
+        </RenalDynamics>
+    </Clearance>
+    <Pharmacokinetics>
+        <AcidDissociationConstant value="18.87"/>
+        <BindingProtein>Albumin</BindingProtein>
+        <BloodPlasmaRatio value="1.0"/>
+        <FractionUnboundInPlasma value="1.0"/>
+        <IonicState>Neutral</IonicState>
+        <LogP value="2.06"/>
+    </Pharmacokinetics>
+    <Pharmacodynamics>
+        <Bronchodilation value="0.0"/>
+        <DiastolicPressureModifier value="-0.2"/>
+        <EC50 value="450.0" unit="ug/mL"/>
+        <HeartRateModifier value="-0.2"/>
+        <NeuromuscularBlock value="0.0"/>
+        <PupilState>Normal</PupilState>
+        <RespirationRateModifier value="0.2"/>
+        <Sedation value="0.0"/>
+        <SystolicPressureModifier value="-0.2"/>
+        <TidalVolumeModifier value="0.0"/>
+    </Pharmacodynamics>
+</Substance>
