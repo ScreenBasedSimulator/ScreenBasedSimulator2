@@ -1,0 +1,140 @@
+<!-- @brief A collection of data and instructions to be executed by a physiology engine  -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="uri:/mil/tatrc/physiology/datamodel" xmlns="uri:/mil/tatrc/physiology/datamodel" elementFormDefault="qualified">    
+    
+    <xs:include schemaLocation="Anatomy.xsd"/>
+    <xs:include schemaLocation="Anesthesia.xsd"/>
+    <xs:include schemaLocation="Inhaler.xsd"/>
+    <xs:include schemaLocation="Engine.xsd"/>
+    
+    <xs:complexType name="ConditionData" abstract="true">
+        <xs:sequence>            
+            <xs:element name="Comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>      
+    </xs:complexType>
+    <xs:complexType name="ConditionListData">
+        <xs:sequence>
+            <xs:element name="Condition" type="ConditionData" minOccurs="1" maxOccurs="unbounded"/>   
+        </xs:sequence>       
+    </xs:complexType> 
+    <xs:element name="ConditionList" type="ConditionListData"/>
+    
+    <xs:complexType name="ActionData">        
+        <xs:sequence>
+            <xs:element name="Comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ActionListData">
+        <xs:sequence>
+            <xs:element name="Action" type="ActionData" minOccurs="1" maxOccurs="unbounded"/>   
+        </xs:sequence>       
+    </xs:complexType> 
+    <xs:element name="ActionList" type="ActionListData"/>
+    
+    <xs:complexType name="DataRequestData" abstract="true">       
+        <xs:attribute name="Name" type="xs:string" use="required"/>
+        <xs:attribute name="Unit" type="xs:string" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="DataRequestListData">
+        <xs:sequence>
+            <xs:element name="DataRequest" type="DataRequestData" minOccurs="1" maxOccurs="unbounded"/>   
+        </xs:sequence>       
+    </xs:complexType> 
+    <xs:element name="DataRequestList" type="DataRequestListData"/>
+    
+    <xs:complexType name="PatientDataRequestData">  
+        <xs:complexContent>
+            <xs:extension base="DataRequestData"/>       
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="PhysiologySystemDataRequestData">  
+        <xs:complexContent>
+            <xs:extension base="DataRequestData"/>       
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:simpleType name="enumCompartmentType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Chyme"/> 
+            <xs:enumeration value="Pulmonary"/>
+            <xs:enumeration value="Temperature"/>  
+            <xs:enumeration value="Tissue"/>
+            <xs:enumeration value="Urine"/>   
+            <xs:enumeration value="Vascular"/>         
+        </xs:restriction>
+    </xs:simpleType>  
+    <xs:complexType name="AnatomyCompartmentDataRequestData">
+        <xs:complexContent>
+            <xs:extension base="DataRequestData">                
+                <xs:attribute name="Compartment" type="enumAnatomy" use="required"/>
+                <xs:attribute name="Type" type="enumCompartmentType" use="required"/>
+                <xs:attribute name="Substance" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="SubstanceDataRequestData">
+        <xs:complexContent>
+            <xs:extension base="DataRequestData">  
+                <xs:attribute name="Substance" type="xs:string" use="required"/>
+                <xs:attribute name="Compartment" type="enumAnatomy" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- Note this is not set up to retrieve data from the Anesthesia Machine Chambers or O2 Bottles 
+         I could set it up, but there is no need at this point -->
+    <xs:complexType name="EquipmentSystemDataRequestData">
+        <xs:complexContent>
+            <xs:extension base="DataRequestData"/>       
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="AnesthesiaMachineCompartmentDataRequestData">
+        <xs:complexContent>
+            <xs:extension base="DataRequestData">                
+                <xs:attribute name="Compartment" type="enumAnesthesiaMachine" use="required"/>
+                <xs:attribute name="Substance" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="InhalerCompartmentDataRequestData">
+        <xs:complexContent>
+            <xs:extension base="DataRequestData">                
+                <xs:attribute name="Compartment" type="enumInhaler" use="required"/>
+                <xs:attribute name="Substance" type="xs:string" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="ScenarioData">
+        <xs:complexContent>
+            <xs:extension base="ObjectData">               
+                <xs:sequence>
+                    <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Configuration" type="PhysiologyEngineConfigurationData" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="PatientFile" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="DataRequest" type="DataRequestData" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="Condition" type="ConditionData" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="Action" type="ActionData" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="SamplesPerSecond" type="xs:double" use="optional"/> 
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="Scenario" type="ScenarioData"/>
+    
+    <!-- @brief Execute the engine for the specified amount of time -->
+    <xs:complexType name="AdvanceTimeData">       
+        <xs:complexContent>
+            <xs:extension base="ActionData">
+                <xs:sequence>
+                    <xs:element name="Time" type="ScalarTimeData" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+</xs:schema>
