@@ -7,29 +7,16 @@ Run main method under com.cmu.sbs
 
 How to run BioGearServer on Mac:
 
-1. Install homebrew
-2. Install boost and google-perftools
-3. Compile BioGears Server under biogears folder
-
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install boost google-perftools
-make mac
-```
-
-4. cd to `/bin`
-5. run `./BioGearsServer`
+1. Clone and import the project as maven project to Eclipse
+2. Select /src/main/resources/lib-osx as Native Library Location
+3. Run Main class.
 
 
-How to run BioGears on Centos:
+How to run BioGears on Windows:
 
-0. Install Boost??
-1. Compile BioGears Server under biogears folder
-
-```
-make linux
-```
-
+1. Clone and import the project as maven project to Eclipse.
+2. Select /src/main/resources/windows as Native Library Location
+3. Append absolute path of /src/main/resources/windows to environment variables using [this](http://stackoverflow.com/questions/7048216/environment-variables-in-eclipse)
 
 ***
 
