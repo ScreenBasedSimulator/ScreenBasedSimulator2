@@ -1,11 +1,12 @@
 package edu.cmu.sbs.hub;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.EnumMap;
 import java.util.Map;
 
 import edu.cmu.sbs.hub.datatype.Patient;
 import edu.cmu.sbs.hub.datatype.PatientStatus;
-import edu.cmu.sbs.hub.datatype.Patient.Gender;
 import edu.cmu.sbs.hub.datatype.PatientStatus.Metric;
 
 /**
@@ -14,28 +15,13 @@ import edu.cmu.sbs.hub.datatype.PatientStatus.Metric;
  *
  */
 public class ScoringUtil {
-    /**
-     * Protocal Example:
-     *
-     * Key Name                        |Value         |Specification
-     * --------------------------------|--------------|----------------------------------------
-     * hash                  (Required)|sykwrvmb      |Unique hash ID for a specific patient
-     * heart_rate                      |66.03         |double value round to two decimal places
-     * respiration_rate                |75.48         |double value round to two decimal places
-     * systolic_arterial_pressure      |37.99         |double value round to two decimal places
-     * diastolic_arterial_pressure     |120.91        |double value round to two decimal places
-     * oxygen_saturation               |93.60         |double value round to two decimal places
-     *
-     * Specifications:
-     * > up to six key-values are transferred each time;
-     * > NOT order-sensitive;
-     * > Only hash key is required
-     *
-     * */
 	
-	private PatientStatus patientStatus;
-	private PatientStatus modelStatus;
+	public static final double GAME_OVER_THRESHOLD = 50.0d;
+	
+	private Patient patient;
+	private Patient model;
 	private Map<Metric, Double> weightMap = new EnumMap<>(Metric.class);
+	private long startTime = System.currentTimeMillis();
 	
 	public ScoringUtil() {
 		//add weight parameters
@@ -46,20 +32,20 @@ public class ScoringUtil {
 		weightMap.put(PatientStatus.Metric.RESPIRATION_RATE, 1.0 / 100);
 	}
 	
-	public void setCurrentStatus(PatientStatus patientStatus) {
-		this.patientStatus = patientStatus;
+	public void setPatient(Patient patient) {
+		this.patient = patient;
 	}
 	
-	public void setModelStatus(PatientStatus modelStatus) {
-		this.modelStatus = modelStatus;
+	public void setModel(Patient model) {
+		this.model = model;
 	}
 	
-	public PatientStatus getCurrentStatus() {
-		return patientStatus;
+	public Patient getPatient() {
+		return patient;
 	}
 	
-	public PatientStatus getModelStatus() {
-		return modelStatus;
+	public Patient getModel() {
+		return model;
 	}
 	
 	/**
@@ -67,31 +53,61 @@ public class ScoringUtil {
 	 * @return sum of normalized difference
 	 */
 	public double getScore() {
-		if(patientStatus == null || modelStatus == null) {
+		if(patient == null || model == null) {
 			return 0.0;
 		}
 		
 		double sumDifference = 0.0;
-		Map<Metric, String> patientStatusMap = patientStatus.getMetricMap();
-		Map<Metric, String> modelStatusMap = modelStatus.getMetricMap();
+		Map<Metric, String> patientStatusMap = patient.getStatus().getMetricMap();
+		Map<Metric, String> modelStatusMap = model.getStatus().getMetricMap();
 		
 		for (Metric metric : modelStatusMap.keySet()) {
 			sumDifference += Math.abs(
 					Double.valueOf(patientStatusMap.get(metric)) - 
 					Double.valueOf(modelStatusMap.get(metric))) * weightMap.get(metric);
-			System.out.println(metric.toString() + " " + Math.abs(
+			/*System.out.println(metric.toString() + " " + Math.abs(
 					Double.valueOf(patientStatusMap.get(metric)) - 
-					Double.valueOf(modelStatusMap.get(metric))) * weightMap.get(metric));
+					Double.valueOf(modelStatusMap.get(metric))) * weightMap.get(metric));*/
 		}		
 		//return score in 0 - 100 range
 	    return (1.0 - sumDifference / 5.0) * 100;
 	}
 	
-	//test scoring function
-	public static void main(String[] args) {
+	/**
+	 * this function returns a boolean value indicates if the game is over
+	 * game will over when current score drops below GAME_OVER_THRESHOLD
+	 * @return
+	 */
+	public boolean isGameOver() {
+		if(getScore() < GAME_OVER_THRESHOLD) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Return text report in json format
+	 * @return
+	 */
+	public String getReport() {
+		long endTime = System.currentTimeMillis();
+		NumberFormat formatter = new DecimalFormat("#0.00");
+		return String.format("{\"TotalTime\":\"%s\",\"Score\":\"%f\",\"PatientInfo\":{\"patientHash\":\"%s\",\"name\":\"%s\",\"gender\":\"%s\",\"age\":\"%d\",\"weight\":\"%f\",\"height\":\"%f\"}, \"PatientStatus\":%s}", 
+				formatter.format((endTime - startTime) / 1000d),
+				getScore(),
+				patient.patientHash,
+				patient.name,
+				patient.gender,
+				patient.age,
+				patient.weight,
+				patient.height,
+				patient.getStatus().toString());
+	}
+	
+	//testing scoring function
+	public static void main(String[] args) throws InterruptedException {
 		//set patient status
 		ScoringUtil scoringUtil = new ScoringUtil();
-		scoringUtil.setCurrentStatus(PatientStatus.getRandomFakeStatus());
 		
 		//set model status
 		EnumMap<Metric, String> modelParamMap = new EnumMap<>(Metric.class);
@@ -101,10 +117,23 @@ public class ScoringUtil {
 		modelParamMap.put(PatientStatus.Metric.OXYGEN_SATURATION, "97");
 		modelParamMap.put(PatientStatus.Metric.RESPIRATION_RATE, "100");
 		Patient patientModel = new Patient("model", "model", Patient.Gender.MALE, 0, 0.0, 0.0);
-		scoringUtil.setModelStatus(new PatientStatus(modelParamMap, patientModel));
+		patientModel.updateStatus(modelParamMap);
+		scoringUtil.setModel(patientModel);
+		
+		//set new Patient every second, until game over
+		Patient initialPatient = Patient.generateRandomPatient();
+		initialPatient.updateStatus(PatientStatus.getRandomFakeStatus().getStatus());
+		scoringUtil.setPatient(initialPatient);
+		while(!scoringUtil.isGameOver()) {
+			System.out.println("Score: " + scoringUtil.getScore());
+			Patient randomPatient = Patient.generateRandomPatient();
+			randomPatient.updateStatus(PatientStatus.getRandomFakeStatus().getStatus());
+			scoringUtil.setPatient(randomPatient);
+			Thread.sleep(1000);
+		}
 		
 		//print final score
-		System.out.println("Score: " + scoringUtil.getScore());
+		System.out.println(scoringUtil.getReport());
 	}
 	
 }
