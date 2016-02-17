@@ -42,6 +42,10 @@ Address  |Method | Service | Function | Success Return Value
 /unity/status | GET | Unity | retrieve patient status | UnityReply1
 /unity/create | GET | Unity | create patient | UnityReply2
 
+Address  |Method | Service | Function | Success Return Value
+---------|-------|---------|----------|---------------------
+/scoring/die:{PatientHash} | GET | Scoring | receive patient died |  DieReply
+
 ### UnityReply1
 ```
 {"heart_rate":72.0,"respiration_rate":16.3636,"systolic_arterial_pressure":106.955,"diastolic_arterialpressure":63.8649,"oxygen_saturation":0.968268}
@@ -51,4 +55,11 @@ Address  |Method | Service | Function | Success Return Value
 ```
 Create Successful -> "Success"
 Create Failure    -> "Failure"
+```
+
+### DieReply
+```
+Successfully marked patient with hash as deceased -> "Success"
+patient has already died -> "Success" 
+Patient with hash is not found -> "Failure"
 ```

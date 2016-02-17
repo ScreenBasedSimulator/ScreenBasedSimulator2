@@ -78,7 +78,6 @@ public class Reception {
 
         });
 
-        // No create for now.
         // TODO establish create protocol
         //get("/unity/create", (request, response) -> {
         //    try {
@@ -91,6 +90,19 @@ public class Reception {
         //
         //
         //});
+
+
+        get("/scoring/die:hash", (request, response) -> {
+            String id = request.params(":hash");
+
+            try {
+                kiosk.roster.locatePatient(id).die();
+                return "Success";
+            } catch (PatientNotFoundException e) {
+                logger.error("Patient " + id + " does not exist");
+                return "Failure";
+            }
+        });
 
         post("/unity/action/:action", (request, response) -> {
 

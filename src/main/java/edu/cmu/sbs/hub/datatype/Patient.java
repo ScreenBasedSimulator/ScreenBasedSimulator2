@@ -17,6 +17,7 @@ public class Patient {
     public final double weight;
     public final double height;
     private PatientStatus status;
+    private boolean alive = true;
 
     public Patient(String patientHash, String name, Gender gender, int age, double weight, double height) {
         this.patientHash = patientHash;
@@ -30,6 +31,14 @@ public class Patient {
     public static Patient generateRandomPatient() {
         logger.info("RandomPatient invoked");
         return new Patient(RandomStringUtils.random(8, "qwertyuiopasdfghjklzxcvbnm1234567890"), RandomStringUtils.random(5, "abcdefghijkmon"), Gender.FEMALE, ((int) (Math.random() * 50 + 10)), Math.random() * 50 + 10, Math.random() * 9 + 2);
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void die() {
+        alive = false;
     }
 
     public void updateStatus(EnumMap<PatientStatus.Metric, String> metricMap) {
