@@ -92,7 +92,8 @@ public class ScoringUtil {
 	public String getReport() {
 		long endTime = System.currentTimeMillis();
 		NumberFormat formatter = new DecimalFormat("#0.00");
-		return String.format("{\"TotalTime\":\"%s\",\"Score\":\"%f\",\"PatientInfo\":{\"patientHash\":\"%s\",\"name\":\"%s\",\"gender\":\"%s\",\"age\":\"%d\",\"weight\":\"%f\",\"height\":\"%f\"}, \"PatientStatus\":%s}", 
+		return String.format("{\"GameOver\":\"%s\",\"TotalTime\":\"%s\",\"Score\":\"%f\",\"PatientInfo\":{\"patientHash\":\"%s\",\"name\":\"%s\",\"gender\":\"%s\",\"age\":\"%d\",\"weight\":\"%f\",\"height\":\"%f\"}, \"PatientStatus\":%s}", 
+				(isGameOver() ? "true" : "false"),
 				formatter.format((endTime - startTime) / 1000d),
 				getScore(),
 				patient.patientHash,

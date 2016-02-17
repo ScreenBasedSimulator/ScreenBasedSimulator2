@@ -2,10 +2,16 @@ package edu.cmu.sbs.hub.server;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
 import edu.cmu.sbs.hub.Kiosk;
+import edu.cmu.sbs.hub.ScoringUtil;
+import edu.cmu.sbs.hub.datatype.Patient;
+import edu.cmu.sbs.hub.datatype.PatientStatus;
+import edu.cmu.sbs.hub.datatype.PatientStatus.Metric;
 import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.hub.logging.RecordKeeperEZ;
 import edu.cmu.sbs.protocol.StatusProtocol;
+
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.slf4j.Logger;
@@ -14,6 +20,7 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.Type;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.EnumMap;
 import java.util.Map;
 
 import static spark.Spark.*;
@@ -72,6 +79,38 @@ public class Reception {
                 return FAILURE;
             } finally {
                 logger.info("Status Update Success");
+            }
+
+        });
+        
+        // TODO establish transfer protocol
+        get("/report", (request, response) -> {
+            try {
+            	//warning: this part is only for testing use!
+            	ScoringUtil scoringUtil = new ScoringUtil();
+        		
+        		//set model status
+        		EnumMap<Metric, String> modelParamMap = new EnumMap<>(Metric.class);
+        		modelParamMap.put(PatientStatus.Metric.HEART_RATE, "72.0");
+        		modelParamMap.put(PatientStatus.Metric.SYSTOLIC_ARTERIAL_PRESSURE, "64");
+        		modelParamMap.put(PatientStatus.Metric.DIASTOLIC_ARTERIALPRESSURE, "105");
+        		modelParamMap.put(PatientStatus.Metric.OXYGEN_SATURATION, "97");
+        		modelParamMap.put(PatientStatus.Metric.RESPIRATION_RATE, "100");
+        		Patient patientModel = new Patient("model", "model", Patient.Gender.MALE, 0, 0.0, 0.0);
+        		patientModel.updateStatus(modelParamMap);
+        		scoringUtil.setModel(patientModel);
+        		
+        		//set new Patient every second, until game over
+        		Patient initialPatient = Patient.generateRandomPatient();
+        		initialPatient.updateStatus(PatientStatus.getRandomFakeStatus().getStatus());
+        		scoringUtil.setPatient(initialPatient);
+            	
+                return scoringUtil.getReport();
+            } catch (Exception e) {
+                logger.error(e.getMessage());
+                return FAILURE;
+            } finally {
+                logger.info("Report successfully sent");
             }
 
         });
