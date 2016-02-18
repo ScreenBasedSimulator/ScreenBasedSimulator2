@@ -22,6 +22,7 @@ public class Getinformation : MonoBehaviour {
 
 	void Start(){
 		StartCoroutine(RepeatedGet());
+//		OpenWebpage();
 		
 	}
 	string oxygenStr = "Oxygen Level: ";
@@ -66,6 +67,18 @@ public class Getinformation : MonoBehaviour {
 			{
 				Debug.Log ("Debrief");
 				gameStatus = "debrief";
+				
+				// open a url in browser
+				Application.OpenURL("http://unity3d.com/");
+
+				// To open a html in unity, we need to parse & render the http response while Unity
+				// does not have a built-in HTML parser/renderer
+				// There is a HtmlTexturePlugin which depends on Webkit that is available natively in OSX
+				// but not Windows
+				// Another solution available in Windows:
+				// http://labs.awesomium.com/unity3d-integration-tutorial-part-1/
+				// See also: http://www.andrewnoske.com/wiki/Unity_-_Web_Interaction
+				// Here I d
 			}
 
 			GUI.Label(new Rect(40,200,Screen.width,50),"Patient Status:");
@@ -78,10 +91,10 @@ public class Getinformation : MonoBehaviour {
 		}
 		if (gameStatus == "debrief") 
 		{
-			GUI.Label(new Rect(70,50,40,50),"Score:");
-			GUI.Label(new Rect(110,50,40,50),"100");
-			string debrief = "you did good!\nblablabla\nblabla\n\nblablabla\nbla";
-			GUI.TextField(new Rect(100, 100, 400, 200), debrief, 100);
+//			GUI.Label(new Rect(70,50,40,50),"Score:");
+//			GUI.Label(new Rect(110,50,40,50),"100");
+//			string debrief = "you did good!\nblablabla\nblabla\n\nblablabla\nbla";
+//			GUI.TextField(new Rect(100, 100, 400, 200), debrief, 100);
 		}
 	}
 
