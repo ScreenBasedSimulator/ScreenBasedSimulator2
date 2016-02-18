@@ -16,9 +16,9 @@ public class ControlNurse : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey(KeyCode.Return)){
 			//			print("Return has been pressed");
-//			animator.SetBool("begin_walk", true);
+			animator.SetBool("begin_walk", true);
 //			print (animator2.avatar);
-//			animator2.SetBool("begin_move", true);
+			animator2.SetBool("begin_move", true);
 		}
 	}
 }
