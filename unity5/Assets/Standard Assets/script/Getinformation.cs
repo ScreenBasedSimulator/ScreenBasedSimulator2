@@ -4,9 +4,10 @@ using UnityEngine.UI;
 using SimpleJSON	;
 
 public class Getinformation : MonoBehaviour {
-
+	
 	//	private Rigidbody rb;
 	private string url = "localhost:26666/unity/status";
+	private string report_url = "localhost:26666/unity/report";
 	//	public Rigidbody projectile;
 	//	public Text content;
 	public int i;
@@ -19,6 +20,8 @@ public class Getinformation : MonoBehaviour {
 	string systolic_arterial_pressure = "null";
 	string respiration_rate = "null";
 	private string gameStatus = "gaming";
+	private bool game_over_sign = false;
+	private string game_over = "false"; 
 
 	void Start(){
 		StartCoroutine(RepeatedGet());
@@ -89,6 +92,7 @@ public class Getinformation : MonoBehaviour {
 	{
 		while (true) {
 			WWW w = new WWW (url);
+			WWW k = new WWW (report_url);
 			yield return w;
 			yield return new WaitForSeconds(1);
 			if (w.error == null)
@@ -102,6 +106,14 @@ public class Getinformation : MonoBehaviour {
 				diastolic_arterialpressure = HubResponse["diastolic_arterialpressure"];
 				respiration_rate = HubResponse["respiration_rate"];
 				//{"heart_rate":"72","respiration_rate":"16.2651","systolic_arterial_pressure":"106.976","diastolic_arterialpressure":"63.8783","oxygen_saturation":"0.968285"}
+
+
+				var report_response = JSON.Parse(k.text);  //Game_over Sign
+				game_over = report_response ["GameOver"];
+				if (game_over.Equals ("true")) {
+					game_over_sign = true;
+				}
+
 			}
 			else
 			{
