@@ -1,0 +1,38 @@
+<!-- @brief Nutrition data for feeding the patient -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="uri:/mil/tatrc/physiology/datamodel" xmlns="uri:/mil/tatrc/physiology/datamodel" elementFormDefault="qualified">
+    
+    <xs:include schemaLocation="Properties.xsd"/>
+
+    <!-- @name
+    -->
+    <xs:complexType name="NutritionData">
+        <xs:complexContent>
+            <xs:extension base="ObjectData">
+                <xs:sequence>
+                    <xs:element name="Carbohydrate" type="ScalarMassData" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="CarbohydrateDigestionRate" type="ScalarMassPerTimeData" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Fat" type="ScalarMassData" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="FatDigestionRate" type="ScalarMassPerTimeData" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Protein" type="ScalarMassData" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="ProteinDigestionRate" type="ScalarMassPerTimeData" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Calcium" type="ScalarMassData" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Sodium" type="ScalarMassData" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Water" type="ScalarVolumeData" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="Nutrition" type="NutritionData"/>
+    
+    <xs:complexType name="MealData">
+        <xs:complexContent>
+            <xs:extension base="NutritionData">
+                <xs:sequence>
+                    <xs:element name="ElapsedTime" type="ScalarTimeData" minOccurs="1" maxOccurs="1"/>                    
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="Meal" type="MealData"/>
+    
+</xs:schema>
