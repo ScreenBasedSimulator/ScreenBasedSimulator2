@@ -4,6 +4,7 @@ using System.Collections;
 using SimpleJSON;
 
 public class parameterDisplay : MonoBehaviour {
+	//public callMachine call_machine;
 	private Text Heartbeat;
 	private Text drug_name;
 	private string url = "localhost:26666/unity/status";
@@ -19,32 +20,54 @@ public class parameterDisplay : MonoBehaviour {
 	string respiration_rate = "null";
 	string respiration_rate_name = "Respiration Rate: ";
 	string arterial_pressure_name = "Arterial Pressure: ";
+
+	//all signs
+	string heart_sign = "";
+	string respiration_rate_sign = "";
+	string arterial_pressure_sign = "";
+	string oxygen_level_sign = "";
+
+	//all flag
+	bool hear_rate_flag = false;
+	bool respiration_rate_flag = false;
+	bool arterial_pressure_flag = false;
+	bool oxygen_level_flag = false;
+
+
+
+
 	// Use this for initialization
 	void Start () {
 		Heartbeat = GetComponent<Text>();
-
-
-
 	}
 
 	// Update is called once per frame
 	void FixedUpdate()
-	{
-		//		System.Random rnd = new System.Random();
-		Heartbeat.text = heart_label + heart + "\n" + oxygen_level + oxygen +"\n" + 
+	{	
+
+		var call_machine = GameObject.FindObjectOfType(typeof(callMachine)) as callMachine;
+		hear_rate_flag = call_machine.heart_rate;
+		if (hear_rate_flag) {
+			heart_sign = heart_label + heart;
+		} else {
+			heart_sign = "";
+		}
+
+		Heartbeat.text =  heart_sign + "\n" + oxygen_level + oxygen +"\n" + 
 			arterial_pressure_name + diastolic_arterialpressure +"\n"
 			+ respiration_rate_name + respiration_rate ;
-		//		drug_name.text = drugname;
+
 	}
 
 	IEnumerator RepeatedGet()
-	{
+	{	
+
 		while (true) {
 			WWW w = new WWW (url);
 			yield return w;
 			yield return new WaitForSeconds(1);
 			if (w.error == null)
-			{
+			{	
 				var HubResponse = JSON.Parse(w.text);
 				dplabel = HubResponse["heart_rate"].Value;
 				oxygen = HubResponse["oxygen_saturation"].Value;

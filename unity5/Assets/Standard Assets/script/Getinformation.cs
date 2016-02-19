@@ -37,7 +37,7 @@ public class Getinformation : MonoBehaviour {
 
 		if (gameStatus == "gaming")
 		{
-			GUI.Label(new Rect(10,10,Screen.width,50),"Please input the drugname and dosage");
+//			GUI.Label(new Rect(10,10,Screen.width,50),"Please input the drugname and dosage");
 	//		GUI.Label(new Rect(100, 100, 100, 25), "Client");
 			if(GUI.Button(new Rect(10,120,100,30),"Submit"))
 			{
@@ -45,18 +45,18 @@ public class Getinformation : MonoBehaviour {
 				StartCoroutine(SendDrug(drugname, dos));
 				Debug.Log("FInished Submit input to hub");
 			}
-			GUI.Label (new Rect (10,150,160,20), "Anesthesia Machine");
+			//GUI.Label (new Rect (10,150,160,20), "Anesthesia Machine");
 
-			if(GUI.Button(new Rect(10,170,100,30),"Turn ON "))
-			{
-				Debug.Log("Turn ON anesthesia machine");
-				StartCoroutine(SendAnesthesiaMachine("on"));
-			}
-			if(GUI.Button(new Rect(110,170,100,30),"Turn OFF"))
-			{
-				Debug.Log("Turn OFF anesthesia machine");
-				StartCoroutine(SendAnesthesiaMachine("off"));
-			}
+//			if(GUI.Button(new Rect(10,170,100,30),"Turn ON "))
+//			{
+//				Debug.Log("Turn ON anesthesia machine");
+//				StartCoroutine(SendAnesthesiaMachine("on"));
+//			}
+//			if(GUI.Button(new Rect(110,170,100,30),"Turn OFF"))
+//			{
+//				Debug.Log("Turn OFF anesthesia machine");
+//				StartCoroutine(SendAnesthesiaMachine("off"));
+//			}
 
 			// call code
 			if(GUI.Button(new Rect(600, 10, 100, 30), "Call Code"))
@@ -84,13 +84,13 @@ public class Getinformation : MonoBehaviour {
 				// Here I d
 			}
 
-			GUI.Label(new Rect(40,200,Screen.width,50),"Patient Status:");
-			GUI.Label(new Rect(40,220,Screen.width,50),oxygenStr,guiStyle);
-			GUI.Label(new Rect(40,240,Screen.width,50),"Heart Rate: "  +  heart,guiStyle);
-			GUI.Label(new Rect(40,260,Screen.width,50),"Arterial Pressure: " + systolic_arterial_pressure + "/" + diastolic_arterialpressure,guiStyle);
-			GUI.Label (new Rect (40, 280, Screen.width, 50), "Respiration Rate: " + respiration_rate,guiStyle);
-			drugname = GUI.TextField(new Rect(60,40,200,30),drugname,15);
-			dos = GUI.TextField(new Rect(60,80,200,30),dos,15);
+//			GUI.Label(new Rect(40,200,Screen.width,50),"Patient Status:");
+//			GUI.Label(new Rect(40,220,Screen.width,50),oxygenStr,guiStyle);
+//			GUI.Label(new Rect(40,240,Screen.width,50),"Heart Rate: "  +  heart,guiStyle);
+//			GUI.Label(new Rect(40,260,Screen.width,50),"Arterial Pressure: " + systolic_arterial_pressure + "/" + diastolic_arterialpressure,guiStyle);
+//			GUI.Label (new Rect (40, 280, Screen.width, 50), "Respiration Rate: " + respiration_rate,guiStyle);
+//			drugname = GUI.TextField(new Rect(60,40,200,30),drugname,15);
+//			dos = GUI.TextField(new Rect(60,80,200,30),dos,15);
 		}
 		if (gameStatus == "debrief") 
 		{
