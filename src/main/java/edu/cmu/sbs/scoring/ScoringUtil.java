@@ -1,4 +1,4 @@
-package edu.cmu.sbs.hub;
+package edu.cmu.sbs.scoring;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;

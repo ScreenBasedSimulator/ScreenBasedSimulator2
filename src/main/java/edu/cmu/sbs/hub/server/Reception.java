@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import edu.cmu.sbs.hub.Kiosk;
-import edu.cmu.sbs.hub.ScoringUtil;
+import edu.cmu.sbs.scoring.ScoringUtil;
 import edu.cmu.sbs.hub.datatype.Patient;
 import edu.cmu.sbs.hub.datatype.PatientStatus;
 import edu.cmu.sbs.hub.datatype.PatientStatus.Metric;
