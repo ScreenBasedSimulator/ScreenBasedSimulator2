@@ -10,6 +10,7 @@ import edu.cmu.sbs.hub.datatype.PatientStatus;
 import edu.cmu.sbs.hub.datatype.PatientStatus.Metric;
 import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.hub.logging.RecordKeeperEZ;
+import edu.cmu.sbs.hub.server.Action;
 import edu.cmu.sbs.protocol.StatusProtocol;
 
 import org.joda.time.DateTime;
@@ -43,7 +44,7 @@ public class Reception {
         Logger logger = LoggerFactory.getLogger("Reception");
 
         recordKeeperEZ = kiosk.roster.recordKeeperEZ;
-
+        staticFileLocation("/static");
         port(26666);
         post("/biogears/update", (request, response) -> {
 
