@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="screen-based-simulator-app">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
       <script src="js/debrief.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-controller="screen-based-simulator-controller">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -55,6 +55,12 @@
                 </tr>
               </thead>
               <tbody id="patients">
+                <tr>
+                  <th>{{patient.PatientInfo.name}}</th>
+                  <th>{{patient.PatientInfo.gender}}</th>
+                  <th>{{patient.PatientInfo.weight}}</th>
+                  <th>{{patient.PatientInfo.height}}</th>
+                </tr>
               </tbody>
             </table>
           <div id="time"></div>
@@ -81,5 +87,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
         <script src="js/debrief.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/controller.js"></script>
   </body>
 </html>
