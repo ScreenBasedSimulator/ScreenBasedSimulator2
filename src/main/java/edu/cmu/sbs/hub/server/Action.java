@@ -1,37 +1,41 @@
 package edu.cmu.sbs.hub.server;
 
-import edu.cmu.sbs.biogears.PatientSimulator;
+import edu.cmu.sbs.hub.datatype.Patient;
 
 public class Action {
-    private final PatientSimulator m_patient = new PatientSimulator();
+    public static final String KILL = "kill";
+    public static final String REVIVE = "revive";
+    public static final String OXYGENOFF = "noOxygen";
+    public static final String OXYGENON = "resumeOxygen";
+    public static final String INJECT = "inject";
 
     public Action() {
     }
 
-    public boolean kill() {
-        m_patient.bolusDrug("Succinylcholine", 200.0);
+    public static boolean kill(Patient patient) {
+        patient.getEngine().bolusDrug("Succinylcholine", 200.0);
         return true;
     }
 
-    public boolean revive() {
+    public static boolean revive(Patient patient) {
 
         // TODO revive
 
         return true;
     }
 
-    public boolean noOxygen() {
-        m_patient.setAnesthesiaMachine("off");
+    public static boolean noOxygen(Patient patient) {
+        patient.getEngine().setAnesthesiaMachine("off");
         return true;
     }
 
-    public boolean resumeOxygen() {
-        m_patient.setAnesthesiaMachine("active");
+    public static boolean resumeOxygen(Patient patient) {
+        patient.getEngine().setAnesthesiaMachine("active");
         return true;
     }
 
-    public boolean inject(String drugName, Double dose) {
-        m_patient.bolusDrug(drugName, dose);
+    public static boolean inject(Patient patient, String drugName, Double dose) {
+        patient.getEngine().bolusDrug(drugName, dose);
         return true;
     }
 }

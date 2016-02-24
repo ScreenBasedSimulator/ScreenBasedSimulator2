@@ -7,6 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class Roster {
 
@@ -23,6 +26,12 @@ public class Roster {
         patientMap.put(preExistingPatient.patientHash, preExistingPatient);
         recordKeeperEZ.registerPatient(preExistingPatient);
 
+        startPollingService();
+    }
+
+    private void startPollingService() {
+        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+        executorService.scheduleAtFixedRate((Runnable) () -> patientMap.values().forEach(Patient::update), 0, 300, TimeUnit.MILLISECONDS);
     }
 
     public Patient locatePatient(String hash) throws PatientNotFoundException {

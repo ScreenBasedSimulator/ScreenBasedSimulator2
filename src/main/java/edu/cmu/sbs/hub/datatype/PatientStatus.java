@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.Map;
 
@@ -22,20 +21,13 @@ public class PatientStatus {
         this.patient = patient;
     }
 
-    // TODO does not work properly
-    public static void validateEnumMap(EnumMap<Metric, String> metricMap) {
-        if (metricMap.size() != Metric.values().length || metricMap.keySet().containsAll(Arrays.asList(Metric.values()))) {
-            throw new IllegalArgumentException("Map is not complete");
-        }
-    }
-
     public static PatientStatus getRandomFakeStatus() {
         logger.info("RandomFakeStatus invoked");
         
         EnumMap<Metric, String> metricDoubleMap = new EnumMap<>(Metric.class);
         metricDoubleMap.put(Metric.HEART_RATE, 50 + 20 * Math.random() + "");
         metricDoubleMap.put(Metric.SYSTOLIC_ARTERIAL_PRESSURE, Math.random() * 100 + "");
-        metricDoubleMap.put(Metric.DIASTOLIC_ARTERIALPRESSURE, Math.random() * 20 + 100 + "");
+        metricDoubleMap.put(Metric.DIASTOLIC_ARTERIAL_PRESSURE, Math.random() * 20 + 100 + "");
         metricDoubleMap.put(Metric.OXYGEN_SATURATION, Math.random() * 120 + "");
         metricDoubleMap.put(Metric.RESPIRATION_RATE, 60.0 + Math.random() * 20 + "");
         return new PatientStatus(metricDoubleMap, Patient.generateRandomPatient());
@@ -68,7 +60,7 @@ public class PatientStatus {
     }
 
     public enum Metric {
-        HEART_RATE, RESPIRATION_RATE, SYSTOLIC_ARTERIAL_PRESSURE, DIASTOLIC_ARTERIALPRESSURE, OXYGEN_SATURATION;
+        HEART_RATE, RESPIRATION_RATE, SYSTOLIC_ARTERIAL_PRESSURE, DIASTOLIC_ARTERIAL_PRESSURE, OXYGEN_SATURATION;
 
         @Override
         public String toString() {

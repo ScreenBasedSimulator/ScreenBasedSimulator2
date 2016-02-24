@@ -1,5 +1,6 @@
 package edu.cmu.sbs.hub.datatype;
 
+import edu.cmu.sbs.biogears.PatientSimulator;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ public class Patient {
     public final int age;
     public final double weight;
     public final double height;
+    private final PatientSimulator patientBioEngine;
     private PatientStatus status;
     private boolean alive = true;
 
@@ -26,11 +28,23 @@ public class Patient {
         this.age = age;
         this.weight = weight;
         this.height = height;
+
+        patientBioEngine = new PatientSimulator(patientHash);
+
     }
 
     public static Patient generateRandomPatient() {
         logger.info("RandomPatient invoked");
         return new Patient(RandomStringUtils.random(8, "qwertyuiopasdfghjklzxcvbnm1234567890"), RandomStringUtils.random(5, "abcdefghijkmon"), Gender.FEMALE, ((int) (Math.random() * 50 + 10)), Math.random() * 50 + 10, Math.random() * 9 + 2);
+    }
+
+    // TODO poll status from engine
+    public void update() {
+
+    }
+
+    public PatientSimulator getEngine() {
+        return patientBioEngine;
     }
 
     public boolean isAlive() {

@@ -1,28 +1,19 @@
 package edu.cmu.sbs.hub.server;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
 import edu.cmu.sbs.hub.Kiosk;
-import edu.cmu.sbs.scoring.ScoringUtil;
 import edu.cmu.sbs.hub.datatype.Patient;
 import edu.cmu.sbs.hub.datatype.PatientStatus;
 import edu.cmu.sbs.hub.datatype.PatientStatus.Metric;
 import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.hub.logging.RecordKeeperEZ;
-import edu.cmu.sbs.hub.server.Action;
-import edu.cmu.sbs.protocol.StatusProtocol;
-
+import edu.cmu.sbs.scoring.ScoringUtil;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.Type;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.EnumMap;
-import java.util.Map;
 
 import static spark.Spark.*;
 
@@ -46,32 +37,34 @@ public class Reception {
         recordKeeperEZ = kiosk.roster.recordKeeperEZ;
         staticFileLocation("/static");
         port(26666);
-        post("/biogears/update", (request, response) -> {
 
-            logger.info(LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME) + " received " + request.body());
-
-            try {
-                Type castType = new TypeToken<Map<String, String>>() {
-                }.getType();
-
-                kiosk.receive(new StatusProtocol(gson.fromJson(request.body(), castType)));
-
-                if (!kill && counter != 0) {
-                    counter--;
-                } else if (!kill) {
-                    actionBag.kill();
-                    kill = true;
-                }
-
-                return SUCCESS;
-            } catch (PatientNotFoundException e) {
-                logger.error(e.getMessage());
-                return FAILURE;
-            }
-        });
+        // Obsolete
+        //post("/biogears/update", (request, response) -> {
+        //
+        //    logger.info(LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME) + " received " + request.body());
+        //
+        //    try {
+        //        Type castType = new TypeToken<Map<String, String>>() {
+        //        }.getType();
+        //
+        //        kiosk.receive(new StatusProtocol(gson.fromJson(request.body(), castType)));
+        //
+        //        if (!kill && counter != 0) {
+        //            counter--;
+        //        } else if (!kill) {
+        //            actionBag.kill();
+        //            kill = true;
+        //        }
+        //
+        //        return SUCCESS;
+        //    } catch (PatientNotFoundException e) {
+        //        logger.error(e.getMessage());
+        //        return FAILURE;
+        //    }
+        //});
 
         // TODO establish transfer protocol
-        get("/unity/status", (request, response) -> {
+        get("/unity/status/:patienthash", (request, response) -> {
 
             try {
                 // TODO for test patient, it will ALWAYS return a random data instead of actual Biogears data.
@@ -96,8 +89,8 @@ public class Reception {
         		EnumMap<Metric, String> modelParamMap = new EnumMap<>(Metric.class);
         		modelParamMap.put(PatientStatus.Metric.HEART_RATE, "72.0");
         		modelParamMap.put(PatientStatus.Metric.SYSTOLIC_ARTERIAL_PRESSURE, "64");
-        		modelParamMap.put(PatientStatus.Metric.DIASTOLIC_ARTERIALPRESSURE, "105");
-        		modelParamMap.put(PatientStatus.Metric.OXYGEN_SATURATION, "97");
+                modelParamMap.put(PatientStatus.Metric.DIASTOLIC_ARTERIAL_PRESSURE, "105");
+                modelParamMap.put(PatientStatus.Metric.OXYGEN_SATURATION, "97");
         		modelParamMap.put(PatientStatus.Metric.RESPIRATION_RATE, "100");
         		Patient patientModel = new Patient("model", "model", Patient.Gender.MALE, 0, 0.0, 0.0);
         		patientModel.updateStatus(modelParamMap);
@@ -131,33 +124,34 @@ public class Reception {
         //
         //});
 
+        // Obsolete
+        //get("/scoring/die:hash", (request, response) -> {
+        //    String id = request.params(":hash");
+        //
+        //    try {
+        //        kiosk.roster.locatePatient(id).die();
+        //        return "Success";
+        //    } catch (PatientNotFoundException e) {
+        //        logger.error("Patient " + id + " does not exist");
+        //        return "Failure";
+        //    }
+        //});
 
-        get("/scoring/die:hash", (request, response) -> {
-            String id = request.params(":hash");
-
-            try {
-                kiosk.roster.locatePatient(id).die();
-                return "Success";
-            } catch (PatientNotFoundException e) {
-                logger.error("Patient " + id + " does not exist");
-                return "Failure";
-            }
-        });
-
-        post("/unity/action/:action", (request, response) -> {
+        post("/unity/action/:patientHash/:action", (request, response) -> {
 
             String action = request.params(":action").toLowerCase();
+            String hash = request.params(":patientHash");
 
-            logger.info(action + " Action Received");
+            logger.info(action + " Action Received on patient: " + hash);
 
             switch (action) {
                 case "oxygen":
                     String status = request.queryParams("status");
 
                     if (status.equals("on")) {
-                        actionBag.resumeOxygen();
+                        Action.resumeOxygen(kiosk.locatePatient(hash));
                     } else {
-                        actionBag.noOxygen();
+                        Action.noOxygen(kiosk.locatePatient(hash));
                     }
 
                     //logging
@@ -166,7 +160,7 @@ public class Reception {
                     return SUCCESS;
 
                 case "kill":
-                    actionBag.kill();
+                    Action.kill(kiosk.locatePatient(hash));
 
                     //logging
                     logAction(action);
@@ -174,9 +168,8 @@ public class Reception {
                     return SUCCESS;
                 case "inject":
 
-                    System.out.println(request.queryParams("drug_name"));
-                    System.out.println(Double.parseDouble(request.queryParams("dose")));
-                    actionBag.inject(request.queryParams("drug_name"), Double.parseDouble(request.queryParams("dose")));
+                    logAction("Injecting " + request.queryParams("drug_name") + ":" + Double.parseDouble(request.queryParams("dose") + " on " + hash));
+                    Action.inject(kiosk.locatePatient(hash), request.queryParams("drug_name"), Double.parseDouble(request.queryParams("dose")));
 
                     // TODO inject content is unlogged
                     logAction(action);
@@ -187,7 +180,13 @@ public class Reception {
                     return FAILURE;
             }
         });
+
+        // TODO
+        post("/unity/create/:patientHash", (request, response) -> {
+            return SUCCESS;
+        });
     }
+
 
     public void logAction(String action) {
         recordKeeperEZ.log(format(action));
