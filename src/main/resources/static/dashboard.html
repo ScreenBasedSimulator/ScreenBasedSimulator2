@@ -42,7 +42,10 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h2 id="score"></h2>
+        <div class="row">
+        <h2 id="score" class="col-lg-6">TOTAL SCORE:{{patient.Score}}</h2>
+        <h2 id="time" class="col-lg-6">TIME USED:{{patient.TotalTime}}</h2>
+        </div>>
           <table id="patient" class="table table-striped">
               <thead>
                 <tr>
@@ -51,7 +54,6 @@
                   <th>Height</th>
                   <th>Weight</th>
                   <th>Age</th>
-                  <th>Status</th>
                 </tr>
               </thead>
               <tbody id="patients">
@@ -60,10 +62,34 @@
                   <th>{{patient.PatientInfo.gender}}</th>
                   <th>{{patient.PatientInfo.weight}}</th>
                   <th>{{patient.PatientInfo.height}}</th>
+                  <th>{{patient.PatientInfo.age}}</th>
                 </tr>
               </tbody>
             </table>
-          <div id="time"></div>
+
+      <div class="row marketing">
+        <div class="col-lg-3">
+          <h4>Heart Rate</h4>
+          <p>{{patient.PatientStatus.heart_rate}}</p>
+
+          <h4>Respiration Rate</h4>
+          <p>{{patient.PatientStatus.respiration_rate}}</p>
+
+          <h4>Oxygen Saturation</h4>
+          <p>{{patient.PatientStatus.oxygen_saturation}}</p>
+        </div>
+
+        <div class="col-lg-3">
+          <h4>Diastolic Arterialpressure</h4>
+          <p>{{patient.PatientStatus.diastolic_arterialpressure}}</p>
+
+          <h4>Systolic Arterial Pressure</h4>
+          <p>{{patient.PatientStatus.systolic_arterial_pressure}}</p>
+
+          <h4>Status</h4>
+          <p>{{patient.PatientInfo.status}}</p>
+        </div>
+      </div>
       </div>
     </div>
     <div class="container">
