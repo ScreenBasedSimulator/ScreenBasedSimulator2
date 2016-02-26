@@ -12,29 +12,16 @@ public class callMachine : MonoBehaviour {
 	public  bool windowSwitch= false;
 	public bool heart_rate = false;
 	private Rect windowRect = new Rect(200, 80, 200, 100);
-
+	public float interact_distance = 5f;
 	void Start () {
 		GameObject.Find ("Parameter_Text").transform.localScale = new Vector3(0, 0, 0);
 	}
-
-	// Update is called once per frame
-	void Update () {
-
-
-//		go.SetActive (false);
-		if (Input.GetMouseButtonDown (0)) {
-			RaycastHit hit;
-			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-//			var select = GameObject.Find("AneStore").transform;
-			if (Physics.Raycast (ray, out hit, 3.5f)){
-				//gameObject.GetComponent<parameterDisplay>().enabled = true;
-			//	GameObject k = GameObject.Find("Text");
-				GameObject.Find ("Parameter_Text").transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-				gui_switch = true;
-				windowSwitch = true;
-			}
-//			CreateWizard ();
-		}
+		
+	void OnMouseDown() {
+		GameObject.Find ("Parameter_Text").transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
+		gui_switch = true;
+		windowSwitch = true;
+	
 	}
 	static void CreateWizard () {
 		Transform[] transforms = Selection.GetTransforms(SelectionMode.Deep |
