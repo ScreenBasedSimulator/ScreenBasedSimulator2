@@ -5,7 +5,7 @@ using SimpleJSON	;
 using UnityEngine;
 using UnityEditor;
 
-public class callMachine : MonoBehaviour {
+public class Monitor : MonoBehaviour {
 
 	// Use this for initialization
 	bool gui_switch = false;
