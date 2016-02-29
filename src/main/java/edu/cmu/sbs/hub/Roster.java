@@ -18,14 +18,7 @@ public class Roster {
     private HashMap<String, Patient> patientMap;
 
     public Roster() {
-
         this.patientMap = new HashMap<>();
-
-        // PatientAlpha - for testing purpose only
-        Patient preExistingPatient = new Patient("abcdefg", "PatientAlpha", Patient.Gender.FEMALE, 22, 100.0, 5.5);
-        patientMap.put(preExistingPatient.patientHash, preExistingPatient);
-        recordKeeperEZ.registerPatient(preExistingPatient);
-
         startPollingService();
     }
 
