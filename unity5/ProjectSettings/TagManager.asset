@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - cart
-  - Screen
-  - Cart
+  - Patient
   layers:
   - Default
   - TransparentFX
