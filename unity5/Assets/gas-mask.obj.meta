@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 18da5cbaaac2a4844a745b817b8ca7cd
+timeCreated: 1456086191
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Mascara_de_gas_Gas_Mask_Front_Fan_Cylinder1
+    100004: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Cilindro
+    100006: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder
+    100008: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart0
+    100010: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart1
+    100012: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart2
+    100014: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart3
+    100016: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart4
+    100018: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart5
+    100020: Mascara_de_gas_Gas_Mask_Mask_Mask_1
+    100022: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart0
+    100024: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart1
+    100026: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart2
+    100028: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido_
+    100030: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_11
+    100032: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_21
+    100034: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cilindro1
+    100036: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_1
+    100038: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_2
+    100040: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1
+    100042: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_1
+    100044: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_2
+    400000: //RootNode
+    400002: Mascara_de_gas_Gas_Mask_Front_Fan_Cylinder1
+    400004: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Cilindro
+    400006: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder
+    400008: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart0
+    400010: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart1
+    400012: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart2
+    400014: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart3
+    400016: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart4
+    400018: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart5
+    400020: Mascara_de_gas_Gas_Mask_Mask_Mask_1
+    400022: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart0
+    400024: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart1
+    400026: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart2
+    400028: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido_
+    400030: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_11
+    400032: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_21
+    400034: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cilindro1
+    400036: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_1
+    400038: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_2
+    400040: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1
+    400042: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_1
+    400044: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_2
+    2300000: Mascara_de_gas_Gas_Mask_Front_Fan_Cylinder1
+    2300002: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Cilindro
+    2300004: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart0
+    2300006: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart1
+    2300008: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart2
+    2300010: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart3
+    2300012: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart4
+    2300014: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart5
+    2300016: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart0
+    2300018: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart1
+    2300020: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart2
+    2300022: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido_
+    2300024: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_11
+    2300026: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_21
+    2300028: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cilindro1
+    2300030: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_1
+    2300032: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_2
+    2300034: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1
+    2300036: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_1
+    2300038: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_2
+    3300000: Mascara_de_gas_Gas_Mask_Front_Fan_Cylinder1
+    3300002: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Cilindro
+    3300004: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart0
+    3300006: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart1
+    3300008: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart2
+    3300010: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart3
+    3300012: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart4
+    3300014: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart5
+    3300016: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart0
+    3300018: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart1
+    3300020: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart2
+    3300022: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido_
+    3300024: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_11
+    3300026: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_21
+    3300028: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cilindro1
+    3300030: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_1
+    3300032: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_2
+    3300034: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1
+    3300036: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_1
+    3300038: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_2
+    4300000: Mascara_de_gas_Gas_Mask_Front_Fan_Cylinder1
+    4300002: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Cilindro
+    4300004: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart0
+    4300006: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart1
+    4300008: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart2
+    4300010: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart3
+    4300012: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart4
+    4300014: Mascara_de_gas_Gas_Mask_Gas_Cylinders_Parts1_Gas_Cylinder_Cylinder_MeshPart5
+    4300016: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart0
+    4300018: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart1
+    4300020: Mascara_de_gas_Gas_Mask_Mask_Mask_1_MeshPart2
+    4300022: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido_
+    4300024: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_11
+    4300026: Mascara_de_gas_Gas_Mask_Strap_NURBS_Recorrido__Tapa_21
+    4300028: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cilindro1
+    4300030: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_1
+    4300032: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Cylinder_2
+    4300034: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1
+    4300036: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_1
+    4300038: Mascara_de_gas_Gas_Mask_Strap_Simetr_a_Parts_Sweep_NURBS_1_Tapa_2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
