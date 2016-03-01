@@ -1,13 +1,10 @@
 package edu.cmu.sbs.scoring;
 
 import edu.cmu.sbs.hub.datatype.Patient;
-import edu.cmu.sbs.hub.datatype.Patient.PatientBuilder;
 import edu.cmu.sbs.hub.datatype.PatientStatus;
-import edu.cmu.sbs.hub.datatype.PatientStatus.PatientStatusBuilder;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -129,7 +126,7 @@ public class ScoringUtil {
 				(isGameOver() ? "true" : "false"),
 				formatter.format((endTime - startTime) / 1000d),
 				getScore(),
-				patient.patientHash,
+				patient.getUUID(),
 				patient.name,
 				patient.gender,
 				patient.age,

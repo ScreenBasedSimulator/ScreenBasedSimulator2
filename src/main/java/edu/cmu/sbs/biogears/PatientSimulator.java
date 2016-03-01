@@ -1,6 +1,7 @@
 package edu.cmu.sbs.biogears;
 
 import edu.cmu.sbs.hub.datatype.PatientStatus;
+import edu.cmu.sbs.hub.datatype.PatientStatus.PatientStatusBuilder;
 import mil.tatrc.physiology.biogears.engine.BioGearsEngine;
 import mil.tatrc.physiology.datamodel.bind.EnumAnesthesiaMachineOxygenSource;
 import mil.tatrc.physiology.datamodel.bind.EnumAnesthesiaMachinePrimaryGas;
@@ -45,7 +46,7 @@ public class PatientSimulator {
         SCHEDULED_EXECUTOR.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
-                if (m_enginePromise.isDone()) {
+                if (isReady()) {
                     m_engine.advanceTime(ONE_SECOND);
                 }
             }
@@ -55,22 +56,36 @@ public class PatientSimulator {
     }
 
     public boolean isReady() {
+        if (m_enginePromise.isDone() && m_engine == null) {
+            try {
+                m_engine = m_enginePromise.get();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
         return m_enginePromise.isDone();
     }
 
-    public PatientStatus getStatus() {
-        if (m_enginePromise.isDone()) {
-//            PatientStatus status = new PatientStatus();
-            m_engine.respiratory.getRespirationRate();
-        } else {
-
+    public PatientStatus getStatus() throws IllegalStateException {
+        if (!isReady()) {
+            throw new IllegalStateException("BioGears engine is not ready");
         }
-        return null;
+        
+        PatientStatusBuilder builder = new PatientStatusBuilder();
+        return builder.setRespirationRate(m_engine.respiratory.getRespirationRate().getValue())
+                .setHeartRate(m_engine.cardiovascular.getHeartRate().getValue())
+                .setSystolicArterialPressure(m_engine.cardiovascular.getSystolicArterialPressure().getValue())
+                .setDiastolicArterialPressure(m_engine.cardiovascular.getDiastolicArterialPressure().getValue())
+                .setRespirationRate(m_engine.respiratory.getRespirationRate().getValue()).build();
     }
 
     public void setAnesthesiaMachine(String state)
             throws IllegalStateException {
-        if (!m_enginePromise.isDone()) {
+        if (!isReady()) {
             throw new IllegalStateException("Engine is not ready");
         }
         switch (state) {
@@ -115,15 +130,11 @@ public class PatientSimulator {
         return THREAD_POOL.submit(new Callable<BioGearsEngine>() {
             @Override
             public BioGearsEngine call() throws Exception {
-                System.out.println("Starting Engine1");
                 BioGearsEngine bge = new BioGearsEngine();
                 bge.setListener(new BioGearsListener());
-                System.out.println("Starting Engine2");
                 bge.setEventHandler(new BioGearsEventHandler());
                 SEPatient patient = new SEPatient();
-                System.out.println("Starting Engine3");
                 patient.loadPatientFile("patients/Standard.xml");
-                System.out.println("Starting Engine4");
                 List<SEDataRequest> dataRequests = new ArrayList<SEDataRequest>();
                 SEPhysiologySystemDataRequest hr = new SEPhysiologySystemDataRequest();
                 hr.setName("HeartRate");
@@ -144,7 +155,6 @@ public class PatientSimulator {
                 dp.setName("DiastolicArterialPressure");
                 dp.setUnit(PressureUnit.mmHg.toString());
                 dataRequests.add(dp);
-                System.out.println("Starting Engine");
                 bge.initializeEngine("./BioGears.log", patient, null,
                         dataRequests);
                 return bge;

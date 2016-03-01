@@ -1,9 +1,9 @@
 package edu.cmu.sbs.hub;
 
+import java.util.NoSuchElementException;
+
 import edu.cmu.sbs.hub.datatype.Patient;
 import edu.cmu.sbs.hub.datatype.Patient.PatientBuilder;
-import edu.cmu.sbs.hub.datatype.exception.IllegalProtocol;
-import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,11 +21,11 @@ public class Kiosk {
     //    roster.locatePatient(statusProtocol.getPatientHash()).updateStatus(statusProtocol.toEnumMap());
     //}
 
-    public Patient locatePatient(String hash) throws PatientNotFoundException {
+    public Patient locatePatient(String hash) throws NoSuchElementException {
         return roster.locatePatient(hash);
     }
 
-    public Patient createPatient(String request) throws IllegalProtocol {
+    public Patient createPatient(String request) {
         PatientBuilder builder = new PatientBuilder();
         Patient patient = builder.build();
         roster.checkInPatient(patient);
@@ -34,7 +34,7 @@ public class Kiosk {
 
     // TODO complete parse Patient from request string
     @Deprecated
-    private Patient parsePatient(String request) throws IllegalProtocol {
+    private Patient parsePatient(String request) {
         return Patient.generateRandomPatient();
     }
 }

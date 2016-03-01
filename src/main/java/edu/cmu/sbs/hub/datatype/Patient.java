@@ -1,6 +1,9 @@
 package edu.cmu.sbs.hub.datatype;
 
+import java.util.UUID;
+
 import edu.cmu.sbs.biogears.PatientSimulator;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +12,7 @@ public class Patient {
 
     private static Logger logger = LoggerFactory.getLogger("Patient");
 
-    public final String patientHash;
+    public final UUID uuid;
     public final String name;
     public final Gender gender;
     public final int age;
@@ -58,7 +61,7 @@ public class Patient {
     }
     
     private Patient(String name, Gender gender, int age, double weight, double height, boolean isStatic) {
-        this.patientHash = RandomStringUtils.random(8, "qwertyuiopasdfghjklzxcvbnm1234567890");
+        this.uuid = UUID.randomUUID();
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -66,7 +69,7 @@ public class Patient {
         this.height = height;
         
         if (!isStatic) {
-            patientBioEngine = new PatientSimulator(patientHash);
+            patientBioEngine = new PatientSimulator(uuid.toString());
         } else {
             patientBioEngine = null;
         }
@@ -74,7 +77,7 @@ public class Patient {
 
     // TODO poll status from engine
     public void update() {
-
+        this.status = patientBioEngine.getStatus();
     }
 
     public PatientSimulator getEngine() {
@@ -89,11 +92,8 @@ public class Patient {
         alive = false;
     }
 
-    public PatientStatus getStatus() {
-        if (name.equals("PatientAlpha")) {
-            return PatientStatus.getRandomFakeStatus();
-        }
-
+    public PatientStatus getStatus() throws IllegalStateException {
+        status = patientBioEngine.getStatus();
         return status;
     }
 
@@ -108,13 +108,17 @@ public class Patient {
 
         Patient patient = (Patient) o;
 
-        return patientHash.equals(patient.patientHash);
+        return uuid.equals(patient.uuid);
 
     }
 
     @Override
     public int hashCode() {
-        return patientHash.hashCode();
+        return uuid.hashCode();
+    }
+    
+    public String getUUID() {
+        return uuid.toString();
     }
 
     @Override

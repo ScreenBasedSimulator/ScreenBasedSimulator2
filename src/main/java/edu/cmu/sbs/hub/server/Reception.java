@@ -1,12 +1,11 @@
 package edu.cmu.sbs.hub.server;
 
-import com.google.gson.Gson;
+import java.util.NoSuchElementException;
 
 import edu.cmu.sbs.hub.Kiosk;
 import edu.cmu.sbs.hub.datatype.Patient;
 import edu.cmu.sbs.hub.datatype.Patient.PatientBuilder;
 import edu.cmu.sbs.hub.datatype.PatientStatus.PatientStatusBuilder;
-import edu.cmu.sbs.hub.datatype.exception.PatientNotFoundException;
 import edu.cmu.sbs.hub.logging.RecordKeeperEZ;
 import edu.cmu.sbs.scoring.ScoringUtil;
 
@@ -24,7 +23,6 @@ public class Reception {
     final private String FAILURE = "Failure\n";
     final private String SUCCESS = "Success\n";
     final private DateTime startTime;
-    private Gson gson = new Gson();
     private Action actionBag = new Action();
     private RecordKeeperEZ recordKeeperEZ;
 
@@ -40,15 +38,15 @@ public class Reception {
 
 
         // TODO establish transfer protocol
-        get("/unity/status/:patienthash", (request, response) -> {
-
+        get("/unity/status/:patientUUID", (request, response) -> {
             try {
-                // TODO for test patient, it will ALWAYS return a random data instead of actual Biogears data.
-
-                return kiosk.locatePatient("abcdefg").getStatus().toString();
-            } catch (PatientNotFoundException e) {
+                String uuid = request.params("patientUUID");
+                return kiosk.locatePatient(uuid).getStatus().toString();
+            } catch (NoSuchElementException e) {
                 logger.error(e.getMessage());
                 return FAILURE;
+            } catch (IllegalStateException e) {
+                return "patient is not ready";  
             } finally {
                 logger.info("Status Update Success");
             }
@@ -87,19 +85,6 @@ public class Reception {
             }
 
         });
-
-        // TODO establish create protocol
-        //get("/unity/create", (request, response) -> {
-        //    try {
-        //        kiosk.createPatient(request.toString());
-        //        return SUCCESS;
-        //    } catch (IllegalProtocol illegalProtocol) {
-        //        logger.error(illegalProtocol.getMessage());
-        //        return FAILURE;
-        //    }
-        //
-        //
-        //});
 
 
         post("/unity/action/:patientHash/:action", (request, response) -> {
@@ -149,7 +134,7 @@ public class Reception {
         // TODO
         post("/unity/create", (request, response) -> {
             Patient patient = kiosk.createPatient("standard");
-            return patient.hashCode();
+            return patient.getUUID();
         });
     }
 
