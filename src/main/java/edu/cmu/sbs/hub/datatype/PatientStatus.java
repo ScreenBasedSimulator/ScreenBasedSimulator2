@@ -1,78 +1,82 @@
 package edu.cmu.sbs.hub.datatype;
 
 import com.google.gson.Gson;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
-import java.util.EnumMap;
-import java.util.Map;
-
 public class PatientStatus {
-
+    public final double HEART_RATE;
+    public final double SYSTOLIC_ARTERIAL_PRESSURE;
+    public final double DIASTOLIC_ARTERIAL_PRESSURE;
+    public final double OXYGEN_SATURATION;
+    public final double RESPIRATION_RATE;
+    
     private static Gson gson = new Gson();
+    public static class PatientStatusBuilder {
+        private double heartRate = 72;
+        private double systolicArterialPressure = 64;
+        private double diastolicArterialPressure = 105;
+        private double oxygenSaturation = 97;
+        private double respirationRate = 100;
+        public PatientStatusBuilder setHeartRate(double heartRate) {
+            this.heartRate = heartRate;
+            return this;
+        }
+        public PatientStatusBuilder setSystolicArterialPressure(double systolicArterialPressure) {
+            this.systolicArterialPressure = systolicArterialPressure;
+            return this;
+        }
+        public PatientStatusBuilder setDiastolicArterialPressure(double diastolicArterialPressure) {
+            this.diastolicArterialPressure = diastolicArterialPressure;
+            return this;
+        }
+        public PatientStatusBuilder setOxygenSaturation(double oxygenSaturation) {
+            this.oxygenSaturation = oxygenSaturation;
+            return this;
+        }
+        public PatientStatusBuilder setRespirationRate(double respirationRate) {
+            this.respirationRate = respirationRate;
+            return this;
+        }
+        public PatientStatus build() {
+            return new PatientStatus(heartRate, systolicArterialPressure,
+                    diastolicArterialPressure, oxygenSaturation, respirationRate);
+        }
+    }
     private static Logger logger = LoggerFactory.getLogger("PatientStatus");
 
-    private final Patient patient;
-    Map<Metric, String> metricMap = new EnumMap<>(Metric.class);
 
-    public PatientStatus(EnumMap<Metric, String> metricMap, Patient patient) {
-        //validateEnumMap(metricMap);
-        this.metricMap = metricMap;
-        this.patient = patient;
-    }
-
-    // TODO does not work properly
-    public static void validateEnumMap(EnumMap<Metric, String> metricMap) {
-        if (metricMap.size() != Metric.values().length || metricMap.keySet().containsAll(Arrays.asList(Metric.values()))) {
-            throw new IllegalArgumentException("Map is not complete");
-        }
+    private PatientStatus(double heartRate, double systolicArterialPressure,
+            double diastolicArterialPressure, double oxygenSaturation, double respirationRate) {
+        this.HEART_RATE = heartRate;
+        this.SYSTOLIC_ARTERIAL_PRESSURE = systolicArterialPressure;
+        this.DIASTOLIC_ARTERIAL_PRESSURE = diastolicArterialPressure;
+        this.OXYGEN_SATURATION = oxygenSaturation;
+        this.RESPIRATION_RATE = respirationRate;
     }
 
     public static PatientStatus getRandomFakeStatus() {
         logger.info("RandomFakeStatus invoked");
+        PatientStatusBuilder builder= new PatientStatusBuilder();
         
-        EnumMap<Metric, String> metricDoubleMap = new EnumMap<>(Metric.class);
-        metricDoubleMap.put(Metric.HEART_RATE, 50 + 20 * Math.random() + "");
-        metricDoubleMap.put(Metric.SYSTOLIC_ARTERIAL_PRESSURE, Math.random() * 100 + "");
-        metricDoubleMap.put(Metric.DIASTOLIC_ARTERIALPRESSURE, Math.random() * 20 + 100 + "");
-        metricDoubleMap.put(Metric.OXYGEN_SATURATION, Math.random() * 120 + "");
-        metricDoubleMap.put(Metric.RESPIRATION_RATE, 60.0 + Math.random() * 20 + "");
-        return new PatientStatus(metricDoubleMap, Patient.generateRandomPatient());
+        return builder.setHeartRate(50 + 20 * Math.random())
+               .setSystolicArterialPressure(50 + 20 * Math.random())
+               .setDiastolicArterialPressure(Math.random() * 20 + 100)
+               .setOxygenSaturation(Math.random() * 50+50)
+               .setRespirationRate(60.0 + Math.random() * 20)
+               .build();
     }
-
+    
     public static void main(String[] args) {
         for (int i = 0; i < 20; i++) {
             getRandomFakeStatus();
         }
     }
 
-    public EnumMap<Metric, String> getStatus() {
-        return new EnumMap<>(metricMap);
-    }
-
-    public void updateStatus(EnumMap<Metric, String> metricMap) {
-        for (Metric metric : metricMap.keySet()) {
-            this.metricMap.put(metric, metricMap.get(metric));
-        }
-        logger.info(patient + " is successfully updated");
-    }
-
-    public Map<Metric, String> getMetricMap() {
-        return metricMap;
-    }
 
     @Override
     public String toString() {
-        return gson.toJson(metricMap);
-    }
-
-    public enum Metric {
-        HEART_RATE, RESPIRATION_RATE, SYSTOLIC_ARTERIAL_PRESSURE, DIASTOLIC_ARTERIALPRESSURE, OXYGEN_SATURATION;
-
-        @Override
-        public String toString() {
-            return this.name().toLowerCase();
-        }
+        return gson.toJson(this);
     }
 }

@@ -36,30 +36,19 @@ make linux
 ## Hub HTTP Protocol
 Port: 26666
 
-Address  |Method | Service | Function | Success Return Value
----------|-------|---------|----------|---------------------
-/biogears/update | POST | Biogears | update patient status |  BiogearsReply1
-/unity/status | GET | Unity | retrieve patient status | UnityReply1
-/unity/create | GET | Unity | create patient | UnityReply2
-
-Address  |Method | Service | Function | Success Return Value
----------|-------|---------|----------|---------------------
-/scoring/die:{PatientHash} | GET | Scoring | receive patient died |  DieReply
+Address  |Method | Function | Success Return Value
+---------|-------|----------|---------------------
+/unity/status/{patientHash} | GET | retrieve patient status | UnityReply1
+/unity/create/{patientHash} (not used currently)| POST | create patient | UnityReply
+/unity/action/{patientHash}/{actionType} | POST | perform action | UnityReply 
 
 ### UnityReply1
 ```
 {"heart_rate":72.0,"respiration_rate":16.3636,"systolic_arterial_pressure":106.955,"diastolic_arterialpressure":63.8649,"oxygen_saturation":0.968268}
 ```
 
-### UnityReply2
+### UnityReply
 ```
 Create Successful -> "Success"
 Create Failure    -> "Failure"
-```
-
-### DieReply
-```
-Successfully marked patient with hash as deceased -> "Success"
-patient has already died -> "Success" 
-Patient with hash is not found -> "Failure"
 ```
