@@ -8,6 +8,24 @@ var reportPage = "report";
 
 var app = angular.module('screen-based-simulator-app', []);
 
+var questions = "‘What went well for you in the scenario?’\
+·         ‘What confused you the most in the scenario?\
+·         ‘When did you feel most challenged?\
+·         ‘As you look at those challenging moments, what resources were available to help you?’\
+·         ‘What would you like to do differently if you face this problem in the real-world’\
+·         ‘What was THE MOST important lesson you learned from this experience’".split('·         ');
+
+var specific_questions = "·         What triggers our bodies to breath?\
+·         How do narcotics affect those triggers?\
+·         What does it look like when a person tries to breath against an upper airway obstruction?\
+·         How can you relieve an upper airway obstruction?\
+·         How does naloxone work to reverse a narcotic overdose?\
+·         What is the elimination half-life of naloxone?\
+·         How can you maintain a plasma level of a short acting drug like naloxone to wait out the body’s elimination of the narcotic?\
+·         How would an emergency medicine doctor use naloxone to treat a heroin overdose?\
+·         How would a hospitalist use naloxone to treat a narcotic overdose in her hospital?\
+·         How would an anesthesiologist use naloxone to treat a narcotic overdose?".split('·         ');
+
 app.controller('screen-based-simulator-controller', function ($scope, $http, $interval) {
   $scope.patient = {
     "GameOver": false,
@@ -82,6 +100,33 @@ app.controller('screen-based-simulator-controller', function ($scope, $http, $in
   $interval(update, 1000);
 });
 
+function loadQuestions(){
+    qlist = $("#question_list");
+    for(var i = 0; i<questions.length; i++){
+        qlist.append(
+            $('\
+        <div class="general_question">\
+            <p class="lead">'+ questions[i] + '</p>\
+            <fieldset class="form-group">\
+              <label for="general_response_'+i+'">Response</label>\
+              <textarea class="form-control" id="response_0"></textarea>\
+            </fieldset>\
+        </div>')
+        )
+    }
+    for(var j = 0; j< specific_questions.length; j++){
+        qlist.append(
+            $('\
+        <div class="general_question">\
+            <p class="lead">'+ specific_questions[j] + '</p>\
+            <fieldset class="form-group">\
+              <label for="specific_response_'+j+'">Response</label>\
+              <textarea class="form-control" id="response_0"></textarea>\
+            </fieldset>\
+        </div>')
+        )
+    }
+}
 
 function submit(){
     console.log("post!!");
@@ -148,6 +193,7 @@ function getInfo(){
 
 $(document).ready(function(){
     $("#submit_btn").click(submit);
+    loadQuestions();
       // CSRF set-up copied from Django docs
       //function getCookie(name) {
       //  var cookieValue = null;

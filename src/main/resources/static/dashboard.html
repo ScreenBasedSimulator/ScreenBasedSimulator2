@@ -94,7 +94,7 @@
     </div>
     <div class="container">
       <div class="row" id="questions">
-          <div class="col-sm-9">
+          <div class="col-sm-9" id="question_list">
               <div class="question_sample">
                 <p class="lead">Question: blablabla bla blabla?</p>
                 <fieldset class="form-group">
@@ -102,18 +102,20 @@
                   <textarea class="form-control" id="response_0"></textarea>
                 </fieldset>
               </div>
-              <div id="submission">
-                   <button id="submit_btn">submit</button>
-               </div>
           </div>
+      </div>
+      <div id="submission">
+         <button id="submit_btn">submit</button>
+      </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-        <script src="js/debrief.js"></script>
+
         <script src="js/angular.min.js"></script>
-        <script src="js/controller.js"></script>
+        <script src="js/debrief.js"></script>
+        <!--<script src="js/controller.js"></script>-->
   </body>
 </html>
